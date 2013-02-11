@@ -21,6 +21,10 @@ define( [
 
                 this.enableMouseOver();
 
+                // Store the initial canvas size, for scaling
+                var initialWidth = canvas.width;
+                var initialHeight = canvas.height;
+
                 // model-view transform
                 var MVT_SCALE = 1; // 1 model unit == 1 view unit
                 var MVT_OFFSET = new Point2D( 0, 0 ); // origin relative to rootContainer
@@ -30,7 +34,7 @@ define( [
                 var background = new Easel.Shape();
 
                 // frame rate display, upper left (for performance debugging)
-                var frameRateNode = new FrameRateNode();
+                var frameRateNode = new FrameRateNode( 'white' );
                 frameRateNode.x = 20;
                 frameRateNode.y = 20;
 
@@ -39,9 +43,9 @@ define( [
 
                 // rendering order
                 this.addChild( background );
+                this.addChild( frameRateNode );
                 var rootContainer = new Easel.Container();
                 this.addChild( rootContainer );
-                rootContainer.addChild( frameRateNode );
                 rootContainer.addChild( barMagnetNode );
 
                 // resize handler
@@ -61,8 +65,14 @@ define( [
                             .beginFill( 'black' )
                             .rect( 0, 0, canvas.width, canvas.height );
 
-                    // scale the scenegraph
-                    // TODO
+                    // move the root node to the center of the canvas, so the origin remains at the center
+                    rootContainer.x = canvas.width / 2;
+                    rootContainer.y = canvas.height / 2;
+
+                    // isometric scaling
+                    var scale = Math.min( canvas.width / initialWidth, canvas.height / initialHeight );
+                    rootContainer.scaleX = scale;
+                    rootContainer.scaleY = scale;
 
                     // force rendering update
                     that.tick();
