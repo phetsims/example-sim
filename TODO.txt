@@ -4,3 +4,4 @@ Keep track of tasks that you need to do in this file.
 - issues with scene graph scaling when window is resized
 - test with file://
 - test on various browsers and devices
+- grunt.js + package.json
