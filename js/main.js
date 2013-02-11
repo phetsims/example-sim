@@ -1,4 +1,10 @@
-// Main entry point for the sim.
+// Copyright 2002-2013, University of Colorado
+
+/**
+ * Main entry point for the sim.
+ *
+ * @author Chris Malley (cmalley@pixelzoom.com)
+ */
 require( [
              'easel',
              'i18n!../nls/example-sim-strings'

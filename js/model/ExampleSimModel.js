@@ -1,0 +1,32 @@
+// Copyright 2002-2013, University of Colorado
+
+/**
+ * Model container.
+ *
+ * @author Chris Malley (PixelZoom, Inc.)
+ */
+define( [
+            'easel',
+            'phetcommon/math/Dimension2D',
+            'phetcommon/math/Point2D',
+            'model/BarMagnet'
+        ],
+        function ( Easel, Dimension2D, Point2D, BarMagnet ) {
+
+            function ExampleSimModel() {
+                // model elements
+                this.barMagnet = new BarMagnet( new Point2D( 0, 0 ), new Dimension2D( 250, 50 ), 0 );
+            }
+
+            // Resets all model elements
+            ExampleSimModel.prototype.reset = function () {
+                this.barMagnet.reset();
+            };
+
+            // Animates the model, called by Easel.Ticker
+            ExampleSimModel.prototype.tick = function() {
+                // Make model changes here.
+            };
+
+            return ExampleSimModel;
+        } );

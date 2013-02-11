@@ -1,4 +1,11 @@
-// RequireJS configuration file for the sim. Paths are relative to the location of this file.
+// Copyright 2002-2013, University of Colorado
+
+/**
+ * RequireJS configuration file for the sim.
+ * Paths are relative to the location of this file.
+ *
+ * @author Chris Malley (cmalley@pixelzoom.com)
+ */
 require.config( {
 
     deps: ["main"],
@@ -12,7 +19,6 @@ require.config( {
 
         // common
         phetcommon:"../common/phetcommon/js",
-        phetcommon_html:"../common/phetcommon/html",
         'easel-phet':"../common/easel-phet/js"
     },
 
