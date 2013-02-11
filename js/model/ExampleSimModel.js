@@ -7,8 +7,8 @@
  */
 define( [
             'easel',
-            'phetcommon/math/Dimension2D',
-            'phetcommon/math/Point2D',
+            'PHETCOMMON/math/Dimension2D',
+            'PHETCOMMON/math/Point2D',
             'model/BarMagnet'
         ],
         function ( Easel, Dimension2D, Point2D, BarMagnet ) {

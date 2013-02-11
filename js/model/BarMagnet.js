@@ -7,8 +7,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( [
-            'phetcommon/math/Point2D',
-            'phetcommon/model/property/Property'
+            'PHETCOMMON/math/Point2D',
+            'PHETCOMMON/model/property/Property'
         ],
         function ( Point2D, Property ) {
 

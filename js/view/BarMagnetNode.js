@@ -7,12 +7,12 @@
  */
 define( [
             'easel',
-            'phetcommon/view/Inheritance',
-            'easel-phet/events/DragHandler',
-            'phetcommon/math/MathUtil',
+            'EASEL-PHET/events/DragHandler',
+            'PHETCOMMON/view/Inheritance',
+            'PHETCOMMON/math/MathUtil',
             'image!images/barMagnet.png'
         ],
-        function ( Easel, Inheritance, DragHandler, MathUtil, barMagnetImage ) {
+        function ( Easel, DragHandler, Inheritance, MathUtil, barMagnetImage ) {
 
             /**
              * @class BarMagnetNode

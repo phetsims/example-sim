@@ -7,10 +7,10 @@
  */
 define( [
             'easel',
-            'easel-phet/nodes/FrameRateNode',
-            'phetcommon/view/Inheritance',
-            'phetcommon/view/ModelViewTransform2D',
-            'phetcommon/math/Point2D',
+            'EASEL-PHET/nodes/FrameRateNode',
+            'PHETCOMMON/view/Inheritance',
+            'PHETCOMMON/view/ModelViewTransform2D',
+            'PHETCOMMON/math/Point2D',
             'view/BarMagnetNode'
         ],
         function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Point2D, BarMagnetNode ) {

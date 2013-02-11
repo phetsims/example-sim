@@ -7,7 +7,7 @@
  */
 require( [
              'easel',
-             'phetcommon/view/CanvasQuirks',
+             'PHETCOMMON/view/CanvasQuirks',
              'model/ExampleSimModel',
              'view/ExampleSimStage',
              'i18n!../nls/example-sim-strings'
