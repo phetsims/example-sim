@@ -22,14 +22,11 @@ define( [
 
                 this.enableMouseOver();
 
-                // Store the initial window size, for scaling
-                var initialWindowSize = new Dimension2D($( window ).width(), $( window ).height() );
-
-                // At this window size, the model-view scaling is 1:1.
-                var referenceSize = new Dimension2D( 1024, 768 );
+                // At this window size, scaling is 1.
+                var UNITY_WINDOW_SIZE = new Dimension2D( 1024, 768 );
 
                 // model-view transform
-                var MVT_SCALE = Math.min( initialWindowSize.width / referenceSize.width, initialWindowSize.height / referenceSize.height );
+                var MVT_SCALE = 1;
                 var MVT_OFFSET = new Point2D( 0, 0 ); // origin relative to rootContainer
                 var mvt = new ModelViewTransform2D( MVT_SCALE, MVT_OFFSET );
 
@@ -56,12 +53,11 @@ define( [
                 var handleResize = function () {
 
                     // get the window width
-                    var width = $( window ).width();
-                    var height = $( window ).height();
+                    var windowSize = new Dimension2D( $( window ).width(), $( window ).height() );
 
                     // make the canvas fill the window
-                    canvas.width = width;
-                    canvas.height = height;
+                    canvas.width = windowSize.width;
+                    canvas.height = windowSize.height;
 
                     // expand the background to fill the canvas
                     background.graphics
@@ -73,7 +69,7 @@ define( [
                     rootContainer.y = canvas.height / 2;
 
                     // isometric scaling
-                    var scale = Math.min( canvas.width / initialWindowSize.width, canvas.height / initialWindowSize.height );
+                    var scale = Math.min( windowSize.width / UNITY_WINDOW_SIZE.width, windowSize.height / UNITY_WINDOW_SIZE.height );
                     rootContainer.scaleX = scale;
                     rootContainer.scaleY = scale;
 
