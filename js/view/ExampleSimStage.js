@@ -10,10 +10,11 @@ define( [
             'EASEL-PHET/nodes/FrameRateNode',
             'PHETCOMMON/model/Inheritance',
             'PHETCOMMON/view/ModelViewTransform2D',
+            'PHETCOMMON/math/Dimension2D',
             'PHETCOMMON/math/Point2D',
             'view/BarMagnetNode'
         ],
-        function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Point2D, BarMagnetNode ) {
+        function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, BarMagnetNode ) {
 
             function ExampleSimStage( canvas, model ) {
 
@@ -21,12 +22,14 @@ define( [
 
                 this.enableMouseOver();
 
-                // Store the initial canvas size, for scaling
-                var initialWidth = canvas.width;
-                var initialHeight = canvas.height;
+                // Store the initial window size, for scaling
+                var initialWindowSize = new Dimension2D($( window ).width(), $( window ).height() );
+
+                // At this window size, the model-view scaling is 1:1.
+                var referenceSize = new Dimension2D( 1024, 768 );
 
                 // model-view transform
-                var MVT_SCALE = 1; // 1 model unit == 1 view unit
+                var MVT_SCALE = Math.min( initialWindowSize.width / referenceSize.width, initialWindowSize.height / referenceSize.height );
                 var MVT_OFFSET = new Point2D( 0, 0 ); // origin relative to rootContainer
                 var mvt = new ModelViewTransform2D( MVT_SCALE, MVT_OFFSET );
 
@@ -70,7 +73,7 @@ define( [
                     rootContainer.y = canvas.height / 2;
 
                     // isometric scaling
-                    var scale = Math.min( canvas.width / initialWidth, canvas.height / initialHeight );
+                    var scale = Math.min( canvas.width / initialWindowSize.width, canvas.height / initialWindowSize.height );
                     rootContainer.scaleX = scale;
                     rootContainer.scaleY = scale;
 
