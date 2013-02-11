@@ -8,7 +8,7 @@
 define( [
             'easel',
             'EASEL-PHET/events/DragHandler',
-            'PHETCOMMON/view/Inheritance',
+            'PHETCOMMON/model/Inheritance',
             'PHETCOMMON/math/MathUtil',
             'image!images/barMagnet.png'
         ],

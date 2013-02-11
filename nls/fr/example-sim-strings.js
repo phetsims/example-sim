@@ -1,4 +1,4 @@
 // French strings
 define( {
-            "title":"Example French Sim"
+            "title":"Simulation par Exemple"
         } );

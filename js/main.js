@@ -12,7 +12,7 @@ require( [
              'view/ExampleSimStage',
              'i18n!../nls/example-sim-strings'
          ],
-         function ( Easel, ExampleSimModel, ExampleSimStage, Strings ) {
+         function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, Strings ) {
 
              // Title --------------------------------------------------------------------
 
