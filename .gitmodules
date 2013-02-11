@@ -1,0 +1,3 @@
+[submodule "contrib/i18n"]
+	path = contrib/i18n
+	url = git://github.com/phetsims/i18n.git
