@@ -1,0 +1,1 @@
+Put image files in this directory. Each image must have an entry in license.txt.
