@@ -1,5 +1,6 @@
 Keep track of tasks that you need to do in this file.
 
+- remove margin above and to left of canvas
 - add example Bootstrap controls ("Reset All" button, "Flip Magnet" button)
 - test with file://
 - test on various browsers and devices
