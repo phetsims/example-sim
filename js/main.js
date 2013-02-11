@@ -7,9 +7,12 @@
  */
 require( [
              'easel',
+             'phetcommon/view/CanvasQuirks',
+             'model/ExampleSimsModel',
+             'view/ExampleSimsStage',
              'i18n!../nls/example-sim-strings'
          ],
-         function ( Easel, Strings ) {
+         function ( Easel, ExampleSimsModel, ExampleSimsStage, Strings ) {
 
              // Title --------------------------------------------------------------------
 
@@ -18,14 +21,17 @@ require( [
              // Canvas --------------------------------------------------------------------
 
              var canvas = document.getElementById( 'example-sim-canvas' );
+             CanvasQuirks.fixTextCursor( canvas );
 
              // MVC --------------------------------------------------------------------
+
+             var model = new ExampleSimModel();
+             var stage = new ExampleSimStage( canvas, model );
 
              // Animation loop ----------------------------------------------------------
 
              Easel.Ticker.addListener( model );
              Easel.Ticker.addListener( stage );
-             Easel.Ticker.addListener( stage.frameRateDisplay );
              Easel.Ticker.setFPS( 60 );
              Easel.Touch.enable( stage, false, false );
          } );
