@@ -8,11 +8,11 @@
 require( [
              'easel',
              'phetcommon/view/CanvasQuirks',
-             'model/ExampleSimsModel',
-             'view/ExampleSimsStage',
+             'model/ExampleSimModel',
+             'view/ExampleSimStage',
              'i18n!../nls/example-sim-strings'
          ],
-         function ( Easel, ExampleSimsModel, ExampleSimsStage, Strings ) {
+         function ( Easel, ExampleSimModel, ExampleSimStage, Strings ) {
 
              // Title --------------------------------------------------------------------
 

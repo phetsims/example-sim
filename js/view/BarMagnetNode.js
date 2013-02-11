@@ -1,28 +1,28 @@
 // Copyright 2002-2013, University of Colorado
 
 /**
- * Easel display object for the bar magnet.
+ * Easel display object (scene graph node) for the bar magnet.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( [
             'easel',
+            'phetcommon/view/Inheritance',
             'easel-phet/events/DragHandler',
             'phetcommon/math/MathUtil',
             'image!images/barMagnet.png'
         ],
-        function ( Easel, DragHandler, MathUtil, barMagnetImage ) {
+        function ( Easel, Inheritance, DragHandler, MathUtil, barMagnetImage ) {
 
             /**
-             * @class BarMagnetDisplay
+             * @class BarMagnetNode
              * @constructor
              * @param {BarMagnet} barMagnet
              * @param {ModelViewTransform2D} mvt
              */
-            function BarMagnetDisplay( barMagnet, mvt ) {
+            function BarMagnetNode( barMagnet, mvt ) {
 
-                // Use constructor stealing to inherit instance properties.
-                Easel.Bitmap.call( this, barMagnetImage );
+                Easel.Bitmap.call( this, barMagnetImage ); // constructor stealing
 
                 // Compute scale factors to match model.
                 this.scaleX = mvt.modelToView( barMagnet.size.width ) / this.image.width;
@@ -49,10 +49,7 @@ define( [
                 } );
             }
 
-            // prototype chaining via parasitic combination inheritance
-            var prototype = Object( Easel.Bitmap.prototype ); // create a clone of the supertype's prototype
-            prototype.constructor = BarMagnetDisplay; // account for losing the default constructor when prototype is overwritten
-            BarMagnetDisplay.prototype = prototype; // assign cloned prototype to subtype
+            Inheritance.inheritPrototype( BarMagnetNode, Easel.Bitmap ); // prototype chaining
 
-            return BarMagnetDisplay;
+            return BarMagnetNode;
         } );

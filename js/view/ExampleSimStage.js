@@ -7,12 +7,13 @@
  */
 define( [
             'easel',
+            'easel-phet/nodes/FrameRateNode',
+            'phetcommon/view/Inheritance',
             'phetcommon/view/ModelViewTransform2D',
             'phetcommon/math/Point2D',
-            'view/BarMagnetDisplay',
-            'view/FrameRateDisplay'
+            'view/BarMagnetNode'
         ],
-        function ( Easel, ModelViewTransform2D, Point2D, BarMagnetDisplay, FrameRateDisplay ) {
+        function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Point2D, BarMagnetNode ) {
 
             function ExampleSimStage( canvas, model ) {
 
@@ -28,23 +29,20 @@ define( [
                 // canvas background
                 var background = new Easel.Shape();
 
-                // bar magnet
-                var barMagnet = new BarMagnetDisplay( model.barMagnet, mvt );
-
-                // compass
-                var compass = new CompassDisplay( model.compass, mvt, NEEDLE_SIZE );
-
                 // frame rate display, upper left (for performance debugging)
-                this.frameRateDisplay = new FrameRateDisplay();
-                this.frameRateDisplay.x = 20;
-                this.frameRateDisplay.y = 20;
+                var frameRateNode = new FrameRateNode();
+                frameRateNode.x = 20;
+                frameRateNode.y = 20;
+
+                // bar magnet
+                var barMagnetNode = new BarMagnetNode( model.barMagnet, mvt );
 
                 // rendering order
                 this.addChild( background );
                 var rootContainer = new Easel.Container();
                 this.addChild( rootContainer );
-                rootContainer.addChild( barMagnet );
-                rootContainer.addChild( this.frameRateDisplay );
+                rootContainer.addChild( frameRateNode );
+                rootContainer.addChild( barMagnetNode );
 
                 // resize handler
                 var that = this;
@@ -73,10 +71,7 @@ define( [
                 handleResize(); // initial size
             }
 
-            // prototype chaining via parasitic combination inheritance
-            var prototype = Object( Easel.Stage.prototype ); // create a clone of the supertype's prototype
-            prototype.constructor = ExampleSimStage; // account for losing the default constructor when prototype is overwritten
-            ExampleSimStage.prototype = prototype; // assign cloned prototype to subtype
+            Inheritance.inheritPrototype( ExampleSimStage, Easel.Stage ); // prototype chaining
 
             return ExampleSimStage;
         } );
