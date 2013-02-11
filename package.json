@@ -1,0 +1,9 @@
+{
+    "name": "example-sim",
+    "version": "0.0.1",
+    "license": "BSD",
+    "dependencies": {
+        "grunt": "~0.3.17",
+        "grunt-contrib-requirejs": "~0.3.3"
+    }
+}
