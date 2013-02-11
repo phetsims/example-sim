@@ -1,8 +1,7 @@
 // Internationalized strings
 define( {
             "root": {
-                "title":"Example Sim",
-                "someString": "Some English String"
+                "title":"Simulation par Exemple"
             },
             "fr": "true"
         } );
