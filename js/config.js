@@ -1,5 +1,7 @@
 // Copyright 2002-2013, University of Colorado
 
+"use strict";
+
 /**
  * RequireJS configuration file for the sim.
  * Paths are relative to the location of this file.
