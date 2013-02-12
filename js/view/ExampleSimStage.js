@@ -1,7 +1,5 @@
 // Copyright 2002-2013, University of Colorado
 
-"use strict";
-
 /**
  * The Easel stage for this simulation.
  *grunt
