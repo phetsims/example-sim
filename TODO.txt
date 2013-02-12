@@ -1,6 +1,5 @@
 Keep track of tasks that you need to do in this file.
 
-- test i18n
 - remove margin above and to left of canvas
 - add example Bootstrap controls ("Reset All" button, "Flip Magnet" button)
 - make it work with file:// (fails on Chrome)
