@@ -3,69 +3,66 @@ module.exports = function ( grunt ) {
 
     // Project configuration.
     grunt.initConfig( {
-                          pkg: '<json:package.json>',
+                          pkg:'<json:package.json>',
 
 
-                          lint: {
-                              files: [
-//                                  'grunt.js',
-//                                  'app-easel/*.js'
+                          lint:{
+                              files:[
+                                  'js/**/*.js'
                               ]
                           },
 
-                          concat: {
-                              "dist/debug/require.js": [
+                          concat:{
+                              "deploy/debug/require.js":[
                                   "js/vendor/almond.js",
-                                  "dist/debug/require.js"
+                                  "deploy/debug/require.js"
                               ]
                           },
 
-                          min: {
-                              "dist/release/require.js": [
-                                  "dist/debug/require.js"
+                          min:{
+                              "deploy/release/require.js":[
+                                  "deploy/debug/require.js"
                               ]
                           },
 
-                          requirejs: {
-                              compile: {
-                                  options: {
-                                      mainConfigFile: "js/config.js",
-                                      out: "dist/debug/require.js",
-                                      name: "config",
-                                      wrap: false
+                          requirejs:{
+                              compile:{
+                                  options:{
+                                      mainConfigFile:"js/config.js",
+                                      out:"deploy/debug/require.js",
+                                      name:"config",
+                                      wrap:true
                                   }
                               }
                           },
 
-                          jshint: {
-                              options: {
-                                  curly: true,
-                                  eqeqeq: true,
-                                  immed: false,
-                                  latedef: false,
-                                  newcap: true,
-                                  noarg: true,
-                                  sub: true,
-                                  undef: true,
-                                  boss: true,
-                                  eqnull: true,
-                                  browser: true,
-                                  node: true,
-                                  jQuery: true,
-                                  expr: true
+                          jshint:{
+                              options:{
+                                  curly:true,
+                                  eqeqeq:true,
+                                  immed:false,
+                                  latedef:false,
+                                  newcap:true,
+                                  noarg:true,
+                                  sub:true,
+                                  undef:true,
+                                  boss:true,
+                                  eqnull:true,
+                                  browser:true,
+                                  node:true,
+                                  jquery:true,
+                                  expr:true
                               },
-                              globals: {
-                                  Modernizr: true,
-                                  define: true,
-                                  $: true
+                              globals:{
+                                  Modernizr:true,
+                                  define:true,
+                                  $:true
                               }
                           }
-
-
                       } );
 
     // Default task.
-    grunt.registerTask( 'default', 'requirejs concat min' );
+    grunt.registerTask( 'default', 'lint requirejs concat min' );
     grunt.loadNpmTasks( 'grunt-contrib-requirejs' );
 
 };
