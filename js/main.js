@@ -3,7 +3,7 @@
 /**
  * Main entry point for the sim.
  *
- * @author Chris Malley (cmalley@pixelzoom.com)
+ * @author Chris Malley (PixelZoom, Inc.)
  */
 require(
   [
