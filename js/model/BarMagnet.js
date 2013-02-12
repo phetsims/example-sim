@@ -1,7 +1,5 @@
 // Copyright 2002-2013, University of Colorado
 
-"use strict";
-
 /**
  * Model of a simple bar magnet.
  * The magnet has fixed size, and mutable location and orientation.
@@ -14,8 +12,9 @@ define(
     'PHETCOMMON/model/property/Property'
   ],
   function ( Point2D, Property ) {
+    "use strict";
 
-    /**
+      /**
      * @class BarMagnet
      * @constructor
      * @param {Point2D} location

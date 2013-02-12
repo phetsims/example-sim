@@ -1,5 +1,7 @@
 // Copyright 2002-2013, University of Colorado
 
+"use strict";
+
 /**
  * The Easel stage for this simulation.
  *
@@ -16,6 +18,7 @@ define(
     'view/BarMagnetNode'
   ],
   function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, BarMagnetNode ) {
+    "use strict"
 
     function ExampleSimStage( canvas, model ) {
 

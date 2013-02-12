@@ -14,6 +14,7 @@ define(
     'image!images/barMagnet.png'
   ],
   function ( Easel, DragHandler, Inheritance, MathUtil, barMagnetImage ) {
+    "use strict"
 
     /**
      * @class BarMagnetNode

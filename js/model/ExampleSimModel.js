@@ -1,7 +1,5 @@
 // Copyright 2002-2013, University of Colorado
 
-"use strict";
-
 /**
  * Model container.
  *
@@ -15,6 +13,7 @@ define(
     'model/BarMagnet'
   ],
   function ( Easel, Dimension2D, Point2D, BarMagnet ) {
+    "use strict";
 
     function ExampleSimModel() {
       // model elements
