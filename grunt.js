@@ -28,6 +28,7 @@ module.exports = function ( grunt ) {
                           requirejs:{
                               compile:{
                                   options:{
+                                      almond: true,
                                       mainConfigFile:"js/config.js",
                                       out:"deploy/debug/require.js",
                                       name:"config",
