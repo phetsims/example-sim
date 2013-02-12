@@ -20,7 +20,7 @@ require( [
 
              // Canvas --------------------------------------------------------------------
 
-             var canvas = document.getElementById( 'example-sim-canvas' );
+             var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
              CanvasQuirks.fixTextCursor( canvas );
 
              // MVC --------------------------------------------------------------------
