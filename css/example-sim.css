@@ -7,3 +7,28 @@
     top: 0;
     left: 0;
 }
+
+/*.control-panel {*/
+  /*float: right;*/
+  /*clear: both;*/
+  /*width: 91%;*/
+  /*min-height: 1em;*/
+  /*min-width: 440px;*/
+  /*background: rgb(255, 255, 153);*/
+  /*margin: 1%;*/
+  /*border: 2px solid black;*/
+  /*border-radius: 10px;*/
+/*}*/
+
+.control-panel {
+  position: absolute;
+  right: 0;
+  top: 100;
+  background: rgb(255, 255, 153);
+  margin: 1%;
+  padding: 20px;
+  border: 2px solid gray;
+  border-radius: 8px;
+  font-family: Arial;
+  font-size: 1.5em;
+}
