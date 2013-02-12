@@ -5,33 +5,34 @@
  *
  * @author Chris Malley (cmalley@pixelzoom.com)
  */
-require( [
-             'easel',
-             'PHETCOMMON/view/CanvasQuirks',
-             'model/ExampleSimModel',
-             'view/ExampleSimStage',
-             'i18n!../nls/example-sim-strings'
-         ],
-         function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, Strings ) {
+require(
+  [
+    'easel',
+    'PHETCOMMON/view/CanvasQuirks',
+    'model/ExampleSimModel',
+    'view/ExampleSimStage',
+    'i18n!../nls/example-sim-strings'
+  ],
+  function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, Strings ) {
 
-             // Title --------------------------------------------------------------------
+    // Title --------------------------------------------------------------------
 
-             $( 'title' ).html( Strings.title );
+    $( 'title' ).html( Strings.title );
 
-             // Canvas --------------------------------------------------------------------
+    // Canvas --------------------------------------------------------------------
 
-             var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
-             CanvasQuirks.fixTextCursor( canvas );
+    var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
+    CanvasQuirks.fixTextCursor( canvas );
 
-             // MVC --------------------------------------------------------------------
+    // MVC --------------------------------------------------------------------
 
-             var model = new ExampleSimModel();
-             var stage = new ExampleSimStage( canvas, model );
+    var model = new ExampleSimModel();
+    var stage = new ExampleSimStage( canvas, model );
 
-             // Animation loop ----------------------------------------------------------
+    // Animation loop ----------------------------------------------------------
 
-             Easel.Ticker.addListener( model );
-             Easel.Ticker.addListener( stage );
-             Easel.Ticker.setFPS( 60 );
-             Easel.Touch.enable( stage, false, false );
-         } );
+    Easel.Ticker.addListener( model );
+    Easel.Ticker.addListener( stage );
+    Easel.Ticker.setFPS( 60 );
+    Easel.Touch.enable( stage, false, false );
+  } );
