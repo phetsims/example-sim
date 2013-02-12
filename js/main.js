@@ -1,7 +1,5 @@
 // Copyright 2002-2013, University of Colorado
 
-"use strict";
-
 /**
  * Main entry point for the sim.
  *
@@ -16,6 +14,7 @@ require(
     'i18n!../nls/example-sim-strings'
   ],
   function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, Strings ) {
+    "use strict";
 
     // Title --------------------------------------------------------------------
 
