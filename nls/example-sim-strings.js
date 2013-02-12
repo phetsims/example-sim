@@ -3,5 +3,5 @@ define( {
             "root": {
                 "title":"Simulation Example"
             },
-            "fr": "true"
+            "fr": true
         } );

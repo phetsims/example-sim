@@ -1,8 +1,6 @@
 Keep track of tasks that you need to do in this file.
 
 - add example Bootstrap controls ("Reset All" button, "Flip Magnet" button)
-- issues with scene graph scaling when window is resized
-- test with file://
-- test on various browsers and devices
-- grunt.js + package.json
+- make it work with file:// (fails on Chrome)
+- grunt.js + package.json (documented)
 - format using idiomatic.js style
