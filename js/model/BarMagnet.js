@@ -1,5 +1,7 @@
 // Copyright 2002-2013, University of Colorado
 
+"use strict";
+
 /**
  * Model of a simple bar magnet.
  * The magnet has fixed size, and mutable location and orientation.
