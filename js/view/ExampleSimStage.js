@@ -4,7 +4,7 @@
 
 /**
  * The Easel stage for this simulation.
- *
+ *grunt
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define(
@@ -18,7 +18,7 @@ define(
     'view/BarMagnetNode'
   ],
   function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, BarMagnetNode ) {
-    "use strict"
+    "use strict";
 
     function ExampleSimStage( canvas, model ) {
 
