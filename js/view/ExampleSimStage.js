@@ -41,17 +41,19 @@ define(
       frameRateNode.x = 20;
       frameRateNode.y = 20;
 
+      // Nodes added to rootContainer will be scaled as the browser window is resized.
+      var rootContainer = new Easel.Container();
+
       // bar magnet
       var barMagnetNode = new BarMagnetNode( model.barMagnet, mvt );
 
       // rendering order
       this.addChild( background );
       this.addChild( frameRateNode );
-      var rootContainer = new Easel.Container();
       this.addChild( rootContainer );
       rootContainer.addChild( barMagnetNode );
 
-      // resize handler
+      // window-resize handler
       var that = this;
       var handleResize = function () {
 
