@@ -1,0 +1,1 @@
+See http://phet.colorado.edu/en/about/licensing
