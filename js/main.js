@@ -30,7 +30,7 @@ require(
 
     var model = new ExampleSimModel();
     var stage = new ExampleSimStage( canvas, model );
-    ControlPanel.init( model, stage );
+    ControlPanel.init( strings, model, stage );
 
     // Animation loop ----------------------------------------------------------
 

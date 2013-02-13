@@ -7,10 +7,9 @@
  */
 define(
   [
-    'i18n!../../nls/example-sim-strings',
     'tpl!../../html/control-panel.html'
   ],
-  function ( strings, controlPanelTemplate ) {
+  function ( controlPanelTemplate ) {
     "use strict";
 
     function ControlPanel() {
@@ -20,10 +19,11 @@ define(
      * Takes an HTML fragment that describes a control panel with DOM widgets,
      * internationalizes it, and wires up the DOM widgets.
      *
+     * @param strings internationalized strings
      * @param {ExampleSimModel} model
      * @param {ExampleSimStage} stage
      */
-    ControlPanel.init = function ( model, stage ) {
+    ControlPanel.init = function ( strings, model, stage ) {
 
       // Translate the HTML template.
       var controlPanelFragment = controlPanelTemplate(
