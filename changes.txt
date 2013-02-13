@@ -1,4 +1,4 @@
-2/13/13 fixed the <scripts> tag for stats.js, it should not have a data-main attribute
+2/13/13 fixed the <script> tag for stats.js, it should not have a data-main attribute
 2/13/13 fixed "Show Performance Meter" check box, bad attribute controlPanel.html
 2/13/13 renamed "performance meter" to "performance monitor" (how stats.js describes it) throughout
 2/13/13 created ExampleSimView as a container for all view-related stuff (scene graph, dom, browser window,...)
