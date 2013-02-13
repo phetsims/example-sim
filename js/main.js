@@ -34,8 +34,13 @@ require(
 
     // Animation loop ----------------------------------------------------------
 
-    Easel.Ticker.addListener( model );
-    Easel.Ticker.addListener( stage );
+    // Put all animation tasks in this function so that the FPS indicator is accurate.
+    Easel.Ticker.addListener( function() {
+      stage.stats.begin();
+      model.tick();
+      stage.tick()
+      stage.stats.end();
+    } );
     Easel.Ticker.setFPS( 60 );
     Easel.Touch.enable( stage, false, false );
   } );

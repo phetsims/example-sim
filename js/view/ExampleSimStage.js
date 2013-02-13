@@ -21,6 +21,8 @@ define(
 
     function ExampleSimStage( canvas, model ) {
 
+      var that = this;
+
       Easel.Stage.call( this, canvas ); // constructor stealing
 
       this.enableMouseOver();
@@ -37,22 +39,16 @@ define(
       var background = new Easel.Shape();
 
       // frame rate display, upper left (for performance debugging)
-      var stats = new Stats();
-      stats.setMode( 0 ); // 0: fps, 1: ms
+      this.stats = new Stats();
+      this.stats.setMode( 0 ); // 0: fps, 1: ms
 
       // align frame rate display at top-left
-      stats.domElement.style.position = 'absolute';
-      stats.domElement.style.left = '0px';
-      stats.domElement.style.top = '0px';
+      this.stats.domElement.style.position = 'absolute';
+      this.stats.domElement.style.left = '0px';
+      this.stats.domElement.style.top = '0px';
 
       // add frame rate display to DOM.
-      document.body.appendChild( stats.domElement );
-
-      // Hook stats indicator up to animation loop.
-      Easel.Ticker.addListener( function(){
-        stats.begin();
-        stats.end();
-      })
+      document.body.appendChild( this.stats.domElement );
 
       var frameRateNode = new FrameRateNode( 'white' );
       frameRateNode.x = 20;
@@ -105,10 +101,10 @@ define(
       this.frameRateVisibleProperty = new Property( true );
       this.frameRateVisibleProperty.addObserver( function( visible ) {
         if ( visible ){
-          stats.domElement.style.visibility = "visible";
+          that.stats.domElement.style.visibility = "visible";
         }
         else{
-          stats.domElement.style.visibility = "hidden";
+          that.stats.domElement.style.visibility = "hidden";
         }
           frameRateNode.visible = visible;
       } );
