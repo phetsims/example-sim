@@ -11,14 +11,15 @@ require(
     'PHETCOMMON/view/CanvasQuirks',
     'model/ExampleSimModel',
     'view/ExampleSimStage',
+    'view/ControlPanel',
     'i18n!../nls/example-sim-strings'
   ],
-  function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, Strings ) {
+  function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, ControlPanel, strings ) {
     "use strict";
 
     // Title --------------------------------------------------------------------
 
-    $( 'title' ).html( Strings.title );
+    $( 'title' ).html( strings.title );
 
     // Canvas --------------------------------------------------------------------
 
@@ -29,6 +30,7 @@ require(
 
     var model = new ExampleSimModel();
     var stage = new ExampleSimStage( canvas, model );
+    ControlPanel.init( model, stage );
 
     // Animation loop ----------------------------------------------------------
 

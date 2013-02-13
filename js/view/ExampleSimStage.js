@@ -13,9 +13,10 @@ define(
     'PHETCOMMON/view/ModelViewTransform2D',
     'PHETCOMMON/math/Dimension2D',
     'PHETCOMMON/math/Point2D',
+    'PHETCOMMON/model/property/Property',
     'view/BarMagnetNode'
   ],
-  function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, BarMagnetNode ) {
+  function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, Property, BarMagnetNode ) {
     "use strict";
 
     function ExampleSimStage( canvas, model ) {
@@ -80,9 +81,20 @@ define(
       };
       $( window ).resize( handleResize );
       handleResize(); // initial size
+
+      // view-specific properties
+      this.frameRateVisibleProperty = new Property( true );
+      this.frameRateVisibleProperty.addObserver( function( visible ) {
+           frameRateNode.visible = visible;
+      } );
     }
 
     Inheritance.inheritPrototype( ExampleSimStage, Easel.Stage ); // prototype chaining
+
+    ExampleSimStage.prototype.reset = function () {
+      this.frameRateVisibleProperty.reset();
+      // If you need to reset anything else when the "Reset All" button is pressed, add it here.
+    };
 
     return ExampleSimStage;
   } );

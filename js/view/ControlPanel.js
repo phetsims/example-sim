@@ -5,48 +5,56 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( [
-          'i18n!../../nls/example-sim-strings',
-          'tpl!../../html/control-panel.html'
-        ],
-        function ( strings, controlPanelTemplate ) {
-          "use strict"
+define(
+  [
+    'i18n!../../nls/example-sim-strings',
+    'tpl!../../html/control-panel.html'
+  ],
+  function ( strings, controlPanelTemplate ) {
+    "use strict";
 
-          function ControlPanel() {
-          }
+    function ControlPanel() {
+    }
 
-          ControlPanel.init = function () {
+    /*
+     * Takes an HTML fragment that describes a control panel with DOM widgets,
+     * internationalizes it, and wires up the DOM widgets.
+     *
+     * @param {ExampleSimModel} model
+     * @param {ExampleSimStage} stage
+     */
+    ControlPanel.init = function ( model, stage ) {
 
-            // DOM modification ------------------------------------------------------------
-
-            // Add the control panel to the DOM
-            var controlPanelFragment = controlPanelTemplate(
-                {
-                  showFramesPerSecond:strings.showFramesPerSecond,
-                  flipMagnet:strings.flipMagnet,
-                  resetAll:strings.resetAll
-                } );
-            $( "#optionsPanelDiv" ).append( $( controlPanelFragment ) ).trigger( "create" );
-
-            /*
-             * Workaround for jQuery.mobile bug,
-             * see http://stackoverflow.com/questions/8088837/jquery-mobile-triggercreate-command-not-working
-             */
-            $( ".ui-page" ).trigger( 'pagecreate' );
-
-            // Make the Options panel the same height as the window
-            $( "#optionsPanel" ).on(
-                {
-                  popupbeforeposition:function () {
-                    var h = $( window ).height();
-                    $( "#optionsPanel" ).css( "height", h );
-                  }
-                } );
-
-            // Wire up DOM components ------------------------------------------------------
-
-            // TBD
-          }
-
-          return ControlPanel;
+      // Translate the HTML template.
+      var controlPanelFragment = controlPanelTemplate(
+        {
+          showFramesPerSecond: strings.showFramesPerSecond,
+          flipMagnet: strings.flipMagnet,
+          resetAll: strings.resetAll
         } );
+
+      // Add the HTML template to the DOM.
+      $( "#control-panel-div" ).append( $( controlPanelFragment ) ).trigger( "create" );
+
+      // Wire up DOM components.
+      {
+        // "Show Frames per Second" check box toggles visibility.
+        $( "#frameRateVisibleCheckBox" ).bind( 'change', function () {
+          stage.frameRateVisibleProperty.set( !stage.frameRateVisibleProperty.get() );
+        } );
+
+        // "Flip Magnet" button rotates magnet by 90 degrees.
+        $( "#flipMagnetButton" ).bind( 'click', function () {
+          model.barMagnet.orientation.set( model.barMagnet.orientation.get() + Math.PI );
+        } );
+
+        // "Reset All" button returns sim to initial state.
+        $( "#resetAllButton" ).bind( 'click', function () {
+          model.reset();
+          stage.reset();
+        } );
+      }
+    }
+
+    return ControlPanel;
+  } );
