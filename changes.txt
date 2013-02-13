@@ -1,3 +1,4 @@
+2/12/13 add French strings for control panel
 2/12/13 i18n using tpl
 2/12/13 "Flip Magnet" -> "Flip Polarity"
 2/12/13 "Show Frames per Second" -> "Show Frame Rate"
