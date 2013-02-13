@@ -50,10 +50,6 @@ define(
       // add frame rate display to DOM.
       document.body.appendChild( this.stats.domElement );
 
-      var frameRateNode = new FrameRateNode( 'white' );
-      frameRateNode.x = 20;
-      frameRateNode.y = 20;
-
       // Nodes added to rootContainer will be scaled as the browser window is resized.
       var rootContainer = new Easel.Container();
 
@@ -62,7 +58,6 @@ define(
 
       // rendering order
       this.addChild( background );
-//      this.addChild( frameRateNode );
       this.addChild( rootContainer );
       rootContainer.addChild( barMagnetNode );
 
@@ -106,7 +101,6 @@ define(
         else{
           that.stats.domElement.style.visibility = "hidden";
         }
-          frameRateNode.visible = visible;
       } );
     }
 
