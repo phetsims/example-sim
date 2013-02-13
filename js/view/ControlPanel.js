@@ -39,8 +39,11 @@ define(
       // Wire up DOM components.
       {
         // "Show Frames per Second" check box toggles visibility.
-        $( "#frameRateVisibleCheckBox" ).bind( 'change', function () {
+        $( "#showFramesPerSecondCheckBox" ).bind( 'change', function () {
           stage.frameRateVisibleProperty.set( !stage.frameRateVisibleProperty.get() );
+        } );
+        stage.frameRateVisibleProperty.addObserver( function( checked ) {
+          $( "#showFramesPerSecondCheckBox" ).attr( "checked", checked );
         } );
 
         // "Flip Magnet" button rotates magnet by 90 degrees.
