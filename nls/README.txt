@@ -1,0 +1,1 @@
+Localized string files, in the format used by http://github.com/requirejs/i18n
