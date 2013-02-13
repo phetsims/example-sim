@@ -33,6 +33,12 @@
   font-size: 1.5em;
 }
 
+/* Control panel check box */
+.control-panel-label{
+  font-family: Arial;
+  font-size: 0.9em;
+}
+
 /*Control panel button*/
 .cp-button {
   font-size: 0.9em;
