@@ -3,7 +3,7 @@ define( {
             "root": {
                 "title":"Simulation Example",
                 "showFrameRate":"Show Frame Rate",
-                "flipMagnet":"Flip Magnet",
+                "flipPolarity":"Flip Polarity",
                 "resetAll":"Reset All"
             },
             "fr": true

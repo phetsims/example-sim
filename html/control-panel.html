@@ -2,10 +2,16 @@
 
 <!-- Control panel template, placeholders to be filled in with internationalized strings using tpl. -->
 <div class="control-panel">
+
+    <!-- Use a separate label so that clicking on the label fires the check box. -->
     <input type="checkbox" id="showFrameRateCheckBox"/>
-    <label for="showFrameRateCheckBox" id="showFrameRateLabel">Show Frame Rate</label>
+    <label for="showFrameRateCheckBox" id="showFrameRateLabel"><%= showFrameRate %></label>
     <br/>
-    <button type="button" id="flipMagnetButton">Flip Magnet</button>
+
+    <!-- Flip Polarity button -->
+    <button type="button" id="flipPolarityButton"><%= flipPolarity %></button>
     <br/>
-    <button type="button" id="resetAllButton">Reset All</button>
+
+    <!-- Reset All button -->
+    <button type="button" id="resetAllButton"><%= resetAll %></button>
 </div>

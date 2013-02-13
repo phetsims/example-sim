@@ -1,1 +1,4 @@
+2/12/13 i18n using tpl
+2/12/13 "Flip Magnet" -> "Flip Polarity"
+2/12/13 "Show Frames per Second" -> "Show Frame Rate"
 2/12/13 use <label for> for check box label so that clicking on it has same effect as check box button

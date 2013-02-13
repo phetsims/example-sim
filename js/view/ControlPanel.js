@@ -28,8 +28,8 @@ define(
       // Translate the HTML template.
       var controlPanelFragment = controlPanelTemplate(
         {
-          showFramesPerSecond: strings.showFramesPerSecond,
-          flipMagnet: strings.flipMagnet,
+          showFrameRate: strings.showFrameRate,
+          flipPolarity: strings.flipPolarity,
           resetAll: strings.resetAll
         } );
 
@@ -38,7 +38,7 @@ define(
 
       // Wire up DOM components.
       {
-        // "Show Frames Rate" check box toggles visibility.
+        // "Show Frame Rate" check box toggles visibility.
         var frameRateCheckBox = $( "#showFrameRateCheckBox" );
         frameRateCheckBox.bind( 'change', function () {
           stage.frameRateVisibleProperty.set( !stage.frameRateVisibleProperty.get() );
@@ -47,8 +47,8 @@ define(
           frameRateCheckBox.attr( "checked", checked );
         } );
 
-        // "Flip Magnet" button rotates magnet by 90 degrees.
-        $( "#flipMagnetButton" ).bind( 'click', function () {
+        // "Flip Polarity" button rotates magnet by 90 degrees.
+        $( "#flipPolarityButton" ).bind( 'click', function () {
           model.barMagnet.orientation.set( model.barMagnet.orientation.get() + Math.PI );
         } );
 
