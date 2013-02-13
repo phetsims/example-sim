@@ -11,10 +11,10 @@ define(
     'PHETCOMMON/view/CanvasQuirks',
     'view/ExampleSimStage',
     'view/ControlPanel',
-    'view/PerformanceMeter',
+    'view/PerformanceMonitor',
     'i18n!../../nls/example-sim-strings'
   ],
-  function( Property, CanvasQuirks, ExampleSimStage, ControlPanel, PerformanceMeter, strings ) {
+  function( Property, CanvasQuirks, ExampleSimStage, ControlPanel, PerformanceMonitor, strings ) {
     "use strict";
 
     function ExampleSimView( model ) {
@@ -31,13 +31,13 @@ define(
       // stage
       this.stage = new ExampleSimStage( canvas, model );
 
-      // performance meter
-      this.performanceMeter = new PerformanceMeter();
+      // performance monitor
+      this.performanceMonitor = new PerformanceMonitor();
 
       // view-specific properties
-      this.frameRateVisibleProperty = new Property( true );
-      this.frameRateVisibleProperty.addObserver( function ( visible ) {
-        that.performanceMeter.setVisible( visible );
+      this.performanceMonitorVisibile = new Property( true );
+      this.performanceMonitorVisibile.addObserver( function ( visible ) {
+        that.performanceMonitor.setVisible( visible );
       } );
 
       // control panel
@@ -45,7 +45,7 @@ define(
     }
 
     ExampleSimView.prototype.reset = function() {
-      this.frameRateVisibleProperty.reset();
+      this.performanceMonitorVisibile.reset();
       this.stage.reset();
     }
 

@@ -28,7 +28,7 @@ define(
       // Translate the HTML template.
       var controlPanelFragment = controlPanelTemplate(
         {
-          showFrameRate: strings.showFrameRate,
+          showPerformanceMonitor: strings.showPerformanceMonitor,
           flipPolarity: strings.flipPolarity,
           resetAll: strings.resetAll
         } );
@@ -39,12 +39,12 @@ define(
       // Wire up DOM components.
       {
         // "Show Frame Rate" check box toggles visibility.
-        var frameRateCheckBox = $( "#showFrameRateCheckBox" );
-        frameRateCheckBox.bind( 'change', function () {
-          view.frameRateVisibleProperty.set( !view.frameRateVisibleProperty.get() );
+        var performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
+        performanceMonitorCheckBox.bind( 'change', function () {
+          view.performanceMonitorVisibile.set( !view.performanceMonitorVisibile.get() );
         } );
-        view.frameRateVisibleProperty.addObserver( function ( checked ) {
-          frameRateCheckBox.attr( "checked", checked );
+        view.performanceMonitorVisibile.addObserver( function ( checked ) {
+          performanceMonitorCheckBox.attr( "checked", checked );
         } );
 
         // "Flip Polarity" button rotates magnet by 90 degrees.

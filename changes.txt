@@ -1,3 +1,5 @@
+2/13/13 fixed "Show Performance Meter" check box, bad attribute controlPanel.html
+2/13/13 renamed "performance meter" to "performance monitor" (how stats.js describes it) throughout
 2/13/13 created ExampleSimView as a container for all view-related stuff (scene graph, dom, browser window,...)
 2/13/13 encapsulated stats.js meter in PerformanceMeter.js
 2/13/13 switch to non-minified stats-r11.js

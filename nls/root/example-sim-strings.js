@@ -2,7 +2,7 @@
 define(
   {
     "title": "Simulation Example",
-    "showFrameRate": "Show Frame Rate",
+    "showPerformanceMonitor": "Show Performance Monitor",
     "flipPolarity": "Flip Polarity",
     "resetAll": "Reset All"
   } );

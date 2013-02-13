@@ -8,5 +8,5 @@ Keep track of tasks that you need to do in this file.
 - delete example-sim-debug.html
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
 - figure out how to use stats.js with requirejs
-- rewrite PerformanceMeter using inheritance (it's currently an adapter)
-- "Show Performance Meter" button is broken, broken sometime during JB's experiments with bootstrap?
+- rewrite PerformanceMonitor using inheritance (it's currently an adapter)
+- "Show Performance Monitor" button is broken, broken sometime during JB's experiments with bootstrap?

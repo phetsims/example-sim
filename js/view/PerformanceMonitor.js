@@ -2,7 +2,7 @@
 
 //TODO this would be better implemented by subtyping Stats, but that wasn't working
 /**
- * Performance meter that displays frames-per-second (FPS) and frame rendering time in milliseconds.
+ * Displays frames-per-second (FPS) and frame rendering time in milliseconds.
  * Click on it to toggle between the 2 views.
  * Use this for performance debugging.
  */
@@ -11,7 +11,7 @@ define(
   function () {
     "use strict";
 
-    function PerformanceMeter() {
+    function PerformanceMonitor() {
 
       var stats = new Stats();
 
@@ -44,6 +44,6 @@ define(
       }
     }
 
-    return PerformanceMeter;
+    return PerformanceMonitor;
   }
 )
