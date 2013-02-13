@@ -1,6 +1,6 @@
 Keep track of tasks that you need to do in this file.
 
-- add example Bootstrap controls ("Reset All" button, "Flip Magnet" button)
+- apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
 - format using idiomatic.js style
