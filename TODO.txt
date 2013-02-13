@@ -5,3 +5,4 @@ Keep track of tasks that you need to do in this file.
 - grunt.js + package.json (documented)
 - format using idiomatic.js style
 - investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
+- populate LICENSE.md, or refer to http://phet.colorado.edu/en/about/licensing
