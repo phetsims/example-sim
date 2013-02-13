@@ -37,9 +37,25 @@ define(
       var background = new Easel.Shape();
 
       // frame rate display, upper left (for performance debugging)
+      var stats = new Stats();
+      stats.setMode( 0 ); // 0: fps, 1: ms
+
+      // align frame rate display at top-left
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.left = '0px';
+      stats.domElement.style.top = '0px';
+
+      // add frame rate display to DOM.
+      document.body.appendChild( stats.domElement );
+      stats.domElement.style.visibility = "visible";
+
       var frameRateNode = new FrameRateNode( 'white' );
       frameRateNode.x = 20;
       frameRateNode.y = 20;
+      Easel.Ticker.addListener( function(){
+        stats.begin();
+        stats.end();
+      })
 
       // Nodes added to rootContainer will be scaled as the browser window is resized.
       var rootContainer = new Easel.Container();
@@ -49,7 +65,7 @@ define(
 
       // rendering order
       this.addChild( background );
-      this.addChild( frameRateNode );
+//      this.addChild( frameRateNode );
       this.addChild( rootContainer );
       rootContainer.addChild( barMagnetNode );
 
@@ -87,7 +103,13 @@ define(
       // view-specific properties
       this.frameRateVisibleProperty = new Property( true );
       this.frameRateVisibleProperty.addObserver( function( visible ) {
-           frameRateNode.visible = visible;
+        if ( visible ){
+          stats.domElement.style.visibility = "visible";
+        }
+        else{
+          stats.domElement.style.visibility = "hidden";
+        }
+          frameRateNode.visible = visible;
       } );
     }
 
