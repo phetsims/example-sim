@@ -1,0 +1,1 @@
+Put html files (templates, fragments, etc.) in this directory.

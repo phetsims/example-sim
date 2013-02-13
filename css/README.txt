@@ -1,0 +1,1 @@
+Put sim-specific CSS files in this directory. Third-party CSS files should be put in contrib/.
