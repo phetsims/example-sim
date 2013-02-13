@@ -8,39 +8,24 @@
 require(
   [
     'easel',
-    'PHETCOMMON/view/CanvasQuirks',
     'model/ExampleSimModel',
-    'view/ExampleSimStage',
-    'view/ControlPanel',
-    'i18n!../nls/example-sim-strings'
+    'view/ExampleSimView'
   ],
-  function ( Easel, CanvasQuirks, ExampleSimModel, ExampleSimStage, ControlPanel, strings ) {
+  function ( Easel, ExampleSimModel, ExampleSimView ) {
     "use strict";
 
-    // Title --------------------------------------------------------------------
-
-    $( 'title' ).html( strings.title );
-
-    // Canvas --------------------------------------------------------------------
-
-    var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
-    CanvasQuirks.fixTextCursor( canvas );
-
-    // MVC --------------------------------------------------------------------
-
+    // model
     var model = new ExampleSimModel();
-    var stage = new ExampleSimStage( canvas, model );
-    ControlPanel.init( strings, model, stage );
 
-    // Animation loop ----------------------------------------------------------
+    // view
+    var view = new ExampleSimView( model );
 
-    // Put all animation tasks in this function so that the FPS indicator is accurate.
-    Easel.Ticker.addListener( function() {
-      stage.stats.begin();
+    // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
+    Easel.Ticker.addListener( function () {
+      view.performanceMeter.begin();
       model.tick();
-      stage.tick()
-      stage.stats.end();
+      view.tick();
+      view.performanceMeter.end();
     } );
     Easel.Ticker.setFPS( 60 );
-    Easel.Touch.enable( stage, false, false );
   } );

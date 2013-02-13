@@ -8,7 +8,6 @@
 define(
   [
     'easel',
-    'EASEL-PHET/nodes/FrameRateNode',
     'PHETCOMMON/model/Inheritance',
     'PHETCOMMON/view/ModelViewTransform2D',
     'PHETCOMMON/math/Dimension2D',
@@ -16,7 +15,7 @@ define(
     'PHETCOMMON/model/property/Property',
     'view/BarMagnetNode'
   ],
-  function ( Easel, FrameRateNode, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, Property, BarMagnetNode ) {
+  function ( Easel, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, Property, BarMagnetNode ) {
     "use strict";
 
     function ExampleSimStage( canvas, model ) {
@@ -26,6 +25,7 @@ define(
       Easel.Stage.call( this, canvas ); // constructor stealing
 
       this.enableMouseOver();
+      Easel.Touch.enable( this, false, false );
 
       // At this window size, scaling is 1.
       var UNITY_WINDOW_SIZE = new Dimension2D( 1024, 768 );
@@ -37,18 +37,6 @@ define(
 
       // canvas background
       var background = new Easel.Shape();
-
-      // frame rate display, upper left (for performance debugging)
-      this.stats = new Stats();
-      this.stats.setMode( 0 ); // 0: fps, 1: ms
-
-      // align frame rate display at top-left
-      this.stats.domElement.style.position = 'absolute';
-      this.stats.domElement.style.left = '0px';
-      this.stats.domElement.style.top = '0px';
-
-      // add frame rate display to DOM.
-      document.body.appendChild( this.stats.domElement );
 
       // Nodes added to rootContainer will be scaled as the browser window is resized.
       var rootContainer = new Easel.Container();
@@ -62,7 +50,6 @@ define(
       rootContainer.addChild( barMagnetNode );
 
       // window-resize handler
-      var that = this;
       var handleResize = function () {
 
         // get the window width
@@ -91,24 +78,12 @@ define(
       };
       $( window ).resize( handleResize );
       handleResize(); // initial size
-
-      // view-specific properties
-      this.frameRateVisibleProperty = new Property( true );
-      this.frameRateVisibleProperty.addObserver( function( visible ) {
-        if ( visible ){
-          that.stats.domElement.style.visibility = "visible";
-        }
-        else{
-          that.stats.domElement.style.visibility = "hidden";
-        }
-      } );
     }
 
     Inheritance.inheritPrototype( ExampleSimStage, Easel.Stage ); // prototype chaining
 
     ExampleSimStage.prototype.reset = function () {
-      this.frameRateVisibleProperty.reset();
-      // If you need to reset anything else when the "Reset All" button is pressed, add it here.
+      // If you need to reset anything when the "Reset All" button is pressed, add it here.
     };
 
     return ExampleSimStage;

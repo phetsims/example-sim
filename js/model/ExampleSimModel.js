@@ -25,7 +25,7 @@ define(
       this.barMagnet.reset();
     };
 
-    // Animates the model, called by Easel.Ticker
+    // Called by the animation loop
     ExampleSimModel.prototype.tick = function () {
       // Make model changes here.
     };

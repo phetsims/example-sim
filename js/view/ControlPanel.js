@@ -21,9 +21,9 @@ define(
      *
      * @param strings internationalized strings
      * @param {ExampleSimModel} model
-     * @param {ExampleSimStage} stage
+     * @param {ExampleSimView} view
      */
-    ControlPanel.init = function ( strings, model, stage ) {
+    ControlPanel.init = function ( strings, model, view ) {
 
       // Translate the HTML template.
       var controlPanelFragment = controlPanelTemplate(
@@ -41,9 +41,9 @@ define(
         // "Show Frame Rate" check box toggles visibility.
         var frameRateCheckBox = $( "#showFrameRateCheckBox" );
         frameRateCheckBox.bind( 'change', function () {
-          stage.frameRateVisibleProperty.set( !stage.frameRateVisibleProperty.get() );
+          view.frameRateVisibleProperty.set( !view.frameRateVisibleProperty.get() );
         } );
-        stage.frameRateVisibleProperty.addObserver( function ( checked ) {
+        view.frameRateVisibleProperty.addObserver( function ( checked ) {
           frameRateCheckBox.attr( "checked", checked );
         } );
 
@@ -55,7 +55,7 @@ define(
         // "Reset All" button returns sim to initial state.
         $( "#resetAllButton" ).bind( 'click', function () {
           model.reset();
-          stage.reset();
+          view.reset();
         } );
       }
     }
