@@ -1,3 +1,4 @@
+2/12/13 add missing README files, doc
 2/12/13 fix control panel i18n by passing strings to ControlPanel.init
 2/12/13 add French strings for control panel
 2/12/13 i18n using tpl
