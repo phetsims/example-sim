@@ -4,3 +4,4 @@ Keep track of tasks that you need to do in this file.
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
 - format using idiomatic.js style
+- investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.hmtl) causes "not well-formed" error to console

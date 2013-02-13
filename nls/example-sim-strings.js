@@ -1,4 +1,4 @@
-// Internationalized strings
+// Supported locales
 define(
   {
     "root": true,
