@@ -47,15 +47,16 @@ define(
 
       // add frame rate display to DOM.
       document.body.appendChild( stats.domElement );
-      stats.domElement.style.visibility = "visible";
 
-      var frameRateNode = new FrameRateNode( 'white' );
-      frameRateNode.x = 20;
-      frameRateNode.y = 20;
+      // Hook stats indicator up to animation loop.
       Easel.Ticker.addListener( function(){
         stats.begin();
         stats.end();
       })
+
+      var frameRateNode = new FrameRateNode( 'white' );
+      frameRateNode.x = 20;
+      frameRateNode.y = 20;
 
       // Nodes added to rootContainer will be scaled as the browser window is resized.
       var rootContainer = new Easel.Container();
