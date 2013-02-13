@@ -1,15 +1,1 @@
-# license.txt
-#
-# Each image file must have an entry in this file.
-# If the images/ directory has subdirectories, each subdirectory should have its own license.txt file.
-#
-# Each line consists of the image file name, followed by one or more of the following fields:
-#
-# source - where you found the resource (organization, URL, etc.)
-# author - person or organization that created the resource
-# license - the name of license (see PhetRuleSet.java for a list of recognized licenses)
-# licensefile - file that contains the actual license text
-# notes - any misc notes that you want to include
-#
-
 barMagnet.png author=PhET notes=created using Adobe Fireworks
