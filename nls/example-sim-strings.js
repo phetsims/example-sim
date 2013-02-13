@@ -2,7 +2,7 @@
 define( {
             "root": {
                 "title":"Simulation Example",
-                "showFramesPerSecond":"Show Frames per Second",
+                "showFrameRate":"Show Frame Rate",
                 "flipMagnet":"Flip Magnet",
                 "resetAll":"Reset All"
             },

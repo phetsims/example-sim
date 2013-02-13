@@ -38,12 +38,13 @@ define(
 
       // Wire up DOM components.
       {
-        // "Show Frames per Second" check box toggles visibility.
-        $( "#showFramesPerSecondCheckBox" ).bind( 'change', function () {
+        // "Show Frames Rate" check box toggles visibility.
+        var frameRateCheckBox = $( "#showFrameRateCheckBox" );
+        frameRateCheckBox.bind( 'change', function () {
           stage.frameRateVisibleProperty.set( !stage.frameRateVisibleProperty.get() );
         } );
-        stage.frameRateVisibleProperty.addObserver( function( checked ) {
-          $( "#showFramesPerSecondCheckBox" ).attr( "checked", checked );
+        stage.frameRateVisibleProperty.addObserver( function ( checked ) {
+          frameRateCheckBox.attr( "checked", checked );
         } );
 
         // "Flip Magnet" button rotates magnet by 90 degrees.

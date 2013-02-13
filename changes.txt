@@ -1,1 +1,1 @@
-Keep track of changes in this file.
+2/12/13 use <label for> for check box label so that clicking on it has same effect as check box button
