@@ -6,3 +6,5 @@ Keep track of tasks that you need to do in this file.
 - format using idiomatic.js style
 - investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
 - populate LICENSE.md, or refer to http://phet.colorado.edu/en/about/licensing
+- delete example-sim-debug.html
+- consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
