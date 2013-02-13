@@ -1,11 +1,18 @@
 Keep track of tasks that you need to do in this file.
 
+HIGH
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
-- format using idiomatic.js style
-- investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
-- delete example-sim-debug.html
-- consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
 - figure out how to use stats.js with requirejs
+
+MEDIUM
+- format using idiomatic.js style
+- consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
 - rewrite PerformanceMonitor using inheritance (it's currently an adapter)
+
+LOW
+- placeholder for button that provides access to About, etc.
+- delete example-sim-debug.html
+- investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
+
