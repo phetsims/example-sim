@@ -2,3 +2,4 @@ example-sim.iml
 deploy/
 deploy/debug/*
 deploy/release/*
+node_modules/
