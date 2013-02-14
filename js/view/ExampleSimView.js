@@ -45,7 +45,7 @@ define(
     }
 
     ExampleSimView.prototype.reset = function() {
-      this.performanceMonitorVisibile.reset();
+      this.performanceMonitorVisible.reset();
       this.stage.reset();
     }
 
