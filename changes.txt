@@ -1,3 +1,4 @@
+2/13/13 change animation method from tick to step, so as not to be confused with Easel.Ticker.tick
 2/13/13 fixed the <script> tag for stats.js, it should not have a data-main attribute
 2/13/13 fixed "Show Performance Meter" check box, bad attribute controlPanel.html
 2/13/13 renamed "performance meter" to "performance monitor" (how stats.js describes it) throughout

@@ -35,8 +35,8 @@ define(
       this.performanceMonitor = new PerformanceMonitor();
 
       // view-specific properties
-      this.performanceMonitorVisibile = new Property( true );
-      this.performanceMonitorVisibile.addObserver( function ( visible ) {
+      this.performanceMonitorVisible = new Property( true );
+      this.performanceMonitorVisible.addObserver( function ( visible ) {
         that.performanceMonitor.setVisible( visible );
       } );
 
@@ -50,7 +50,7 @@ define(
     }
 
     // Called by the animation loop
-    ExampleSimView.prototype.tick = function() {
+    ExampleSimView.prototype.step = function() {
       this.stage.tick();
     }
 

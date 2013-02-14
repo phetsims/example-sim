@@ -26,7 +26,7 @@ define(
     };
 
     // Called by the animation loop
-    ExampleSimModel.prototype.tick = function () {
+    ExampleSimModel.prototype.step = function () {
       // Make model changes here.
     };
 

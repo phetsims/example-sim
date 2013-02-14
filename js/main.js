@@ -23,8 +23,8 @@ require(
     // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
     Easel.Ticker.addListener( function () {
       view.performanceMonitor.begin();
-      model.tick();
-      view.tick();
+      model.step();
+      view.step();
       view.performanceMonitor.end();
     } );
     Easel.Ticker.setFPS( 60 );

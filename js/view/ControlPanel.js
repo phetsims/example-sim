@@ -41,9 +41,9 @@ define(
         // "Show Frame Rate" check box toggles visibility.
         var performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
         performanceMonitorCheckBox.bind( 'change', function () {
-          view.performanceMonitorVisibile.set( !view.performanceMonitorVisibile.get() );
+          view.performanceMonitorVisible.set( !view.performanceMonitorVisible.get() );
         } );
-        view.performanceMonitorVisibile.addObserver( function ( checked ) {
+        view.performanceMonitorVisible.addObserver( function ( checked ) {
           performanceMonitorCheckBox.attr( "checked", checked );
         } );
 
