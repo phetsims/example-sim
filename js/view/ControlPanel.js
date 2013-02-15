@@ -39,12 +39,12 @@ define(
       // Wire up DOM components.
       {
         // "Show Frame Rate" check box toggles visibility.
-        var performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
-        performanceMonitorCheckBox.bind( 'change', function () {
+        var $performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
+        $performanceMonitorCheckBox.bind( 'change', function () {
           view.performanceMonitorVisible.set( !view.performanceMonitorVisible.get() );
         } );
         view.performanceMonitorVisible.addObserver( function ( checked ) {
-          performanceMonitorCheckBox.attr( "checked", checked );
+          $performanceMonitorCheckBox.attr( "checked", checked );
         } );
 
         // "Flip Polarity" button rotates magnet by 90 degrees.
@@ -58,7 +58,7 @@ define(
           view.reset();
         } );
       }
-    }
+    };
 
     return ControlPanel;
   } );
