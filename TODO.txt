@@ -15,5 +15,3 @@ LOW
 - placeholder for button that provides access to About, etc.
 - delete example-sim-debug.html
 - investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
-
-Gratuitous edit for testing commits.
