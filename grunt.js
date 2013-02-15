@@ -13,24 +13,24 @@ module.exports = function ( grunt ) {
                           },
 
                           concat:{
-                              "deploy/debug/require.js":[
-                                  "js/vendor/almond.js",
-                                  "deploy/debug/require.js"
+                              "deploy/debug/example-sim-debug.js":[
+                                  "almond.js",
+                                  "deploy/debug/example-sim-debug.js"
                               ]
                           },
 
+                          // Even though r.js minified already, do it again to minify the boot loader.
                           min:{
-                              "deploy/release/require.js":[
-                                  "deploy/debug/require.js"
+                              "deploy/release/example-sim.min.js":[
+                                  "deploy/debug/example-sim-debug.js"
                               ]
                           },
 
                           requirejs:{
                               compile:{
                                   options:{
-                                      almond: true,
                                       mainConfigFile:"js/config.js",
-                                      out:"deploy/debug/require.js",
+                                      out:"deploy/debug/example-sim-debug.js",
                                       name:"config",
                                       wrap:true
                                   }
