@@ -4,7 +4,7 @@ HIGH
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
-- figure out how to use stats.js with requirejs
+- figure out how to use stats.js and fastclick.js with requirejs
 
 MEDIUM
 - format using idiomatic.js style
