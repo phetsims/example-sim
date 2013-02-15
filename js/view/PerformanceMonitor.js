@@ -7,8 +7,8 @@
  * Use this for performance debugging.
  */
 define(
-  [],
-  function () {
+  [ "stats" ],
+  function ( Stats ) {
     "use strict";
 
     function PerformanceMonitor() {

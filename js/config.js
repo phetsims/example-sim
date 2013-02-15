@@ -16,6 +16,7 @@ require.config(
       i18n: "../contrib/i18n/i18n",
       image: "../contrib/image-0.2.1",
       tpl: "../contrib/tpl-0.2",
+      stats: "../contrib/stats-r11",
 
       // common directories, uppercase names to identify them in require imports
       PHETCOMMON: "../common/phetcommon/js",
@@ -25,7 +26,11 @@ require.config(
     shim: {
       easel: {
         exports: "createjs"
+      },
+      stats: {
+        exports: "Stats"
       }
+
     },
 
     urlArgs: new Date().getTime()  // cache buster to make browser refresh load all included scripts
