@@ -14,6 +14,9 @@ require(
   function ( Easel, ExampleSimModel, ExampleSimView ) {
     "use strict";
 
+    //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
+    new FastClick( document.body );
+
     // model
     var model = new ExampleSimModel();
 
