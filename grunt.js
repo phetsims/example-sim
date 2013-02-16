@@ -14,7 +14,7 @@ module.exports = function ( grunt ) {
 
                           concat:{
                               "deploy/debug/example-sim-debug.js":[
-                                  "almond.js",
+                                  "almond-0.2.5.js",
                                   "deploy/debug/example-sim-debug.js"
                               ]
                           },

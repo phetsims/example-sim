@@ -1,3 +1,4 @@
+2/16/13 check in almond-0.2.5.js, shim loader for use with grunt
 2/16/13 rewrite PerformanceMonitor using inheritance
 2/16/13 add config.js path and shim for fastclick.js, remove from .html
 2/16/13 rename fastclick.js to fastclick-0.5.6.js, following phet's convention for contrib libs
