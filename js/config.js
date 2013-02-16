@@ -17,6 +17,7 @@ require.config(
       image: "../contrib/image-0.2.1",
       tpl: "../contrib/tpl-0.2",
       stats: "../contrib/stats-r11",
+      fastclick: "../contrib/fastclick-0.5.6",
 
       // common directories, uppercase names to identify them in require imports
       PHETCOMMON: "../common/phetcommon/js",
@@ -29,8 +30,10 @@ require.config(
       },
       stats: {
         exports: "Stats"
+      },
+      fastclick: {
+        exports: "FastClick"
       }
-
     },
 
     urlArgs: new Date().getTime()  // cache buster to make browser refresh load all included scripts

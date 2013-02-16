@@ -1,3 +1,4 @@
+2/16/13 add config.js path and shim for fastclick.js, remove from .html
 2/16/13 rename fastclick.js to fastclick-0.5.6.js, following phet's convention for contrib libs
 2/15/13 Added fastclick.js so that buttons will respond immediately on iPad instead of after 300ms
 2/13/13 change animation method from tick to step, so as not to be confused with Easel.Ticker.tick
