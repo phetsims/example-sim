@@ -4,12 +4,10 @@ HIGH
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
-- figure out how to use stats.js and fastclick.js with requirejs
 
 MEDIUM
 - format using idiomatic.js style
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
-- rewrite PerformanceMonitor using inheritance (it's currently an adapter)
 
 LOW
 - placeholder for button that provides access to About, etc.

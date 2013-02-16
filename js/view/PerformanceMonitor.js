@@ -7,13 +7,18 @@
  * Use this for performance debugging.
  */
 define(
-  [ "stats" ],
-  function ( Stats ) {
+  [
+    "stats",
+    "PHETCOMMON/model/Inheritance"
+  ],
+  function ( Stats, Inheritance ) {
     "use strict";
 
     function PerformanceMonitor() {
 
-      var stats = new Stats();
+      Stats.call( this ); // constructor stealing
+
+      var stats = this;
 
       stats.setMode( 0 ); // 0: fps, 1: ms
 
@@ -26,7 +31,7 @@ define(
       document.body.appendChild( stats.domElement );
 
       // @param {Boolean} visible
-      this.setVisible = function ( visible ) {
+      stats.setVisible = function ( visible ) {
         if ( visible ) {
           stats.domElement.style.visibility = "visible";
         }
@@ -34,15 +39,10 @@ define(
           stats.domElement.style.visibility = "hidden";
         }
       }
-
-      this.begin = function() {
-        stats.begin();
-      }
-
-      this.end = function() {
-        stats.end();
-      }
     }
+
+    // use this form of prototype chaining, Stats is not set up to support parasitic combination inheritance.
+    PerformanceMonitor.prototype = new Stats();
 
     return PerformanceMonitor;
   }
