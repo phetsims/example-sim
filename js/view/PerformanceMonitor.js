@@ -1,10 +1,12 @@
 // Copyright 2002-2013, University of Colorado
 
-//TODO this would be better implemented by subtyping Stats, but that wasn't working
 /**
- * Displays frames-per-second (FPS) and frame rendering time in milliseconds.
- * Click on it to toggle between the 2 views.
+ * This is a specialization/encapsulation of github.com/mrdoob/stats.js.
+ * It's a DOM-based performance monitor that displays frames-per-second (fps) xor
+ * frame rendering time in milliseconds (ms). Click on it to toggle between the 2 views.
  * Use this for performance debugging.
+ *
+ * @author Chris Malley (PixelZoom, Inc.)
  */
 define(
   [
@@ -30,7 +32,10 @@ define(
       // add to DOM
       document.body.appendChild( stats.domElement );
 
-      // @param {Boolean} visible
+      /*
+       * Encapsulate the style properties used to control visibility.
+       * @param {Boolean} visible
+       */
       stats.setVisible = function ( visible ) {
         if ( visible ) {
           stats.domElement.style.visibility = "visible";
