@@ -4,6 +4,7 @@ HIGH
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
+- move PerformanceMonitor to phetcommon
 
 MEDIUM
 - format using idiomatic.js style
