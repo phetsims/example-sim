@@ -2,7 +2,6 @@ Keep track of tasks that you need to do in this file.
 
 HIGH
 - change approach to loading images to work with grunt
-- turn of mangling for uglify
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
