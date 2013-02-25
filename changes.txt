@@ -1,3 +1,4 @@
+2/25/13 more detailed/general doc in config.js
 2/25/13 cleanup, document and reorder Gruntfile.js
 2/25/13 fix specification of jshint globals in Gruntfile.js, to silence "'define' is undefined" complaints
 2/25/13 add missing semicolons identified by jshint
