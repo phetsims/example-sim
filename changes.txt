@@ -1,4 +1,3 @@
-2/25/13 delete "dependencies" entry in package.json, SB says we only need "devDependencies" (the default)
 2/16/13 changelog change to test git-aware bash prompt
 2/16/13 fix example-sim-debug.html, check in example-sim-release.html (for grunt testing)
 2/16/13 reformat grunt.js with 2-space indents
