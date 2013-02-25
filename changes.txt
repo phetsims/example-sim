@@ -1,3 +1,4 @@
+2/25/13 document package.json in README.md, because JSON doesn't support comments
 2/16/13 changelog change to test git-aware bash prompt
 2/16/13 fix example-sim-debug.html, check in example-sim-release.html (for grunt testing)
 2/16/13 reformat grunt.js with 2-space indents
