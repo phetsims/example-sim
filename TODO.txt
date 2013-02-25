@@ -5,7 +5,6 @@ HIGH
 - change approach to loading images to work with grunt
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
-- grunt.js + package.json (documented)
 - move PerformanceMonitor (and stats.js?) to phetcommon
 
 MEDIUM
