@@ -1,4 +1,12 @@
 {
+  "/": [
+    "----------------------------------------------------------------------------------------------",
+    "This file is used by npm to store metadata for projects published as npm modules.",
+    "You will list grunt and the Grunt plugins your project needs as devDependencies in",
+    "this file. Running 'npm install' in the same folder as this file will install the",
+    "correct version of each dependency listed herein.",
+    "----------------------------------------------------------------------------------------------"
+    ],
   "name": "example-sim",
   "version": "0.0.0",
   "license": "GPL",
