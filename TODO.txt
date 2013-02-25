@@ -6,9 +6,10 @@ HIGH
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 - grunt.js + package.json (documented)
-- move PerformanceMonitor to phetcommon
+- move PerformanceMonitor (and stats.js?) to phetcommon
 
 MEDIUM
+- adding almond in grunt concat task will mess up source maps, figure out a better way
 - format using idiomatic.js style
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
 
