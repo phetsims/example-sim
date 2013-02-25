@@ -2,7 +2,6 @@
 
 /**
  * RequireJS configuration file for the sim.
- * Paths are relative to the location of this file.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
