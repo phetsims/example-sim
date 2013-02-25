@@ -49,12 +49,12 @@ module.exports = function ( grunt ) {
                           browser: true,
                           node: true,
                           jquery: true,
-                          expr: true
-                        },
-                        globals: {
-                          Modernizr: true,
-                          define: true,
-                          $: true
+                          expr: true,
+                          globals: {
+                            Modernizr: true,
+                            define: true,
+                            $: true
+                          }
                         }
                       }
                     } );
