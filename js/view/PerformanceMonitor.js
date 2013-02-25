@@ -32,17 +32,17 @@ define(
         else {
           stats.domElement.style.visibility = "hidden";
         }
-      }
+      };
 
       this.begin = function() {
         stats.begin();
-      }
+      };
 
       this.end = function() {
         stats.end();
-      }
+      };
     }
 
     return PerformanceMonitor;
   }
-)
+);

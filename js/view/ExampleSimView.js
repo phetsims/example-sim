@@ -47,12 +47,12 @@ define(
     ExampleSimView.prototype.reset = function() {
       this.performanceMonitorVisible.reset();
       this.stage.reset();
-    }
+    };
 
     // Called by the animation loop
     ExampleSimView.prototype.step = function() {
       this.stage.tick();
-    }
+    };
 
     return ExampleSimView;
   }
