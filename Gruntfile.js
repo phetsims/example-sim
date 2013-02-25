@@ -4,11 +4,13 @@
  */
 module.exports = function ( grunt ) {
 
-  // Configure the project
+  // Initialize a configuration object for the project.
   grunt.initConfig(
     {
+      // Read the project settings from the package.json file.
       pkg: '<json:package.json>',
 
+      // Validate files with JSHint.
       jshint: {
         files: [ 'js/**/*.js' ],
         options: {
@@ -34,6 +36,7 @@ module.exports = function ( grunt ) {
         }
       },
 
+      // Optimize RequireJS projects using r.js.
       requirejs: {
         compile: {
           options: {
@@ -49,6 +52,7 @@ module.exports = function ( grunt ) {
         }
       },
 
+      // Concatenate files.
       concat: {
         "deploy/debug/example-sim-debug.js": [
           "almond-0.2.5.js",
@@ -56,6 +60,7 @@ module.exports = function ( grunt ) {
         ]
       },
 
+      // Minify files with UglifyJS.
       uglify: {
         "deploy/release/example-sim.min.js": [
           "deploy/debug/example-sim-debug.js"
