@@ -1,26 +1,18 @@
 // Copyright 2002-2013, University of Colorado
 
 /**
- * This is a specialization/encapsulation of github.com/mrdoob/stats.js.
- * It's a DOM-based performance monitor that displays frames-per-second (fps) xor
- * frame rendering time in milliseconds (ms). Click on it to toggle between the 2 views.
+ * Displays frames-per-second (FPS) and frame rendering time in milliseconds.
+ * Click on it to toggle between the 2 views.
  * Use this for performance debugging.
- *
- * @author Chris Malley (PixelZoom, Inc.)
  */
 define(
-  [
-    "stats",
-    "PHETCOMMON/model/Inheritance"
-  ],
-  function ( Stats, Inheritance ) {
+  [ "stats" ],
+  function ( Stats ) {
     "use strict";
 
     function PerformanceMonitor() {
 
-      Stats.call( this ); // constructor stealing
-
-      var stats = this;
+      var stats = new Stats();
 
       stats.setMode( 0 ); // 0: fps, 1: ms
 
@@ -32,11 +24,8 @@ define(
       // add to DOM
       document.body.appendChild( stats.domElement );
 
-      /*
-       * Encapsulate the style properties used to control visibility.
-       * @param {Boolean} visible
-       */
-      stats.setVisible = function ( visible ) {
+      // @param {Boolean} visible
+      this.setVisible = function ( visible ) {
         if ( visible ) {
           stats.domElement.style.visibility = "visible";
         }
@@ -44,10 +33,15 @@ define(
           stats.domElement.style.visibility = "hidden";
         }
       }
-    }
 
-    // use this form of prototype chaining, Stats is not set up to support parasitic combination inheritance.
-    PerformanceMonitor.prototype = new Stats();
+      this.begin = function() {
+        stats.begin();
+      }
+
+      this.end = function() {
+        stats.end();
+      }
+    }
 
     return PerformanceMonitor;
   }

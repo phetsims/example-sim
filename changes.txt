@@ -1,3 +1,4 @@
+2/25/13 revert to composition for implementation of PerformanceMonitor, no need for inheritance
 2/25/13 change package.json to specify non-fuzzy versions for dependencies (recommended by SB)
 2/25/13 turn off uglify name mangling to make debugging easier
 2/25/13 delete "dependencies" entry in package.json, SB says we only need "devDependencies" (the default)

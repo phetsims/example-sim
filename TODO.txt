@@ -1,6 +1,7 @@
 Keep track of tasks that you need to do in this file.
 
 HIGH
+- change stats.js to work with requirejs
 - change approach to loading images to work with grunt
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
