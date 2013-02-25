@@ -1,3 +1,4 @@
+2/25/13 turn off uglify name mangling to make debugging easier
 2/25/13 delete "dependencies" entry in package.json, SB says we only need "devDependencies" (the default)
 2/25/13 document package.json in README.md, because JSON doesn't support comments
 2/16/13 changelog change to test git-aware bash prompt

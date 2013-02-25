@@ -24,7 +24,11 @@ module.exports = function ( grunt ) {
                             mainConfigFile: "js/config.js",
                             out: "deploy/debug/example-sim-debug.js",
                             name: "config",
-                            wrap: true
+                            wrap: true,
+                            uglify: {
+                              // turn off name mangling to make debugging easier
+                              no_mangle: true
+                            }
                           }
                         }
                       },
