@@ -1,3 +1,4 @@
+2/26/13 add images and overlay to debug and release html files
 2/26/13 integrate jquery.imagesloaded into requirejs config
 2/26/13 delete config/image-0.2.1.js, not using
 2/26/13 encapsulate imagesloaded in ImagesLoader
