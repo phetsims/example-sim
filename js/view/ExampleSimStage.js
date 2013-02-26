@@ -18,7 +18,7 @@ define(
   function ( Easel, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, Property, BarMagnetNode ) {
     "use strict";
 
-    function ExampleSimStage( $imageElements, canvas, model ) {
+    function ExampleSimStage( imagesLoader, canvas, model ) {
 
       var that = this;
 
@@ -41,15 +41,8 @@ define(
       // Nodes added to rootContainer will be scaled as the browser window is resized.
       var rootContainer = new Easel.Container();
 
-      //TODO migrate to common
-      // Load an HTMLImageElement from the DOM
-      function getImageElement( name, imageElements ) {
-        var selector = 'img[src^="images/' + name + '"]';
-        return imageElements.parent().find( selector )[0];
-      }
-
       // bar magnet
-      var barMagnetNode = new BarMagnetNode( getImageElement( "barMagnet", $imageElements ), model.barMagnet, mvt );
+      var barMagnetNode = new BarMagnetNode( imagesLoader.getImage( "barMagnet" ), model.barMagnet, mvt );
 
       // rendering order
       this.addChild( background );

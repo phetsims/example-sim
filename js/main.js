@@ -10,9 +10,10 @@ require(
     'easel',
     'fastclick',
     'model/ExampleSimModel',
-    'view/ExampleSimView'
+    'view/ExampleSimView',
+    'view/ImagesLoader'
   ],
-  function ( Easel, FastClick, ExampleSimModel, ExampleSimView ) {
+  function ( Easel, FastClick, ExampleSimModel, ExampleSimView, ImagesLoader ) {
     "use strict";
 
     //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
@@ -22,10 +23,10 @@ require(
     var model = new ExampleSimModel();
 
     // initialize the view
-    function initView( $images ) {
+    function initView( imagesLoader ) {
 
       // view
-      var view = new ExampleSimView( $images, model );
+      var view = new ExampleSimView( imagesLoader, model );
 
       // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
       Easel.Ticker.addListener( function () {
@@ -38,9 +39,12 @@ require(
     }
 
     // after images are loaded...
-    $( 'body' ).imagesLoaded( function ( $images, $proper, $broken ) {
-      console.log( "num images loaded: " + $images.length );//XXX
-      initView( $images );
+    new ImagesLoader( function ( imagesLoader ) {
+
+      initView( imagesLoader );
+
+      // clean up the DOM
       $( "#images" ).remove();
+      $( "#overlay" ).remove();
     } );
   } );

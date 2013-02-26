@@ -1,3 +1,5 @@
+2/26/13 encapsulate imagesloaded in ImagesLoader
+2/26/13 add overlay hack to top-level html, to prevent seeing images briefly
 2/26/13 initialize view after all images have been loaded
 2/26/13 use <img> + imagesloaded + jquery to load images
 2/26/13 dump requirejs image plugin, because it doesn't work after applying grunt
