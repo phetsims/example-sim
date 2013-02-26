@@ -5,9 +5,10 @@ HIGH
 - change approach to loading images to work with grunt
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
-- move PerformanceMonitor (and stats.js?) to phetcommon
+- migrate PerformanceMonitor (and stats.js?) to phetcommon
 
 MEDIUM
+- upgrade contrib to latest versions (Easel 0.6,...)
 - adding almond in grunt concat task will mess up source maps, figure out a better way
 - format using idiomatic.js style
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
