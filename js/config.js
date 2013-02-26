@@ -22,7 +22,7 @@ require.config(
       'EASEL-PHET': "../common/easel-phet/js",
 
       // contrib dependencies required by common directories
-      stats: "../common/phetcommon/contrib/stats-r11",  //TODO can I used "PHETCOMMON" here?
+      stats: "../common/phetcommon/contrib/stats-r11",
 
       // local contrib dependencies
       easel: "../contrib/easel-0.5.0",
