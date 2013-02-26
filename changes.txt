@@ -1,3 +1,4 @@
+2/26/13 delete config/image-0.2.1.js, not using
 2/26/13 encapsulate imagesloaded in ImagesLoader
 2/26/13 add overlay hack to top-level html, to prevent seeing images briefly
 2/26/13 initialize view after all images have been loaded
