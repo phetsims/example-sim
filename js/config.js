@@ -23,13 +23,13 @@ require.config(
 
       // contrib dependencies required by common directories
       stats: "../common/phetcommon/contrib/stats-r11",
+      imagesloaded: "../common/phetcommon/contrib/jquery.imagesloaded-2.1.1",
 
       // local contrib dependencies
       easel: "../contrib/easeljs-0.6.0.min",
       i18n: "../contrib/i18n/i18n",
       tpl: "../contrib/tpl-0.2",
-      fastclick: "../contrib/fastclick-0.5.6",
-      imagesloaded: "../contrib/jquery.imagesloaded-2.1.1"
+      fastclick: "../contrib/fastclick-0.5.6"
     },
 
     // Configure the dependencies and exports for older, traditional "browser globals" scripts
