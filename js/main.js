@@ -9,11 +9,11 @@ require(
   [
     'easel',
     'fastclick',
+    'PHETCOMMON/view/ImagesLoader',
     'model/ExampleSimModel',
-    'view/ExampleSimView',
-    'view/ImagesLoader'
+    'view/ExampleSimView'
   ],
-  function ( Easel, FastClick, ExampleSimModel, ExampleSimView, ImagesLoader ) {
+  function ( Easel, FastClick, ImagesLoader, ExampleSimModel, ExampleSimView ) {
     "use strict";
 
     //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
