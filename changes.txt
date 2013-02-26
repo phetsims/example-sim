@@ -1,3 +1,7 @@
+2/26/13 initialize view after all images have been loaded
+2/26/13 use <img> + imagesloaded + jquery to load images
+2/26/13 dump requirejs image plugin, because it doesn't work after applying grunt
+2/26/13 update to easeljs-0.6.0
 2/26/13 migrate PerformanceMonitor and its dependency (stats.js) to phetcommon from example-sim
 2/25/13 clean up .gitignore, don't need to specify stuff inside deploy/
 2/25/13 remove <script ..."requirejs"> from example-sim-debug.html, almond has been concat'ed at this point

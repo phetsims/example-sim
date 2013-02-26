@@ -10,21 +10,21 @@ define(
     'easel',
     'EASEL-PHET/events/DragHandler',
     'PHETCOMMON/model/Inheritance',
-    'PHETCOMMON/math/MathUtil',
-    'image!images/barMagnet.png'
+    'PHETCOMMON/math/MathUtil'
   ],
-  function ( Easel, DragHandler, Inheritance, MathUtil, barMagnetImage ) {
+  function ( Easel, DragHandler, Inheritance, MathUtil ) {
     "use strict";
 
     /**
      * @class BarMagnetNode
      * @constructor
+     * @param {HTMLImageElement} barMagnetImageElement
      * @param {BarMagnet} barMagnet
      * @param {ModelViewTransform2D} mvt
      */
-    function BarMagnetNode( barMagnet, mvt ) {
+    function BarMagnetNode( barMagnetImageElement, barMagnet, mvt ) {
 
-      Easel.Bitmap.call( this, barMagnetImage ); // constructor stealing
+      Easel.Bitmap.call( this, barMagnetImageElement ); // constructor stealing
 
       // Compute scale factors to match model.
       this.scaleX = mvt.modelToView( barMagnet.size.width ) / this.image.width;

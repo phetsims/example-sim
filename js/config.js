@@ -25,7 +25,7 @@ require.config(
       stats: "../common/phetcommon/contrib/stats-r11",
 
       // local contrib dependencies
-      easel: "../contrib/easel-0.5.0",
+      easel: "../contrib/easeljs-0.6.0.min",
       i18n: "../contrib/i18n/i18n",
       image: "../contrib/image-0.2.1",
       tpl: "../contrib/tpl-0.2",

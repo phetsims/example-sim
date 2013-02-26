@@ -17,7 +17,7 @@ define(
   function( Property, CanvasQuirks, PerformanceMonitor, ExampleSimStage, ControlPanel, strings ) {
     "use strict";
 
-    function ExampleSimView( model ) {
+    function ExampleSimView( $imageElements, model ) {
 
       var that = this;
 
@@ -29,7 +29,7 @@ define(
       CanvasQuirks.fixTextCursor( canvas );
 
       // stage
-      this.stage = new ExampleSimStage( canvas, model );
+      this.stage = new ExampleSimStage( $imageElements, canvas, model );
 
       // performance monitor
       this.performanceMonitor = new PerformanceMonitor();

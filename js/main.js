@@ -21,15 +21,26 @@ require(
     // model
     var model = new ExampleSimModel();
 
-    // view
-    var view = new ExampleSimView( model );
+    // initialize the view
+    function initView( $images ) {
 
-    // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
-    Easel.Ticker.addListener( function () {
-      view.performanceMonitor.begin();
-      model.step();
-      view.step();
-      view.performanceMonitor.end();
+      // view
+      var view = new ExampleSimView( $images, model );
+
+      // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
+      Easel.Ticker.addListener( function () {
+        view.performanceMonitor.begin();
+        model.step();
+        view.step();
+        view.performanceMonitor.end();
+      } );
+      Easel.Ticker.setFPS( 60 );
+    }
+
+    // after images are loaded...
+    $( 'body' ).imagesLoaded( function ( $images, $proper, $broken ) {
+      console.log( "num images loaded: " + $images.length );//XXX
+      initView( $images );
+      $( "#images" ).remove();
     } );
-    Easel.Ticker.setFPS( 60 );
   } );
