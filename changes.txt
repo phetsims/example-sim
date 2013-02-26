@@ -1,3 +1,4 @@
+2/25/13 clean up .gitignore, don't need to specify stuff inside deploy/
 2/25/13 remove <script ..."requirejs"> from example-sim-debug.html, almond has been concat'ed at this point
 2/25/13 added comments to package.json using "//" key hack
 2/25/13 more detailed/general doc in config.js
