@@ -9,12 +9,12 @@ define(
   [
     'PHETCOMMON/model/property/Property',
     'PHETCOMMON/view/CanvasQuirks',
+    'PHETCOMMON/view/PerformanceMonitor',
     'view/ExampleSimStage',
     'view/ControlPanel',
-    'view/PerformanceMonitor',
     'i18n!../../nls/example-sim-strings'
   ],
-  function( Property, CanvasQuirks, ExampleSimStage, ControlPanel, PerformanceMonitor, strings ) {
+  function( Property, CanvasQuirks, PerformanceMonitor, ExampleSimStage, ControlPanel, strings ) {
     "use strict";
 
     function ExampleSimView( model ) {

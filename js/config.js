@@ -16,17 +16,20 @@ require.config(
     // Path mappings for module names not found directly under baseUrl. The path settings are assumed to be
     // relative to baseUrl unless the paths setting starts with a "/" or has a URL protocol.
     paths: {
-      // contrib
+
+      // common directories, uppercase names to identify them in require imports
+      PHETCOMMON: "../common/phetcommon/js",
+      'EASEL-PHET': "../common/easel-phet/js",
+
+      // contrib dependencies required by common directories
+      stats: "../common/phetcommon/contrib/stats-r11",  //TODO can I used "PHETCOMMON" here?
+
+      // local contrib dependencies
       easel: "../contrib/easel-0.5.0",
       i18n: "../contrib/i18n/i18n",
       image: "../contrib/image-0.2.1",
       tpl: "../contrib/tpl-0.2",
-      stats: "../contrib/stats-r11",
-      fastclick: "../contrib/fastclick-0.5.6",
-
-      // common directories, uppercase names to identify them in require imports
-      PHETCOMMON: "../common/phetcommon/js",
-      'EASEL-PHET': "../common/easel-phet/js"
+      fastclick: "../contrib/fastclick-0.5.6"
     },
 
     // Configure the dependencies and exports for older, traditional "browser globals" scripts
