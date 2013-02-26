@@ -10,10 +10,8 @@ HIGH
 MEDIUM
 - upgrade contrib to latest versions (Easel 0.6,...)
 - adding almond in grunt concat task will mess up source maps, figure out a better way
-- format using idiomatic.js style
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
 
 LOW
 - placeholder for button that provides access to About, etc.
-- delete example-sim-debug.html
-- investigate why the first occurrence of <% token %> in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
+- investigate why the first occurrence of "<% token %>" in an HTML template (eg, control-panel.html) causes "not well-formed" error to console
