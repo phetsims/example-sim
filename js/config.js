@@ -11,7 +11,7 @@ require.config(
     // is loaded, and you want to specify dependencies to load as soon as require() is defined.
     deps: ["main"],
 
-    // baseUrl: defaults to the location of the HTML page that loads require.js.
+    // baseUrl: don't bother trying to set it here, it is overridden by data-main in the top-level HTML file
 
     // Path mappings for module names not found directly under baseUrl. The path settings are assumed to be
     // relative to baseUrl unless the paths setting starts with a "/" or has a URL protocol.
