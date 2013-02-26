@@ -8,8 +8,10 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define(
-  [],
-  function () {
+  [
+    'imagesloaded'
+  ],
+  function ( imagesloaded ) {
 
     /**
      * @param callback called after the images have been loaded, has one {ImageLoader} arg
