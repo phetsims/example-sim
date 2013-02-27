@@ -1,7 +1,8 @@
 Keep track of tasks that you need to do in this file.
 
 HIGH
-- fork stats.js and make changes to work with requirejs
+- tpl isn't working in minified script, no console error and no control panel displayed
+- phetcommon/contrib/stats-r11.js doesn't work in minified script, should be using stats fork
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 
