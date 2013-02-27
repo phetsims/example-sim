@@ -1,7 +1,7 @@
 Keep track of tasks that you need to do in this file.
 
 HIGH
-- change stats.js to work with requirejs
+- fork stats.js and make changes to work with requirejs
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
 
