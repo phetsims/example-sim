@@ -1,3 +1,4 @@
+2/26/13 use i18n release instead of submodule fork
 2/26/13 upgrade contrib to latest versions
 2/26/13 migrate images loader to phetcommon
 2/26/13 add images and overlay to debug and release html files

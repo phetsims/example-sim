@@ -27,7 +27,7 @@ require.config(
 
       // local contrib dependencies
       easel: "../contrib/easeljs-0.6.0.min",
-      i18n: "../contrib/i18n/i18n",
+      i18n: "../contrib/i18n-2.0.2",
       tpl: "../contrib/tpl-0.2",
       fastclick: "../contrib/fastclick-0.5.6"
     },
@@ -43,6 +43,12 @@ require.config(
       },
       fastclick: {
         exports: "FastClick"
+      }
+    },
+
+    config: {
+      i18n: {
+        locale: "en_us" // change this to test other locales
       }
     },
 
