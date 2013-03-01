@@ -17,12 +17,17 @@
   padding: 20px;
   border: 2px solid gray;
   border-radius: 8px;
-  font-family: Arial;
-  font-size: 1.5em;
 }
 
-/* Control panel check box */
-.control-panel-label{
+.v-button {
+  margin-top: 10px;
+  width: 100%;
+  display: block;
   font-family: Arial;
-  font-size: 0.9em;
+  font-size: 10em;
+  font-weight: bold;
+}
+
+.reset-all-button {
+  margin-top: 10px;
 }
