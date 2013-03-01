@@ -39,12 +39,17 @@ define(
       // Wire up DOM components.
       {
         // "Show Frame Rate" check box toggles visibility.
-        var $performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
-        $performanceMonitorCheckBox.bind( 'change', function () {
+        var handlePerformanceMonitorButtonClick = function (){
           view.performanceMonitorVisible.set( !view.performanceMonitorVisible.get() );
-        } );
+        }
+        var $performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
+        $performanceMonitorCheckBox.bind( "touchstart", handlePerformanceMonitorButtonClick );
+        $performanceMonitorCheckBox.bind( "click", handlePerformanceMonitorButtonClick );
+
         view.performanceMonitorVisible.addObserver( function ( checked ) {
-          $performanceMonitorCheckBox.attr( "checked", checked );
+          var $icon = $( '#showPerformanceMonitorCheckBox i' );
+          $icon.removeClass( "icon-check-empty" ).removeClass( "icon-check" );
+          $icon.addClass( checked ? "icon-check" : "icon-check-empty" );
         } );
 
         // "Flip Polarity" button rotates magnet by 90 degrees.
