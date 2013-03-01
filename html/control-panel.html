@@ -1,17 +1,38 @@
 <!-- Copyright 2002-2013, University of Colorado -->
 
 <!-- Control panel template, placeholders to be filled in with internationalized strings using tpl. -->
+<!--<div class="control-panel">-->
+
+<!--&lt;!&ndash; Use a separate label so that clicking on the label fires the check box. &ndash;&gt;-->
+<!--&lt;!&ndash;<label class=control-panel-label><input type="checkbox" id="showPerformanceMonitorCheckBox" value="showPerformanceMonitor" /><%= showPerformanceMonitor %></label>&ndash;&gt;-->
+<!--<button class="btn" id="showPerformanceMonitorCheckBox"><%= showPerformanceMonitor %></button>-->
+<!--<br/>-->
+
+<!--&lt;!&ndash; Flip Polarity button &ndash;&gt;-->
+<!--<button class="btn" id="flipPolarityButton"><%= flipPolarity %></button>-->
+<!--<br/>-->
+
+<!--&lt;!&ndash; Reset All button &ndash;&gt;-->
+<!--<button class="btn" id="resetAllButton"><%= resetAll %></button>-->
+<!--</div>-->
+
 <div class="control-panel">
-
-    <!-- Use a separate label so that clicking on the label fires the check box. -->
-    <label class=control-panel-label><input type="checkbox" id="showPerformanceMonitorCheckBox" value="showPerformanceMonitor" /><%= showPerformanceMonitor %></label>
-    <br/>
-
-    <!-- Flip Polarity button -->
-    <button class="btn" id="flipPolarityButton"><%= flipPolarity %></button>
-    <br/>
-
-    <!-- Reset All button -->
-    <button class="btn" id="resetAllButton"><%= resetAll %></button>
+    <div class="btn-group btn-group-vertical"
+         style="position:relative; margin: 0; padding: 0">
+        <button class="btn v-button" id="showPerformanceMonitorCheckBox"><p
+                style="font-size: 12pt;font-weight:bold;">
+            <i class="icon-check-empty"
+               style="float:left; margin-right: 5px; font-size: larger;"></i>
+            <%= showPerformanceMonitor %></p></button>
+        <button class="btn v-button" id="flipPolarityButton"><p
+                style="font-size: 12pt;font-weight:bold;">
+            <%= flipPolarity %>
+        </p></button>
+    </div>
+    <div style="text-align: center">
+        <button class="btn btn-warning reset-all-button"
+                id="resetAllButton"
+                style="margin-top: 10px;"><i
+                class="icon-refresh icon-2x"></i></button>
+    </div>
 </div>
-
