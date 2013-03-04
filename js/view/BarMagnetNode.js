@@ -9,7 +9,7 @@ define(
   [
     'easel',
     'EASEL-PHET/events/DragHandler',
-    'PHETCOMMON/model/Inheritance',
+    'PHETCOMMON/util/Inheritance',
     'PHETCOMMON/math/MathUtil'
   ],
   function ( Easel, DragHandler, Inheritance, MathUtil ) {
