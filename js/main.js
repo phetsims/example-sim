@@ -9,7 +9,7 @@ require(
   [
     'easel',
     'fastclick',
-    'PHETCOMMON/view/ImagesLoader',
+    'PHETCOMMON/util/ImagesLoader',
     'model/ExampleSimModel',
     'view/ExampleSimView'
   ],
