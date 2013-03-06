@@ -10,12 +10,12 @@ define(
     'easel',
     'PHETCOMMON/util/Inheritance',
     'PHETCOMMON/view/ModelViewTransform2D',
-    'PHETCOMMON/math/Dimension2D',
-    'PHETCOMMON/math/Point2D',
+    'DOT/Dimension2',
+    'DOT/Vector2',
     'PHETCOMMON/model/property/Property',
     'view/BarMagnetNode'
   ],
-  function ( Easel, Inheritance, ModelViewTransform2D, Dimension2D, Point2D, Property, BarMagnetNode ) {
+  function ( Easel, Inheritance, ModelViewTransform2D, Dimension2, Vector2, Property, BarMagnetNode ) {
     "use strict";
 
     function ExampleSimStage( imagesLoader, canvas, model ) {
@@ -28,11 +28,11 @@ define(
       Easel.Touch.enable( this, false, false );
 
       // At this window size, scaling is 1.
-      var UNITY_WINDOW_SIZE = new Dimension2D( 1024, 768 );
+      var UNITY_WINDOW_SIZE = new Dimension2( 1024, 768 );
 
       // model-view transform
       var MVT_SCALE = 1;
-      var MVT_OFFSET = new Point2D( 0, 0 ); // origin relative to rootContainer
+      var MVT_OFFSET = new Vector2( 0, 0 ); // origin relative to rootContainer
       var mvt = new ModelViewTransform2D( MVT_SCALE, MVT_OFFSET );
 
       // canvas background
@@ -53,7 +53,7 @@ define(
       var handleResize = function () {
 
         // get the window width
-        var windowSize = new Dimension2D( $( window ).width(), $( window ).height() );
+        var windowSize = new Dimension2( $( window ).width(), $( window ).height() );
 
         // make the canvas fill the window
         canvas.width = windowSize.width;

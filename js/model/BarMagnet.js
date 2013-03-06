@@ -8,17 +8,17 @@
  */
 define(
   [
-    'PHETCOMMON/math/Point2D',
+    'DOT/Vector2',
     'PHETCOMMON/model/property/Property'
   ],
-  function ( Point2D, Property ) {
+  function ( Vector2, Property ) {
     "use strict";
 
       /**
      * @class BarMagnet
      * @constructor
-     * @param {Point2D} location
-     * @param {Dimension2D} size
+     * @param {Vector2} location
+     * @param {Dimension2} size
      * @param {Number} orientation in radians
      */
     function BarMagnet( location, size, orientation ) {

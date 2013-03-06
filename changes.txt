@@ -1,3 +1,4 @@
+3/6/13 delete phetcommon type (Dimension2D, Vector2D, Point2D), use dot type (Dimension2 and Vector2)
 3/6/13 delete submodules and common/
 3/6/13 expect dependent repositories (phetcommon, easel-phet) to be checked out as siblings in the directory hierarchy
 2/26/13 use i18n release instead of submodule fork

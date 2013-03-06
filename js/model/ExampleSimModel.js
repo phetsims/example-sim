@@ -8,16 +8,16 @@
 define(
   [
     'easel',
-    'PHETCOMMON/math/Dimension2D',
-    'PHETCOMMON/math/Point2D',
+    'DOT/Dimension2',
+    'DOT/Vector2',
     'model/BarMagnet'
   ],
-  function ( Easel, Dimension2D, Point2D, BarMagnet ) {
+  function ( Easel, Dimension2, Vector2, BarMagnet ) {
     "use strict";
 
     function ExampleSimModel() {
       // model elements
-      this.barMagnet = new BarMagnet( new Point2D( 0, 0 ), new Dimension2D( 375, 75 ), 0 );
+      this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 375, 75 ), 0 );
     }
 
     // Resets all model elements
