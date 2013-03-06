@@ -18,12 +18,12 @@ require.config(
     paths: {
 
       // common directories, uppercase names to identify them in require imports
-      PHETCOMMON: "../common/phetcommon/js",
-      'EASEL-PHET': "../common/easel-phet/js",
+      PHETCOMMON: "../../phetcommon/js",
+      'EASEL-PHET': "../../easel-phet/js",
 
       // contrib dependencies required by common directories
-      stats: "../common/phetcommon/contrib/stats-r11",
-      imagesloaded: "../common/phetcommon/contrib/jquery.imagesloaded-2.1.1",
+      stats: "../../phetcommon/contrib/stats-r11",
+      imagesloaded: "../../phetcommon/contrib/jquery.imagesloaded-2.1.1",
 
       // local contrib dependencies
       easel: "../contrib/easeljs-0.6.0.min",
