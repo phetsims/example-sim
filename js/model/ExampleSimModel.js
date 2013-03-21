@@ -18,19 +18,17 @@ define( function( require ) {
         init: function() {
           // model elements
           this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}, width: 375, height: 75, orientation: 0} );
+        },
+
+        // Resets all model elements
+        reset: function() {
+          this.barMagnet.reset();
+        },
+
+        // Called by the animation loop
+        step: function() {
+          // Make model changes here.
         }} );
-
-  //TODO: Make sure reset not replacing the entire bar magnet
-
-  // Resets all model elements
-  ExampleSimModel.prototype.reset = function() {
-    this.barMagnet.reset();
-  };
-
-  // Called by the animation loop
-  ExampleSimModel.prototype.step = function() {
-    // Make model changes here.
-  };
 
   return ExampleSimModel;
 } );
