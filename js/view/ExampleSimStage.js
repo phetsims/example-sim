@@ -2,8 +2,9 @@
 
 /**
  * The Easel stage for this simulation.
- *grunt
+ *
  * @author Chris Malley (PixelZoom, Inc.)
+ * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
   "use strict";

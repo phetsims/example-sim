@@ -5,6 +5,7 @@
  * The magnet has fixed size, and mutable location and orientation.
  *
  * @author Chris Malley (PixelZoom, Inc.)
+ * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );

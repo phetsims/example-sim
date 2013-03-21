@@ -4,6 +4,7 @@
  * View container.
  *
  * @author Chris Malley (PixelZoom, Inc.)
+ * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
           "use strict";
