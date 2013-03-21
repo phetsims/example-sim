@@ -9,8 +9,6 @@
  */
 define( function( require ) {
   "use strict";
-  var Vector2 = require( 'DOT/Vector2' );
-  var Property = require( 'PHETCOMMON/model/property/Property' );
   var Fort = require( 'FORT/Fort' );
 
   //Constructor for BarMagnet.
