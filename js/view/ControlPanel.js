@@ -53,7 +53,7 @@ define( function( require ) {
 
       // "Flip Polarity" button rotates magnet by 90 degrees.
       $( "#flipPolarityButton" ).bind( 'click', function() {
-        model.barMagnet.orientation.set( model.barMagnet.orientation.get() + Math.PI );
+        model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
       } );
 
       // "Reset All" button returns sim to initial state.
