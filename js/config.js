@@ -22,6 +22,7 @@ require.config(
       'EASEL-PHET': "../../easel-phet/js",
       DOT: "../../dot/js",
       ASSERT: "../../assert/js",
+      FORT: "../../fort/js",
 
       // contrib dependencies required by common directories
       stats: "../../phetcommon/contrib/stats-r11",
