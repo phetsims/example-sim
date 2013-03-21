@@ -11,28 +11,13 @@ define( function( require ) {
   "use strict";
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'PHETCOMMON/model/property/Property' );
+  var Fort = require( 'FORT/Fort' );
 
-  /**
-   * @class BarMagnet
-   * @constructor
-   * @param {Vector2} location
-   * @param {Dimension2} size
-   * @param {Number} orientation in radians
-   */
-  function BarMagnet( location, size, orientation ) {
+  //Constructor for BarMagnet.
+  //Parameters location,width,height,orientation are set in the constructor invocation
+  var BarMagnet = Fort.Model.extend();
 
-    // initialize properties
-    this.location = new Property( location );
-    this.size = size;
-    this.orientation = new Property( orientation );
-  }
-
-  // Resets all properties
-  BarMagnet.prototype.reset = function() {
-    this.location.reset();
-    this.orientation.reset();
-  };
-
+  //No custom methods or properties in this case.
   return BarMagnet;
 } );
 

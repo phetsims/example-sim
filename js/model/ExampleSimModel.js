@@ -8,15 +8,19 @@
  */
 define( function( require ) {
   "use strict";
-  var Easel = require( 'easel' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
   var BarMagnet = require( 'model/BarMagnet' );
+  var Fort = require( 'FORT/Fort' );
 
-  function ExampleSimModel() {
-    // model elements
-    this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 375, 75 ), 0 );
-  }
+  var ExampleSimModel = Fort.Model.extend(
+      {
+        init: function() {
+          // model elements
+          this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}, width: 375, height: 75, orientation: 0} );
+        }} );
+
+  //TODO: Make sure reset not replacing the entire bar magnet
 
   // Resets all model elements
   ExampleSimModel.prototype.reset = function() {

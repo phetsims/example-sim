@@ -40,7 +40,7 @@ define( function( require ) {
       // "Show Frame Rate" check box toggles visibility.
       var handlePerformanceMonitorButtonClick = function() {
         view.performanceMonitorVisible.set( !view.performanceMonitorVisible.get() );
-      }
+      };
       var $performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
       $performanceMonitorCheckBox.bind( "touchstart", handlePerformanceMonitorButtonClick );
       $performanceMonitorCheckBox.bind( "click", handlePerformanceMonitorButtonClick );

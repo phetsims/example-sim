@@ -25,8 +25,8 @@ define( function( require ) {
     Easel.Bitmap.call( this, barMagnetImageElement ); // constructor stealing
 
     // Compute scale factors to match model.
-    this.scaleX = mvt.modelToView( barMagnet.size.width ) / this.image.width;
-    this.scaleY = mvt.modelToView( barMagnet.size.height ) / this.image.height;
+    this.scaleX = mvt.modelToView( barMagnet.width ) / this.image.width;
+    this.scaleY = mvt.modelToView( barMagnet.height ) / this.image.height;
 
     // Move registration point to the center.
     this.regX = this.image.width / 2;
@@ -34,17 +34,17 @@ define( function( require ) {
 
     // @param {Vector2} point
     DragHandler.register( this, function( point ) {
-      barMagnet.location.set( mvt.viewToModel( point ) );
+      barMagnet.location = mvt.viewToModel( point );
     } );
 
     // Register for synchronization with model.
     var that = this;
-    barMagnet.location.addObserver( function updateLocation( /* Vector2 */ location ) {
+    barMagnet.sync( 'location', function updateLocation( model, location ) {
       var point = mvt.modelToView( location );
       that.x = point.x;
       that.y = point.y;
     } );
-    barMagnet.orientation.addObserver( function updateOrientation( orientation /* radians */ ) {
+    barMagnet.sync( 'orientation', function updateOrientation( model, orientation ) {
       that.rotation = MathUtil.toDegrees( orientation );
     } );
   }
