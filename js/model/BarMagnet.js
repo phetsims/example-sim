@@ -6,12 +6,10 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define(
-  [
-    'DOT/Vector2',
-    'PHETCOMMON/model/property/Property'
-  ],
-  function ( Vector2, Property ) {
+define(function ( require ) {
+    var Vector2 = require('DOT/Vector2');
+    var Property = require('PHETCOMMON/model/property/Property');
+
     "use strict";
 
       /**
