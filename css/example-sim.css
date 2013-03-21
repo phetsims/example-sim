@@ -3,9 +3,9 @@
 /* Put sim-specific CSS in this file. */
 
 #example-sim-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .control-panel {

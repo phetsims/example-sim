@@ -6,45 +6,45 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 require(
-  [
-    'easel',
-    'fastclick',
-    'PHETCOMMON/util/ImagesLoader',
-    'model/ExampleSimModel',
-    'view/ExampleSimView'
-  ],
-  function ( Easel, FastClick, ImagesLoader, ExampleSimModel, ExampleSimView ) {
-    "use strict";
+    [
+      'easel',
+      'fastclick',
+      'PHETCOMMON/util/ImagesLoader',
+      'model/ExampleSimModel',
+      'view/ExampleSimView'
+    ],
+    function( Easel, FastClick, ImagesLoader, ExampleSimModel, ExampleSimView ) {
+      "use strict";
 
-    //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
-    new FastClick( document.body );
+      //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
+      new FastClick( document.body );
 
-    // model
-    var model = new ExampleSimModel();
+      // model
+      var model = new ExampleSimModel();
 
-    // initialize the view
-    function initView( imagesLoader ) {
+      // initialize the view
+      function initView( imagesLoader ) {
 
-      // view
-      var view = new ExampleSimView( imagesLoader, model );
+        // view
+        var view = new ExampleSimView( imagesLoader, model );
 
-      // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
-      Easel.Ticker.addListener( function () {
-        view.performanceMonitor.begin();
-        model.step();
-        view.step();
-        view.performanceMonitor.end();
+        // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
+        Easel.Ticker.addListener( function() {
+          view.performanceMonitor.begin();
+          model.step();
+          view.step();
+          view.performanceMonitor.end();
+        } );
+        Easel.Ticker.setFPS( 60 );
+      }
+
+      // after images are loaded...
+      new ImagesLoader( function( imagesLoader ) {
+
+        initView( imagesLoader );
+
+        // clean up the DOM
+        $( "#images" ).remove();
+        $( "#overlay" ).remove();
       } );
-      Easel.Ticker.setFPS( 60 );
-    }
-
-    // after images are loaded...
-    new ImagesLoader( function ( imagesLoader ) {
-
-      initView( imagesLoader );
-
-      // clean up the DOM
-      $( "#images" ).remove();
-      $( "#overlay" ).remove();
     } );
-  } );

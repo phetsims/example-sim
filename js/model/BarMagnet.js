@@ -6,33 +6,33 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define(function ( require ) {
-    var Vector2 = require('DOT/Vector2');
-    var Property = require('PHETCOMMON/model/property/Property');
+define( function( require ) {
+  var Vector2 = require( 'DOT/Vector2' );
+  var Property = require( 'PHETCOMMON/model/property/Property' );
 
-    "use strict";
+  "use strict";
 
-      /**
-     * @class BarMagnet
-     * @constructor
-     * @param {Vector2} location
-     * @param {Dimension2} size
-     * @param {Number} orientation in radians
-     */
-    function BarMagnet( location, size, orientation ) {
+  /**
+   * @class BarMagnet
+   * @constructor
+   * @param {Vector2} location
+   * @param {Dimension2} size
+   * @param {Number} orientation in radians
+   */
+  function BarMagnet( location, size, orientation ) {
 
-      // initialize properties
-      this.location = new Property( location );
-      this.size = size;
-      this.orientation = new Property( orientation );
-    }
+    // initialize properties
+    this.location = new Property( location );
+    this.size = size;
+    this.orientation = new Property( orientation );
+  }
 
-    // Resets all properties
-    BarMagnet.prototype.reset = function () {
-      this.location.reset();
-      this.orientation.reset();
-    };
+  // Resets all properties
+  BarMagnet.prototype.reset = function() {
+    this.location.reset();
+    this.orientation.reset();
+  };
 
-    return BarMagnet;
-  } );
+  return BarMagnet;
+} );
 
