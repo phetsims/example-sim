@@ -8,10 +8,9 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
+  "use strict";
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'PHETCOMMON/model/property/Property' );
-
-  "use strict";
 
   /**
    * @class BarMagnet
