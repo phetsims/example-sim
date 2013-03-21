@@ -5,55 +5,53 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define(
-    [
-      'PHETCOMMON/model/property/Property',
-      'PHETCOMMON/view/CanvasQuirks',
-      'PHETCOMMON/view/PerformanceMonitor',
-      'view/ExampleSimStage',
-      'view/ControlPanel',
-      'i18n!../../nls/example-sim-strings'
-    ],
-    function( Property, CanvasQuirks, PerformanceMonitor, ExampleSimStage, ControlPanel, strings ) {
-      "use strict";
+define( function( require ) {
+          "use strict";
 
-      function ExampleSimView( imagesLoader, model ) {
+          var Property = require( 'PHETCOMMON/model/property/Property' );
+          var CanvasQuirks = require( 'PHETCOMMON/view/CanvasQuirks' );
+          var PerformanceMonitor = require( 'PHETCOMMON/view/PerformanceMonitor' );
+          var ExampleSimStage = require( 'view/ExampleSimStage' );
+          var ControlPanel = require( 'view/ControlPanel' );
+          var strings = require( 'i18n!../../nls/example-sim-strings' );
 
-        var that = this;
+          function ExampleSimView( imagesLoader, model ) {
 
-        // browser window title
-        $( 'title' ).html( strings.title );
+            var that = this;
 
-        // canvas
-        var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
-        CanvasQuirks.fixTextCursor( canvas );
+            // browser window title
+            $( 'title' ).html( strings.title );
 
-        // stage
-        this.stage = new ExampleSimStage( imagesLoader, canvas, model );
+            // canvas
+            var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
+            CanvasQuirks.fixTextCursor( canvas );
 
-        // performance monitor
-        this.performanceMonitor = new PerformanceMonitor();
+            // stage
+            this.stage = new ExampleSimStage( imagesLoader, canvas, model );
 
-        // view-specific properties
-        this.performanceMonitorVisible = new Property( true );
-        this.performanceMonitorVisible.addObserver( function( visible ) {
-          that.performanceMonitor.setVisible( visible );
-        } );
+            // performance monitor
+            this.performanceMonitor = new PerformanceMonitor();
 
-        // control panel
-        ControlPanel.init( strings, model, this );
-      }
+            // view-specific properties
+            this.performanceMonitorVisible = new Property( true );
+            this.performanceMonitorVisible.addObserver( function( visible ) {
+              that.performanceMonitor.setVisible( visible );
+            } );
 
-      ExampleSimView.prototype.reset = function() {
-        this.performanceMonitorVisible.reset();
-        this.stage.reset();
-      };
+            // control panel
+            ControlPanel.init( strings, model, this );
+          }
 
-      // Called by the animation loop
-      ExampleSimView.prototype.step = function() {
-        this.stage.tick();
-      };
+          ExampleSimView.prototype.reset = function() {
+            this.performanceMonitorVisible.reset();
+            this.stage.reset();
+          };
 
-      return ExampleSimView;
-    }
+          // Called by the animation loop
+          ExampleSimView.prototype.step = function() {
+            this.stage.tick();
+          };
+
+          return ExampleSimView;
+        }
 );
