@@ -31,3 +31,8 @@
 .reset-all-button {
   margin-top: 10px;
 }
+
+.scene {
+  position: absolute;
+  background: #000000;
+}

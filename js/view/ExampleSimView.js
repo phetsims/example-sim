@@ -11,7 +11,7 @@ define( function( require ) {
 
           var CanvasQuirks = require( 'PHETCOMMON/view/CanvasQuirks' );
           var PerformanceMonitor = require( 'PHETCOMMON/view/PerformanceMonitor' );
-          var ExampleSimStage = require( 'view/ExampleSimStage' );
+          var ExampleSimScene = require( 'view/ExampleSimScene' );
           var ControlPanel = require( 'view/ControlPanel' );
           var strings = require( 'i18n!../../nls/example-sim-strings' );
 
@@ -24,10 +24,10 @@ define( function( require ) {
 
             // canvas
             var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
-            CanvasQuirks.fixTextCursor( canvas );
+            CanvasQuirks.fixTextCursor( $( 'body' ) );
 
             // stage
-            this.stage = new ExampleSimStage( imagesLoader, canvas, model );
+            this.scene = new ExampleSimScene( imagesLoader, canvas, model );
 
             // performance monitor
             this.performanceMonitor = new PerformanceMonitor();
@@ -42,8 +42,8 @@ define( function( require ) {
           }
 
           // Called by the animation loop
-          ExampleSimView.prototype.step = function() {
-            this.stage.tick();
+          ExampleSimView.prototype.update = function() {
+            this.scene.updateScene();
           };
 
           return ExampleSimView;

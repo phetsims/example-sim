@@ -20,7 +20,9 @@ require.config(
 
         // common directories, uppercase names to identify them in require imports
         PHETCOMMON: "../../phetcommon/js",
-        'EASEL-PHET': "../../easel-phet/js",
+        SCENERY: "../../scenery/js",
+        KITE: "../../kite/js",
+        PHET_CORE: "../../phet-core/js",
         DOT: "../../dot/js",
         ASSERT: "../../assert/js",
         FORT: "../../fort/js",
@@ -30,7 +32,6 @@ require.config(
         imagesloaded: "../../phetcommon/contrib/jquery.imagesloaded-2.1.1",
 
         // local contrib dependencies
-        easel: "../contrib/easeljs-0.6.0.min",
         i18n: "../contrib/i18n-2.0.2",
         tpl: "../contrib/tpl-0.2",
         fastclick: "../contrib/fastclick-0.5.6"
@@ -39,9 +40,6 @@ require.config(
       // Configure the dependencies and exports for older, traditional "browser globals" scripts
       // that do not use define() to declare the dependencies and set a module value.
       shim: {
-        easel: {
-          exports: "createjs"
-        },
         stats: {
           exports: "Stats"
         },

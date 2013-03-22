@@ -2,37 +2,32 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8"/>
+  <meta charset="utf-8"/>
 
-    <!-- internationalized title will be inserted by sim -->
-    <title></title>
+  <!-- internationalized title will be inserted by sim -->
+  <title></title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../phetcommon/css/phetcommon.css"/>
-    <link rel="stylesheet" href="css/example-sim.css"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../phetcommon/css/phetcommon.css"/>
+  <link rel="stylesheet" href="css/example-sim.css"/>
 
-    <!-- jquery must be loaded here -->
-    <script src="contrib/jquery-1.9.1.js"></script>
+  <!-- jquery must be loaded here -->
+  <script src="contrib/jquery-1.9.1.js"></script>
 
-    <!-- sim -->
-    <script src='deploy/release/example-sim.min.js'></script>
+  <!-- sim -->
+  <script src='deploy/release/example-sim.min.js'></script>
 
 </head>
 <body>
 <div id="images" style="display: hidden; position: absolute">
   <img src="images/barMagnet.png"/>
 </div>
-<div>
-    <!-- Canvas -->
-    <div>
-        <canvas id='example-sim-canvas'>Canvas not supported.</canvas>
-    </div>
-
-    <!-- Control panel will be inserted here -->
-    <div id="control-panel-div"></div>
-
-</div>
+<!--The scene for Scenery-->
+<div class="scene" style="position:absolute;"></div>
+<!-- Control panel will be inserted here -->
+<div id="control-panel-div"></div>
 <!-- Overlay that prevents us from seeing images briefly. -->
-<div id="overlay" style="position: absolute; top:0; width: 100%;height: 100%; left:0; background-color: black"></div>
+<div id="overlay"
+     style="position: absolute; top:0; width: 100%;height: 100%; left:0; background-color: black"></div>
 </body>
 </html>
