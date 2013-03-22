@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
   var Inheritance = require( 'PHETCOMMON/util/Inheritance' );
   var MathUtil = require( 'PHETCOMMON/math/MathUtil' );
+  var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
@@ -22,8 +23,19 @@ define( function( require ) {
    */
   function BarMagnetNode( barMagnetImageElement, barMagnet, mvt ) {
     var that = this;
-    Image.call( this, barMagnetImageElement, { cursor: 'pointer' } ); // constructor stealing
-
+    
+    // super constructor
+    Node.call( this, {
+      cursor: 'pointer'
+    } );
+    
+    // add the centered bar magnet image
+    this.addChild( new Image( barMagnetImageElement, {
+      centerX: 0,
+      centerY: 0
+    } ) );
+    
+    // scale it so it matches the model width and height
     this.scale( mvt.modelToView( barMagnet.width ) / this.width,
                 mvt.modelToView( barMagnet.height ) / this.height );
 
@@ -33,28 +45,21 @@ define( function( require ) {
       allowTouchSnag: true,
 
       //Translate on drag events
-      translate: function( options ) {
-        barMagnet.location = mvt.viewToModel( { x: options.position.x + that.width / 2,
-                                                y: options.position.y + that.height / 2 } );
+      translate: function( args ) {
+        barMagnet.location = mvt.viewToModel( args.position );
       }
     } ) );
 
     // Register for synchronization with model.
     barMagnet.link( 'location', function updateLocation( model, location ) {
-      var point = mvt.modelToView( location );
-      that.centerX = point.x;
-      that.centerY = point.y;
+      that.translation = mvt.modelToView( location );
     } );
     barMagnet.link( 'orientation', function updateOrientation( model, orientation ) {
-      var centerX = that.centerX;
-      var centerY = that.centerY;
       that.rotation = orientation;
-      that.centerX = centerX;
-      that.centerY = centerY;
     } );
   }
 
-  Inheritance.inheritPrototype( BarMagnetNode, Image ); // prototype chaining
+  Inheritance.inheritPrototype( BarMagnetNode, Node ); // prototype chaining
 
   return BarMagnetNode;
 } );
