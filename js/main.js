@@ -36,7 +36,7 @@ require(
         // place the rAF *before* the render() to assure as close to
         // 60fps with the setTimeout fallback.
         (function animloop() {
-          requestAnimationFrame( animloop );
+          window.requestAnimationFrame( animloop );
           view.performanceMonitor.begin();
           model.step();
           view.update();
