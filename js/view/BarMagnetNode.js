@@ -39,12 +39,12 @@ define( function( require ) {
 
     // Register for synchronization with model.
     var that = this;
-    barMagnet.sync( 'location', function updateLocation( model, location ) {
+    barMagnet.link( 'location', function updateLocation( model, location ) {
       var point = mvt.modelToView( location );
       that.x = point.x;
       that.y = point.y;
     } );
-    barMagnet.sync( 'orientation', function updateOrientation( model, orientation ) {
+    barMagnet.link( 'orientation', function updateOrientation( model, orientation ) {
       that.rotation = MathUtil.toDegrees( orientation );
     } );
   }
