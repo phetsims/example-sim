@@ -7,9 +7,8 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-
-  var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
   "use strict";
+  var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
 
   function ControlPanel() {
   }
