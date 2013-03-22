@@ -27,7 +27,7 @@ define( function( require ) {
     this.scale( mvt.modelToView( barMagnet.width ) / this.width,
                 mvt.modelToView( barMagnet.height ) / this.height );
 
-    //TODO: need to set the center of the bar magnet, not its top left coordinate
+    //When dragging, move the bar magnet
     this.addInputListener( new SimpleDragHandler(
         {
           //When dragging across it in a mobile device, pick it up
@@ -35,7 +35,8 @@ define( function( require ) {
 
           //Translate on drag events
           translate: function( options ) {
-            barMagnet.location = mvt.viewToModel( options.position );
+            barMagnet.location = mvt.viewToModel( {x: options.position.x + that.width / 2,
+                                                    y: options.position.y + that.height / 2} );
           }
         }
     ) );
@@ -43,8 +44,8 @@ define( function( require ) {
     // Register for synchronization with model.
     barMagnet.link( 'location', function updateLocation( model, location ) {
       var point = mvt.modelToView( location );
-      that.x = point.x;
-      that.y = point.y;
+      that.centerX = point.x;
+      that.centerY = point.y;
     } );
     barMagnet.link( 'orientation', function updateOrientation( model, orientation ) {
       var centerX = that.centerX;
