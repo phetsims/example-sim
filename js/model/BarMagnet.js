@@ -12,9 +12,10 @@ define( function( require ) {
   var Fort = require( 'FORT/Fort' );
 
   //Constructor for BarMagnet.
-  //Parameters location,width,height,orientation are set in the constructor invocation
+  //Parameters location & orientation are set in the constructor invocation
   var BarMagnet = Fort.Model.extend(
       {
+        //All bar magnets have the same size and initial orientation.  The position is set in the constructor.
         defaults: {width: 375, height: 75, orientation: 0}
       } );
 

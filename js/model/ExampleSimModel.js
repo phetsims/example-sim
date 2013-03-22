@@ -21,14 +21,15 @@ define( function( require ) {
         init: function() {
           // model elements
           this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}} );
-          this.performanceMonitorVisibleInitialValue = this.performanceMonitorVisible;
         },
 
         // Resets all model elements
-        //TODO: call super.reset somehow
         reset: function() {
+
+          //Call parent reset method to reset fields in this model, then ask child models to reset themselves.
+          //In the future, Fort may automatically identify and reset child Fort models
+          Fort.Model.prototype.reset.call( this );
           this.barMagnet.reset();
-          this.performanceMonitorVisible = this.performanceMonitorVisibleInitialValue;
         },
 
         // Called by the animation loop
