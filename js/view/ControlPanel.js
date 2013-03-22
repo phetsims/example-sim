@@ -39,13 +39,13 @@ define( function( require ) {
     {
       // "Show Frame Rate" check box toggles visibility.
       var handlePerformanceMonitorButtonClick = function() {
-        view.performanceMonitorVisible.set( !view.performanceMonitorVisible.get() );
+        model.performanceMonitorVisible = !model.performanceMonitorVisible;
       };
       var $performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
       $performanceMonitorCheckBox.bind( "touchstart", handlePerformanceMonitorButtonClick );
       $performanceMonitorCheckBox.bind( "click", handlePerformanceMonitorButtonClick );
 
-      view.performanceMonitorVisible.addObserver( function( checked ) {
+      model.link( 'performanceMonitorVisible', function( model, checked ) {
         var $icon = $( '#showPerformanceMonitorCheckBox i' );
         $icon.removeClass( "icon-check-empty" ).removeClass( "icon-check" );
         $icon.addClass( checked ? "icon-check" : "icon-check-empty" );

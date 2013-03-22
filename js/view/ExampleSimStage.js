@@ -13,7 +13,6 @@ define( function( require ) {
   var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
-  var Property = require( 'PHETCOMMON/model/property/Property' );
   var BarMagnetNode = require( 'view/BarMagnetNode' );
 
   function ExampleSimStage( imagesLoader, canvas, model ) {

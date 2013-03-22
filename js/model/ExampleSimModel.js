@@ -15,6 +15,7 @@ define( function( require ) {
 
   var ExampleSimModel = Fort.Model.extend(
       {
+        defaults: {performanceMonitorVisible: true},
         init: function() {
           // model elements
           this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}, width: 375, height: 75, orientation: 0} );

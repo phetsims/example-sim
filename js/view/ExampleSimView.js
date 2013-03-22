@@ -9,7 +9,6 @@
 define( function( require ) {
           "use strict";
 
-          var Property = require( 'PHETCOMMON/model/property/Property' );
           var CanvasQuirks = require( 'PHETCOMMON/view/CanvasQuirks' );
           var PerformanceMonitor = require( 'PHETCOMMON/view/PerformanceMonitor' );
           var ExampleSimStage = require( 'view/ExampleSimStage' );
@@ -34,8 +33,7 @@ define( function( require ) {
             this.performanceMonitor = new PerformanceMonitor();
 
             // view-specific properties
-            this.performanceMonitorVisible = new Property( true );
-            this.performanceMonitorVisible.addObserver( function( visible ) {
+            model.link( 'performanceMonitorVisible', function( model, visible ) {
               that.performanceMonitor.setVisible( visible );
             } );
 
