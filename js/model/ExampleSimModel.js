@@ -15,15 +15,20 @@ define( function( require ) {
 
   var ExampleSimModel = Fort.Model.extend(
       {
+        //All user settings belong in the model, whether or not they are part of the physical model
         defaults: {performanceMonitorVisible: true},
+
         init: function() {
           // model elements
-          this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}, width: 375, height: 75, orientation: 0} );
+          this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}} );
+          this.performanceMonitorVisibleInitialValue = this.performanceMonitorVisible;
         },
 
         // Resets all model elements
+        //TODO: call super.reset somehow
         reset: function() {
           this.barMagnet.reset();
+          this.performanceMonitorVisible = this.performanceMonitorVisibleInitialValue;
         },
 
         // Called by the animation loop

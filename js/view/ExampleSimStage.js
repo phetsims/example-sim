@@ -79,9 +79,5 @@ define( function( require ) {
 
   Inheritance.inheritPrototype( ExampleSimStage, Easel.Stage ); // prototype chaining
 
-  ExampleSimStage.prototype.reset = function() {
-    // If you need to reset anything when the "Reset All" button is pressed, add it here.
-  };
-
   return ExampleSimStage;
 } );

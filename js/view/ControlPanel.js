@@ -57,10 +57,8 @@ define( function( require ) {
       } );
 
       // "Reset All" button returns sim to initial state.
-      $( "#resetAllButton" ).bind( 'click', function() {
-        model.reset();
-        view.reset();
-      } );
+      // No need to reset the view here, it should be driven completely off of the model
+      $( "#resetAllButton" ).bind( 'click', model.reset.bind( model ) );
     }
   };
 
