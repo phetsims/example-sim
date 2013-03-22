@@ -7,7 +7,7 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-  "use strict";
+  'use strict';
   var BarMagnet = require( 'model/BarMagnet' );
   var Fort = require( 'FORT/Fort' );
 

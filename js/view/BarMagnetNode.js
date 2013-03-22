@@ -7,10 +7,10 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-  "use strict";
+  'use strict';
   var Inheritance = require( 'PHETCOMMON/util/Inheritance' );
   var MathUtil = require( 'PHETCOMMON/math/MathUtil' );
-  var Image = require( "SCENERY/nodes/Image" );
+  var Image = require( 'SCENERY/nodes/Image' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   /**

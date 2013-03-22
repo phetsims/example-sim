@@ -8,7 +8,7 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-  "use strict";
+  'use strict';
   var Fort = require( 'FORT/Fort' );
 
   //Constructor for BarMagnet.

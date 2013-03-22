@@ -7,9 +7,9 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-  "use strict";
+  'use strict';
 
-  var Scene = require( "SCENERY/Scene" );
+  var Scene = require( 'SCENERY/Scene' );
   var Inheritance = require( 'PHETCOMMON/util/Inheritance' );
   var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
   var Dimension2 = require( 'DOT/Dimension2' );
@@ -36,7 +36,7 @@ define( function( require ) {
     var mvt = new ModelViewTransform2D( MVT_SCALE, MVT_OFFSET );
 
     // bar magnet
-    var barMagnetNode = new BarMagnetNode( imagesLoader.getImage( "barMagnet" ), model.barMagnet, mvt );
+    var barMagnetNode = new BarMagnetNode( imagesLoader.getImage( 'barMagnet' ), model.barMagnet, mvt );
 
     // rendering order
     this.addChild( barMagnetNode );

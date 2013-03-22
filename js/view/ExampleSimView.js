@@ -7,7 +7,7 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-  "use strict";
+  'use strict';
 
   var CanvasQuirks = require( 'PHETCOMMON/view/CanvasQuirks' );
   var PerformanceMonitor = require( 'PHETCOMMON/view/PerformanceMonitor' );

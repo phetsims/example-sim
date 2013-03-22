@@ -15,7 +15,7 @@ require(
       'SCENERY/util/Util'
     ],
     function( FastClick, ImagesLoader, ExampleSimModel, ExampleSimView, Util ) {
-      "use strict";
+      'use strict';
 
       //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
       new FastClick( document.body );
@@ -50,7 +50,7 @@ require(
         initView( imagesLoader );
 
         // clean up the DOM
-        $( "#images" ).remove();
-        $( "#overlay" ).remove();
+        $( '#images' ).remove();
+        $( '#overlay' ).remove();
       } );
     } );

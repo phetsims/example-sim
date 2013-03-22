@@ -7,7 +7,7 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 define( function( require ) {
-  "use strict";
+  'use strict';
   var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
 
   function ControlPanel() {
@@ -31,32 +31,32 @@ define( function( require ) {
     } );
 
     // Add the HTML template to the DOM.
-    $( "#control-panel-div" ).append( $( controlPanelFragment ) ).trigger( "create" );
+    $( '#control-panel-div' ).append( $( controlPanelFragment ) ).trigger( 'create' );
 
     // Wire up DOM components.
     {
-      // "Show Frame Rate" check box toggles visibility.
+      // 'Show Frame Rate' check box toggles visibility.
       var handlePerformanceMonitorButtonClick = function() {
         model.performanceMonitorVisible = !model.performanceMonitorVisible;
       };
-      var $performanceMonitorCheckBox = $( "#showPerformanceMonitorCheckBox" );
-      $performanceMonitorCheckBox.bind( "touchstart", handlePerformanceMonitorButtonClick );
-      $performanceMonitorCheckBox.bind( "click", handlePerformanceMonitorButtonClick );
+      var $performanceMonitorCheckBox = $( '#showPerformanceMonitorCheckBox' );
+      $performanceMonitorCheckBox.bind( 'touchstart', handlePerformanceMonitorButtonClick );
+      $performanceMonitorCheckBox.bind( 'click', handlePerformanceMonitorButtonClick );
 
       model.link( 'performanceMonitorVisible', function( model, checked ) {
         var $icon = $( '#showPerformanceMonitorCheckBox i' );
-        $icon.removeClass( "icon-check-empty" ).removeClass( "icon-check" );
-        $icon.addClass( checked ? "icon-check" : "icon-check-empty" );
+        $icon.removeClass( 'icon-check-empty' ).removeClass( 'icon-check' );
+        $icon.addClass( checked ? 'icon-check' : 'icon-check-empty' );
       } );
 
-      // "Flip Polarity" button rotates magnet by 90 degrees.
-      $( "#flipPolarityButton" ).bind( 'click', function() {
+      // 'Flip Polarity' button rotates magnet by 90 degrees.
+      $( '#flipPolarityButton' ).bind( 'click', function() {
         model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
       } );
 
-      // "Reset All" button returns sim to initial state.
+      // 'Reset All' button returns sim to initial state.
       // No need to reset the view here, it should be driven completely off of the model
-      $( "#resetAllButton" ).bind( 'click', model.reset.bind( model ) );
+      $( '#resetAllButton' ).bind( 'click', model.reset.bind( model ) );
     }
   };
 
