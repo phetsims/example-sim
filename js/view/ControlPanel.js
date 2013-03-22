@@ -24,12 +24,11 @@ define( function( require ) {
   ControlPanel.init = function( strings, model, view ) {
 
     // Translate the HTML template.
-    var controlPanelFragment = controlPanelTemplate(
-        {
-          showPerformanceMonitor: strings.showPerformanceMonitor,
-          flipPolarity: strings.flipPolarity,
-          resetAll: strings.resetAll
-        } );
+    var controlPanelFragment = controlPanelTemplate( {
+      showPerformanceMonitor: strings.showPerformanceMonitor,
+      flipPolarity: strings.flipPolarity,
+      resetAll: strings.resetAll
+    } );
 
     // Add the HTML template to the DOM.
     $( "#control-panel-div" ).append( $( controlPanelFragment ) ).trigger( "create" );

@@ -11,20 +11,20 @@ define( function( require ) {
   var BarMagnet = require( 'model/BarMagnet' );
   var Fort = require( 'FORT/Fort' );
 
-  var ExampleSimModel = Fort.Model.extend(
-      {
-        //Properties of the model.  All user settings belong in the model, whether or not they are part of the physical model
-        defaults: {performanceMonitorVisible: true},
+  var ExampleSimModel = Fort.Model.extend( {
+    //Properties of the model.  All user settings belong in the model, whether or not they are part of the physical model
+    defaults: { performanceMonitorVisible: true },
 
-        init: function() {
-          // child model elements that are not direct properties
-          this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}} );
-        },
+    init: function() {
+      // child model elements that are not direct properties
+      this.barMagnet = new BarMagnet({ location: { x: 0, y: 0 } });
+    },
 
-        // Called by the animation loop
-        step: function() {
-          // Make model changes here.
-        }} );
+    // Called by the animation loop
+    step: function() {
+      // Make model changes here.
+    }
+  } );
 
   return ExampleSimModel;
 } );

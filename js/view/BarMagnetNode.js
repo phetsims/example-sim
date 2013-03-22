@@ -22,24 +22,22 @@ define( function( require ) {
    */
   function BarMagnetNode( barMagnetImageElement, barMagnet, mvt ) {
     var that = this;
-    Image.call( this, barMagnetImageElement, {cursor: 'pointer'} ); // constructor stealing
+    Image.call( this, barMagnetImageElement, { cursor: 'pointer' } ); // constructor stealing
 
     this.scale( mvt.modelToView( barMagnet.width ) / this.width,
                 mvt.modelToView( barMagnet.height ) / this.height );
 
     //When dragging, move the bar magnet
-    this.addInputListener( new SimpleDragHandler(
-        {
-          //When dragging across it in a mobile device, pick it up
-          allowTouchSnag: true,
+    this.addInputListener( new SimpleDragHandler( {
+      //When dragging across it in a mobile device, pick it up
+      allowTouchSnag: true,
 
-          //Translate on drag events
-          translate: function( options ) {
-            barMagnet.location = mvt.viewToModel( {x: options.position.x + that.width / 2,
-                                                    y: options.position.y + that.height / 2} );
-          }
-        }
-    ) );
+      //Translate on drag events
+      translate: function( options ) {
+        barMagnet.location = mvt.viewToModel( { x: options.position.x + that.width / 2,
+                                                y: options.position.y + that.height / 2 } );
+      }
+    } ) );
 
     // Register for synchronization with model.
     barMagnet.link( 'location', function updateLocation( model, location ) {

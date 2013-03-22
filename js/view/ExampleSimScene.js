@@ -22,7 +22,7 @@ define( function( require ) {
     //subclass Scene
     //NOTE: it's background color should be rendered in CSS, not the scene graph
     //Nodes added to the scene will be scaled as the browser window is resized.
-    Scene.call( this, $( '.scene' ), {width: 200, height: 200, allowDevicePixelRatioScaling: true} );
+    Scene.call( this, $( '.scene' ), { width: 200, height: 200, allowDevicePixelRatioScaling: true } );
 
     this.initializeStandaloneEvents(); // sets up listeners on the document with preventDefault(), and forwards those events to our scene
     this.resizeOnWindowResize(); // the scene gets resized to the full screen size
