@@ -19,7 +19,5 @@ define( function( require ) {
         defaults: {width: 375, height: 75, orientation: 0}
       } );
 
-  //No custom methods or properties in this case.
   return BarMagnet;
 } );
-

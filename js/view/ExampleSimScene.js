@@ -48,7 +48,10 @@ define( function( require ) {
       var width = $( window ).width();
       var height = $( window ).height();
 
+      //Find the minimum scale that will still allow everything to be seen based on the provided aspect ratio
       var scale = Math.min( width / UNITY_WINDOW_SIZE.width, height / UNITY_WINDOW_SIZE.height );
+
+      //Update the scene's transform to match the 
       scene.resetTransform();
       scene.resize( width, height );
       scene.scale( scale );

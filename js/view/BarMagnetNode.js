@@ -27,10 +27,6 @@ define( function( require ) {
     this.scale( mvt.modelToView( barMagnet.width ) / this.width,
                 mvt.modelToView( barMagnet.height ) / this.height );
 
-    // Move registration point to the center.
-    this.regX = this.image.width / 2;
-    this.regY = this.image.height / 2;
-
     //TODO: need to set the center of the bar magnet, not its top left coordinate
     this.addInputListener( new SimpleDragHandler(
         {

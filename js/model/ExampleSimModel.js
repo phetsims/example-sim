@@ -8,18 +8,16 @@
  */
 define( function( require ) {
   "use strict";
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var Vector2 = require( 'DOT/Vector2' );
   var BarMagnet = require( 'model/BarMagnet' );
   var Fort = require( 'FORT/Fort' );
 
   var ExampleSimModel = Fort.Model.extend(
       {
-        //All user settings belong in the model, whether or not they are part of the physical model
+        //Properties of the model.  All user settings belong in the model, whether or not they are part of the physical model
         defaults: {performanceMonitorVisible: true},
 
         init: function() {
-          // model elements
+          // child model elements that are not direct properties
           this.barMagnet = new BarMagnet( {location: {x: 0, y: 0}} );
         },
 
