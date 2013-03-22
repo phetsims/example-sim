@@ -7,7 +7,6 @@ HIGH
 - make it work with file:// (fails on Chrome)
 
 MEDIUM
-- adding almond in grunt concat task will mess up source maps, figure out a better way
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
 
 LOW
