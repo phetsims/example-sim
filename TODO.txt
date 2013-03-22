@@ -5,6 +5,7 @@ HIGH
 - phetcommon/contrib/stats-r11.js doesn't work in minified script, should be using stats fork
 - apply Bootstrap to DOM controls
 - make it work with file:// (fails on Chrome)
+- fill in title in HTML, blank is a big SEO no-no
 
 MEDIUM
 - consider putting build-related files in a build/ directory, perhaps leave grunt.js at top level
