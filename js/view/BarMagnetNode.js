@@ -8,7 +8,7 @@
 define(
   [
     'easel',
-    'EASEL-PHET/events/DragHandler',
+    'EASEL_PHET/events/DragHandler',
     'PHETCOMMON/util/Inheritance',
     'PHETCOMMON/math/MathUtil'
   ],

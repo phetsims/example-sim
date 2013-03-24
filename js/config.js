@@ -19,7 +19,7 @@ require.config(
 
       // common directories, uppercase names to identify them in require imports
       PHETCOMMON: "../../phetcommon/js",
-      'EASEL-PHET': "../../easel-phet/js",
+      EASEL_PHET: "../../easel-phet/js",
       DOT: "../../dot/js",
       ASSERT: "../../assert/js",
 
