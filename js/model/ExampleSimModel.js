@@ -12,19 +12,30 @@ define( function( require ) {
   var Fort = require( 'FORT/Fort' );
 
   var ExampleSimModel = Fort.Model.extend( {
-    //Properties of the model.  All user settings belong in the model, whether or not they are part of the physical model
-    defaults: { performanceMonitorVisible: true },
+                                             //Properties of the model.  All user settings belong in the model, whether or not they are part of the physical model
+                                             defaults: { performanceMonitorVisible: true },
 
-    init: function() {
-      // child model elements that are not direct properties
-      this.barMagnet = new BarMagnet({ location: { x: 0, y: 0 } });
-    },
+                                             //Main constructor
+                                             init: function() {
+                                               // child model elements that are not direct properties
+                                               this.barMagnet = new BarMagnet( { location: { x: 0, y: 0 } } );
+                                             },
 
-    // Called by the animation loop
-    step: function() {
-      // Make model changes here.
-    }
-  } );
+                                             // Called by the animation loop
+                                             step: function() {
+                                               // Make model changes here.
+                                             },
+
+                                             // Reset the entire model
+                                             reset: function() {
+
+                                               //Reset the properties in this model
+                                               Fort.Model.prototype.reset.call( this );
+
+                                               //Reset child models
+                                               this.barMagnet.reset();
+                                             }
+                                           } );
 
   return ExampleSimModel;
 } );
