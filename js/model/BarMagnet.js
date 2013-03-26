@@ -7,16 +7,19 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( function ( require ) {
   'use strict';
   var Fort = require( 'FORT/Fort' );
 
-  //Constructor for BarMagnet.
-  //The location parameter is set in the constructor invocation.
-  var BarMagnet = Fort.Model.extend( {
-                                       //All bar magnets have the same size and initial orientation.  The position is set in the constructor.
-                                       defaults: { width: 375, height: 75, orientation: 0 }
-                                     } );
+  // Constructor for BarMagnet.
+  var BarMagnet = Fort.Model.extend(
+      {
+        defaults: {
+          width: 375,
+          height: 75,
+          orientation: 0,
+          location: {x: 0, y: 0} }
+      } );
 
   return BarMagnet;
 } );
