@@ -54,9 +54,9 @@ define( function( require ) {
     barMagnet.link( 'location', function updateLocation( model, location ) {
       that.translation = mvt.modelToView( location );
     } );
-    barMagnet.link( 'orientation', function updateOrientation( model, orientation ) {
-      that.rotation = orientation;
-    } );
+    
+    // Register for synchronization with model orientation using the simplified 'link' style
+    barMagnet.link('orientation',that,'rotation');
   }
 
   Inheritance.inheritPrototype( BarMagnetNode, Node ); // prototype chaining
