@@ -10,7 +10,7 @@ define( function( require ) {
   'use strict';
 
   var Scene = require( 'SCENERY/Scene' );
-  var Inheritance = require( 'PHETCOMMON/util/Inheritance' );
+  var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
@@ -63,7 +63,7 @@ define( function( require ) {
     handleResize(); // initial size
   }
 
-  Inheritance.inheritPrototype( ExampleSimScene, Scene ); // prototype chaining
+  inherit( ExampleSimScene, Scene ); // prototype chaining
 
   return ExampleSimScene;
 } );

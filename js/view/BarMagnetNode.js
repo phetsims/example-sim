@@ -8,8 +8,7 @@
  */
 define( function( require ) {
   'use strict';
-  var Inheritance = require( 'PHETCOMMON/util/Inheritance' );
-  var MathUtil = require( 'PHETCOMMON/math/MathUtil' );
+  var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
@@ -59,7 +58,7 @@ define( function( require ) {
     barMagnet.link('orientation',that,'rotation');
   }
 
-  Inheritance.inheritPrototype( BarMagnetNode, Node ); // prototype chaining
+  inherit( BarMagnetNode, Node ); // prototype chaining
 
   return BarMagnetNode;
 } );
