@@ -43,7 +43,7 @@ define( function( require ) {
       $performanceMonitorCheckBox.bind( 'touchstart', handlePerformanceMonitorButtonClick );
       $performanceMonitorCheckBox.bind( 'click', handlePerformanceMonitorButtonClick );
 
-      model.link( 'performanceMonitorVisible', function( model, checked ) {
+      model.link( 'performanceMonitorVisible', function( checked ) {
         var $icon = $( '#showPerformanceMonitorCheckBox i' );
         $icon.removeClass( 'icon-check-empty' ).removeClass( 'icon-check' );
         $icon.addClass( checked ? 'icon-check' : 'icon-check-empty' );

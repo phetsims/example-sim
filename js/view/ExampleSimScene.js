@@ -36,7 +36,7 @@ define( function( require ) {
     var mvt = new ModelViewTransform2D( MVT_SCALE, MVT_OFFSET );
 
     // bar magnet
-    var barMagnetNode = new BarMagnetNode( imagesLoader.getImage( 'barMagnet' ), model.barMagnet, mvt );
+    var barMagnetNode = new BarMagnetNode( imagesLoader.getImage( 'barMagnet.png' ), model.barMagnet, mvt );
 
     // rendering order
     this.addChild( barMagnetNode );

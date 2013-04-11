@@ -33,7 +33,7 @@ define( function( require ) {
     this.performanceMonitor = new PerformanceMonitor();
 
     // view-specific properties
-    model.link( 'performanceMonitorVisible', function( model, visible ) {
+    model.link( 'performanceMonitorVisible', function( visible ) {
       that.performanceMonitor.setVisible( visible );
     } );
 

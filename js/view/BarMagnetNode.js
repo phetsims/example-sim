@@ -50,7 +50,7 @@ define( function( require ) {
     } ) );
 
     // Register for synchronization with model.
-    barMagnet.link( 'location', function updateLocation( model, location ) {
+    barMagnet.link( 'location', function updateLocation( location ) {
       that.translation = mvt.modelToView( location );
     } );
     
