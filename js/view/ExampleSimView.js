@@ -38,7 +38,7 @@ define( function( require ) {
     } );
 
     // control panel
-    ControlPanel.init( strings, model, this );
+    ControlPanel.init( strings, model, this,this.scene );
   }
 
   // Called by the animation loop

@@ -9,6 +9,7 @@
 define( function( require ) {
   'use strict';
   var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
+  var DOM = require( 'SCENERY/nodes/DOM' );
 
   function ControlPanel() {
   }
@@ -21,7 +22,7 @@ define( function( require ) {
    * @param {ExampleSimModel} model
    * @param {ExampleSimView} view
    */
-  ControlPanel.init = function( strings, model, view ) {
+  ControlPanel.init = function( strings, model, view,parent ) {
 
     // Translate the HTML template.
     var controlPanelFragment = controlPanelTemplate( {
@@ -31,7 +32,8 @@ define( function( require ) {
     } );
 
     // Add the HTML template to the DOM.
-    $( '#control-panel-div' ).append( $( controlPanelFragment ) ).trigger( 'create' );
+    var $fragment = $( controlPanelFragment );
+    parent.addChild( new DOM( $fragment ,{right:1000}) );
 
     // Wire up DOM components.
     {
@@ -39,24 +41,24 @@ define( function( require ) {
       var handlePerformanceMonitorButtonClick = function() {
         model.performanceMonitorVisible = !model.performanceMonitorVisible;
       };
-      var $performanceMonitorCheckBox = $( '#showPerformanceMonitorCheckBox' );
+      var $performanceMonitorCheckBox = $fragment.find('#showPerformanceMonitorCheckBox' );
       $performanceMonitorCheckBox.bind( 'touchstart', handlePerformanceMonitorButtonClick );
       $performanceMonitorCheckBox.bind( 'click', handlePerformanceMonitorButtonClick );
 
       model.link( 'performanceMonitorVisible', function( checked ) {
-        var $icon = $( '#showPerformanceMonitorCheckBox i' );
+        var $icon = $fragment.find( '#showPerformanceMonitorCheckBox i' );
         $icon.removeClass( 'icon-check-empty' ).removeClass( 'icon-check' );
         $icon.addClass( checked ? 'icon-check' : 'icon-check-empty' );
       } );
 
       // 'Flip Polarity' button rotates magnet by 90 degrees.
-      $( '#flipPolarityButton' ).bind( 'click', function() {
+      $fragment.find( '#flipPolarityButton' ).bind( 'click', function() {
         model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
       } );
 
       // 'Reset All' button returns sim to initial state.
       // No need to reset the view here, it should be driven completely off of the model
-      $( '#resetAllButton' ).bind( 'click', model.reset.bind( model ) );
+      $fragment.find( '#resetAllButton' ).bind( 'click', model.reset.bind( model ) );
     }
   };
 
