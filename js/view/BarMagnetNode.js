@@ -24,9 +24,7 @@ define( function( require ) {
     var that = this;
     
     // super constructor
-    Node.call( this, {
-      cursor: 'pointer'
-    } );
+    Node.call( this, { cursor: 'pointer' } );
     
     // add the centered bar magnet image
     this.addChild( new Image( barMagnetImageElement, {
