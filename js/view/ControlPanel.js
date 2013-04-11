@@ -10,9 +10,7 @@ define( function( require ) {
   'use strict';
   var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
   var DOM = require( 'SCENERY/nodes/DOM' );
-
-  function ControlPanel() {
-  }
+  var inherit = require( 'PHET_CORE/inherit' );
 
   /*
    * Takes an HTML fragment that describes a control panel with DOM widgets,
@@ -22,26 +20,25 @@ define( function( require ) {
    * @param {ExampleSimModel} model
    * @param {ExampleSimView} view
    */
-  ControlPanel.init = function( strings, model, view,parent ) {
+  function ControlPanel( strings, model ) {
 
     // Translate the HTML template.
     var controlPanelFragment = controlPanelTemplate( {
-      showPerformanceMonitor: strings.showPerformanceMonitor,
-      flipPolarity: strings.flipPolarity,
-      resetAll: strings.resetAll
-    } );
+                                                       showPerformanceMonitor: strings.showPerformanceMonitor,
+                                                       flipPolarity: strings.flipPolarity,
+                                                       resetAll: strings.resetAll
+                                                     } );
 
     // Add the HTML template to the DOM.
     var $fragment = $( controlPanelFragment );
-    parent.addChild( new DOM( $fragment ,{right:1000}) );
-
+    DOM.call( this, $fragment, {right: 1024} );
     // Wire up DOM components.
     {
       // 'Show Frame Rate' check box toggles visibility.
       var handlePerformanceMonitorButtonClick = function() {
         model.performanceMonitorVisible = !model.performanceMonitorVisible;
       };
-      var $performanceMonitorCheckBox = $fragment.find('#showPerformanceMonitorCheckBox' );
+      var $performanceMonitorCheckBox = $fragment.find( '#showPerformanceMonitorCheckBox' );
       $performanceMonitorCheckBox.bind( 'touchstart', handlePerformanceMonitorButtonClick );
       $performanceMonitorCheckBox.bind( 'click', handlePerformanceMonitorButtonClick );
 
@@ -60,7 +57,10 @@ define( function( require ) {
       // No need to reset the view here, it should be driven completely off of the model
       $fragment.find( '#resetAllButton' ).bind( 'click', model.reset.bind( model ) );
     }
-  };
+
+  }
+
+  inherit( ControlPanel, DOM );
 
   return ControlPanel;
 } );
