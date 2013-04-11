@@ -24,11 +24,10 @@ define(
         $( 'title' ).html( strings.title );
 
         // canvas
-        var canvas = document.getElementById( 'example-sim-canvas' ); //TODO replace with jquery selector
         CanvasQuirks.fixTextCursor( $( 'body' ) );
 
         // stage
-        this.scene = new ExampleSimScene( imagesLoader, canvas, model );
+        this.scene = new ExampleSimScene( imagesLoader, $( '#example-sim-canvas' ), model );
 
         // performance monitor
         this.performanceMonitor = new PerformanceMonitor();
