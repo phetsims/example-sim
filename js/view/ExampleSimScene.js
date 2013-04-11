@@ -15,6 +15,8 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
   var BarMagnetNode = require( 'view/BarMagnetNode' );
+  var ControlPanel = require( 'view/ControlPanel' );
+  var strings = require( 'i18n!../../nls/example-sim-strings' );
 
   function ExampleSimScene( imagesLoader, canvas, model ) {
     var scene = this;
@@ -40,6 +42,9 @@ define( function( require ) {
 
     // rendering order
     this.addChild( barMagnetNode );
+
+    //Add the control panel.  Notice it will scale up and down
+    this.addChild( new ControlPanel( strings, model ) );
 
     // window-resize handler
     var handleResize = function() {

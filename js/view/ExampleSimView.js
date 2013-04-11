@@ -13,7 +13,6 @@ define(
       var CanvasQuirks = require( 'PHETCOMMON/view/CanvasQuirks' );
       var PerformanceMonitor = require( 'PHETCOMMON/view/PerformanceMonitor' );
       var ExampleSimScene = require( 'view/ExampleSimScene' );
-      var ControlPanel = require( 'view/ControlPanel' );
       var strings = require( 'i18n!../../nls/example-sim-strings' );
 
       function ExampleSimView( imagesLoader, model ) {
@@ -36,9 +35,6 @@ define(
         model.link( 'performanceMonitorVisible', function( visible ) {
           that.performanceMonitor.setVisible( visible );
         } );
-
-        //Add the control panel.  Notice it will scale up and down
-        this.scene.addChild( new ControlPanel( strings, model ) );
       }
 
       // Called by the animation loop
