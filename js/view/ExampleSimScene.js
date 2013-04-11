@@ -16,7 +16,7 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var BarMagnetNode = require( 'view/BarMagnetNode' );
   var ControlPanel = require( 'view/ControlPanel' );
-  var strings = require( 'i18n!../../nls/example-sim-strings' );
+  var strings = require( 'example-sim-strings' );
 
   function ExampleSimScene( imagesLoader, canvas, model ) {
     var scene = this;

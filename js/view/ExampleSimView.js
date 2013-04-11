@@ -13,7 +13,7 @@ define(
       var CanvasQuirks = require( 'PHETCOMMON/view/CanvasQuirks' );
       var PerformanceMonitor = require( 'PHETCOMMON/view/PerformanceMonitor' );
       var ExampleSimScene = require( 'view/ExampleSimScene' );
-      var strings = require( 'i18n!../../nls/example-sim-strings' );
+      var strings = require( 'example-sim-strings' );
 
       function ExampleSimView( imagesLoader, model ) {
 
