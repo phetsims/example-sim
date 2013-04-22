@@ -13,7 +13,7 @@ require(
       'model/ExampleSimModel',
       'view/ExampleSimScene',
       'SCENERY/util/Util',
-      'SCENERY_PHET/Sim',
+      'JOIST/Sim',
       'SCENERY/nodes/Rectangle'
     ],
     function( FastClick, ImagesLoader, ExampleSimModel, ExampleSimScene, Util, Sim, Rectangle ) {

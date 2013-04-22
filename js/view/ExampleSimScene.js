@@ -11,7 +11,7 @@ define( function( require ) {
 
   var Scene = require( 'SCENERY/Scene' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var PlayArea = require( 'SCENERY_PHET/PlayArea' );
+  var PlayArea = require( 'JOIST/PlayArea' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
   var Dimension2 = require( 'DOT/Dimension2' );

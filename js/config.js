@@ -27,6 +27,7 @@ require.config( {
     FORT: '../../fort/js',
     SCENERY_PHET: '../../scenery-phet/js',
     SUN: '../../sun/js',
+    JOIST: '../../joist/js',
 
     // lib dependencies required by common directories
     stats: '../../phetcommon/contrib/stats-r11',
