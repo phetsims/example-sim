@@ -25,6 +25,8 @@ require.config( {
     DOT: '../../dot/js',
     ASSERT: '../../assert/js',
     FORT: '../../fort/js',
+    SCENERY_PHET: '../../scenery-phet/js',
+    SUN: '../../sun/js',
 
     // lib dependencies required by common directories
     stats: '../../phetcommon/contrib/stats-r11',

@@ -11,43 +11,26 @@ require(
       'fastclick',
       'PHETCOMMON/util/ImagesLoader',
       'model/ExampleSimModel',
-      'view/ExampleSimView',
-      'SCENERY/util/Util'
+      'view/ExampleSimScene',
+      'SCENERY/util/Util',
+      'SCENERY_PHET/Sim',
+      'SCENERY/nodes/Rectangle'
     ],
-    function( FastClick, ImagesLoader, ExampleSimModel, ExampleSimView, Util ) {
+    function( FastClick, ImagesLoader, ExampleSimModel, ExampleSimScene, Util, Sim, Rectangle ) {
       'use strict';
 
       //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
       new FastClick( document.body );
 
-      // model
-      var model = new ExampleSimModel();
-      
-      Util.polyfillRequestAnimationFrame();
-
-      // initialize the view
-      function initView( imagesLoader ) {
-
-        // view
-        var view = new ExampleSimView( imagesLoader, model );
-
-        // Animation loop. Put all animation tasks in this function so that the FPS indicator is accurate.
-        //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-        // place the rAF *before* the render() to assure as close to
-        // 60fps with the setTimeout fallback.
-        (function animloop() {
-          window.requestAnimationFrame( animloop );
-          view.performanceMonitor.begin();
-          model.step();
-          view.update();
-          view.performanceMonitor.end();
-        })();
-      }
-
       // after images are loaded...
       new ImagesLoader( function( imagesLoader ) {
 
-        initView( imagesLoader );
+        new Sim( "Simulation Example", [
+          { name: "Example",
+            icon: new Rectangle( 0, 0, 50, 50, {fill: 'blue'} ),
+            createModel: function() {return new ExampleSimModel();},
+            createView: function( model ) {return new ExampleSimScene( imagesLoader, null, model );}}
+        ] ).start();
 
         // clean up the DOM
         $( '#images' ).remove();

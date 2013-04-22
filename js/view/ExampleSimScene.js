@@ -10,6 +10,8 @@ define( function( require ) {
   'use strict';
 
   var Scene = require( 'SCENERY/Scene' );
+  var Bounds2 = require( 'DOT/Bounds2' );
+  var PlayArea = require( 'SCENERY_PHET/PlayArea' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
   var Dimension2 = require( 'DOT/Dimension2' );
@@ -24,10 +26,7 @@ define( function( require ) {
     //subclass Scene
     //NOTE: it's background color should be rendered in CSS, not the scene graph
     //Nodes added to the scene will be scaled as the browser window is resized.
-    Scene.call( this, $( '.scene' ), { width: 200, height: 200, allowDevicePixelRatioScaling: true } );
-
-    this.initializeStandaloneEvents(); // sets up listeners on the document with preventDefault(), and forwards those events to our scene
-    this.resizeOnWindowResize(); // the scene gets resized to the full screen size
+    PlayArea.call( this );
 
     // At this window size, scaling is 1.
     var UNITY_WINDOW_SIZE = new Dimension2( 1024, 768 );
@@ -45,30 +44,9 @@ define( function( require ) {
 
     //Add the control panel.  Notice it will scale up and down
     this.addChild( new ControlPanel( strings, model ) );
-
-    // window-resize handler
-    var handleResize = function() {
-
-      // get the window width
-      var width = $( window ).width();
-      var height = $( window ).height();
-
-      //Find the minimum scale that will still allow everything to be seen based on the provided aspect ratio
-      var scale = Math.min( width / UNITY_WINDOW_SIZE.width, height / UNITY_WINDOW_SIZE.height );
-
-      //Update the scene's transform to match the 
-      scene.resetTransform();
-      scene.resize( width, height );
-      scene.scale( scale );
-
-      // force rendering update
-      scene.updateScene();
-    };
-    $( window ).resize( handleResize );
-    handleResize(); // initial size
   }
 
-  inherit( ExampleSimScene, Scene ); // prototype chaining
+  inherit( ExampleSimScene, PlayArea, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} ); // prototype chaining
 
   return ExampleSimScene;
 } );
