@@ -26,14 +26,14 @@ require.config( {
     ASSERT: '../../assert/js',
     FORT: '../../fort/js',
 
-    // contrib dependencies required by common directories
+    // lib dependencies required by common directories
     stats: '../../phetcommon/contrib/stats-r11',
     imagesloaded: '../../phetcommon/contrib/jquery.imagesloaded-2.1.1',
 
-    // local contrib dependencies
-    i18n: '../contrib/i18n-2.0.2',
-    tpl: '../contrib/tpl-0.2',
-    fastclick: '../contrib/fastclick-0.5.6'
+    // local lib dependencies
+    i18n: '../lib/i18n-2.0.2',
+    tpl: '../lib/tpl-0.2',
+    fastclick: '../lib/fastclick-0.5.6'
   },
 
   // Configure the dependencies and exports for older, traditional 'browser globals' scripts
