@@ -8,6 +8,7 @@
  */
 define( function( require ) {
   'use strict';
+
   var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
   var DOM = require( 'SCENERY/nodes/DOM' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -23,9 +24,7 @@ define( function( require ) {
   function ControlPanel( strings, model ) {
 
     // Translate the HTML template.
-    var controlPanelFragment = controlPanelTemplate( {
-                                                       showPerformanceMonitor: strings.showPerformanceMonitor,
-                                                       flipPolarity: strings.flipPolarity,
+    var controlPanelFragment = controlPanelTemplate( { flipPolarity: strings.flipPolarity,
                                                        resetAll: strings.resetAll
                                                      } );
 
@@ -34,20 +33,6 @@ define( function( require ) {
     DOM.call( this, $fragment, {right: 1024} );
     // Wire up DOM components.
     {
-      // 'Show Frame Rate' check box toggles visibility.
-      var handlePerformanceMonitorButtonClick = function() {
-        model.performanceMonitorVisible = !model.performanceMonitorVisible;
-      };
-      var $performanceMonitorCheckBox = $fragment.find( '#showPerformanceMonitorCheckBox' );
-      $performanceMonitorCheckBox.bind( 'touchstart', handlePerformanceMonitorButtonClick );
-      $performanceMonitorCheckBox.bind( 'click', handlePerformanceMonitorButtonClick );
-
-      model.link( 'performanceMonitorVisible', function( checked ) {
-        var $icon = $fragment.find( '#showPerformanceMonitorCheckBox i' );
-        $icon.removeClass( 'icon-check-empty' ).removeClass( 'icon-check' );
-        $icon.addClass( checked ? 'icon-check' : 'icon-check-empty' );
-      } );
-
       // 'Flip Polarity' button rotates magnet by 90 degrees.
       $fragment.find( '#flipPolarityButton' ).bind( 'click', function() {
         model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
