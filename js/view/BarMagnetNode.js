@@ -20,7 +20,7 @@ define( function( require ) {
    * @constructor
    * @param {HTMLImageElement} barMagnetImageElement
    * @param {BarMagnet} barMagnet
-   * @param {ModelViewTransform2D} mvt
+   * @param {ModelViewTransform2} mvt
    */
   function BarMagnetNode( barMagnetImageElement, barMagnet, mvt ) {
     var that = this;
@@ -35,8 +35,8 @@ define( function( require ) {
     } ) );
     
     // scale it so it matches the model width and height
-    this.scale( mvt.modelToView( barMagnet.width ) / this.width,
-                mvt.modelToView( barMagnet.height ) / this.height );
+    this.scale( mvt.modelToViewDeltaX( barMagnet.width ) / this.width,
+                mvt.modelToViewDeltaY( barMagnet.height ) / this.height );
 
     //When dragging, move the bar magnet
     this.addInputListener( new SimpleDragHandler( {
@@ -45,13 +45,13 @@ define( function( require ) {
 
       //Translate on drag events
       translate: function( args ) {
-        barMagnet.location = mvt.viewToModel( args.position );
+        barMagnet.location = mvt.viewToModelPosition( args.position );
       }
     } ) );
 
     // Register for synchronization with model.
     barMagnet.link( 'location', function updateLocation( location ) {
-      that.translation = mvt.modelToView( location );
+      that.translation = mvt.modelToViewPosition( location );
     } );
     
     // Register for synchronization with model orientation using the simplified 'link' style

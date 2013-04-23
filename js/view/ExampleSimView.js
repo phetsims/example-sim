@@ -14,7 +14,7 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
   var TabView = require( 'JOIST/TabView' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
   var BarMagnetNode = require( 'view/BarMagnetNode' );
@@ -32,7 +32,7 @@ define( function( require ) {
     // model-view transform
     var MVT_SCALE = 1;
     var MVT_OFFSET = new Vector2( UNITY_WINDOW_SIZE.width / 2, UNITY_WINDOW_SIZE.height / 2 );
-    var mvt = new ModelViewTransform2D( MVT_SCALE, MVT_OFFSET );
+    var mvt = new ModelViewTransform2.createOffsetScaleMapping( MVT_OFFSET, MVT_SCALE );
 
     // bar magnet
     var barMagnetNode = new BarMagnetNode( imagesLoader.getImage( 'barMagnet.png' ), model.barMagnet, mvt );
