@@ -30,7 +30,6 @@ require.config( {
     JOIST: '../../joist/js',
 
     // lib dependencies required by common directories
-    stats: '../../phetcommon/contrib/stats-r11',
     imagesloaded: '../../phetcommon/contrib/jquery.imagesloaded-2.1.1',
 
     // local lib dependencies

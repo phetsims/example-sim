@@ -30,7 +30,7 @@ require(
             icon: new Rectangle( 0, 0, 50, 50, {fill: 'blue'} ),
             createModel: function() {return new ExampleSimModel();},
             createView: function( model ) {return new ExampleSimView( imagesLoader, null, model );},
-            background: 'black' }
+            backgroundColor: 'black' }
         ] ).start();
 
         // clean up the DOM
