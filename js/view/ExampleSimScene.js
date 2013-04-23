@@ -11,7 +11,7 @@ define( function( require ) {
 
   var Scene = require( 'SCENERY/Scene' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var PlayArea = require( 'JOIST/PlayArea' );
+  var TabView = require( 'JOIST/TabView' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2D = require( 'PHETCOMMON/view/ModelViewTransform2D' );
   var Dimension2 = require( 'DOT/Dimension2' );
@@ -26,7 +26,7 @@ define( function( require ) {
     //subclass Scene
     //NOTE: it's background color should be rendered in CSS, not the scene graph
     //Nodes added to the scene will be scaled as the browser window is resized.
-    PlayArea.call( this );
+    TabView.call( this );
 
     // At this window size, scaling is 1.
     var UNITY_WINDOW_SIZE = new Dimension2( 1024, 768 );
@@ -46,7 +46,7 @@ define( function( require ) {
     this.addChild( new ControlPanel( strings, model ) );
   }
 
-  inherit( ExampleSimScene, PlayArea, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} ); // prototype chaining
+  inherit( ExampleSimScene, TabView, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} ); // prototype chaining
 
   return ExampleSimScene;
 } );
