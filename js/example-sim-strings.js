@@ -9,7 +9,5 @@
  */
 define( function( require ) {
   'use strict';
-
-  var Strings = require( 'i18n!../nls/example-sim-strings' );
-  return Strings;
+   return require( 'i18n!../nls/example-sim-strings' );
 } );
