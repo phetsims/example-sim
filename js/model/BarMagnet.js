@@ -9,6 +9,8 @@
  */
 define( function ( require ) {
   'use strict';
+
+  // imports
   var Fort = require( 'FORT/Fort' );
 
   // Constructor for BarMagnet.

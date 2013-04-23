@@ -8,6 +8,8 @@
  */
 define( function( require ) {
   'use strict';
+
+  // imports
   var BarMagnet = require( 'model/BarMagnet' );
   var Fort = require( 'FORT/Fort' );
 
