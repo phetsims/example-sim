@@ -11,12 +11,12 @@ require(
       'fastclick',
       'PHETCOMMON/util/ImagesLoader',
       'model/ExampleSimModel',
-      'view/ExampleSimScene',
+      'view/ExampleSimView',
       'SCENERY/util/Util',
       'JOIST/Sim',
       'SCENERY/nodes/Rectangle'
     ],
-    function( FastClick, ImagesLoader, ExampleSimModel, ExampleSimScene, Util, Sim, Rectangle ) {
+    function( FastClick, ImagesLoader, ExampleSimModel, ExampleSimView, Util, Sim, Rectangle ) {
       'use strict';
 
       //On iPad, prevent buttons from flickering 300ms after press.  See https://github.com/twitter/bootstrap/issues/3772
@@ -29,7 +29,8 @@ require(
           { name: "Example",
             icon: new Rectangle( 0, 0, 50, 50, {fill: 'blue'} ),
             createModel: function() {return new ExampleSimModel();},
-            createView: function( model ) {return new ExampleSimScene( imagesLoader, null, model );}}
+            createView: function( model ) {return new ExampleSimView( imagesLoader, null, model );},
+            background: 'black' }
         ] ).start();
 
         // clean up the DOM

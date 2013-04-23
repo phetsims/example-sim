@@ -1,3 +1,6 @@
+4/23/13 specify background color for tab that is passed to Sim
+4/23/13 rename ExampleSimScene to ExampleSimView, since it is not a scene
+4/23/13 remove some clearly-obsolete cruft from example-sim.css
 4/2/13 Switched from phetcommon/inheritance to phet_core/inherit
 3/6/13 delete phetcommon type (Dimension2D, Vector2D, Point2D), use dot type (Dimension2 and Vector2)
 3/6/13 delete submodules and common/

@@ -9,6 +9,7 @@
 define( function( require ) {
   'use strict';
 
+  // imports
   var Scene = require( 'SCENERY/Scene' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var TabView = require( 'JOIST/TabView' );
@@ -20,16 +21,13 @@ define( function( require ) {
   var ControlPanel = require( 'view/ControlPanel' );
   var strings = require( 'example-sim-strings' );
 
-  function ExampleSimScene( imagesLoader, canvas, model ) {
+  // constants
+  var UNITY_WINDOW_SIZE = new Dimension2( 1024, 768 ); // At this window size, scaling is 1.
+
+  function ExampleSimView( imagesLoader, canvas, model ) {
+
     var scene = this;
-
-    //subclass Scene
-    //NOTE: it's background color should be rendered in CSS, not the scene graph
-    //Nodes added to the scene will be scaled as the browser window is resized.
-    TabView.call( this );
-
-    // At this window size, scaling is 1.
-    var UNITY_WINDOW_SIZE = new Dimension2( 1024, 768 );
+    TabView.call( scene );
 
     // model-view transform
     var MVT_SCALE = 1;
@@ -46,7 +44,7 @@ define( function( require ) {
     this.addChild( new ControlPanel( strings, model ) );
   }
 
-  inherit( ExampleSimScene, TabView, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} ); // prototype chaining
+  inherit( ExampleSimView, TabView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} ); // prototype chaining
 
-  return ExampleSimScene;
+  return ExampleSimView;
 } );

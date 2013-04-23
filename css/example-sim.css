@@ -2,12 +2,6 @@
 
 /* Put sim-specific CSS in this file. */
 
-#example-sim-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .control-panel {
   position: absolute;
   right: 0;
@@ -30,13 +24,4 @@
 
 .reset-all-button {
   margin-top: 10px;
-}
-
-.scene {
-  position: absolute;
-  background: #000000;
-}
-
-body{
-  background: #000000;
 }
