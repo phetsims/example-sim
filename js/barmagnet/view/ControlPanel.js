@@ -26,7 +26,11 @@ define( function( require ) {
    */
   function ControlPanel( model, options ) {
 
-    options = _.extend( { xMargin: 10, yMargin: 10 }, options );
+    options = _.extend( { xMargin: 10,
+                          yMargin: 10,
+                          stroke: 'orange',
+                          lineWidth: 3 },
+                        options );
 
     var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( "20px Arial" ) } );
     var flipButton = new Button( flipLabel, function() {
