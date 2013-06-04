@@ -11,9 +11,7 @@ define( function( require ) {
   // imports
   var BarMagnetModel = require( "barmagnet/model/BarMagnetModel" );
   var BarMagnetView = require( "barmagnet/view/BarMagnetView" );
-  var ExampleSimImages = require( "common/ExampleSimImages" );
   var ExampleSimStrings = require( "common/ExampleSimStrings" );
-  var ModelViewTransform2 = require( "PHETCOMMON/view/ModelViewTransform2" );
   var Rectangle = require( "SCENERY/nodes/Rectangle" );
 
   function ExampleSimTab() {

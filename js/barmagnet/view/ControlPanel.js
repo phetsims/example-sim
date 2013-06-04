@@ -14,10 +14,10 @@ define( function( require ) {
   var ExampleSimStrings = require( "common/ExampleSimStrings" );
   var Font = require( "SCENERY/util/Font" );
   var inherit = require( 'PHET_CORE/inherit' );
-  var VBox = require( "SCENERY/nodes/VBox" );
   var PanelNode = require( "SUN/PanelNode" );
   var ResetAllButton = require( "SCENERY_PHET/ResetAllButton" );
   var Text = require( "SCENERY/nodes/Text" );
+  var VBox = require( "SCENERY/nodes/VBox" );
 
   /**
    * @param {BarMagnetModel} model
