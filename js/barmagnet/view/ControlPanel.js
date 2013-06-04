@@ -9,43 +9,38 @@
 define( function( require ) {
   'use strict';
 
-  var controlPanelTemplate = require( 'tpl!../../html/control-panel.html' );
-  var DOM = require( 'SCENERY/nodes/DOM' );
+  // imports
+  var Button = require( "SUN/Button" );
+  var ExampleSimStrings = require( "common/ExampleSimStrings" );
+  var Font = require( "SCENERY/util/Font" );
   var inherit = require( 'PHET_CORE/inherit' );
+  var VBox = require( "SCENERY/nodes/VBox" );
+  var PanelNode = require( "SUN/PanelNode" );
+  var ResetAllButton = require( "SCENERY_PHET/ResetAllButton" );
+  var Text = require( "SCENERY/nodes/Text" );
 
-  /*
-   * Takes an HTML fragment that describes a control panel with DOM widgets,
-   * internationalizes it, and wires up the DOM widgets.
-   *
-   * @param strings internationalized strings
-   * @param {ExampleSimModel} model
-   * @param {ExampleSimView} view
+  /**
+   * @param {BarMagnetModel} model
+   * @param {*} options
+   * @constructor
    */
-  function ControlPanel( strings, model ) {
+  function ControlPanel( model, options ) {
 
-    // Translate the HTML template.
-    var controlPanelFragment = controlPanelTemplate( { flipPolarity: strings.flipPolarity,
-                                                       resetAll: strings.resetAll
-                                                     } );
+    var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( "Arial 20px" ) } );
+    var flipButton = new Button( flipLabel, function() {
+      model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
+    }, { xMargin: 10 } );
 
-    // Add the HTML template to the DOM.
-    var $fragment = $( controlPanelFragment );
-    DOM.call( this, $fragment, {right: 1024} );
-    // Wire up DOM components.
-    {
-      // 'Flip Polarity' button rotates magnet by 90 degrees.
-      $fragment.find( '#flipPolarityButton' ).bind( 'click', function() {
-        model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
-      } );
+    var resetAllButton = new ResetAllButton( function() {
+      model.reset();
+    } );
 
-      // 'Reset All' button returns sim to initial state.
-      // No need to reset the view here, it should be driven completely off of the model
-      $fragment.find( '#resetAllButton' ).bind( 'click', model.reset.bind( model ) );
-    }
+    var content = new VBox( {align: 'center', spacing: 10, children: [flipButton, resetAllButton] } );
 
+    PanelNode.call( this, content, options );
   }
 
-  inherit( ControlPanel, DOM );
+  inherit( ControlPanel, PanelNode );
 
   return ControlPanel;
 } );

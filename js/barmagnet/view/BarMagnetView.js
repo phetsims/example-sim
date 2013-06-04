@@ -11,7 +11,7 @@ define( function( require ) {
 
   // imports
   var BarMagnetNode = require( 'barmagnet/view/BarMagnetNode' );
-//  var ControlPanel = require( 'barmagnet/view/ControlPanel' );
+  var ControlPanel = require( 'barmagnet/view/ControlPanel' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -33,9 +33,7 @@ define( function( require ) {
     var mvt = new ModelViewTransform2.createOffsetScaleMapping( MVT_OFFSET, MVT_SCALE );
 
     thisView.addChild( new BarMagnetNode( model.barMagnet, mvt ) );
-
-    //Add the control panel.  Notice it will scale up and down
-//    this.addChild( new ControlPanel( strings, model ) );
+    thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
   inherit( BarMagnetView, TabView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} ); // prototype chaining
