@@ -14,7 +14,7 @@ define( function( require ) {
   var ExampleSimStrings = require( "common/ExampleSimStrings" );
   var Rectangle = require( "SCENERY/nodes/Rectangle" );
 
-  function ExampleSimTab() {
+  function BarMagnetTab() {
 
     this.name = ExampleSimStrings.exampleSim;
     this.icon = new Rectangle( 0, 0, 50, 50, {fill: 'blue'} ); // a dummy icon for single-tab sim
@@ -29,5 +29,5 @@ define( function( require ) {
     };
   }
 
-  return ExampleSimTab;
+  return BarMagnetTab;
 } );
