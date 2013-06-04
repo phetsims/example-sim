@@ -1,7 +1,7 @@
 // English strings
 define(
   {
-    "title": "Simulation Example",
+    "exampleSim": "Example Simulation",
     "flipPolarity": "Flip Polarity",
     "resetAll": "Reset All"
   } );

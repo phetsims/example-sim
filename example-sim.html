@@ -7,12 +7,10 @@
   <meta charset="utf-8"/>
 
   <!-- internationalized title will be inserted by sim -->
-  <title></title>
+  <title>&nbsp;</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="../phetcommon/css/phetcommon.css"/>
-  <link rel="stylesheet" href="lib/bootstrap-2.2.1/css/bootstrap.css"/>
-  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css"/>
   <link rel="stylesheet" href="css/example-sim.css"/>
 
   <!-- jquery must be loaded here -->
@@ -20,13 +18,18 @@
 
   <!--Other dependencies-->
   <script src="../fort/contrib/lodash.js"></script>
-  <script src="../fort/contrib/backbone.js"></script>
+  <script type="text/javascript" src="lib/has.js"></script>
+
+  <!-- PhET common code that must be loaded pre-RequireJS -->
+  <script type="text/javascript" src="../phetcommon/js/util/query-parameters.js"></script>
+  <script type="text/javascript" src="../phetcommon/js/util/check-assertions.js"></script>
 
   <!-- sim -->
-  <script data-main='js/config.js' src='lib/require-2.1.4.js'></script>
+  <script data-main='js/example-sim-config.js' src='lib/require-2.1.4.js'></script>
 
 </head>
 <body>
+<!-- Images that will be loaded by the sim -->
 <div id="images" style="display: hidden; position: absolute">
   <img src="images/barMagnet.png"/>
 </div>

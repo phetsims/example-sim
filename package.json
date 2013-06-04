@@ -5,14 +5,20 @@
     "You will list grunt and the Grunt plugins your project needs as devDependencies in",
     "this file. Running 'npm install' in the same folder as this file will install the",
     "correct version of each dependency listed herein.",
+    "",
+    "This file is also used by the PhET build process, specifically the build.sh and lint.sh",
+    "scripts in the chipper repository.",
     "----------------------------------------------------------------------------------------------"
     ],
   "name": "example-sim",
-  "version": "0.0.0",
+  "version": "0.0.0-1",
+  "resourceDirs": "images",
+  "include": "../phetcommon/css/phetcommon.css ../phetcommon/js/util/check-assertions.js ../phetcommon/js/util/query-parameters.js",
+  "phetLibs": "molarity assert dot joist kite nitroglycerin phet-core phetcommon scenery scenery-phet sun",
   "license": "GPL",
   "devDependencies": {
-    "grunt": "0.4.0",
+    "grunt": "~0.4.1",
     "grunt-requirejs": "~0.3.2",
-    "grunt-contrib-jshint": "~0.3.0"
+    "grunt-contrib-jshint": "~0.5.4"
   }
 }
