@@ -1,3 +1,4 @@
+# 0.0.0-1 6/3/13
 6/3/13 cleanup example-sim, bring it up to current PhET practices
 4/23/13 delete TODO.txt because no one seems to be using it and everything in it is currently irrelevant
 4/23/13 delete "Show Performance Monitor" control, joist doesn't support it
