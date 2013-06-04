@@ -26,10 +26,12 @@ define( function( require ) {
    */
   function ControlPanel( model, options ) {
 
-    var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( "Arial 20px" ) } );
+    options = _.extend( { xMargin: 10, yMargin: 10 }, options );
+
+    var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( "20px Arial" ) } );
     var flipButton = new Button( flipLabel, function() {
       model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
-    }, { xMargin: 10 } );
+    }, { xMargin: 10, fill: 'yellow' } );
 
     var resetAllButton = new ResetAllButton( function() {
       model.reset();
