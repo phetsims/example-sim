@@ -10,14 +10,14 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var Button = require( "SUN/Button" );
-  var ExampleSimStrings = require( "common/ExampleSimStrings" );
-  var Font = require( "SCENERY/util/Font" );
+  var Button = require( 'SUN/Button' );
+  var ExampleSimStrings = require( 'common/ExampleSimStrings' );
+  var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PanelNode = require( "SUN/PanelNode" );
-  var ResetAllButton = require( "SCENERY_PHET/ResetAllButton" );
-  var Text = require( "SCENERY/nodes/Text" );
-  var VBox = require( "SCENERY/nodes/VBox" );
+  var PanelNode = require( 'SUN/PanelNode' );
+  var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
    * @param {BarMagnetModel} model
@@ -34,7 +34,7 @@ define( function( require ) {
                         options );
 
     // "Flip Polarity" button
-    var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( "20px Arial" ) } );
+    var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( '20px Arial' ) } );
     var flipButton = new Button( flipLabel, function() {
       model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
     }, { xMargin: 10, fill: 'yellow' } );

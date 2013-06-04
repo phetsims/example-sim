@@ -19,8 +19,8 @@ require.config(
       paths: {
 
         // third-party libs
-        i18n: "../lib/i18n-2.0.2",
-        imagesloaded: "../lib/jquery.imagesloaded-2.1.1",
+        i18n: '../lib/i18n-2.0.2',
+        imagesloaded: '../lib/jquery.imagesloaded-2.1.1',
 
         // common directories, uppercase names to identify them in require imports
         PHETCOMMON: '../../phetcommon/js',
@@ -37,7 +37,7 @@ require.config(
 
       // Configure dependencies for 'browser globals' scripts that do not use RequireJS.
       shim: {
-        jquery: { exports: "$" }
+        jquery: { exports: '$' }
       },
 
       config: {
