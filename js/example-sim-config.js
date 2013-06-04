@@ -7,6 +7,7 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 require.config( {
+
   // An array of dependencies to load. Useful when require is defined as a config object before require.js
   // is loaded, and you want to specify dependencies to load as soon as require() is defined.
   deps: ['example-sim-main'],
@@ -16,6 +17,10 @@ require.config( {
   // Path mappings for module names not found directly under baseUrl. The path settings are assumed to be
   // relative to baseUrl unless the paths setting starts with a '/' or has a URL protocol.
   paths: {
+
+    // third-party libs
+    i18n: "../lib/i18n-2.0.2",
+    imagesloaded: "../lib/jquery.imagesloaded-2.1.1",
 
     // common directories, uppercase names to identify them in require imports
     PHETCOMMON: '../../phetcommon/js',
@@ -27,26 +32,12 @@ require.config( {
     FORT: '../../fort/js',
     SCENERY_PHET: '../../scenery-phet/js',
     SUN: '../../sun/js',
-    JOIST: '../../joist/js',
-
-    // lib dependencies required by common directories
-    imagesloaded: '../../phetcommon/contrib/jquery.imagesloaded-2.1.1',
-
-    // local lib dependencies
-    i18n: '../lib/i18n-2.0.2',
-    tpl: '../lib/tpl-0.2',
-    fastclick: '../lib/fastclick-0.5.6'
+    JOIST: '../../joist/js'
   },
 
-  // Configure the dependencies and exports for older, traditional 'browser globals' scripts
-  // that do not use define() to declare the dependencies and set a module value.
+  // Configure dependencies for 'browser globals' scripts that do not use RequireJS.
   shim: {
-    stats: {
-      exports: 'Stats'
-    },
-    fastclick: {
-      exports: 'FastClick'
-    }
+    jquery: { exports: "$" }
   },
 
   config: {
