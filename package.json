@@ -14,7 +14,7 @@
   "version": "0.0.0-1",
   "resourceDirs": "images",
   "include": "../phetcommon/css/phetcommon.css ../phetcommon/js/util/check-assertions.js ../phetcommon/js/util/query-parameters.js",
-  "phetLibs": "example-sim assert dot joist kite nitroglycerin phet-core phetcommon scenery scenery-phet sun",
+  "phetLibs": "example-sim assert dot joist kite phet-core phetcommon scenery scenery-phet sun",
   "license": "GPL",
   "devDependencies": {
     "grunt": "~0.4.1",
