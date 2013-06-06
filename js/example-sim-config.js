@@ -23,16 +23,16 @@ require.config(
         imagesloaded: '../lib/jquery.imagesloaded-2.1.1',
 
         // common directories, uppercase names to identify them in require imports
-        PHETCOMMON: '../../phetcommon/js',
-        SCENERY: '../../scenery/js',
-        KITE: '../../kite/js',
-        PHET_CORE: '../../phet-core/js',
-        DOT: '../../dot/js',
         ASSERT: '../../assert/js',
         AXON: '../../axon/js',
+        DOT: '../../dot/js',
+        JOIST: '../../joist/js',
+        KITE: '../../kite/js',
+        PHET_CORE: '../../phet-core/js',
+        PHETCOMMON: '../../phetcommon/js',
+        SCENERY: '../../scenery/js',
         SCENERY_PHET: '../../scenery-phet/js',
-        SUN: '../../sun/js',
-        JOIST: '../../joist/js'
+        SUN: '../../sun/js'
       },
 
       // Configure dependencies for 'browser globals' scripts that do not use RequireJS.
