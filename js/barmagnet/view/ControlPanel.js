@@ -50,7 +50,7 @@ define( function( require ) {
     PanelNode.call( this, content, options );
   }
 
-  inherit( ControlPanel, PanelNode );
+  inherit( PanelNode, ControlPanel );
 
   return ControlPanel;
 } );

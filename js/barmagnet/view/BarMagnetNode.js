@@ -57,7 +57,7 @@ define( function( require ) {
     } );
   }
 
-  inherit( BarMagnetNode, Node ); // prototype chaining
+  inherit( Node, BarMagnetNode ); // prototype chaining
 
   return BarMagnetNode;
 } );
