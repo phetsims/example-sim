@@ -12,5 +12,7 @@
  */
 define( function() {
   'use strict';
-  return {};
+  return {
+    imageNames: 'barMagnet.png'
+  };
 } );

@@ -20,7 +20,6 @@ require.config(
 
         // third-party libs
         i18n: '../lib/i18n-2.0.2',
-        imagesloaded: '../lib/jquery.imagesloaded-2.1.1',
 
         // common directories, uppercase names to identify them in require imports
         ASSERT: '../../assert/js',
