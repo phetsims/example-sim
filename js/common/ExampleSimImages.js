@@ -13,6 +13,6 @@
 define( function() {
   'use strict';
   return {
-    imageNames: 'barMagnet.png'
+    imageNames: [ 'barMagnet.png' ]
   };
 } );
