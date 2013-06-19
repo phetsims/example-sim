@@ -1,3 +1,4 @@
+6/19/13 upgrade lodash, jQuery and require
 6/7/13 upgrade from lodash-1.0.0-rc3 to lodash-1.2.1, fixes Chrome "source URL declaration is deprecated" warning
 6/7/13 replace imagesloaded jquery plugin with PxLoader, integrate SimLauncher
 # 0.0.0-1 6/3/13
