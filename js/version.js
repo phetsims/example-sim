@@ -1,4 +1,4 @@
-// Copyright 2013, University of Colorado
+// Copyright 2002-2013, University of Colorado Boulder
 
 // Returns version identifier for the simulation.
 define( function( require ) {
