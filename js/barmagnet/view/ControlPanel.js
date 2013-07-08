@@ -14,7 +14,7 @@ define( function( require ) {
   var ExampleSimStrings = require( 'common/ExampleSimStrings' );
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PanelNode = require( 'SUN/PanelNode' );
+  var Panel = require( 'SUN/Panel' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -47,10 +47,10 @@ define( function( require ) {
     // The contents of the control panel
     var content = new VBox( {align: 'center', spacing: 10, children: [flipButton, resetAllButton] } );
 
-    PanelNode.call( this, content, options );
+    Panel.call( this, content, options );
   }
 
-  inherit( PanelNode, ControlPanel );
+  inherit( Panel, ControlPanel );
 
   return ControlPanel;
 } );
