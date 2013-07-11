@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * The "Example Sim" tab. Conforms to the contract specified in joist/Tab
+ * The 'Example Sim' tab. Conforms to the contract specified in joist/Tab
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

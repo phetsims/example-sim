@@ -26,7 +26,7 @@ define( function( require ) {
     Node.call( thisNode ); // supertype constructor
 
     // add the centered bar magnet image
-    thisNode.addChild( new Image( ExampleSimImages.getImage( "barMagnet.png" ),
+    thisNode.addChild( new Image( ExampleSimImages.getImage( 'barMagnet.png' ),
                                   { centerX: 0, centerY: 0 } ) );
 
     // scale it so it matches the model width and height

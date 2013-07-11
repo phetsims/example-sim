@@ -33,13 +33,13 @@ define( function( require ) {
                           lineWidth: 3 },
                         options );
 
-    // "Flip Polarity" button
+    // 'Flip Polarity' button
     var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( '20px Arial' ) } );
     var flipButton = new RectangleButton( flipLabel, function() {
       model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
     }, { rectangleXMargin: 10, rectangleFill: 'yellow' } );
 
-    // "Reset All" button, resets the sim to its initial state
+    // 'Reset All' button, resets the sim to its initial state
     var resetAllButton = new ResetAllButton( function() {
       model.reset();
     } );
