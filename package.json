@@ -13,7 +13,7 @@
   "name": "example-sim",
   "version": "0.0.0-2",
   "resourceDirs": "images",
-  "include": "../phetcommon/css/phetcommon.css ../phetcommon/js/util/check-assertions.js ../phetcommon/js/util/query-parameters.js",
+  "include": "../phetcommon/js/util/check-assertions.js ../phetcommon/js/util/query-parameters.js",
   "phetLibs": "example-sim assert dot joist kite phet-core phetcommon scenery scenery-phet sun",
   "license": "GPL",
   "devDependencies": {
