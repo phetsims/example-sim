@@ -14,9 +14,9 @@ define( function( require ) {
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
-  var RectangleButton = require( 'SUN/RectangleButton' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var TextButton = require( 'SUN/TextButton' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
@@ -27,17 +27,17 @@ define( function( require ) {
   function ControlPanel( model, options ) {
 
     // Demonstrate a common pattern for specifying options and providing default values.
-    options = _.extend( { xMargin: 10,
-                          yMargin: 10,
-                          stroke: 'orange',
-                          lineWidth: 3 },
-                        options );
+    options = _.extend( {
+        xMargin: 10,
+        yMargin: 10,
+        stroke: 'orange',
+        lineWidth: 3 },
+      options );
 
     // 'Flip Polarity' button
-    var flipLabel = new Text( ExampleSimStrings.flipPolarity, { font: new Font( '20px Arial' ) } );
-    var flipButton = new RectangleButton( flipLabel, function() {
+    var flipButton = new TextButton( ExampleSimStrings.flipPolarity, function() {
       model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
-    }, { rectangleXMargin: 10, rectangleFill: 'yellow' } );
+    }, { font: new Font( '20px Arial' ), rectangleXMargin: 10, rectangleFill: 'yellow' } );
 
     // 'Reset All' button, resets the sim to its initial state
     var resetAllButton = new ResetAllButton( function() {
