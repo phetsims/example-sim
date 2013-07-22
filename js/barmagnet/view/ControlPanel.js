@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // imports
+  var Color = require( 'SCENERY/util/Color' );
   var ExampleSimStrings = require( 'common/ExampleSimStrings' );
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -37,7 +38,11 @@ define( function( require ) {
     // 'Flip Polarity' button
     var flipButton = new TextButton( ExampleSimStrings.flipPolarity, function() {
       model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
-    }, { font: new Font( '20px Arial' ), rectangleXMargin: 10, rectangleFill: 'yellow' } );
+    }, {
+      font: new Font( '20px Arial' ),
+      rectangleXMargin: 10,
+      rectangleFillUp: new Color( 255, 255, 0 )
+    } );
 
     // 'Reset All' button, resets the sim to its initial state
     var resetAllButton = new ResetAllButton( function() {
