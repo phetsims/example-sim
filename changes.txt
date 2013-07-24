@@ -1,3 +1,4 @@
+7/24/13 add local copy of new ResetAllButton and associated images
 7/11/13 change double quotes (") to single quotes (') throughout
 6/19/13 upgrade lodash, jQuery and require
 6/7/13 upgrade from lodash-1.0.0-rc3 to lodash-1.2.1, fixes Chrome "source URL declaration is deprecated" warning

@@ -13,6 +13,12 @@
 define( function() {
   'use strict';
   return {
-    imageNames: [ 'barMagnet.png' ]
+    imageNames: [
+      'barMagnet.png',
+      'reset_button_disabled.png',
+      'reset_button_down.png',
+      'reset_button_over.png',
+      'reset_button_up.png'
+    ]
   };
 } );
