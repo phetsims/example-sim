@@ -13,8 +13,8 @@
   "name": "example-sim",
   "version": "0.0.0-2",
   "resourceDirs": "images",
-  "include": "../phetcommon/js/util/check-assertions.js ../phetcommon/js/util/query-parameters.js",
-  "phetLibs": "example-sim assert dot joist kite phet-core phetcommon scenery scenery-phet sun",
+  "phetLibs": "example-sim assert axon dot joist kite phet-core phetcommon scenery scenery-phet sun",
+  "preload": "lib/jquery-2.0.2.js lib/lodash-1.3.1.js lib/has.js lib/PxLoader.js lib/PxLoaderImage.js ../phetcommon/js/util/query-parameters.js ../phetcommon/js/util/check-assertions.js ../phetcommon/js/analytics/google-analytics.js",
   "license": "GPLv3",
   "devDependencies": {
     "grunt": "~0.4.1",
