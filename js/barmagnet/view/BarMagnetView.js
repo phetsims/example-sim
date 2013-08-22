@@ -11,12 +11,12 @@ define( function( require ) {
 
   // imports
   var BarMagnetNode = require( 'barmagnet/view/BarMagnetNode' );
-  var ControlPanel = require( 'barmagnet/view/ControlPanel' );
   var Bounds2 = require( 'DOT/Bounds2' );
+  var ControlPanel = require( 'barmagnet/view/ControlPanel' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var TabView = require( 'JOIST/TabView' );
+  var ScreenView = require( 'JOIST/ScreenView' );
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
@@ -25,7 +25,7 @@ define( function( require ) {
   function BarMagnetView( model ) {
 
     var thisView = this;
-    TabView.call( thisView );
+    ScreenView.call( thisView );
 
     // model-view transform
     var MVT_SCALE = 1;
@@ -36,7 +36,7 @@ define( function( require ) {
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
-  inherit( TabView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} ); // prototype chaining
+  inherit( ScreenView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} ); // prototype chaining
 
   return BarMagnetView;
 } );
