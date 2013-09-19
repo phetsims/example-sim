@@ -1,3 +1,4 @@
+9/19/13 changes required by merge of chipper 'single-file' branch into master
 8/22/13 joist#35, terminology change: tab -> screen
 7/24/13 add local copy of new ResetAllButton and associated images
 7/11/13 change double quotes (") to single quotes (') throughout

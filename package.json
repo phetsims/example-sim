@@ -1,24 +1,24 @@
 {
-  "/": [
-    "----------------------------------------------------------------------------------------------",
-    "This file is used by npm to store metadata for projects published as npm modules.",
-    "You will list grunt and the Grunt plugins your project needs as devDependencies in",
-    "this file. Running 'npm install' in the same folder as this file will install the",
-    "correct version of each dependency listed herein.",
-    "",
-    "This file is also used by the PhET build process, specifically the build.sh and lint.sh",
-    "scripts in the chipper repository.",
-    "----------------------------------------------------------------------------------------------"
-    ],
   "name": "example-sim",
   "version": "0.0.0-2",
   "resourceDirs": "images",
   "phetLibs": "example-sim assert axon dot joist kite phet-core phetcommon scenery scenery-phet sun",
   "preload": "../sherpa/jquery-2.0.3.js ../sherpa/lodash-2.0.0.js ../sherpa/has.js ../sherpa/PxLoader.js ../sherpa/PxLoaderImage.js ../phetcommon/js/util/query-parameters.js ../phetcommon/js/util/check-assertions.js ../phetcommon/js/analytics/google-analytics.js",
+  "images": [
+    "images/barMagnet.png",
+    "images/reset_button_disabled.png",
+    "images/reset_button_down.png",
+    "images/reset_button_over.png",
+    "images/reset_button_up.png"
+  ],
   "license": "GPLv3",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-requirejs": "~0.3.2",
-    "grunt-contrib-jshint": "~0.5.4"
+    "grunt-contrib-jshint": "~0.5.4",
+    "uglify-js": "~2.4.0",
+    "requirejs": "~2.1.8",
+    "esprima": "~1.0.4",
+    "escodegen": "~0.0.27"
   }
 }
