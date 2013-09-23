@@ -9,9 +9,9 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var BarMagnetModel = require( 'barmagnet/model/BarMagnetModel' );
-  var BarMagnetView = require( 'barmagnet/view/BarMagnetView' );
-  var ExampleSimStrings = require( 'common/ExampleSimStrings' );
+  var BarMagnetModel = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnetModel' );
+  var BarMagnetView = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetView' );
+  var ExampleSimStrings = require( 'EXAMPLE_SIM/common/ExampleSimStrings' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   function BarMagnetScreen() {

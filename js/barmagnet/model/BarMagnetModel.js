@@ -10,7 +10,7 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var BarMagnet = require( 'barmagnet/model/BarMagnet' );
+  var BarMagnet = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnet' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
 

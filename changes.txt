@@ -1,3 +1,5 @@
+9/23/13 convert to use chipper 'image' plug-in, and scenery-phet.ResetAllButton
+9/23/13 added EXAMPLE_SIM namespace to example-sim-config.js and all source files
 9/19/13 changes required by merge of chipper 'single-file' branch into master
 8/22/13 joist#35, terminology change: tab -> screen
 7/24/13 add local copy of new ResetAllButton and associated images

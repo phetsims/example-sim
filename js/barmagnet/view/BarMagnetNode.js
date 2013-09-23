@@ -10,11 +10,13 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var ExampleSimImages = require( 'common/ExampleSimImages' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+
+  // images
+  var barMagnetImage = require( 'image!EXAMPLE_SIM/../images/barMagnet.png' );
 
   /**
    * @param {BarMagnet} barMagnet
@@ -26,8 +28,7 @@ define( function( require ) {
     Node.call( thisNode ); // supertype constructor
 
     // add the centered bar magnet image
-    thisNode.addChild( new Image( ExampleSimImages.getImage( 'barMagnet.png' ),
-                                  { centerX: 0, centerY: 0 } ) );
+    thisNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
 
     // scale it so it matches the model width and height
     thisNode.scale( mvt.modelToViewDeltaX( barMagnet.size.width ) / this.width,

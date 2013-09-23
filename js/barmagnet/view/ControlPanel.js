@@ -11,11 +11,11 @@ define( function( require ) {
 
   // imports
   var Color = require( 'SCENERY/util/Color' );
-  var ExampleSimStrings = require( 'common/ExampleSimStrings' );
+  var ExampleSimStrings = require( 'EXAMPLE_SIM/common/ExampleSimStrings' );
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
-  var ResetAllButton = require( 'common/view/ResetAllButton' );
+  var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
   var Text = require( 'SCENERY/nodes/Text' );
   var TextButton = require( 'SUN/TextButton' );
   var VBox = require( 'SCENERY/nodes/VBox' );

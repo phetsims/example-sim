@@ -21,6 +21,9 @@ require.config(
       // third-party libs
       i18n: '../../sherpa/i18n-2.0.4',
 
+      // PhET plugins
+      image: '../../chipper/requirejs-plugins/image',
+
       // common directories, uppercase names to identify them in require imports
       ASSERT: '../../assert/js',
       AXON: '../../axon/js',
@@ -31,7 +34,10 @@ require.config(
       PHETCOMMON: '../../phetcommon/js',
       SCENERY: '../../scenery/js',
       SCENERY_PHET: '../../scenery-phet/js',
-      SUN: '../../sun/js'
+      SUN: '../../sun/js',
+
+      // this sim
+      EXAMPLE_SIM: '.'
     },
 
     // Configure dependencies for 'browser globals' scripts that do not use RequireJS.
