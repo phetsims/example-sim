@@ -10,7 +10,7 @@ require( ['JOIST/SimLauncher', 'JOIST/Sim', 'EXAMPLE_SIM/barmagnet/BarMagnetScre
   function( SimLauncher, Sim, BarMagnetScreen, ExampleSimStrings ) {
     'use strict';
 
-    SimLauncher.launch( {imageNames: []}, function() {
+    SimLauncher.launch( function() {
       var sim = new Sim( ExampleSimStrings.exampleSim, [ new BarMagnetScreen() ] );
       sim.start();
     } );
