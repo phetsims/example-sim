@@ -19,22 +19,21 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  // constants
-  var UNITY_WINDOW_SIZE = new Dimension2( 1024, 768 ); // At this window size, scaling is 1.
-
+  /**
+   * @param {BarMagnetModel} model
+   * @constructor
+   */
   function BarMagnetView( model ) {
 
     var thisView = this;
     ScreenView.call( thisView );
 
     // model-view transform
-    var MVT_SCALE = 1;
-    var MVT_OFFSET = new Vector2( UNITY_WINDOW_SIZE.width / 2, UNITY_WINDOW_SIZE.height / 2 );
-    var mvt = new ModelViewTransform2.createOffsetScaleMapping( MVT_OFFSET, MVT_SCALE );
+    var mvt = new ModelViewTransform2.createOffsetScaleMapping( new Vector2( thisView.layoutBounds.width / 2, thisView.layoutBounds.height / 2 ), 1 );
 
     thisView.addChild( new BarMagnetNode( model.barMagnet, mvt ) );
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
-  return inherit( ScreenView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} );
+  return inherit( ScreenView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} );
 } );
