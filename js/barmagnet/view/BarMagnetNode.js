@@ -32,20 +32,20 @@ define( function( require ) {
 
     // scale it so it matches the model width and height
     thisNode.scale( mvt.modelToViewDeltaX( barMagnet.size.width ) / this.width,
-                    mvt.modelToViewDeltaY( barMagnet.size.height ) / this.height );
+      mvt.modelToViewDeltaY( barMagnet.size.height ) / this.height );
 
     //When dragging, move the bar magnet
     thisNode.cursor = 'pointer';
     thisNode.addInputListener( new SimpleDragHandler(
-        {
-          //When dragging across it in a mobile device, pick it up
-          allowTouchSnag: true,
+      {
+        //When dragging across it in a mobile device, pick it up
+        allowTouchSnag: true,
 
-          //Translate on drag events
-          translate: function( args ) {
-            barMagnet.location.value = mvt.viewToModelPosition( args.position );
-          }
-        } ) );
+        //Translate on drag events
+        translate: function( args ) {
+          barMagnet.location.value = mvt.viewToModelPosition( args.position );
+        }
+      } ) );
 
     // Register for synchronization with model.
     barMagnet.location.link( function( location ) {
@@ -58,7 +58,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, BarMagnetNode ); // prototype chaining
-
-  return BarMagnetNode;
+  return inherit( Node, BarMagnetNode );
 } );

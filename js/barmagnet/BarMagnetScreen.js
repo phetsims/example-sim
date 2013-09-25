@@ -28,6 +28,5 @@ define( function( require ) {
     };
   }
 
-
   return BarMagnetScreen;
 } );

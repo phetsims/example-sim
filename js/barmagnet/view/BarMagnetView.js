@@ -36,7 +36,5 @@ define( function( require ) {
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
-  inherit( ScreenView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} ); // prototype chaining
-
-  return BarMagnetView;
+  return inherit( ScreenView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, UNITY_WINDOW_SIZE.width, UNITY_WINDOW_SIZE.height )} );
 } );

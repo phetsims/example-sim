@@ -55,7 +55,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  inherit( Panel, ControlPanel );
-
-  return ControlPanel;
+  return inherit( Panel, ControlPanel );
 } );

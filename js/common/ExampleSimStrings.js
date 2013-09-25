@@ -10,5 +10,5 @@
  */
 define( function( require ) {
   'use strict';
-   return require( 'i18n!EXAMPLE_SIM/../nls/example-sim-strings' );
+  return require( 'i18n!EXAMPLE_SIM/../nls/example-sim-strings' );
 } );
