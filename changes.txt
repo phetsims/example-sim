@@ -1,3 +1,5 @@
+9/25/13 move strings file to js/example-sim-strings.js, fix imports
+9/25/13 change BarMagnet to use PropertySet
 9/23/13 convert to use chipper 'image' plug-in, and scenery-phet.ResetAllButton
 9/23/13 added EXAMPLE_SIM namespace to example-sim-config.js and all source files
 9/19/13 changes required by merge of chipper 'single-file' branch into master
