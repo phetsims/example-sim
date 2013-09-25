@@ -11,11 +11,11 @@ define( function( require ) {
 
   // imports
   var Color = require( 'SCENERY/util/Color' );
-  var ExampleSimStrings = require( 'EXAMPLE_SIM/common/ExampleSimStrings' );
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
+  var strings = require( 'EXAMPLE_SIM/example-sim-strings' );
   var Text = require( 'SCENERY/nodes/Text' );
   var TextButton = require( 'SUN/TextButton' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -36,7 +36,7 @@ define( function( require ) {
       options );
 
     // 'Flip Polarity' button
-    var flipButton = new TextButton( ExampleSimStrings.flipPolarity, function() {
+    var flipButton = new TextButton( strings.flipPolarity, function() {
       model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
     }, {
       font: new Font( '20px Arial' ),
