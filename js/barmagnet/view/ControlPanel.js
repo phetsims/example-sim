@@ -37,7 +37,7 @@ define( function( require ) {
 
     // 'Flip Polarity' button
     var flipButton = new TextButton( ExampleSimStrings.flipPolarity, function() {
-      model.barMagnet.orientation.value = model.barMagnet.orientation.value + Math.PI;
+      model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
     }, {
       font: new Font( '20px Arial' ),
       rectangleXMargin: 10,

@@ -43,17 +43,17 @@ define( function( require ) {
 
         //Translate on drag events
         translate: function( args ) {
-          barMagnet.location.value = mvt.viewToModelPosition( args.position );
+          barMagnet.location = mvt.viewToModelPosition( args.position );
         }
       } ) );
 
     // Register for synchronization with model.
-    barMagnet.location.link( function( location ) {
+    barMagnet.locationProperty.link( function( location ) {
       thisNode.translation = mvt.modelToViewPosition( location );
     } );
 
     // Register for synchronization with model
-    barMagnet.orientation.link( function( orientation ) {
+    barMagnet.orientationProperty.link( function( orientation ) {
       thisNode.rotation = orientation;
     } );
   }

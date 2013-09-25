@@ -11,7 +11,8 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var Property = require( 'AXON/Property' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var PropertySet = require( 'AXON/PropertySet' );
 
   /**
    * @param {Vector2} location
@@ -19,19 +20,9 @@ define( function( require ) {
    * @param {Number} orientation in radians
    */
   function BarMagnet( location, size, orientation ) {
-    this.location = new Property( location );
+    PropertySet.call( this, { location: location, orientation: orientation } );
     this.size = size;
-    this.orientation = new Property( orientation );
   }
 
-  BarMagnet.prototype = {
-
-    // Resets all properties
-    reset: function() {
-      this.location.reset();
-      this.orientation.reset();
-    }
-  };
-
-  return BarMagnet;
+  return inherit( PropertySet, BarMagnet );
 } );
