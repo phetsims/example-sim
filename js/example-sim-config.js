@@ -40,11 +40,6 @@ require.config(
       EXAMPLE_SIM: '.'
     },
 
-    // Configure dependencies for 'browser globals' scripts that do not use RequireJS.
-    shim: {
-      jquery: { exports: '$' }
-    },
-
     config: {
       i18n: {
         locale: 'en_us' // change this to test other locales
