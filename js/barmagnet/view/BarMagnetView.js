@@ -13,7 +13,6 @@ define( function( require ) {
   var BarMagnetNode = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetNode' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var ControlPanel = require( 'EXAMPLE_SIM/barmagnet/view/ControlPanel' );
-  var Dimension2 = require( 'DOT/Dimension2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var ScreenView = require( 'JOIST/ScreenView' );

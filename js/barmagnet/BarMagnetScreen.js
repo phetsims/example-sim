@@ -11,7 +11,6 @@ define( function( require ) {
   // imports
   var BarMagnetModel = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnetModel' );
   var BarMagnetView = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetView' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var strings = require( 'EXAMPLE_SIM/example-sim-strings' );
 
   function BarMagnetScreen() {

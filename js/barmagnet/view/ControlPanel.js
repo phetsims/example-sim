@@ -16,7 +16,6 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
   var strings = require( 'EXAMPLE_SIM/example-sim-strings' );
-  var Text = require( 'SCENERY/nodes/Text' );
   var TextButton = require( 'SUN/TextButton' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
