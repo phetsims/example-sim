@@ -11,11 +11,13 @@ define( function( require ) {
   // imports
   var BarMagnetModel = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnetModel' );
   var BarMagnetView = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetView' );
-  var strings = require( 'EXAMPLE_SIM/example-sim-strings' );
+
+  // strings
+  var exampleSimString = require( 'string!EXAMPLE_SIM/exampleSim' );
 
   function BarMagnetScreen() {
 
-    this.name = strings.exampleSim;
+    this.name = exampleSimString;
     this.backgroundColor = 'rgb(50,50,50)'; // dark gray
 
     this.createModel = function() {

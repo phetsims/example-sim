@@ -1,3 +1,4 @@
+10/4/13 convert to use PhET string.js plugin
 9/25/13 move strings file to js/example-sim-strings.js, fix imports
 9/25/13 change BarMagnet to use PropertySet
 9/23/13 convert to use chipper 'image' plug-in, and scenery-phet.ResetAllButton

@@ -6,12 +6,12 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
  */
-require( ['JOIST/SimLauncher', 'JOIST/Sim', 'EXAMPLE_SIM/barmagnet/BarMagnetScreen', 'EXAMPLE_SIM/example-sim-strings' ],
-  function( SimLauncher, Sim, BarMagnetScreen, strings ) {
+require( ['JOIST/SimLauncher', 'JOIST/Sim', 'EXAMPLE_SIM/barmagnet/BarMagnetScreen', 'string!EXAMPLE_SIM/exampleSim' ],
+  function( SimLauncher, Sim, BarMagnetScreen, simTitle ) {
     'use strict';
 
     SimLauncher.launch( function() {
-      var sim = new Sim( strings.exampleSim, [ new BarMagnetScreen() ] );
+      var sim = new Sim( simTitle, [ new BarMagnetScreen() ] );
       sim.start();
     } );
   } );

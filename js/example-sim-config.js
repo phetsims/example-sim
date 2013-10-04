@@ -19,10 +19,12 @@ require.config(
     paths: {
 
       // third-party libs
+      text: '../../sherpa/text',
       i18n: '../../sherpa/i18n-2.0.4',
 
       // PhET plugins
       image: '../../chipper/requirejs-plugins/image',
+      string: '../../chipper/requirejs-plugins/string',
 
       // common directories, uppercase names to identify them in require imports
       ASSERT: '../../assert/js',
@@ -38,12 +40,6 @@ require.config(
 
       // this sim
       EXAMPLE_SIM: '.'
-    },
-
-    config: {
-      i18n: {
-        locale: 'en_us' // change this to test other locales
-      }
     },
 
     urlArgs: new Date().getTime()  // cache buster to make browser reload all included scripts
