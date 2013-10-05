@@ -20,7 +20,6 @@ require.config(
 
       // third-party libs
       text: '../../sherpa/text',
-      i18n: '../../sherpa/i18n-2.0.4',
 
       // PhET plugins
       image: '../../chipper/requirejs-plugins/image',
