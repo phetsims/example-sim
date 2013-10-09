@@ -16,7 +16,7 @@ define( function( require ) {
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   // images
-  var barMagnetImage = require( 'image!EXAMPLE_SIM/../images/barMagnet.png' );
+  var barMagnetImage = require( 'image!EXAMPLE_SIM/barMagnet.png' );
 
   /**
    * @param {BarMagnet} barMagnet
