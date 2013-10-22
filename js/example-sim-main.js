@@ -6,7 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
  */
-require( ['JOIST/SimLauncher', 'JOIST/Sim', 'EXAMPLE_SIM/barmagnet/BarMagnetScreen', 'string!EXAMPLE_SIM/exampleSim' ],
+require( ['JOIST/SimLauncher', 'JOIST/Sim', 'EXAMPLE_SIM/barmagnet/BarMagnetScreen', 'string!EXAMPLE_SIM/example-sim.name' ],
   function( SimLauncher, Sim, BarMagnetScreen, simTitle ) {
     'use strict';
 
