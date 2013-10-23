@@ -11,23 +11,19 @@ define( function( require ) {
   // imports
   var BarMagnetModel = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnetModel' );
   var BarMagnetView = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetView' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Screen = require( 'JOIST/Screen' );
 
   // strings
   var exampleSimString = require( 'string!EXAMPLE_SIM/exampleSim' );
 
   function BarMagnetScreen() {
-
-    this.name = exampleSimString;
-    this.backgroundColor = 'rgb(50,50,50)'; // dark gray
-
-    this.createModel = function() {
-      return new BarMagnetModel();
-    };
-
-    this.createView = function( model ) {
-      return new BarMagnetView( model );
-    };
+    Screen.call( this, exampleSimString, null /* no icon, single-screen sim */,
+      function() { return new BarMagnetModel(); },
+      function( model ) { return new BarMagnetView( model ); },
+      { backgroundColor: 'rgb(50,50,50)' }
+    );
   }
 
-  return BarMagnetScreen;
+  return inherit( Screen, BarMagnetScreen );
 } );
