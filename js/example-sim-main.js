@@ -6,12 +6,35 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
  */
-require( ['JOIST/SimLauncher', 'JOIST/Sim', 'EXAMPLE_SIM/barmagnet/BarMagnetScreen', 'string!EXAMPLE_SIM/example-sim.name' ],
-  function( SimLauncher, Sim, BarMagnetScreen, simTitle ) {
-    'use strict';
+define( function( require ) {
+  'use strict';
 
-    SimLauncher.launch( function() {
-      var sim = new Sim( simTitle, [ new BarMagnetScreen() ] );
-      sim.start();
-    } );
+  // imports
+  var SimLauncher = require( 'JOIST/SimLauncher' );
+  var Sim = require( 'JOIST/Sim' );
+  var BarMagnetScreen = require( 'EXAMPLE_SIM/barmagnet/BarMagnetScreen' );
+
+  // strings
+  var simTitle = require( 'string!EXAMPLE_SIM/example-sim.name' );
+
+  var simOptions = {
+    credits: 'PhET Development Team -\n' +
+             'Lead Design: Groucho\n' +
+             'Software Development: Harpo\n' +
+             'Design Team: Curly, Larry, Mo',
+    thanks: 'Thanks -\n' +
+            'Thanks to everyone who made this possible!'
+  };
+
+  // Appending '?dev' to the URL will enable developer-only features.
+  if ( window.phetcommon.getQueryParameter( 'dev' ) ) {
+    simOptions = _.extend( {
+      // add dev-specific options here
+    }, simOptions );
+  }
+
+  SimLauncher.launch( function() {
+    var sim = new Sim( simTitle, [ new BarMagnetScreen() ], simOptions );
+    sim.start();
   } );
+} );

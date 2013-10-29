@@ -1,3 +1,5 @@
+10/29/13 joist#69, convert to different requirejs style for main.js
+10/29/13 add sample credits and dev options to main.js
 10/4/13 convert to use PhET string.js plugin
 9/25/13 move strings file to js/example-sim-strings.js, fix imports
 9/25/13 change BarMagnet to use PropertySet
