@@ -10,9 +10,9 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var SimLauncher = require( 'JOIST/SimLauncher' );
-  var Sim = require( 'JOIST/Sim' );
   var BarMagnetScreen = require( 'EXAMPLE_SIM/barmagnet/BarMagnetScreen' );
+  var Sim = require( 'JOIST/Sim' );
+  var SimLauncher = require( 'JOIST/SimLauncher' );
 
   // strings
   var simTitle = require( 'string!EXAMPLE_SIM/example-sim.name' );
