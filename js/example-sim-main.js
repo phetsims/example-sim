@@ -19,9 +19,11 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
+      // all credits fields are optional
       leadDesign: 'Groucho',
       softwareDevelopment: 'Harpo',
       designTeam: 'Curly, Larry, Mo',
+      interviews: 'Wile E. Coyote',
       thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
     }
   };
