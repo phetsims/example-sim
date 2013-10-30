@@ -18,12 +18,12 @@ define( function( require ) {
   var simTitle = require( 'string!EXAMPLE_SIM/example-sim.name' );
 
   var simOptions = {
-    credits: 'PhET Development Team -\n' +
-             'Lead Design: Groucho\n' +
-             'Software Development: Harpo\n' +
-             'Design Team: Curly, Larry, Mo',
-    thanks: 'Thanks -\n' +
-            'Thanks to everyone who made this possible!'
+    credits: {
+      leadDesign: 'Groucho',
+      softwareDevelopment: 'Harpo',
+      designTeam: 'Curly, Larry, Mo',
+      thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
+    }
   };
 
   // Appending '?dev' to the URL will enable developer-only features.
