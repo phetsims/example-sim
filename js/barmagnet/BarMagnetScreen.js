@@ -15,7 +15,7 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
 
   // strings
-  var exampleSimString = require( 'string!EXAMPLE_SIM/exampleSim' );
+  var exampleSimString = require( 'string!EXAMPLE_SIM/example-sim.name' );
 
   function BarMagnetScreen() {
     Screen.call( this, exampleSimString, null /* no icon, single-screen sim */,
