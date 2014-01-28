@@ -26,7 +26,7 @@ define( function( require ) {
       this.barMagnet.reset();
     },
 
-    // Called by the animation loop
+    // Called by the animation loop. Optional, so if your model has no animation, you can omit this.
     step: function() {
       // Handle model animation here.
     }
