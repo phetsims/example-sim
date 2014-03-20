@@ -9,7 +9,22 @@ http://phet.colorado.edu/
 
 NOTE: This repository has dependencies on other repositories. Those repositories
 much be checked out as siblings to this repository in your directory structure.
-See package.json for a list of dependencies.
+See package.json for a list of dependencies.  Here is a list of clone commands
+you can run to check out all of the dependencies:
+```
+git clone https://github.com/phetsims/example-sim.git
+git clone https://github.com/phetsims/assert.git
+git clone https://github.com/phetsims/axon.git
+git clone https://github.com/phetsims/dot.git
+git clone https://github.com/phetsims/joist.git
+git clone https://github.com/phetsims/kite.git
+git clone https://github.com/phetsims/phet-core.git
+git clone https://github.com/phetsims/phetcommon.git
+git clone https://github.com/phetsims/scenery.git
+git clone https://github.com/phetsims/scenery-phet.git
+git clone https://github.com/phetsims/sun.git
+git clone https://github.com/phetsims/sherpa.git
+```
 
 Third-Party Dependencies
 =============
