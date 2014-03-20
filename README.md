@@ -10,7 +10,7 @@ http://phet.colorado.edu/
 NOTE: This repository has dependencies on other repositories. Those repositories
 much be checked out as siblings to this repository in your directory structure.
 See package.json for a list of dependencies.  Here is a list of clone commands
-you can run to check out this example sim all of the dependencies:
+you can run to check out this example sim and all of its dependencies:
 ```
 git clone https://github.com/phetsims/example-sim.git
 git clone https://github.com/phetsims/assert.git
