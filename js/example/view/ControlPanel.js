@@ -46,7 +46,6 @@ define( function( require ) {
 
     // 'Reset All' button, resets the sim to its initial state
     var resetAllButton = new ResetAllButton( function() {
-      console.log( "resetall" );//XXX
       model.reset();
     } );
 
