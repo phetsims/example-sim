@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Model for the 'Bar Magnet' screen.
+ * Model for the 'Example' screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -10,16 +10,16 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var BarMagnet = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnet' );
+  var BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  function BarMagnetModel() {
+  function ExampleModel() {
     // model elements
     this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 375, 75 ), 0 );
   }
 
-  BarMagnetModel.prototype = {
+  ExampleModel.prototype = {
 
     // Resets all model elements
     reset: function() {
@@ -32,5 +32,5 @@ define( function( require ) {
     }
   };
 
-  return BarMagnetModel;
+  return ExampleModel;
 } );

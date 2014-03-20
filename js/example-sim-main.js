@@ -10,7 +10,7 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var BarMagnetScreen = require( 'EXAMPLE_SIM/barmagnet/BarMagnetScreen' );
+  var ExampleScreen = require( 'EXAMPLE_SIM/example/ExampleScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
 
@@ -36,7 +36,7 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new BarMagnetScreen() ], simOptions );
+    var sim = new Sim( simTitle, [ new ExampleScreen() ], simOptions );
     sim.start();
   } );
 } );

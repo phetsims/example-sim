@@ -9,21 +9,21 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var BarMagnetModel = require( 'EXAMPLE_SIM/barmagnet/model/BarMagnetModel' );
-  var BarMagnetView = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetView' );
+  var ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
+  var ExampleView = require( 'EXAMPLE_SIM/example/view/ExampleView' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
   // strings
   var exampleSimString = require( 'string!EXAMPLE_SIM/example-sim.name' );
 
-  function BarMagnetScreen() {
+  function ExampleScreen() {
     Screen.call( this, exampleSimString, null /* no icon, single-screen sim */,
-      function() { return new BarMagnetModel(); },
-      function( model ) { return new BarMagnetView( model ); },
+      function() { return new ExampleModel(); },
+      function( model ) { return new ExampleView( model ); },
       { backgroundColor: 'rgb(50,50,50)' }
     );
   }
 
-  return inherit( Screen, BarMagnetScreen );
+  return inherit( Screen, ExampleScreen );
 } );

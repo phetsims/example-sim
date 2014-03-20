@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * View for the 'Bar Magnet' tab.
+ * View for the 'Example' screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -10,9 +10,9 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var BarMagnetNode = require( 'EXAMPLE_SIM/barmagnet/view/BarMagnetNode' );
+  var BarMagnetNode = require( 'EXAMPLE_SIM/example/view/BarMagnetNode' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var ControlPanel = require( 'EXAMPLE_SIM/barmagnet/view/ControlPanel' );
+  var ControlPanel = require( 'EXAMPLE_SIM/example/view/ControlPanel' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -22,7 +22,7 @@ define( function( require ) {
    * @param {BarMagnetModel} model
    * @constructor
    */
-  function BarMagnetView( model ) {
+  function ExampleView( model ) {
 
     var thisView = this;
     ScreenView.call( thisView );
@@ -34,5 +34,5 @@ define( function( require ) {
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
-  return inherit( ScreenView, BarMagnetView, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} );
+  return inherit( ScreenView, ExampleView, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} );
 } );
