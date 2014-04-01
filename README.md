@@ -15,6 +15,7 @@ you can run to check out this example sim and all of its dependencies:
 git clone https://github.com/phetsims/example-sim.git
 git clone https://github.com/phetsims/assert.git
 git clone https://github.com/phetsims/axon.git
+git clone https://github.com/phetsims/chipper.git
 git clone https://github.com/phetsims/dot.git
 git clone https://github.com/phetsims/joist.git
 git clone https://github.com/phetsims/kite.git
