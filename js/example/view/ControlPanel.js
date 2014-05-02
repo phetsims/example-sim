@@ -14,7 +14,7 @@ define( function( require ) {
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
-  var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
+  var ResetAllButtonDeprecated = require( 'SCENERY_PHET/ResetAllButtonDeprecated' );
   var TextPushButton = require( 'SUN/TextPushButton' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -45,7 +45,7 @@ define( function( require ) {
     } );
 
     // 'Reset All' button, resets the sim to its initial state
-    var resetAllButton = new ResetAllButton( function() {
+    var resetAllButton = new ResetAllButtonDeprecated( function() {
       model.reset();
     } );
 
