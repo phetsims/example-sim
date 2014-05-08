@@ -15,7 +15,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
-  var TextPushButton = require( 'SUN/TextPushButton' );
+  var TextPushButtonDeprecated = require( 'SUN/TextPushButtonDeprecated' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
@@ -37,7 +37,7 @@ define( function( require ) {
       options );
 
     // 'Flip Polarity' button
-    var flipButton = new TextPushButton( flipPolarityString, {
+    var flipButton = new TextPushButtonDeprecated( flipPolarityString, {
       listener: function() { model.barMagnet.orientation = model.barMagnet.orientation + Math.PI; },
       font: new Font( '20px Arial' ),
       rectangleXMargin: 10,
