@@ -9,7 +9,7 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var Color = require( 'SCENERY/util/Color' );
   var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -39,13 +39,13 @@ define( function( require ) {
     // 'Flip Polarity' button
     var flipButton = new TextPushButtonDeprecated( flipPolarityString, {
       listener: function() { model.barMagnet.orientation = model.barMagnet.orientation + Math.PI; },
-      font: new Font( '20px Arial' ),
+      font: new Font( '16px Arial' ),
       rectangleXMargin: 10,
       rectangleFillUp: new Color( 255, 255, 0 )
     } );
 
     // 'Reset All' button, resets the sim to its initial state
-    var resetAllButton = new ResetAllButton( { listener: function() { model.reset(); }, radius: 32 } );
+    var resetAllButton = new ResetAllButton( { listener: function() { model.reset(); }} );
 
     // The contents of the control panel
     var content = new VBox( {align: 'center', spacing: 10, children: [flipButton, resetAllButton] } );

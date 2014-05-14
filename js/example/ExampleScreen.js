@@ -8,7 +8,7 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
   var ExampleView = require( 'EXAMPLE_SIM/example/view/ExampleView' );
   var inherit = require( 'PHET_CORE/inherit' );

@@ -9,9 +9,8 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var BarMagnetNode = require( 'EXAMPLE_SIM/example/view/BarMagnetNode' );
-  var Bounds2 = require( 'DOT/Bounds2' );
   var ControlPanel = require( 'EXAMPLE_SIM/example/view/ControlPanel' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
@@ -34,5 +33,5 @@ define( function( require ) {
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
-  return inherit( ScreenView, ExampleView, {layoutBounds: new Bounds2( 0, 0, 1024, 768 )} );
+  return inherit( ScreenView, ExampleView );
 } );

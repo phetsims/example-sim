@@ -9,7 +9,7 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -25,17 +25,22 @@ define( function( require ) {
   function BarMagnetNode( barMagnet, mvt ) {
 
     var thisNode = this;
-    Node.call( thisNode ); // supertype constructor
+
+    // supertype constructor
+    Node.call( thisNode, {
+
+      //Show a cursor hand over the bar magnet
+      cursor: 'pointer'
+    } );
 
     // add the centered bar magnet image
     thisNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
 
     // scale it so it matches the model width and height
     thisNode.scale( mvt.modelToViewDeltaX( barMagnet.size.width ) / this.width,
-      mvt.modelToViewDeltaY( barMagnet.size.height ) / this.height );
+        mvt.modelToViewDeltaY( barMagnet.size.height ) / this.height );
 
     //When dragging, move the bar magnet
-    thisNode.cursor = 'pointer';
     thisNode.addInputListener( new SimpleDragHandler(
       {
         //When dragging across it in a mobile device, pick it up

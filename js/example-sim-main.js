@@ -9,7 +9,7 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var ExampleScreen = require( 'EXAMPLE_SIM/example/ExampleScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -19,6 +19,7 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
+
       // all credits fields are optional
       leadDesign: 'Groucho',
       softwareDevelopment: 'Harpo',
