@@ -1,3 +1,4 @@
+5/16/14 replace sun.TextPushButtonDeprecated with sun.RectangularPushButton
 3/20/14 rename some things to fix confusion with 'BarMagnet' screen
 10/29/13 joist#69, convert to different requirejs style for main.js
 10/29/13 add sample credits and dev options to main.js

@@ -15,7 +15,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
-  var TextPushButtonDeprecated = require( 'SUN/TextPushButtonDeprecated' );
+  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
@@ -37,11 +38,10 @@ define( function( require ) {
       options );
 
     // 'Flip Polarity' button
-    var flipButton = new TextPushButtonDeprecated( flipPolarityString, {
-      listener: function() { model.barMagnet.orientation = model.barMagnet.orientation + Math.PI; },
-      font: new Font( '16px Arial' ),
-      rectangleXMargin: 10,
-      rectangleFillUp: new Color( 255, 255, 0 )
+    var flipButton = new RectangularPushButton( {
+      content: new Text( flipPolarityString, { font: new Font( '16px Arial' ) } ),
+      baseColor: 'yellow',
+      listener: function() { model.barMagnet.orientation = model.barMagnet.orientation + Math.PI; }
     } );
 
     // 'Reset All' button, resets the sim to its initial state
