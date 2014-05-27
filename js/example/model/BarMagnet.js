@@ -15,6 +15,8 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
 
   /**
+   * Create a new bar magnet model.  The magnet has fixed size, and mutable location and orientation.
+   *
    * @param {Vector2} location the position of the bar magnet in model coordinates
    * @param {Dimension2} size the size of the bar magnet in model coordinates
    * @param {Number} orientation in radians
