@@ -15,8 +15,8 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
 
   /**
-   * @param {Vector2} location
-   * @param {Dimension2} size
+   * @param {Vector2} location the position of the bar magnet in model coordinates
+   * @param {Dimension2} size the size of the bar magnet in model coordinates
    * @param {Number} orientation in radians
    */
   function BarMagnet( location, size, orientation ) {
