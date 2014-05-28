@@ -21,7 +21,7 @@ define( function( require ) {
    * @param {BarMagnetModel} model
    * @constructor
    */
-  function ExampleView( model ) {
+  function ExampleScreenView( model ) {
 
     var thisView = this;
     ScreenView.call( thisView );
@@ -33,5 +33,5 @@ define( function( require ) {
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
-  return inherit( ScreenView, ExampleView );
+  return inherit( ScreenView, ExampleScreenView );
 } );

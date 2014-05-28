@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
-  var ExampleView = require( 'EXAMPLE_SIM/example/view/ExampleView' );
+  var ExampleScreenView = require( 'EXAMPLE_SIM/example/view/ExampleScreenView' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
@@ -20,7 +20,7 @@ define( function( require ) {
   function ExampleScreen() {
     Screen.call( this, exampleSimString, null /* no icon, single-screen sim */,
       function() { return new ExampleModel(); },
-      function( model ) { return new ExampleView( model ); },
+      function( model ) { return new ExampleScreenView( model ); },
       { backgroundColor: 'rgb(50,50,50)' }
     );
   }
