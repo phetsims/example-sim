@@ -13,6 +13,7 @@ define( function( require ) {
   var BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
+  var inherit = require( 'PHET_CORE/inherit' );
 
   function ExampleModel() {
 
@@ -20,7 +21,7 @@ define( function( require ) {
     this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 375 * 0.7, 75 * 0.7 ), 0 );
   }
 
-  ExampleModel.prototype = {
+  return inherit( Object, ExampleModel, {
 
     // Resets all model elements
     reset: function() {
@@ -31,7 +32,5 @@ define( function( require ) {
     step: function() {
       // Handle model animation here.
     }
-  };
-
-  return ExampleModel;
+  } );
 } );
