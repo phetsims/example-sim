@@ -10,9 +10,9 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Font = require( 'SCENERY/util/Font' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -37,8 +37,9 @@ define( function( require ) {
 
     // 'Flip Polarity' button
     var flipButton = new TextPushButton( flipPolarityString, {
-      font: new Font( '16px Arial' ),
+      font: new PhetFont( 16 ),
       baseColor: 'yellow',
+      xMargin: 10,
       listener: function() { model.barMagnet.orientation = model.barMagnet.orientation + Math.PI; }
     } );
 
