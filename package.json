@@ -4,6 +4,10 @@
   "phetLibs": "example-sim assert axon brand dot joist kite phet-core phetcommon scenery scenery-phet sun sherpa",
   "preload": "../sherpa/jquery-2.1.0.js ../sherpa/lodash-2.4.1.js ../sherpa/has.js ../sherpa/FileSaver.js ../phetcommon/js/util/query-parameters.js ../phetcommon/js/util/check-assertions.js ../phetcommon/js/analytics/google-analytics.js",
   "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phetsims/example-sim.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-requirejs": "~0.4.0",
