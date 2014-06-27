@@ -27,9 +27,9 @@ define( function( require ) {
     ScreenView.call( thisView );
 
     // model-view transform
-    var mvt = ModelViewTransform2.createOffsetScaleMapping( new Vector2( thisView.layoutBounds.width / 2, thisView.layoutBounds.height / 2 ), 1 );
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2( thisView.layoutBounds.width / 2, thisView.layoutBounds.height / 2 ), 1 );
 
-    thisView.addChild( new BarMagnetNode( model.barMagnet, mvt ) );
+    thisView.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
     thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 

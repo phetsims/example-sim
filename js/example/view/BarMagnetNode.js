@@ -20,9 +20,9 @@ define( function( require ) {
 
   /**
    * @param {BarMagnet} barMagnet
-   * @param {ModelViewTransform2} mvt
+   * @param {ModelViewTransform2} modelViewTransform
    */
-  function BarMagnetNode( barMagnet, mvt ) {
+  function BarMagnetNode( barMagnet, modelViewTransform ) {
 
     var thisNode = this;
 
@@ -37,8 +37,8 @@ define( function( require ) {
     thisNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
 
     // scale it so it matches the model width and height
-    thisNode.scale( mvt.modelToViewDeltaX( barMagnet.size.width ) / this.width,
-        mvt.modelToViewDeltaY( barMagnet.size.height ) / this.height );
+    thisNode.scale( modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width,
+        modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height );
 
     //When dragging, move the bar magnet
     thisNode.addInputListener( new SimpleDragHandler(
@@ -48,13 +48,13 @@ define( function( require ) {
 
         //Translate on drag events
         translate: function( args ) {
-          barMagnet.location = mvt.viewToModelPosition( args.position );
+          barMagnet.location = modelViewTransform.viewToModelPosition( args.position );
         }
       } ) );
 
     // Register for synchronization with model.
     barMagnet.locationProperty.link( function( location ) {
-      thisNode.translation = mvt.modelToViewPosition( location );
+      thisNode.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
     // Register for synchronization with model
