@@ -15,6 +15,10 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var inherit = require( 'PHET_CORE/inherit' );
 
+  /**
+   * Main constructor for ExampleModel, which creates the bar magnet..
+   * @constructor
+   */
   function ExampleModel() {
 
     // model elements

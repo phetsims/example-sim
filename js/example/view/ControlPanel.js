@@ -21,8 +21,9 @@ define( function( require ) {
   var flipPolarityString = require( 'string!EXAMPLE_SIM/flipPolarity' );
 
   /**
-   * @param {BarMagnetModel} model
-   * @param {*} options
+   * Control panel constructor
+   * @param {BarMagnetModel} model the entire model for the bar magnet screen
+   * @param {*} options scenery options for rendering the control panel, see the constructor for options.
    * @constructor
    */
   function ControlPanel( model, options ) {

@@ -19,29 +19,31 @@ define( function( require ) {
   var barMagnetImage = require( 'image!EXAMPLE_SIM/barMagnet.png' );
 
   /**
-   * @param {BarMagnet} barMagnet
-   * @param {ModelViewTransform2} modelViewTransform
+   * Constructor for the BarMagnetNode which renders the bar magnet as a scenery node.
+   * @param {BarMagnet} barMagnet the model of the bar magnet
+   * @param {ModelViewTransform2} modelViewTransform the coordinate transform between model coordinates and view coordinates
+   * @constructor
    */
   function BarMagnetNode( barMagnet, modelViewTransform ) {
 
-    var thisNode = this;
+    var barMagnetNode = this;
 
     // supertype constructor
-    Node.call( thisNode, {
+    Node.call( barMagnetNode, {
 
       //Show a cursor hand over the bar magnet
       cursor: 'pointer'
     } );
 
     // add the centered bar magnet image
-    thisNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
+    barMagnetNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
 
     // scale it so it matches the model width and height
-    thisNode.scale( modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width,
+    barMagnetNode.scale( modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width,
         modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height );
 
     //When dragging, move the bar magnet
-    thisNode.addInputListener( new SimpleDragHandler(
+    barMagnetNode.addInputListener( new SimpleDragHandler(
       {
         //When dragging across it in a mobile device, pick it up
         allowTouchSnag: true,
@@ -54,12 +56,12 @@ define( function( require ) {
 
     // Register for synchronization with model.
     barMagnet.locationProperty.link( function( location ) {
-      thisNode.translation = modelViewTransform.modelToViewPosition( location );
+      barMagnetNode.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
     // Register for synchronization with model
     barMagnet.orientationProperty.link( function( orientation ) {
-      thisNode.rotation = orientation;
+      barMagnetNode.rotation = orientation;
     } );
   }
 

@@ -18,19 +18,20 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * @param {BarMagnetModel} model
+   * Constructor for the ExampleScreenView, it creates the bar magnet node and control panel node.
+   * @param {BarMagnetModel} model the model for the entire screen
    * @constructor
    */
   function ExampleScreenView( model ) {
 
-    var thisView = this;
-    ScreenView.call( thisView );
+    var exampleScreenView = this;
+    ScreenView.call( exampleScreenView );
 
     // model-view transform
-    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2( thisView.layoutBounds.width / 2, thisView.layoutBounds.height / 2 ), 1 );
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2( exampleScreenView.layoutBounds.width / 2, exampleScreenView.layoutBounds.height / 2 ), 1 );
 
-    thisView.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
-    thisView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
+    exampleScreenView.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
+    exampleScreenView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
   }
 
   return inherit( ScreenView, ExampleScreenView );

@@ -17,6 +17,10 @@ define( function( require ) {
   // strings
   var exampleSimString = require( 'string!EXAMPLE_SIM/example-sim.name' );
 
+  /**
+   * Creates the model and view for the ExampleScreen
+   * @constructor
+   */
   function ExampleScreen() {
     Screen.call( this, exampleSimString, null /* no icon, single-screen sim */,
       function() { return new ExampleModel(); },
