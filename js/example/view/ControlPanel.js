@@ -33,7 +33,8 @@ define( function( require ) {
         xMargin: 10,
         yMargin: 10,
         stroke: 'orange',
-        lineWidth: 3 },
+        lineWidth: 3
+      },
       options );
 
     // 'Flip Polarity' button
@@ -41,7 +42,9 @@ define( function( require ) {
       font: new PhetFont( 16 ),
       baseColor: 'yellow',
       xMargin: 10,
-      listener: function() { model.barMagnet.orientation = model.barMagnet.orientation + Math.PI; }
+      listener: function() {
+        model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
+      }
     } );
 
     // 'Reset All' button, resets the sim to its initial state

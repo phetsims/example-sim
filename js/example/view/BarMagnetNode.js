@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * View for the bar magnet object.
+ * View for the bar magnet object, which can be dragged to translate.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -28,27 +28,27 @@ define( function( require ) {
 
     var barMagnetNode = this;
 
-    // supertype constructor
+    // Call the super constructor
     Node.call( barMagnetNode, {
 
-      //Show a cursor hand over the bar magnet
+      // Show a cursor hand over the bar magnet
       cursor: 'pointer'
     } );
 
-    // add the centered bar magnet image
+    // Add the centered bar magnet image
     barMagnetNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
 
-    // scale it so it matches the model width and height
+    // Scale it so it matches the model width and height
     barMagnetNode.scale( modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width,
         modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height );
 
-    //When dragging, move the bar magnet
+    // When dragging, move the bar magnet
     barMagnetNode.addInputListener( new SimpleDragHandler(
       {
-        //When dragging across it in a mobile device, pick it up
+        // When dragging across it in a mobile device, pick it up
         allowTouchSnag: true,
 
-        //Translate on drag events
+        // Translate on drag events
         translate: function( args ) {
           barMagnet.location = modelViewTransform.viewToModelPosition( args.position );
         }

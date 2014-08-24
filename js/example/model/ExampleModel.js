@@ -22,7 +22,7 @@ define( function( require ) {
   function ExampleModel() {
 
     // model elements
-    this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 375 * 0.7, 75 * 0.7 ), 0 );
+    this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 262.5, 52.5 ), 0 );
   }
 
   return inherit( Object, ExampleModel, {
