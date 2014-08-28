@@ -23,7 +23,7 @@ define( function( require ) {
       // all credits fields are optional
       leadDesign: 'Groucho',
       softwareDevelopment: 'Harpo',
-      designTeam: 'Curly, Larry, Mo',
+      designTeam: 'Curly, Larry, Moe',
       interviews: 'Wile E. Coyote',
       thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
     }
