@@ -23,7 +23,7 @@ define( function( require ) {
   /**
    * Control panel constructor
    * @param {BarMagnetModel} model the entire model for the bar magnet screen
-   * @param {Object} options scenery options for rendering the control panel, see the constructor for options.
+   * @param {Object} [options] scenery options for rendering the control panel, see the constructor for options.
    * @constructor
    */
   function ControlPanel( model, options ) {
