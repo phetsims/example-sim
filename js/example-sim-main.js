@@ -19,12 +19,12 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
-
-      // all credits fields are optional
-      leadDesign: 'Groucho',
-      softwareDevelopment: 'Harpo',
-      designTeam: 'Curly, Larry, Moe',
-      interviews: 'Wile E. Coyote',
+      // all credits fields are optional, see joist.AboutDialog
+      leadDesign: 'Boris',
+      softwareDevelopment: 'Natasha',
+      team: 'Groucho, Chico, Harpo, Gummo, Zeppo',
+      qualityAssurance: 'Curly, Larry, Moe',
+      graphicArts: 'Rembrandt Harmenszoon van Rijn',
       thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
     }
   };
