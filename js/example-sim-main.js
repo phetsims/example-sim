@@ -22,7 +22,7 @@ define( function( require ) {
       // all credits fields are optional, see joist.AboutDialog
       leadDesign: 'Boris',
       softwareDevelopment: 'Natasha',
-      team: 'Groucho, Chico, Harpo, Gummo, Zeppo',
+      team: 'Chico, Groucho, Gummo, Harpo, Zeppo',
       qualityAssurance: 'Curly, Larry, Moe',
       graphicArts: 'Rembrandt Harmenszoon van Rijn',
       thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
