@@ -16,7 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   * Main constructor for ExampleModel, which creates the bar magnet..
+   * Main constructor for ExampleModel, which creates the bar magnet.
    * @constructor
    */
   function ExampleModel() {

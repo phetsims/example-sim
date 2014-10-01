@@ -19,7 +19,7 @@ define( function( require ) {
    *
    * @param {Vector2} location the position of the bar magnet in model coordinates
    * @param {Dimension2} size the size of the bar magnet in model coordinates
-   * @param {Number} orientation in radians
+   * @param {number} orientation in radians
    * @constructor
    */
   function BarMagnet( location, size, orientation ) {
