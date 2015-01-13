@@ -48,10 +48,10 @@ define( function( require ) {
     } );
 
     // 'Reset All' button, resets the sim to its initial state
-    var resetAllButton = new ResetAllButton( { listener: function() { model.reset(); }} );
+    var resetAllButton = new ResetAllButton( { listener: function() { model.reset(); } } );
 
     // The contents of the control panel
-    var content = new VBox( {align: 'center', spacing: 10, children: [flipButton, resetAllButton] } );
+    var content = new VBox( { align: 'center', spacing: 10, children: [ flipButton, resetAllButton ] } );
 
     Panel.call( this, content, options );
   }

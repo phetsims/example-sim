@@ -40,7 +40,7 @@ define( function( require ) {
 
     // Scale it so it matches the model width and height
     barMagnetNode.scale( modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width,
-        modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height );
+      modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height );
 
     // When dragging, move the bar magnet
     barMagnetNode.addInputListener( new SimpleDragHandler(
