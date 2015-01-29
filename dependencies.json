@@ -52,8 +52,8 @@
     "branch": "master"
   },
   "example-sim": {
-    "sha": "5144e83be8645f7f2679f97734543738fe089dc4",
+    "sha": "8b343c346f784f120a084a2721657fe05531d81d",
     "branch": "master"
   },
-  "comment": "# example-sim 1.0.0-dev.3 Thu Jan 29 2015 11:32:07 GMT-0700 (MST)"
+  "comment": "# example-sim 1.0.0-dev.4 Thu Jan 29 2015 11:33:21 GMT-0700 (MST)"
 }
