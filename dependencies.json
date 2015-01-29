@@ -1,6 +1,6 @@
 {
   "chipper": {
-    "sha": "8545eaa0deb580fe77aac8f95afd12e81425bdda",
+    "sha": "bdfb8e06a18eb8268cb732431ba048250fc90236",
     "branch": "master"
   },
   "sherpa": {
@@ -52,8 +52,8 @@
     "branch": "master"
   },
   "example-sim": {
-    "sha": "8b343c346f784f120a084a2721657fe05531d81d",
+    "sha": "1f402255bf3550e3a3f606d317756725b0592934",
     "branch": "master"
   },
-  "comment": "# example-sim 1.0.0-dev.4 Thu Jan 29 2015 11:33:21 GMT-0700 (MST)"
+  "comment": "# example-sim 1.0.0-dev.5 Thu Jan 29 2015 11:39:44 GMT-0700 (MST)"
 }
