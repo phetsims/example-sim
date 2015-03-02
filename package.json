@@ -1,7 +1,7 @@
 {
   "name": "example-sim",
   "version": "1.0.0-dev.5",
-  "phetLibs": "example-sim assert axon brand dot joist kite phet-core phetcommon scenery scenery-phet sun sherpa",
+  "phetLibs": "example-sim assert axon brand chipper dot joist kite phet-core phetcommon scenery scenery-phet sherpa sun",
   "preload": "../assert/js/assert.js ../sherpa/jquery-2.1.0.js ../sherpa/lodash-2.4.1.js ../sherpa/has.js ../sherpa/FileSaver.js ../chipper/js/initialize-globals.js ../phetcommon/js/analytics/google-analytics.js",
   "license": "GPLv3",
   "repository": {
