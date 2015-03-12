@@ -3,8 +3,31 @@
   "version": "1.0.0-dev.5",
   "license": "GPLv3",
   "simTitleStringKey": "EXAMPLE_SIM/example-sim.name",
-  "phetLibs": "example-sim assert axon brand chipper dot joist kite phet-core phetcommon scenery scenery-phet sherpa sun",
-  "preload": "../assert/js/assert.js ../sherpa/jquery-2.1.0.js ../sherpa/lodash-2.4.1.js ../sherpa/has.js ../sherpa/FileSaver.js ../chipper/js/initialize-globals.js ../phetcommon/js/analytics/google-analytics.js",
+  "phetLibs": [
+    "example-sim",
+    "assert",
+    "axon",
+    "brand",
+    "chipper",
+    "dot",
+    "joist",
+    "kite",
+    "phet-core",
+    "phetcommon",
+    "scenery",
+    "scenery-phet",
+    "sherpa",
+    "sun"
+  ],
+  "preload": [
+    "../assert/js/assert.js",
+    "../sherpa/jquery-2.1.0.js",
+    "../sherpa/lodash-2.4.1.js",
+    "../sherpa/has.js",
+    "../sherpa/FileSaver.js",
+    "../chipper/js/initialize-globals.js",
+    "../phetcommon/js/analytics/google-analytics.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/phetsims/example-sim.git"
