@@ -9,7 +9,7 @@ at the University of Colorado Boulder.
 ### Documentation
 The <a href="http://bit.ly/phet-development-overview" target="_blank">PhET Development Overview</a> is the most complete guide to PhET Simulation
 Development. This guide includes how to obtain simulation code and its dependencies, notes about architecture & design, how to test and build
-the sims, as well as other important issues.
+the sims, as well as other important information.
 
 ### License
 See the <a href="https://github.com/phetsims/example-sim/blob/master/LICENSE" target="_blank">LICENSE</a>
