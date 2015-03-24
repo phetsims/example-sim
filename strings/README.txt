@@ -1,1 +1,0 @@
-Localized string files, in JSON format.
