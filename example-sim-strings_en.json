@@ -1,0 +1,8 @@
+{
+  "example-sim.name": {
+    "value": "Example Simulation"
+  },
+  "flipPolarity": {
+    "value": "Flip Polarity"
+  }
+}
