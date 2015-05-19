@@ -4,21 +4,7 @@
   "license": "GPLv3",
   "simTitleStringKey": "EXAMPLE_SIM/example-sim.name",
   "phetLibs": [
-    "example-sim",
-    "assert",
-    "axon",
-    "babel",
-    "brand",
-    "chipper",
-    "dot",
-    "joist",
-    "kite",
-    "phet-core",
-    "phetcommon",
-    "scenery",
-    "scenery-phet",
-    "sherpa",
-    "sun"
+    "example-sim"
   ],
   "repository": {
     "type": "git",
