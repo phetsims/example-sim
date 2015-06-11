@@ -30,11 +30,6 @@ define( function( require ) {
     // Resets all model elements
     reset: function() {
       this.barMagnet.reset();
-    },
-
-    // Called by the animation loop. Optional, so if your model has no animation, you can omit this.
-    step: function() {
-      // Handle model animation here.
     }
   } );
 } );
