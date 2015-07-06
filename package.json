@@ -1,6 +1,6 @@
 {
   "name": "example-sim",
-  "version": "1.0.0-dev.7",
+  "version": "1.0.0-dev.8",
   "license": "GPLv3",
   "simTitleStringKey": "EXAMPLE_SIM/example-sim.name",
   "phetLibs": [
