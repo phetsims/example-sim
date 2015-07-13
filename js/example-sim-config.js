@@ -22,6 +22,7 @@ require.config( {
 
     // PhET plugins
     image: '../../chipper/js/requirejs-plugins/image',
+    mipmap: '../../chipper/js/requirejs-plugins/mipmap',
     string: '../../chipper/js/requirejs-plugins/string',
 
     // common directories, uppercase names to identify them in require imports
