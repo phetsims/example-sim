@@ -1,7 +1,7 @@
-Put image files in this directory. Each image must have an entry in license.txt.
-If this directory has subdirectories, each subdirectory mut have its own license.txt file.
+Put image files in this directory. Each image must have an entry in license.json.
+If this directory has subdirectories, each subdirectory mut have its own license.json file.
 
-In license.txt, each line consists of the image file name, followed by one or more of the following fields:
+In license.json, each line consists of the image file name, followed by one or more of the following fields:
 
   source - where you found the resource (organization, URL, etc.)
   author - person or organization that created the resource
