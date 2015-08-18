@@ -2,11 +2,6 @@
   "name": "example-sim",
   "version": "1.0.0-dev.8",
   "license": "GPLv3",
-  "requirejsNamespace": "EXAMPLE_SIM",
-  "simTitleStringKey": "EXAMPLE_SIM/example-sim.name",
-  "phetLibs": [
-    "example-sim"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/phetsims/example-sim.git"
@@ -17,5 +12,12 @@
     "grunt-contrib-jshint": "~0.6.4",
     "uglify-js": "~2.4.0",
     "requirejs": "~2.1.8"
+  },
+  "phet": {
+    "requirejsNamespace": "EXAMPLE_SIM",
+    "simTitleStringKey": "EXAMPLE_SIM/example-sim.name",
+    "phetLibs": [
+      "example-sim"
+    ]
   }
 }
