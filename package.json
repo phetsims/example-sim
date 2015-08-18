@@ -15,9 +15,6 @@
   },
   "phet": {
     "requirejsNamespace": "EXAMPLE_SIM",
-    "simTitleStringKey": "EXAMPLE_SIM/example-sim.name",
-    "phetLibs": [
-      "example-sim"
-    ]
+    "simTitleStringKey": "EXAMPLE_SIM/example-sim.name"
   }
 }
