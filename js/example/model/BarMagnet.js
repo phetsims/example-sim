@@ -23,7 +23,10 @@ define( function( require ) {
    * @constructor
    */
   function BarMagnet( location, size, orientation ) {
-    PropertySet.call( this, { location: location, orientation: orientation } );
+    PropertySet.call( this, {
+      location: location,
+      orientation: orientation
+    } );
     this.size = size;
   }
 

@@ -22,11 +22,11 @@ define( function( require ) {
 
   /**
    * Control panel constructor
-   * @param {BarMagnetModel} model the entire model for the bar magnet screen
+   * @param {BarMagnet} barMagnetModel the entire model for the bar magnet screen
    * @param {Object} [options] scenery options for rendering the control panel, see the constructor for options.
    * @constructor
    */
-  function ControlPanel( model, options ) {
+  function ControlPanel( barMagnetModel, options ) {
 
     // Demonstrate a common pattern for specifying options and providing default values.
     options = _.extend( {
@@ -43,15 +43,26 @@ define( function( require ) {
       baseColor: 'yellow',
       xMargin: 10,
       listener: function() {
-        model.barMagnet.orientation = model.barMagnet.orientation + Math.PI;
+        barMagnetModel.barMagnet.orientation = barMagnetModel.barMagnet.orientation + Math.PI;
       }
     } );
 
     // 'Reset All' button, resets the sim to its initial state
-    var resetAllButton = new ResetAllButton( { listener: function() { model.reset(); } } );
+    var resetAllButton = new ResetAllButton( {
+      listener: function() {
+        barMagnetModel.reset();
+      }
+    } );
 
     // The contents of the control panel
-    var content = new VBox( { align: 'center', spacing: 10, children: [ flipButton, resetAllButton ] } );
+    var content = new VBox( {
+      align: 'center',
+      spacing: 10,
+      children: [
+        flipButton,
+        resetAllButton
+      ]
+    } );
 
     Panel.call( this, content, options );
   }

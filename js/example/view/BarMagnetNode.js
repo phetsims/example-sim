@@ -36,30 +36,34 @@ define( function( require ) {
     } );
 
     // Add the centered bar magnet image
-    barMagnetNode.addChild( new Image( barMagnetImage, { centerX: 0, centerY: 0 } ) );
+    barMagnetNode.addChild( new Image( barMagnetImage, {
+      centerX: 0,
+      centerY: 0
+    } ) );
 
     // Scale it so it matches the model width and height
-    barMagnetNode.scale( modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width,
-      modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height );
+    var scaleX = modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width;
+    var scaleY = modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height;
+    barMagnetNode.scale( scaleX, scaleY );
 
     // When dragging, move the bar magnet
-    barMagnetNode.addInputListener( new SimpleDragHandler(
-      {
-        // When dragging across it in a mobile device, pick it up
-        allowTouchSnag: true,
+    barMagnetNode.addInputListener( new SimpleDragHandler( {
 
-        // Translate on drag events
-        translate: function( args ) {
-          barMagnet.location = modelViewTransform.viewToModelPosition( args.position );
-        }
-      } ) );
+      // When dragging across it in a mobile device, pick it up
+      allowTouchSnag: true,
 
-    // Register for synchronization with model.
+      // Translate on drag events
+      translate: function( args ) {
+        barMagnet.location = modelViewTransform.viewToModelPosition( args.position );
+      }
+    } ) );
+
+    // Observe changes in model location and update the view
     barMagnet.locationProperty.link( function( location ) {
       barMagnetNode.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
-    // Register for synchronization with model
+    // Observe changes in model orientation and update the view
     barMagnet.orientationProperty.link( function( orientation ) {
       barMagnetNode.rotation = orientation;
     } );

@@ -26,13 +26,19 @@ define( function( require ) {
   function ExampleScreenView( model ) {
 
     var exampleScreenView = this;
-    ScreenView.call( exampleScreenView, { layoutBounds: new Bounds2( 0, 0, 768, 504 ) } );
+    ScreenView.call( exampleScreenView, {
+      layoutBounds: new Bounds2( 0, 0, 768, 504 )
+    } );
 
     // model-view transform
-    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2( exampleScreenView.layoutBounds.width / 2, exampleScreenView.layoutBounds.height / 2 ), 1 );
+    var center = new Vector2( exampleScreenView.layoutBounds.width / 2, exampleScreenView.layoutBounds.height / 2 );
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( center, 1 );
 
     exampleScreenView.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
-    exampleScreenView.addChild( new ControlPanel( model, { x: 50, y: 50 } ) );
+    exampleScreenView.addChild( new ControlPanel( model, {
+      x: 50,
+      y: 50
+    } ) );
   }
 
   return inherit( ScreenView, ExampleScreenView );

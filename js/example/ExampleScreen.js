@@ -22,10 +22,18 @@ define( function( require ) {
    * @constructor
    */
   function ExampleScreen() {
-    Screen.call( this, exampleSimString, null /* no icon, single-screen sim */,
-      function() { return new ExampleModel(); },
-      function( model ) { return new ExampleScreenView( model ); },
-      { backgroundColor: 'rgb(50,50,50)' }
+
+    Screen.call( this,
+      exampleSimString,
+      null, // no icon is required for this single-screen simulation
+      function() {
+        return new ExampleModel();
+      },
+      function( model ) {
+        return new ExampleScreenView( model );
+      }, {
+        backgroundColor: 'rgb(50,50,50)'
+      }
     );
   }
 
