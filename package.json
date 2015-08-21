@@ -14,7 +14,6 @@
     "requirejs": "~2.1.8"
   },
   "phet": {
-    "requirejsNamespace": "EXAMPLE_SIM",
-    "simTitleStringKey": "EXAMPLE_SIM/example-sim.name"
+    "requirejsNamespace": "EXAMPLE_SIM"
   }
 }
