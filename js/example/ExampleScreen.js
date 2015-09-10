@@ -15,7 +15,7 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
 
   // strings
-  var exampleSimString = require( 'string!EXAMPLE_SIM/example-sim.name' );
+  var exampleSimString = require( 'string!EXAMPLE_SIM/example-sim.title' );
 
   /**
    * Creates the model and view for the ExampleScreen
