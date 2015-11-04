@@ -15,7 +15,7 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
 
   // strings
-  var exampleSimString = require( 'string!EXAMPLE_SIM/example-sim.title' );
+  var exampleSimTitleString = require( 'string!EXAMPLE_SIM/example-sim.title' );
 
   /**
    * Creates the model and view for the ExampleScreen
@@ -24,7 +24,7 @@ define( function( require ) {
   function ExampleScreen() {
 
     Screen.call( this,
-      exampleSimString,
+      exampleSimTitleString,
       null, // no icon is required for this single-screen simulation
       function() {
         return new ExampleModel();
