@@ -12,6 +12,7 @@ define( function( require ) {
   // modules
   var BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
   var Dimension2 = require( 'DOT/Dimension2' );
+  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var Vector2 = require( 'DOT/Vector2' );
   var inherit = require( 'PHET_CORE/inherit' );
 
@@ -24,6 +25,8 @@ define( function( require ) {
     // model elements
     this.barMagnet = new BarMagnet( new Vector2( 0, 0 ), new Dimension2( 262.5, 52.5 ), 0 );
   }
+
+  exampleSim.register( 'ExampleModel', ExampleModel );
 
   return inherit( Object, ExampleModel, {
 

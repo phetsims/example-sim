@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -68,6 +69,8 @@ define( function( require ) {
       barMagnetNode.rotation = orientation;
     } );
   }
+
+  exampleSim.register( 'BarMagnetNode', BarMagnetNode );
 
   return inherit( Node, BarMagnetNode );
 } );

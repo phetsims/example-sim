@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
   var ExampleScreenView = require( 'EXAMPLE_SIM/example/view/ExampleScreenView' );
+  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
@@ -36,6 +37,8 @@ define( function( require ) {
       }
     );
   }
+
+  exampleSim.register( 'ExampleScreen', ExampleScreen );
 
   return inherit( Screen, ExampleScreen );
 } );

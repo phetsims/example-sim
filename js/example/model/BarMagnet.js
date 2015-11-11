@@ -11,6 +11,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
 
@@ -29,6 +30,8 @@ define( function( require ) {
     } );
     this.size = size;
   }
+
+  exampleSim.register( 'BarMagnet', BarMagnet );
 
   return inherit( PropertySet, BarMagnet );
 } );

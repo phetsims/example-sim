@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -66,6 +67,8 @@ define( function( require ) {
 
     Panel.call( this, content, options );
   }
+
+  exampleSim.register( 'ControlPanel', ControlPanel );
 
   return inherit( Panel, ControlPanel );
 } );
