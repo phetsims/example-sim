@@ -24,7 +24,7 @@
     document.getElementById( 'splash' ).src = '../brand/' + brand + '/images/splash.svg';
 
     // Preloads, with more included for phet-io brands
-    var preloads = ( brand === 'phet-io' ) ? [ '../sherpa/lib/jquery-2.1.0.js', '../sherpa/lib/lodash-2.4.1.js', '../sherpa/lib/FileSaver-b8054a2.js', '../assert/js/assert.js', '../chipper/js/initialize-globals.js', '../sherpa/lib/jsondiffpatch-0.1.31.js', '../together/js/together.js', '../together/js/SimIFrameAPI.js', '../together/js/togetherEvents.js', '../together/js/datamite.js', '../together/js/api/TogetherCommon.js', '../together/js/api/example-sim-api.js', '../together/js/finishedPreloads.js' ] : [ '../sherpa/lib/jquery-2.1.0.js', '../sherpa/lib/lodash-2.4.1.js', '../sherpa/lib/FileSaver-b8054a2.js', '../assert/js/assert.js', '../chipper/js/initialize-globals.js' ];
+    var preloads = ( brand === 'phet-io' ) ? [ '../sherpa/lib/jquery-2.1.0.js', '../sherpa/lib/lodash-2.4.1.js', '../sherpa/lib/FileSaver-b8054a2.js', '../assert/js/assert.js', '../chipper/js/initialize-globals.js', '../sherpa/lib/jsondiffpatch-0.1.31.js', '../phet-io/js/together.js', '../phet-io/js/SimIFrameAPI.js', '../phet-io/js/togetherEvents.js', '../phet-io/js/datamite.js', '../phet-io/js/api/TogetherCommon.js', '../phet-io/js/api/example-sim-api.js', '../phet-io/js/finishedPreloads.js' ] : [ '../sherpa/lib/jquery-2.1.0.js', '../sherpa/lib/lodash-2.4.1.js', '../sherpa/lib/FileSaver-b8054a2.js', '../assert/js/assert.js', '../chipper/js/initialize-globals.js' ];
 
     // Loads a synchronously-executed asynchronously-downloaded script tag, with optional data-main parameter.
     // See http://www.html5rocks.com/en/tutorials/speed/script-loading/ for more about script loading. It helps to
@@ -45,7 +45,7 @@
     preloads.forEach( loadURL );
 
     // This code is a near-duplicate in phet-io-launch.js
-    // See https://github.com/phetsims/together/issues/181 for full details of the phet-io startup sequence
+    // See https://github.com/phetsims/phet-io/issues/181 for full details of the phet-io startup sequence
 
     // This function launches the simulation by running the main require.js code
     var launchSimulation = function() {
