@@ -59,8 +59,8 @@
       loadURL( '../sherpa/lib/require-2.1.11.js', 'js/example-sim-config.js' );
     };
 
-    // The ?phet-io-standalone query parameter will cause a phet-io simulation to launch, even without a wrapper "go-ahead" step
-    var standalone = window.location.search.slice( 1 ).split( '&' ).indexOf( 'phet-io-standalone' ) >= 0;
+    // The ?phet-io.standalone query parameter will cause a phet-io simulation to launch, even without a wrapper "go-ahead" step
+    var standalone = window.location.search.slice( 1 ).split( '&' ).indexOf( 'phet-io.standalone' ) >= 0;
 
     if ( brand !== 'phet-io' || standalone ) {
 
