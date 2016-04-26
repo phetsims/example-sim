@@ -23,8 +23,29 @@
     // Load the desired splash screen image
     document.getElementById( 'splash' ).src = '../brand/' + brand + '/images/splash.svg';
 
-    // Preloads, with more included for phet-io brands
-    var preloads = ( brand === 'phet-io' ) ? [ '../sherpa/lib/jquery-2.1.0.js', '../sherpa/lib/lodash-2.4.1.js', '../sherpa/lib/FileSaver-b8054a2.js', '../assert/js/assert.js', '../chipper/js/initialize-globals.js', '../sherpa/lib/seedrandom-2.4.2.js', '../sherpa/lib/jsondiffpatch-0.1.31.js', '../phet-io/js/phetio.js', '../phet-io/js/SimIFrameAPI.js', '../phet-io/js/phetioEvents.js', '../phet-io/js/datamite.js', '../phet-io/js/api/PhETIOCommon.js', '../phet-io/js/finishedPreloads.js' ] : [ '../sherpa/lib/jquery-2.1.0.js', '../sherpa/lib/lodash-2.4.1.js', '../sherpa/lib/FileSaver-b8054a2.js', '../assert/js/assert.js', '../chipper/js/initialize-globals.js', '../sherpa/lib/seedrandom-2.4.2.js' ];
+    // Preloads, with more included for phet-io brand
+    var preloads = ( brand === 'phet-io' ) ? [
+      '../sherpa/lib/jquery-2.1.0.js', 
+      '../sherpa/lib/lodash-2.4.1.js', 
+      '../sherpa/lib/FileSaver-b8054a2.js', 
+      '../assert/js/assert.js', 
+      '../chipper/js/initialize-globals.js', 
+      '../sherpa/lib/seedrandom-2.4.2.js', 
+      '../sherpa/lib/jsondiffpatch-0.1.31.js', 
+      '../phet-io/js/phetio.js', 
+      '../phet-io/js/SimIFrameAPI.js', 
+      '../phet-io/js/phetioEvents.js', 
+      '../phet-io/js/datamite.js', 
+      '../phet-io/js/api/PhETIOCommon.js', 
+      '../phet-io/js/finishedPreloads.js'
+    ] : [
+      '../sherpa/lib/jquery-2.1.0.js', 
+      '../sherpa/lib/lodash-2.4.1.js', 
+      '../sherpa/lib/FileSaver-b8054a2.js', 
+      '../assert/js/assert.js', 
+      '../chipper/js/initialize-globals.js', 
+      '../sherpa/lib/seedrandom-2.4.2.js'
+    ];
 
     // Loads a synchronously-executed asynchronously-downloaded script tag, with optional data-main parameter.
     // See http://www.html5rocks.com/en/tutorials/speed/script-loading/ for more about script loading. It helps to
