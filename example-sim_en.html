@@ -31,20 +31,16 @@
       '../assert/js/assert.js', 
       '../chipper/js/initialize-globals.js', 
       '../sherpa/lib/seedrandom-2.4.2.js', 
-      '../sherpa/lib/jsondiffpatch-0.1.31.js', 
-      '../phet-io/js/phetio.js', 
-      '../phet-io/js/SimIFrameAPI.js', 
-      '../phet-io/js/phetioEvents.js', 
-      '../phet-io/js/datamite.js', 
-      '../phet-io/js/api/PhETIOCommon.js', 
-      '../phet-io/js/finishedPreloads.js'
+      '../sherpa/lib/game-up-camera-1.0.0.js', 
+      '../sherpa/lib/jsondiffpatch-0.1.31.js'
     ] : [
       '../sherpa/lib/jquery-2.1.0.js', 
       '../sherpa/lib/lodash-2.4.1.js', 
       '../sherpa/lib/FileSaver-b8054a2.js', 
       '../assert/js/assert.js', 
       '../chipper/js/initialize-globals.js', 
-      '../sherpa/lib/seedrandom-2.4.2.js'
+      '../sherpa/lib/seedrandom-2.4.2.js', 
+      '../sherpa/lib/game-up-camera-1.0.0.js'
     ];
 
     // Loads a synchronously-executed asynchronously-downloaded script tag, with optional data-main parameter.
@@ -65,47 +61,7 @@
     // Queue all of the preloads to be loaded.
     preloads.forEach( loadURL );
 
-    // This code is a near-duplicate in phet-io-launch.js
-    // See https://github.com/phetsims/phet-io/issues/181 for full details of the phet-io startup sequence
-
-    // This function launches the simulation by running the main require.js code
-    var launchSimulation = function() {
-
-      // Clean up the global namespace, if we polluted it.
-      if ( window.phetLaunchSimulation ) {
-        delete window.phetLaunchSimulation;
-      }
-
-      // Load the main require.js code for the simulation.
-      loadURL( '../sherpa/lib/require-2.1.11.js', 'js/example-sim-config.js' );
-    };
-
-    // The ?phet-io.standalone query parameter will cause a phet-io simulation to launch, even without a wrapper "go-ahead" step
-    var standalone = window.location.search.slice( 1 ).split( '&' ).indexOf( 'phet-io.standalone' ) >= 0;
-
-    if ( brand !== 'phet-io' || standalone ) {
-
-      // Launch the simulation immediately
-      launchSimulation();
-    }
-    else {
-
-      // Wait for the wrapper to start up the sim, after it has finished pre-launch configuration.
-      // We cannot use the phet namespace yet since it does not yet exist.
-      if ( typeof window.phetLaunchSimulation !== 'undefined' ) {
-        throw new Error( 'window.phetLaunchSimulation was already defined' );
-      }
-      window.phetLaunchSimulation = launchSimulation;
-    }
-
-    // After phetLaunchSimulation has been assigned, start the rest of the launch sequence
-    // This calls onPhETiOInitialized
-    if ( brand === 'phet-io' ) {
-
-      // In phet-io requirejs mode, we must schedule the call to phetio.SimIFrameAPI.initialize() after
-      // all other preloads complete and after window.phetLaunchSimulation is assigned.
-      loadURL( '../phet-io/js/initializeSimIFrameAPI.js' );
-    }
+    loadURL( '../sherpa/lib/require-2.1.11.js', 'js/example-sim-config.js' );
   })();
 </script>
 </body>
