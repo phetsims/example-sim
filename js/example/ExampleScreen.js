@@ -15,9 +15,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
-  // strings
-  var exampleSimTitleString = require( 'string!EXAMPLE_SIM/example-sim.title' );
-
   /**
    * Creates the model and view for the ExampleScreen
    * @constructor
@@ -25,8 +22,6 @@ define( function( require ) {
   function ExampleScreen() {
 
     Screen.call( this,
-      exampleSimTitleString,
-      null, // no icon is required for this single-screen simulation
       function() {
         return new ExampleModel();
       },
