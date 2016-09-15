@@ -21,22 +21,21 @@ define( function( require ) {
 
   /**
    * Constructor for the ExampleScreenView, it creates the bar magnet node and control panel node.
-   * @param {BarMagnetModel} model the model for the entire screen
+   * @param {BarMagnet} model the model for the entire screen
    * @constructor
    */
   function ExampleScreenView( model ) {
 
-    var exampleScreenView = this;
-    ScreenView.call( exampleScreenView, {
+    ScreenView.call( this, {
       layoutBounds: new Bounds2( 0, 0, 768, 504 )
     } );
 
     // model-view transform
-    var center = new Vector2( exampleScreenView.layoutBounds.width / 2, exampleScreenView.layoutBounds.height / 2 );
+    var center = new Vector2( this.layoutBounds.width / 2, this.layoutBounds.height / 2 );
     var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( center, 1 );
 
-    exampleScreenView.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
-    exampleScreenView.addChild( new ControlPanel( model, {
+    this.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
+    this.addChild( new ControlPanel( model, {
       x: 50,
       y: 50
     } ) );

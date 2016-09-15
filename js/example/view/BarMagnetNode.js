@@ -27,17 +27,17 @@ define( function( require ) {
    */
   function BarMagnetNode( barMagnet, modelViewTransform ) {
 
-    var barMagnetNode = this;
+    var self = this;
 
     // Call the super constructor
-    Node.call( barMagnetNode, {
+    Node.call( this, {
 
       // Show a cursor hand over the bar magnet
       cursor: 'pointer'
     } );
 
     // Add the centered bar magnet image
-    barMagnetNode.addChild( new Image( barMagnetImage, {
+    this.addChild( new Image( barMagnetImage, {
       centerX: 0,
       centerY: 0
     } ) );
@@ -45,10 +45,10 @@ define( function( require ) {
     // Scale it so it matches the model width and height
     var scaleX = modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width;
     var scaleY = modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height;
-    barMagnetNode.scale( scaleX, scaleY );
+    this.scale( scaleX, scaleY );
 
     // When dragging, move the bar magnet
-    barMagnetNode.addInputListener( new SimpleDragHandler( {
+    this.addInputListener( new SimpleDragHandler( {
 
       // When dragging across it in a mobile device, pick it up
       allowTouchSnag: true,
@@ -61,12 +61,12 @@ define( function( require ) {
 
     // Observe changes in model location and update the view
     barMagnet.locationProperty.link( function( location ) {
-      barMagnetNode.translation = modelViewTransform.modelToViewPosition( location );
+      self.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
     // Observe changes in model orientation and update the view
     barMagnet.orientationProperty.link( function( orientation ) {
-      barMagnetNode.rotation = orientation;
+      self.rotation = orientation;
     } );
   }
 
