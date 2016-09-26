@@ -44,7 +44,8 @@ define( function( require ) {
       baseColor: 'yellow',
       xMargin: 10,
       listener: function() {
-        barMagnetModel.barMagnet.orientation = barMagnetModel.barMagnet.orientation + Math.PI;
+        var orientation = barMagnetModel.barMagnet.orientationProperty.get() + Math.PI;
+        barMagnetModel.barMagnet.orientationProperty.set( orientation );
       }
     } );
 

@@ -13,7 +13,7 @@ define( function( require ) {
   // modules
   var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
+  var Property = require( 'AXON/Property' );
 
   /**
    * Create a new bar magnet model.  The magnet has fixed size, and mutable location and orientation.
@@ -24,14 +24,19 @@ define( function( require ) {
    * @constructor
    */
   function BarMagnet( location, size, orientation ) {
-    PropertySet.call( this, {
-      location: location,
-      orientation: orientation
-    } );
     this.size = size;
+    this.locationProperty = new Property( location );
+    this.orientationProperty = new Property( orientation );
   }
 
   exampleSim.register( 'BarMagnet', BarMagnet );
 
-  return inherit( PropertySet, BarMagnet );
+  return inherit( Object, BarMagnet, {
+
+    // @public
+    reset: function() {
+      this.locationProperty.reset();
+      this.orientationProperty.reset();
+    }
+  } );
 } );

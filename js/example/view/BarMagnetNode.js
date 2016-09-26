@@ -55,7 +55,7 @@ define( function( require ) {
 
       // Translate on drag events
       translate: function( args ) {
-        barMagnet.location = modelViewTransform.viewToModelPosition( args.position );
+        barMagnet.locationProperty.set( modelViewTransform.viewToModelPosition( args.position ) );
       }
     } ) );
 
