@@ -12,6 +12,15 @@
   <title>Loading example-sim</title>
 </head>
 <body bgcolor="black">
+
+<!-- a11y - hidden until needed to prevent premature announcement -->
+<div id='aria-live-elements' hidden style="position: absolute; left: 0px; top: 0px; width: 0px; height: 0px; clip: rect(0px 0px 0px 0px); pointer-events: none;">
+  <p id="assertive" aria-live="assertive" aria-atomic="true"></p>
+  <p id="polite" aria-live="polite" aria-atomic="true"></p>
+  <p id="assertive-alert" aria-live="assertive" role="alert" aria-atomic="true"></p>
+  <p id="polite-status" aria-live="polite" role="status" aria-atomic="true"></p>
+</div>
+
 <img id="splash" style="position: absolute;top: 50%;left: 50%;margin-top: -210px;margin-left: -252px;">
 
 <script type="text/javascript">
@@ -29,18 +38,24 @@
       '../sherpa/lib/lodash-2.4.1.js', 
       '../sherpa/lib/FileSaver-b8054a2.js', 
       '../assert/js/assert.js', 
+      '../query-string-machine/js/QueryStringMachine.js', 
       '../chipper/js/initialize-globals.js', 
       '../sherpa/lib/seedrandom-2.4.2.js', 
       '../sherpa/lib/game-up-camera-1.0.0.js', 
+      '../sherpa/lib/base64-js-1.2.0.js', 
+      '../sherpa/lib/TextEncoderLite-3c9f6f0.js', 
       '../sherpa/lib/jsondiffpatch-0.1.31.js'
     ] : [
       '../sherpa/lib/jquery-2.1.0.js', 
       '../sherpa/lib/lodash-2.4.1.js', 
       '../sherpa/lib/FileSaver-b8054a2.js', 
       '../assert/js/assert.js', 
+      '../query-string-machine/js/QueryStringMachine.js', 
       '../chipper/js/initialize-globals.js', 
       '../sherpa/lib/seedrandom-2.4.2.js', 
-      '../sherpa/lib/game-up-camera-1.0.0.js'
+      '../sherpa/lib/game-up-camera-1.0.0.js', 
+      '../sherpa/lib/base64-js-1.2.0.js', 
+      '../sherpa/lib/TextEncoderLite-3c9f6f0.js'
     ];
 
     // Loads a synchronously-executed asynchronously-downloaded script tag, with optional data-main parameter.
