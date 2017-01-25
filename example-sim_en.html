@@ -46,21 +46,7 @@ The logo dimensions are given in splash.svg, currently at width="273.172px" heig
     document.getElementById( 'splash' ).src = '../brand/' + brand + '/images/splash.svg';
 
     // Preloads, with more included for phet-io brand
-    var preloads = ( brand === 'phet-io' ) ? [
-      '../sherpa/lib/jquery-2.1.0.js', 
-      '../sherpa/lib/lodash-2.4.1.js', 
-      '../sherpa/lib/FileSaver-b8054a2.js', 
-      '../assert/js/assert.js', 
-      '../query-string-machine/js/QueryStringMachine.js', 
-      '../chipper/js/initialize-globals.js', 
-      '../chipper/js/getVersionForBrand.js', 
-      '../sherpa/lib/seedrandom-2.4.2.js', 
-      '../sherpa/lib/game-up-camera-1.0.0.js', 
-      '../sherpa/lib/base64-js-1.2.0.js', 
-      '../sherpa/lib/TextEncoderLite-3c9f6f0.js', 
-      '../sherpa/lib/jsondiffpatch-0.1.31.js', 
-      '../phet-io/js/phetio-query-parameters.js'
-    ] : [
+    var preloads = [
       '../sherpa/lib/jquery-2.1.0.js', 
       '../sherpa/lib/lodash-2.4.1.js', 
       '../sherpa/lib/FileSaver-b8054a2.js', 
@@ -73,6 +59,13 @@ The logo dimensions are given in splash.svg, currently at width="273.172px" heig
       '../sherpa/lib/base64-js-1.2.0.js', 
       '../sherpa/lib/TextEncoderLite-3c9f6f0.js'
     ];
+
+    if ( brand === 'phet-io' ) {
+      preloads = preloads.concat( [
+      '../sherpa/lib/jsondiffpatch-0.1.31.js', 
+      '../phet-io/js/phetio-query-parameters.js'
+    ] );
+    }
 
     // Loads a synchronously-executed asynchronously-downloaded script tag, with optional data-main parameter.
     // See http://www.html5rocks.com/en/tutorials/speed/script-loading/ for more about script loading. It helps to
