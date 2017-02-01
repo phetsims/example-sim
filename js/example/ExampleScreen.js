@@ -13,9 +13,8 @@ define( function( require ) {
   var ExampleScreenView = require( 'EXAMPLE_SIM/example/view/ExampleScreenView' );
   var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Screen = require( 'JOIST/Screen' );
   var Property = require( 'AXON/Property' );
-  var Color = require( 'SCENERY/util/Color' );
+  var Screen = require( 'JOIST/Screen' );
 
   /**
    * Creates the model and view for the ExampleScreen
@@ -30,7 +29,7 @@ define( function( require ) {
       function( model ) {
         return new ExampleScreenView( model );
       }, {
-        backgroundColorProperty: new Property( Color.toColor( 'rgb(50,50,50)' ) )
+        backgroundColorProperty: new Property( 'rgb(50,50,50)' )
       }
     );
   }
