@@ -27,8 +27,12 @@ define( function( require ) {
     };
 
     Screen.call( this,
-      function() { return new ExampleModel(); },
-      function( model ) { return new ExampleScreenView( model ); },
+      function() {
+        return new ExampleModel();
+      },
+      function( model ) {
+        return new ExampleScreenView( model );
+      },
       options );
   }
 
