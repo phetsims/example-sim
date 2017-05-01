@@ -22,16 +22,14 @@ define( function( require ) {
    */
   function ExampleScreen() {
 
+    var options = {
+      backgroundColorProperty: new Property( 'rgb(50,50,50)' )
+    };
+
     Screen.call( this,
-      function() {
-        return new ExampleModel();
-      },
-      function( model ) {
-        return new ExampleScreenView( model );
-      }, {
-        backgroundColorProperty: new Property( 'rgb(50,50,50)' )
-      }
-    );
+      function() { return new ExampleModel(); },
+      function( model ) { return new ExampleScreenView( model ); },
+      options );
   }
 
   exampleSim.register( 'ExampleScreen', ExampleScreen );
