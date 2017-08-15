@@ -16,10 +16,10 @@
 
 <!-- a11y - aria-live attribute is used to send alerts and status updates to screen readers, otherwise invisible -->
 <div id='aria-live-elements' style="position: absolute; left: 0px; top: 0px; width: 0px; height: 0px; clip: rect(0px 0px 0px 0px); pointer-events: none;">
-  <p id="assertive" aria-live="assertive" aria-atomic="true"></p>
-  <p id="polite" aria-live="polite" aria-atomic="true"></p>
-  <p id="assertive-alert" aria-live="assertive" role="alert" aria-atomic="true"></p>
-  <p id="polite-status" aria-live="polite" role="status" aria-atomic="true"></p>
+  <p id="assertive" aria-live="assertive"></p>
+  <p id="polite" aria-live="polite"></p>
+  <p id="assertive-alert" aria-live="assertive" role="alert"></p>
+  <p id="polite-status" aria-live="polite" role="status"></p>
 </div>
 
 <!--
@@ -28,15 +28,6 @@ Additionally, move the entire image up by a bit.  This is done by changing the t
 
 The logo dimensions are given in splash.svg, currently at width="273.172px" height="130.05px"
 -->
-<img id="splash" style="position: absolute;top: 45%;left: 50%;margin-left: -137px;margin-top: -65px;">
-<div id="progressBar"
-     style="position:absolute;top:50%;left:50%;margin-left:-147px;margin-top:50px;width:273px;height:10px">
-  <svg>
-    <rect id="progressBarBackground" x="10" y="10" width="273" height="10" rx="3" ry="3"
-          style="stroke: white;stroke-width:1"></rect>
-    <rect id="progressBarForeground" x="10" y="10" width="0" height="10" rx="3" ry="3" style="fill:#6acef5;"></rect>
-  </svg>
-</div>
 
 <script type="text/javascript">
   ( function() {
@@ -44,11 +35,9 @@ The logo dimensions are given in splash.svg, currently at width="273.172px" heig
     var brandMatch = location.search.match( /brand=([^&]+)/ );
     var brand = brandMatch ? decodeURIComponent( brandMatch[ 1 ] ) : 'adapted-from-phet';
 
-    // Load the desired splash screen image
-    document.getElementById( 'splash' ).src = '../brand/' + brand + '/images/splash.svg';
-
     // Preloads, with more included for phet-io brand
     var preloads = [
+      '../joist/js/splash.js', 
       '../sherpa/lib/jquery-2.1.0.js', 
       '../sherpa/lib/lodash-4.17.4.js', 
       '../sherpa/lib/FileSaver-b8054a2.js', 
