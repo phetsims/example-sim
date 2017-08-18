@@ -22,15 +22,9 @@
   <p id="polite-status" aria-live="polite" role="status"></p>
 </div>
 
-<!--
-Subtract off half the image width and height to center it.
-Additionally, move the entire image up by a bit.  This is done by changing the top margin to be lower than 50%
-
-The logo dimensions are given in splash.svg, currently at width="273.172px" height="130.05px"
--->
-
 <script type="text/javascript">
   ( function() {
+
     // Identify the brand (assume generated brand if not provided with query parameters)
     var brandMatch = location.search.match( /brand=([^&]+)/ );
     var brand = brandMatch ? decodeURIComponent( brandMatch[ 1 ] ) : 'adapted-from-phet';
