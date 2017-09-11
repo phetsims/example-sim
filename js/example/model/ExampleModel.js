@@ -13,8 +13,8 @@ define( function( require ) {
   var BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var Vector2 = require( 'DOT/Vector2' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   /**
    * Main constructor for ExampleModel, which contains the bar magnet.
