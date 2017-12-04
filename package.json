@@ -10,6 +10,11 @@
     "grunt": "~1.0.0"
   },
   "phet": {
-    "requirejsNamespace": "EXAMPLE_SIM"
+    "requirejsNamespace": "EXAMPLE_SIM",
+    "runnable": true,
+    "supportedBrands": [
+      "phet"
+    ],
+    "simulation": true
   }
 }
