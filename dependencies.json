@@ -1,5 +1,5 @@
 {
-  "comment": "# example-sim 1.0.3-rc.4 Tue Jan 16 2018 10:59:31 GMT-0700 (Mountain Standard Time)",
+  "comment": "# example-sim 1.0.3-rc.5 Tue Jan 16 2018 11:05:04 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "example-sim": {
-    "sha": "d236ffc897ba9bd0de83b3d606adc98429a9964b",
+    "sha": "6f8f90cd9cd4ce4531e6dfccef9ba5fa6e3993bd",
     "branch": "1.0"
   },
   "joist": {
