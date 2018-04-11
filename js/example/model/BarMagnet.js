@@ -16,16 +16,22 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
 
   /**
-   * Create a new bar magnet model.  The magnet has fixed size, and mutable location and orientation.
+   * Create a new bar magnet model. The magnet has fixed size, and mutable location and orientation.
    *
-   * @param {Vector2} location the position of the bar magnet in model coordinates
-   * @param {Dimension2} size the size of the bar magnet in model coordinates
-   * @param {number} orientation in radians
+   * @param {Dimension2} size - the size of the bar magnet in model coordinates
+   * @param {Vector2} location - the position of the bar magnet in model coordinates
+   * @param {number} orientation - in radians
    * @constructor
    */
-  function BarMagnet( location, size, orientation ) {
+  function BarMagnet( size, location, orientation ) {
+
+    // @public (read-only) {Dimension2} the size of the bar magnet in model coordinates
     this.size = size;
+
+    // @public {Vector2} the position of the bar magnet in model coordinates
     this.locationProperty = new Property( location );
+
+    // @public {number} in radians
     this.orientationProperty = new Property( orientation );
   }
 

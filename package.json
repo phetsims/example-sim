@@ -7,7 +7,7 @@
     "url": "https://github.com/phetsims/example-sim.git"
   },
   "devDependencies": {
-    "grunt": "~1.0.0"
+    "grunt": "^1.0.2"
   },
   "phet": {
     "requirejsNamespace": "EXAMPLE_SIM",
@@ -17,5 +17,8 @@
       "adapted-from-phet"
     ],
     "simulation": true
+  },
+  "dependencies": {
+    "grunt-cli": "^1.2.0"
   }
 }
