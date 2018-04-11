@@ -21,7 +21,8 @@ define( function( require ) {
 
   /**
    * Constructor for the ExampleScreenView, it creates the bar magnet node and control panel node.
-   * @param {BarMagnet} model the model for the entire screen
+   
+   * @param {ExampleModel} model - the model for the entire screen
    * @constructor
    */
   function ExampleScreenView( model ) {
