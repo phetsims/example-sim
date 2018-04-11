@@ -22,7 +22,7 @@ define( function( require ) {
    */
   function ExampleModel() {
 
-    // model elements
+    // @public {BarMagent} initial bar magent model element
     this.barMagnet = new BarMagnet( new Dimension2( 262.5, 52.5 ), new Vector2( 0, 0 ), 0 );
   }
 
@@ -30,7 +30,11 @@ define( function( require ) {
 
   return inherit( Object, ExampleModel, {
 
-    // Resets all model elements
+    /**
+    * Restores the initial state all model elements. This method is called when the simulation "Reset All" button is
+    * pressed.
+    * @public
+    */
     reset: function() {
       this.barMagnet.reset();
     }
