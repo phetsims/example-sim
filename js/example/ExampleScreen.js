@@ -32,8 +32,7 @@ define( function( require ) {
       },
       function( model ) {
         return new ExampleScreenView( model );
-      },
-      options );
+      }, options );
   }
 
   exampleSim.register( 'ExampleScreen', ExampleScreen );
