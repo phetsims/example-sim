@@ -39,7 +39,11 @@ define( function( require ) {
 
   return inherit( Object, BarMagnet, {
 
-    // @public
+    /**
+    * Restores the initial state of the BarMagnet. This method is called when the simulation "Reset All" button is
+    * pressed. Note that BarMagnet.size is constant and does not need to be reset.
+    * @public
+    */
     reset: function() {
       this.locationProperty.reset();
       this.orientationProperty.reset();
