@@ -22,7 +22,7 @@ define( function( require ) {
    */
   function ExampleModel() {
 
-    // @public {BarMagent} initial bar magent model element
+    // @public {BarMagnet} initial bar magnet model element
     this.barMagnet = new BarMagnet( new Dimension2( 262.5, 52.5 ), new Vector2( 0, 0 ), 0 );
   }
 
