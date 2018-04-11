@@ -60,14 +60,14 @@ define( function( require ) {
       }
     } ) );
 
-    // Observe changes in model location and update the view. This element always
-    // exists and does not need to be disposed.
+    // Observe changes in model location and update the view. This element always exists and does not need to be
+    // disposed.
     barMagnet.locationProperty.link( function( location ) {
       self.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
-    // Observe changes in model orientation and update the view. This element always
-    // exists and does not need to be disposed.
+    // Observe changes in model orientation and update the view. This element always exists and does not need to be
+    // disposed.
     barMagnet.orientationProperty.link( function( orientation ) {
       self.rotation = orientation;
     } );
