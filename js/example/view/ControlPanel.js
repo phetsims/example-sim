@@ -22,21 +22,21 @@ define( function( require ) {
   var flipPolarityString = require( 'string!EXAMPLE_SIM/flipPolarity' );
 
   /**
-   * Control panel constructor
-   * @param {BarMagnet} barMagnetModel the entire model for the bar magnet screen
-   * @param {Object} [options] scenery options for rendering the control panel, see the constructor for options.
+   * Control panel constructor.
+
+   * @param {ExampleModel} model - the model for the entire screen
+   * @param {Object} [options] - scenery options for rendering the control panel, see the constructor for options
    * @constructor
    */
-  function ControlPanel( barMagnetModel, options ) {
+  function ControlPanel( model, options ) {
 
-    // Demonstrate a common pattern for specifying options and providing default values.
+    // Demonstrate a common pattern for specifying options and providing default values
     options = _.extend( {
         xMargin: 10,
         yMargin: 10,
         stroke: 'orange',
         lineWidth: 3
-      },
-      options );
+      }, options );
 
     // 'Flip Polarity' button
     var flipButton = new TextPushButton( flipPolarityString, {
@@ -44,15 +44,15 @@ define( function( require ) {
       baseColor: 'yellow',
       xMargin: 10,
       listener: function() {
-        var orientation = barMagnetModel.barMagnet.orientationProperty.get() + Math.PI;
-        barMagnetModel.barMagnet.orientationProperty.set( orientation );
+        var orientation = model.barMagnet.orientationProperty.get() + Math.PI;
+        model.barMagnet.orientationProperty.set( orientation );
       }
     } );
 
     // 'Reset All' button, resets the sim to its initial state
     var resetAllButton = new ResetAllButton( {
       listener: function() {
-        barMagnetModel.reset();
+        model.reset();
       }
     } );
 
