@@ -21,8 +21,9 @@ define( function( require ) {
 
   /**
    * Constructor for the BarMagnetNode which renders the bar magnet as a scenery node.
-   * @param {BarMagnet} barMagnet the model of the bar magnet
-   * @param {ModelViewTransform2} modelViewTransform the coordinate transform between model coordinates and view coordinates
+   *
+   * @param {BarMagnet} barMagnet - the model of the bar magnet
+   * @param {ModelViewTransform2} modelViewTransform - the coordinate transform between model coordinates and view coordinates
    * @constructor
    */
   function BarMagnetNode( barMagnet, modelViewTransform ) {
@@ -59,12 +60,14 @@ define( function( require ) {
       }
     } ) );
 
-    // Observe changes in model location and update the view
+    // Observe changes in model location and update the view. This element always
+    // exists and does not need to be disposed.
     barMagnet.locationProperty.link( function( location ) {
       self.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
-    // Observe changes in model orientation and update the view
+    // Observe changes in model orientation and update the view. This element always
+    // exists and does not need to be disposed.
     barMagnet.orientationProperty.link( function( orientation ) {
       self.rotation = orientation;
     } );
