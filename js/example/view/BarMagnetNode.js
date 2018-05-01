@@ -5,6 +5,7 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
+ * @author Steele Dalton (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
@@ -61,13 +62,13 @@ define( function( require ) {
     } ) );
 
     // Observe changes in model location and update the view. This element always exists and does not need to be
-    // disposed.
+    // unlinked.
     barMagnet.locationProperty.link( function( location ) {
       self.translation = modelViewTransform.modelToViewPosition( location );
     } );
 
     // Observe changes in model orientation and update the view. This element always exists and does not need to be
-    // disposed.
+    // unlinked.
     barMagnet.orientationProperty.link( function( orientation ) {
       self.rotation = orientation;
     } );
