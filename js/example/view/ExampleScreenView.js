@@ -5,6 +5,7 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
+ * @author Steele Dalton (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
@@ -21,7 +22,7 @@ define( function( require ) {
 
   /**
    * Constructor for the ExampleScreenView, it creates the bar magnet node and control panel node.
-   
+   *
    * @param {ExampleModel} model - the model for the entire screen
    * @constructor
    */
