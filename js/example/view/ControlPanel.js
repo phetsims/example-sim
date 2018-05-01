@@ -1,10 +1,11 @@
 // Copyright 2013-2017, University of Colorado Boulder
 
 /**
- * Control panel.
+ * Panel of controls at the top left of the sim. It contains controls for flipping the magnet and the reset all button.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
+ * @author Steele Dalton (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
@@ -22,8 +23,6 @@ define( function( require ) {
   var flipPolarityString = require( 'string!EXAMPLE_SIM/flipPolarity' );
 
   /**
-   * Control panel constructor.
-
    * @param {ExampleModel} model - the model for the entire screen
    * @param {Object} [options] - scenery options for rendering the control panel, see the constructor for options
    * @constructor
