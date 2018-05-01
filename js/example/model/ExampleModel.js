@@ -5,6 +5,7 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
+ * @author Steele Dalton (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
@@ -31,7 +32,7 @@ define( function( require ) {
   return inherit( Object, ExampleModel, {
 
     /**
-    * Restores the initial state all model elements. This method is called when the simulation "Reset All" button is
+    * Restores the initial state of all model elements. This method is called when the simulation "Reset All" button is
     * pressed.
     * @public
     */
