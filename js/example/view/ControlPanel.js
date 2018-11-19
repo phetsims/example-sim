@@ -1,4 +1,4 @@
-// Copyright 2013-2017, University of Colorado Boulder
+// Copyright 2013-2018, University of Colorado Boulder
 
 /**
  * Panel of controls at the top left of the sim. It contains controls for flipping the magnet and the reset all button.
