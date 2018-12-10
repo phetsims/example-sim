@@ -16,6 +16,7 @@
       "phet",
       "adapted-from-phet"
     ],
+    "accessible": true,
     "simulation": true
   }
 }
