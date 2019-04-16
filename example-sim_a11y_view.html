@@ -381,38 +381,41 @@
       function addLiveObserver( originalElement, listElement ) {
         var liveObserver = new MutationObserver( function( mutations ) {
           mutations.forEach( function( mutation ) {
-            var alertText = mutation.target.textContent;
 
-            // update the text content of the copied element to match the element in the iframe document
-            // create a list item to add to the alert list
-            if ( alertText.length > 0 ) {
-              var listItem = document.createElement( 'li' );
-              listItem.style.opacity = 1.0;
-              listItem.textContent = alertText;
-              listElement.insertBefore( listItem, listElement.children[ 0 ] );
+            if ( mutation.addedNodes.length > 0 ) {
+              var alertText = mutation.target.textContent;
 
-              // items fade out as they get older
-              for ( var j = 0; j < listElement.children.length; j++ ) {
-                listElement.children[ j ].style.opacity = 1.0 / ( j + 1 ) + 0.25;
-              }
+              // update the text content of the copied element to match the element in the iframe document
+              // create a list item to add to the alert list
+              if ( alertText.length > 0 ) {
+                var listItem = document.createElement( 'li' );
+                listItem.style.opacity = 1.0;
+                listItem.textContent = alertText;
+                listElement.insertBefore( listItem, listElement.children[ 0 ] );
 
-              // if the list is too large, remove the last items from the list
-              var childrenArray = Array.prototype.slice.call( listElement.children );
-              var fadeArray = childrenArray.slice( 5, childrenArray.length );
+                // items fade out as they get older
+                for ( var j = 0; j < listElement.children.length; j++ ) {
+                  listElement.children[ j ].style.opacity = 1.0 / ( j + 1 ) + 0.25;
+                }
 
-              for ( var i = 0; i < fadeArray.length; i++ ) {
-                var fadeChild = fadeArray[ i ];
+                // if the list is too large, remove the last items from the list
+                var childrenArray = Array.prototype.slice.call( listElement.children );
+                var fadeArray = childrenArray.slice( 5, childrenArray.length );
 
-                var fadeout = function() {
-                  fadeChild.style.opacity = fadeChild.style.opacity * 0.95;
+                for ( var i = 0; i < fadeArray.length; i++ ) {
+                  var fadeChild = fadeArray[ i ];
 
-                  // stop animating and remove child
-                  if ( listElement.contains( fadeChild ) && fadeChild.style.opacity < 0.1 ) {
-                    window.clearInterval( intervalId );
-                    listElement.removeChild( fadeChild );
-                  }
-                };
-                var intervalId = window.setInterval( fadeout, 20 );
+                  var fadeout = function() {
+                    fadeChild.style.opacity = fadeChild.style.opacity * 0.95;
+
+                    // stop animating and remove child
+                    if ( listElement.contains( fadeChild ) && fadeChild.style.opacity < 0.1 ) {
+                      window.clearInterval( intervalId );
+                      listElement.removeChild( fadeChild );
+                    }
+                  };
+                  var intervalId = window.setInterval( fadeout, 20 );
+                }
               }
             }
           } );
