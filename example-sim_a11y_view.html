@@ -200,7 +200,6 @@
 </script>
 
 <script type="application/javascript">
-
   /**
    * Get all 'element' nodes off the parent element, placing them in an array for easy traversal.  Note that this
    * includes all elements, even those that are 'hidden' or purely for structure.
@@ -382,6 +381,9 @@
         var liveObserver = new MutationObserver( function( mutations ) {
           mutations.forEach( function( mutation ) {
 
+            // Only display added DOM nodes. ariaHerald will remove the content from aria-live elements so that it
+            // can't be read by the virtual cursor. This registers as a "mutation", but we don't want to display
+            // the removal.
             if ( mutation.addedNodes.length > 0 ) {
               var alertText = mutation.target.textContent;
 
