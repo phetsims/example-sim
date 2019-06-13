@@ -107,7 +107,10 @@
     }
 
     .highlight {
-      border: thick double red;
+      /*use outline instead of border because border doesn't apply to all DOMElements, add margin because outline
+      doesn't take up any space*/
+      outline: thick double red;
+      margin: 1%;
     }
 
     .bold {
