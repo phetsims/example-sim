@@ -43,6 +43,6 @@ require.config( {
     TANDEM: '../../tandem/js'
   },
 
-  // optional cache bust to make browser refresh load all included scripts, can be disabled with ?cacheBust=false
+  // optional cache bust to make browser refresh load all included scripts, can be enabled with ?cacheBust
   urlArgs: phet.chipper.getCacheBustArgs()
 } );
