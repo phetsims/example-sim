@@ -7,7 +7,7 @@
   <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="phet-sim-level" content="development">
-
+  
   <title>example-sim</title>
 </head>
 
@@ -28,6 +28,10 @@
   // Identify the brand (assume generated brand if not provided with query parameters)
   const brandMatch = location.search.match( /brand=([^&]+)/ );
   const brand = brandMatch ? decodeURIComponent( brandMatch[ 1 ] ) : 'adapted-from-phet';
+
+  // matches "cacheBust" at the start of the string, as well as directly after "?" or "&"
+  const cacheBust = /(^|\?|&)cacheBust/.test( location.search );
+  const queryAppend = cacheBust ? `?bust=${Date.now()}` : '';
 
   // Preloads, with more included for phet-io brand
   let preloads = [
@@ -67,7 +71,7 @@
       script.setAttribute( 'data-main', main );
     }
     script.type = 'text/javascript';
-    script.src = preloadURL;
+    script.src = preloadURL + queryAppend;
     script.async = false;
     document.head.appendChild( script );
   };
