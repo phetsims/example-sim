@@ -18,7 +18,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * Main constructor for ExampleModel, which contains the bar magnet.
    * @constructor
    */
   function ExampleModel() {
