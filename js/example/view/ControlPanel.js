@@ -38,25 +38,25 @@ define( require => {
       }, options );
 
     // 'Flip Polarity' button
-    var flipButton = new TextPushButton( flipPolarityString, {
+    const flipButton = new TextPushButton( flipPolarityString, {
       font: new PhetFont( 16 ),
       baseColor: 'yellow',
       xMargin: 10,
       listener: function() {
-        var orientation = model.barMagnet.orientationProperty.get() + Math.PI;
+        const orientation = model.barMagnet.orientationProperty.get() + Math.PI;
         model.barMagnet.orientationProperty.set( orientation );
       }
     } );
 
     // 'Reset All' button, resets the sim to its initial state
-    var resetAllButton = new ResetAllButton( {
+    const resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
       }
     } );
 
     // The contents of the control panel
-    var content = new VBox( {
+    const content = new VBox( {
       align: 'center',
       spacing: 10,
       children: [

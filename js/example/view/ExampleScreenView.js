@@ -33,8 +33,8 @@ define( require => {
     } );
 
     // model-view transform
-    var center = new Vector2( this.layoutBounds.width / 2, this.layoutBounds.height / 2 );
-    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( center, 1 );
+    const center = new Vector2( this.layoutBounds.width / 2, this.layoutBounds.height / 2 );
+    const modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( center, 1 );
 
     this.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
     this.addChild( new ControlPanel( model, {

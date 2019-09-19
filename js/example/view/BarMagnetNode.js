@@ -29,7 +29,7 @@ define( require => {
    */
   function BarMagnetNode( barMagnet, modelViewTransform ) {
 
-    var self = this;
+    const self = this;
 
     // Call the super constructor
     Node.call( this, {
@@ -45,8 +45,8 @@ define( require => {
     } ) );
 
     // Scale it so it matches the model width and height
-    var scaleX = modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width;
-    var scaleY = modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height;
+    const scaleX = modelViewTransform.modelToViewDeltaX( barMagnet.size.width ) / this.width;
+    const scaleY = modelViewTransform.modelToViewDeltaY( barMagnet.size.height ) / this.height;
     this.scale( scaleX, scaleY );
 
     // When dragging, move the bar magnet

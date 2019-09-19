@@ -22,7 +22,7 @@ define( require => {
    */
   function ExampleScreen() {
 
-    var options = {
+    const options = {
       backgroundColorProperty: new Property( 'rgb(50,50,50)' )
     };
 

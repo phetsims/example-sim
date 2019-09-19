@@ -17,7 +17,7 @@ define( require => {
   // strings
   const exampleSimTitleString = require( 'string!EXAMPLE_SIM/example-sim.title' );
 
-  var simOptions = {
+  const simOptions = {
     credits: {
       // all credits fields are optional, see joist.AboutDialog
       leadDesign: 'Boris',
@@ -30,7 +30,7 @@ define( require => {
   };
 
   SimLauncher.launch( function() {
-    var sim = new Sim( exampleSimTitleString, [ new ExampleScreen() ], simOptions );
+    const sim = new Sim( exampleSimTitleString, [ new ExampleScreen() ], simOptions );
     sim.start();
   } );
 } );
