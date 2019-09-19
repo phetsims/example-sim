@@ -5,16 +5,16 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
-  var ExampleScreenView = require( 'EXAMPLE_SIM/example/view/ExampleScreenView' );
-  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
-  var Screen = require( 'JOIST/Screen' );
+  const ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
+  const ExampleScreenView = require( 'EXAMPLE_SIM/example/view/ExampleScreenView' );
+  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Property = require( 'AXON/Property' );
+  const Screen = require( 'JOIST/Screen' );
 
   /**
    * Creates the model and view for the ExampleScreen

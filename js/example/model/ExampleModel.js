@@ -7,15 +7,15 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Steele Dalton (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
+  const Dimension2 = require( 'DOT/Dimension2' );
+  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Vector2 = require( 'DOT/Vector2' );
 
   /**
    * @constructor

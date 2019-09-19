@@ -7,18 +7,18 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Steele Dalton (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
+  const Image = require( 'SCENERY/nodes/Image' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   // images
-  var barMagnetImage = require( 'image!EXAMPLE_SIM/barMagnet.png' );
+  const barMagnetImage = require( 'image!EXAMPLE_SIM/barMagnet.png' );
 
   /**
    * Constructor for the BarMagnetNode which renders the bar magnet as a scenery node.

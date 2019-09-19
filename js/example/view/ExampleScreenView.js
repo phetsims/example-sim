@@ -7,18 +7,18 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Steele Dalton (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var BarMagnetNode = require( 'EXAMPLE_SIM/example/view/BarMagnetNode' );
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var ControlPanel = require( 'EXAMPLE_SIM/example/view/ControlPanel' );
-  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var ScreenView = require( 'JOIST/ScreenView' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const BarMagnetNode = require( 'EXAMPLE_SIM/example/view/BarMagnetNode' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const ControlPanel = require( 'EXAMPLE_SIM/example/view/ControlPanel' );
+  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  const ScreenView = require( 'JOIST/ScreenView' );
+  const Vector2 = require( 'DOT/Vector2' );
 
   /**
    * Constructor for the ExampleScreenView, it creates the bar magnet node and control panel node.

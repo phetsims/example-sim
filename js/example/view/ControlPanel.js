@@ -7,20 +7,20 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Steele Dalton (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var TextPushButton = require( 'SUN/buttons/TextPushButton' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  const TextPushButton = require( 'SUN/buttons/TextPushButton' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var flipPolarityString = require( 'string!EXAMPLE_SIM/flipPolarity' );
+  const flipPolarityString = require( 'string!EXAMPLE_SIM/flipPolarity' );
 
   /**
    * @param {ExampleModel} model - the model for the entire screen

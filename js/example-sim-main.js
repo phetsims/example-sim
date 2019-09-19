@@ -6,16 +6,16 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var ExampleScreen = require( 'EXAMPLE_SIM/example/ExampleScreen' );
-  var Sim = require( 'JOIST/Sim' );
-  var SimLauncher = require( 'JOIST/SimLauncher' );
+  const ExampleScreen = require( 'EXAMPLE_SIM/example/ExampleScreen' );
+  const Sim = require( 'JOIST/Sim' );
+  const SimLauncher = require( 'JOIST/SimLauncher' );
 
   // strings
-  var exampleSimTitleString = require( 'string!EXAMPLE_SIM/example-sim.title' );
+  const exampleSimTitleString = require( 'string!EXAMPLE_SIM/example-sim.title' );
 
   var simOptions = {
     credits: {

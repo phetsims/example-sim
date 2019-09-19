@@ -8,13 +8,13 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Steele Dalton (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
+  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Property = require( 'AXON/Property' );
 
   /**
    * Create a new bar magnet model. The magnet has fixed size, and mutable location and orientation.
