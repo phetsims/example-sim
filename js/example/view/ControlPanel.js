@@ -13,6 +13,7 @@ define( require => {
   // modules
   const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Panel = require( 'SUN/Panel' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -30,7 +31,7 @@ define( require => {
   function ControlPanel( model, options ) {
 
     // Demonstrate a common pattern for specifying options and providing default values
-    options = _.extend( {
+    options = merge( {
         xMargin: 10,
         yMargin: 10,
         stroke: 'orange',
