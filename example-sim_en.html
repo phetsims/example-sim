@@ -29,9 +29,9 @@
   const brandMatch = location.search.match( /brand=([^&]+)/ );
   const brand = brandMatch ? decodeURIComponent( brandMatch[ 1 ] ) : 'adapted-from-phet';
 
-  // matches "cacheBust" at the start of the string, as well as directly after "?" or "&"
-  const cacheBust = /(^|\?|&)cacheBust/.test( location.search );
-  const queryAppend = cacheBust ? `?bust=${Date.now()}` : '';
+  // Cache busting is applied by default, but can be disabled via ?cacheBust=false, see initialize-globals.js
+  const isCacheBustDisabled = /(^|\?|&)cacheBust=false/.test( location.search );
+  const queryAppend = isCacheBustDisabled ? '' : `?bust=${Date.now()}`;
 
   // Preloads, with more included for phet-io brand
   let preloads = [
