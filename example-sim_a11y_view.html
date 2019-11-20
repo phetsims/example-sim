@@ -262,17 +262,14 @@
     if ( data.type === 'load' ) {
 
       var simFrame = document.getElementById( 'iframe' );
-      var innerDoc = simFrame.contentDocument || simFrame.contentWindow.document;
+      var innerWindow = simFrame.contentWindow;
 
       // copy of the parallel DOM
-      var PDOMRoot = simFrame.contentWindow.phet.joist.sim.display.accessibleDOMElement;
+      var PDOMRoot = innerWindow.phet.joist.sim.display.accessibleDOMElement;
       var PDOMCopy = PDOMRoot.cloneNode( true );
 
       // get the alert dom elements from the iframe's inner document
-      var politeElement1 = innerDoc.getElementById( 'elements-1-polite-1' );
-      var politeElement2 = innerDoc.getElementById( 'elements-1-polite-2' );
-      var politeElement3 = innerDoc.getElementById( 'elements-1-polite-3' );
-      var politeElement4 = innerDoc.getElementById( 'elements-1-polite-4' );
+      var ariaLiveElementsContainer = innerWindow.phet.joist.sim.display.utteranceQueue.getAriaLiveContainer();
 
       // get the alert dom elements from the PDOM copy
       var alertList = document.getElementById( 'alert-list' );
@@ -430,10 +427,9 @@
       }
 
       // observe each of the live elements and add new text content to the list view
-      addLiveObserver( politeElement1, alertList );
-      addLiveObserver( politeElement2, alertList );
-      addLiveObserver( politeElement3, alertList );
-      addLiveObserver( politeElement4, alertList );
+      for ( let i = 0; i < ariaLiveElementsContainer.children.length; i++ ) {
+        addLiveObserver( ariaLiveElementsContainer.children[ i ], alertList );
+      }
 
       // set focus to the loaded iframe
       document.getElementById( 'iframe' ).focus();
