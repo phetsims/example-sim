@@ -69,7 +69,7 @@
     script.async = false;
     document.head.appendChild( script );
   };
-  preloads.push( 'dist/main.js' );
+  preloads.push( 'http://localhost:9000/js/main.js' );
 
   // Queue all of the preloads to be loaded.
   preloads.forEach( loadURL );

@@ -4,10 +4,22 @@ module.exports = {
   optimization: {
     minimize: false, // <---- disables uglify.
   },
+
   entry: './js/example-sim-main.js',
   output: {
     filename: 'main.js',
-    path: path.resolve( __dirname, 'dist' )
+    path: path.resolve( __dirname, 'dist' ),
+    publicPath: path.resolve( __dirname, '/js/' )
+  },
+  watchOptions: {
+    poll: true
+  },
+  devServer: {
+    contentBase: path.join( __dirname, '../' ),
+    compress: true,
+    port: 9000,
+    publicPath: path.resolve( __dirname, '/js/' ),
+    hot: true
   },
   // devtool: 'source-map',
   // watch:true,
