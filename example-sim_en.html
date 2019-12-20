@@ -69,11 +69,12 @@
     script.async = false;
     document.head.appendChild( script );
   };
+  preloads.push( 'dist/main.js' );
 
   // Queue all of the preloads to be loaded.
   preloads.forEach( loadURL );
 
-  loadURL( '../sherpa/lib/require-2.3.6.js', 'js/example-sim-config.js' );
+  // loadURL( '../sherpa/lib/require-2.3.6.js', 'js/example-sim-config.js' );
 </script>
 </body>
 </html>

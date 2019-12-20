@@ -18,7 +18,7 @@ define( require => {
   const SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   // images
-  const barMagnetImage = require( 'image!EXAMPLE_SIM/barMagnet.png' );
+  const barMagnetImage = require( 'EXAMPLE_SIM/../images/barMagnet.png' ).default;
 
   /**
    * Constructor for the BarMagnetNode which renders the bar magnet as a scenery node.

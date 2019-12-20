@@ -21,7 +21,7 @@ define( require => {
   const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  const flipPolarityString = require( 'string!EXAMPLE_SIM/flipPolarity' );
+  const flipPolarityString = ( 'EXAMPLE_SIM/flipPolarity' );
 
   /**
    * @param {ExampleModel} model - the model for the entire screen
