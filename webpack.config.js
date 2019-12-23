@@ -5,7 +5,7 @@ module.exports = {
     minimize: false, // <---- disables uglify.
   },
 
-  entry: './js/example-sim-main.js',
+  entry: '../chipper/js/all.js',
   output: {
     filename: 'main.js',
     path: path.resolve( __dirname, 'dist' ),
