@@ -25,6 +25,7 @@ module.exports = {
   // watch:true,
   resolve: {
     alias: {
+      ACID_BASE_SOLUTIONS: path.resolve( __dirname, '../acid-base-solutions/js' ),
       AXON: path.resolve( __dirname, '../axon/js' ),
       BRAND: path.resolve( __dirname, '../brand/phet/js' ), // TODO: how to support multiple brands?
       DOT: path.resolve( __dirname, '../dot/js' ),
