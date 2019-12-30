@@ -2,15 +2,19 @@ const path = require( 'path' );
 
 module.exports = {
   optimization: {
-    minimize: false, // <---- disables uglify.
+    // disable uglification for development iteration
+    minimize: false,
   },
 
-  entry: [ './js/example-sim-main.js' ],
+  entry: {
+    'example-sim': './js/example-sim-main.js'
+  },
   output: {
-    filename: 'main.js',
-    path: path.resolve( __dirname, 'dist' ),
+    path: path.resolve( __dirname, 'build' ),
+    filename: '[name].js',
     publicPath: '/js/'
   },
+
   watchOptions: {
     poll: true
   },
