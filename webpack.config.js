@@ -21,7 +21,7 @@ module.exports = {
     publicPath: '/js/',
     hot: true
   },
-  // devtool: 'source-map',
+  devtool: 'inline-source-map',
   // watch:true,
   resolve: {
     alias: {
