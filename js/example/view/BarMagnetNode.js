@@ -57,14 +57,14 @@ define( require => {
 
       // Translate on drag events
       translate: function( args ) {
-        barMagnet.locationProperty.set( modelViewTransform.viewToModelPosition( args.position ) );
+        barMagnet.positionProperty.set( modelViewTransform.viewToModelPosition( args.position ) );
       }
     } ) );
 
-    // Observe changes in model location and update the view. This element always exists and does not need to be
+    // Observe changes in model position and update the view. This element always exists and does not need to be
     // unlinked.
-    barMagnet.locationProperty.link( function( location ) {
-      self.translation = modelViewTransform.modelToViewPosition( location );
+    barMagnet.positionProperty.link( function( position ) {
+      self.translation = modelViewTransform.modelToViewPosition( position );
     } );
 
     // Observe changes in model orientation and update the view. This element always exists and does not need to be
