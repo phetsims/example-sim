@@ -11,10 +11,10 @@ define( require => {
   'use strict';
 
   // modules
+  const DragListener = require( 'SCENERY/listeners/DragListener' );
   const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
   const Image = require( 'SCENERY/nodes/Image' );
   const Node = require( 'SCENERY/nodes/Node' );
-  const SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   // images
   const barMagnetImage = require( 'image!EXAMPLE_SIM/barMagnet.png' );
@@ -45,15 +45,13 @@ define( require => {
       this.scale( scaleX, scaleY );
 
       // When dragging, move the bar magnet
-      this.addInputListener( new SimpleDragHandler( {
+      this.addInputListener( new DragListener( {
 
         // When dragging across it in a mobile device, pick it up
         allowTouchSnag: true,
 
-        // Translate on drag events
-        translate: args => {
-          barMagnet.positionProperty.set( modelViewTransform.viewToModelPosition( args.position ) );
-        }
+        positionProperty: barMagnet.positionProperty,
+        transform: modelViewTransform
       } ) );
 
       // Observe changes in model position and update the view. This element always exists and does not need to be
