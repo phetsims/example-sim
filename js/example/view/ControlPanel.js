@@ -43,7 +43,7 @@ define( require => {
         font: new PhetFont( 16 ),
         baseColor: 'yellow',
         xMargin: 10,
-        listener: function() {
+        listener: () => {
           const orientation = model.barMagnet.orientationProperty.get() + Math.PI;
           model.barMagnet.orientationProperty.set( orientation );
         }
