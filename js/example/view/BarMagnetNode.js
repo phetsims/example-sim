@@ -47,21 +47,21 @@ define( require => {
       // When dragging, move the bar magnet
       this.addInputListener( new DragListener( {
 
-        // When dragging across it in a mobile device, pick it up
+        // When dragging across it on a touch device, pick it up
         allowTouchSnag: true,
 
         positionProperty: barMagnet.positionProperty,
         transform: modelViewTransform
       } ) );
 
-      // Observe changes in model position and update the view. This element always exists and does not need to be
-      // unlinked.
+      // Observe changes in model position and update the view.
+      // This element always exists and does not need to be unlinked.
       barMagnet.positionProperty.link( position => {
         this.translation = modelViewTransform.modelToViewPosition( position );
       } );
 
-      // Observe changes in model orientation and update the view. This element always exists and does not need to be
-      // unlinked.
+      // Observe changes in model orientation and update the view.
+      // This element always exists and does not need to be unlinked.
       barMagnet.orientationProperty.link( orientation => {
         this.rotation = orientation;
       } );
