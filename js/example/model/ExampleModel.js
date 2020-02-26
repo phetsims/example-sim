@@ -1,4 +1,4 @@
-// Copyright 2013-2019, University of Colorado Boulder
+// Copyright 2013-2020, University of Colorado Boulder
 
 /**
  * Model for the 'Example' screen.
@@ -14,29 +14,25 @@ define( require => {
   const BarMagnet = require( 'EXAMPLE_SIM/example/model/BarMagnet' );
   const Dimension2 = require( 'DOT/Dimension2' );
   const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Vector2 = require( 'DOT/Vector2' );
 
-  /**
-   * @constructor
-   */
-  function ExampleModel() {
+  class ExampleModel {
 
-    // @public {BarMagnet} initial bar magnet model element
-    this.barMagnet = new BarMagnet( new Dimension2( 262.5, 52.5 ), new Vector2( 0, 0 ), 0 );
-  }
+    constructor() {
 
-  exampleSim.register( 'ExampleModel', ExampleModel );
-
-  return inherit( Object, ExampleModel, {
+      // @public {BarMagnet} initial bar magnet model element
+      this.barMagnet = new BarMagnet( new Dimension2( 262.5, 52.5 ), new Vector2( 0, 0 ), 0 );
+    }
 
     /**
-    * Restores the initial state of all model elements. This method is called when the simulation "Reset All" button is
-    * pressed.
-    * @public
-    */
-    reset: function() {
+     * Restores the initial state of all model elements. This method is called when the simulation "Reset All" button is
+     * pressed.
+     * @public
+     */
+    reset() {
       this.barMagnet.reset();
     }
-  } );
+  }
+
+  return exampleSim.register( 'ExampleModel', ExampleModel );
 } );

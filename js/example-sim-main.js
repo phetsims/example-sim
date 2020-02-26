@@ -1,4 +1,4 @@
-// Copyright 2013-2019, University of Colorado Boulder
+// Copyright 2013-2020, University of Colorado Boulder
 
 /**
  * Main entry point for the sim.
@@ -29,7 +29,7 @@ define( require => {
     }
   };
 
-  SimLauncher.launch( function() {
+  SimLauncher.launch( () => {
     const sim = new Sim( exampleSimTitleString, [ new ExampleScreen() ], simOptions );
     sim.start();
   } );
