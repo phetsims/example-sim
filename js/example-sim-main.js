@@ -6,31 +6,27 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const ExampleScreen = require( 'EXAMPLE_SIM/example/ExampleScreen' );
-  const Sim = require( 'JOIST/Sim' );
-  const SimLauncher = require( 'JOIST/SimLauncher' );
+import Sim from '../../joist/js/Sim.js';
+import SimLauncher from '../../joist/js/SimLauncher.js';
+import exampleSimStrings from './example-sim-strings.js';
+import ExampleScreen from './example/ExampleScreen.js';
 
-  // strings
-  const exampleSimTitleString = require( 'string!EXAMPLE_SIM/example-sim.title' );
+const exampleSimTitleString = exampleSimStrings[ 'example-sim' ].title;
 
-  const simOptions = {
-    credits: {
-      // all credits fields are optional, see joist.AboutDialog
-      leadDesign: 'Boris',
-      softwareDevelopment: 'Natasha',
-      team: 'Chico, Groucho, Gummo, Harpo, Zeppo',
-      qualityAssurance: 'Curly, Larry, Moe',
-      graphicArts: 'Rembrandt Harmenszoon van Rijn',
-      thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
-    }
-  };
+const simOptions = {
+  credits: {
+    // all credits fields are optional, see joist.AboutDialog
+    leadDesign: 'Boris',
+    softwareDevelopment: 'Natasha',
+    team: 'Chico, Groucho, Gummo, Harpo, Zeppo',
+    qualityAssurance: 'Curly, Larry, Moe',
+    graphicArts: 'Rembrandt Harmenszoon van Rijn',
+    thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
+  }
+};
 
-  SimLauncher.launch( () => {
-    const sim = new Sim( exampleSimTitleString, [ new ExampleScreen() ], simOptions );
-    sim.start();
-  } );
+SimLauncher.launch( () => {
+  const sim = new Sim( exampleSimTitleString, [ new ExampleScreen() ], simOptions );
+  sim.start();
 } );

@@ -5,26 +5,23 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const ExampleModel = require( 'EXAMPLE_SIM/example/model/ExampleModel' );
-  const ExampleScreenView = require( 'EXAMPLE_SIM/example/view/ExampleScreenView' );
-  const exampleSim = require( 'EXAMPLE_SIM/exampleSim' );
-  const Property = require( 'AXON/Property' );
-  const Screen = require( 'JOIST/Screen' );
+import Property from '../../../axon/js/Property.js';
+import Screen from '../../../joist/js/Screen.js';
+import exampleSim from '../exampleSim.js';
+import ExampleModel from './model/ExampleModel.js';
+import ExampleScreenView from './view/ExampleScreenView.js';
 
-  class ExampleScreen extends Screen {
+class ExampleScreen extends Screen {
 
-    constructor() {
-      super(
-        () => new ExampleModel(),
-        model => new ExampleScreenView( model ), {
-          backgroundColorProperty: new Property( 'rgb( 50, 50, 50 )' )
-        } );
-    }
+  constructor() {
+    super(
+      () => new ExampleModel(),
+      model => new ExampleScreenView( model ), {
+        backgroundColorProperty: new Property( 'rgb( 50, 50, 50 )' )
+      } );
   }
+}
 
-  return exampleSim.register( 'ExampleScreen', ExampleScreen );
-} );
+exampleSim.register( 'ExampleScreen', ExampleScreen );
+export default ExampleScreen;
