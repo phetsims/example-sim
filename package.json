@@ -16,7 +16,7 @@
       "phet",
       "adapted-from-phet"
     ],
-    "accessible": true,
+    "supportsInteractiveDescriptions": true,
     "simulation": true,
     "ignoreForAutomatedMaintenanceReleases": true,
     "readmeCreatedManually": true
