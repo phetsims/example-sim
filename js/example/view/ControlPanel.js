@@ -14,7 +14,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Panel from '../../../../sun/js/Panel.js';
-import exampleSimStrings from '../../example-sim-strings.js';
+import exampleSimStrings from '../../exampleSimStrings.js';
 import exampleSim from '../../exampleSim.js';
 
 const flipPolarityString = exampleSimStrings.flipPolarity;

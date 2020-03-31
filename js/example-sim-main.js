@@ -9,7 +9,7 @@
 
 import Sim from '../../joist/js/Sim.js';
 import SimLauncher from '../../joist/js/SimLauncher.js';
-import exampleSimStrings from './example-sim-strings.js';
+import exampleSimStrings from './exampleSimStrings.js';
 import ExampleScreen from './example/ExampleScreen.js';
 
 const exampleSimTitleString = exampleSimStrings[ 'example-sim' ].title;
