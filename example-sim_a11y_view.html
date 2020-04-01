@@ -262,7 +262,6 @@
    *
    * @param  {HTMLElement} ancestor - parent whose children will be linearized
    * @returns {HTMLElement[]}
-   * @private
    */
   function getAllDOMElementsAsLinear( ancestor ) {
 
@@ -352,7 +351,7 @@
         // if the element has aria-valuetext, render this text in a new element so we can see the content of this
         // inline attribute
         const valueTextElement = document.createElement( 'p' );
-        valueTextElement.className = "pdom-style";
+        valueTextElement.className = 'pdom-style';
         valueTextElement.style.opacity = 0.55;
         valueTextElement.textContent = element.getAttribute( 'aria-valuetext' );
 
@@ -363,8 +362,9 @@
   }
 
   /**
+   * Copy the necessary PDOM content over to the a11y view
    * @param {HTMLElement} pdomRoot
-   * @param {HTMLElement} copyContainer
+   * @param {HTMLElement} copyContainer - the parent of where the copy will be added in the a11y view
    */
   function setPDOMCopyContent( pdomRoot, copyContainer ) {
 
@@ -383,21 +383,31 @@
   }
 
   /**
+   * Add an observer to the PDOM root that will update the a11y view copy whenever the sim pdom changes.
    * @param {HTMLElement} pdomRoot
-   * @param {HTMLElement} copyContainer
+   * @param {HTMLElement} copyContainer - the PDOM copy will be added as a child here, see setPDOMCopyContent
    * @param {Object} mutationConfig
    */
   function addPDOMObserver( pdomRoot, copyContainer, mutationConfig ) {
 
-    // whenever an element in the parallel DOM changes, we need to update its copied element as well
-    const domObserver = new MutationObserver( function( mutations ) {
+    let dirty = false;
 
-      // update the PDOM copy after a delay to fix a FF/Safari bug where cloneNode prevents hidden DOM elements
-      // in the iframe from staying hidden - see https://github.com/phetsims/chipper/issues/648
-      setTimeout( function() {
-        setPDOMCopyContent( pdomRoot, copyContainer );
-      }, 10 );
-    } );
+    // poll for updates to help performance on chrome
+    setInterval( () => {
+
+      if ( dirty ) {
+
+        // update the PDOM copy after a delay to fix a FF/Safari bug where cloneNode prevents hidden DOM elements
+        // in the iframe from staying hidden - see https://github.com/phetsims/chipper/issues/648
+        setTimeout( function() {
+          setPDOMCopyContent( pdomRoot, copyContainer );
+          dirty = false;
+        }, 10 );
+      }
+    }, 300 ); // as of this writing, 200 ms was pretty good, but could get a bit laggy at times on chrome while using NVDA.
+
+    // whenever an element in the parallel DOM changes, we need to update its copied element as well
+    const domObserver = new MutationObserver( mutations => { dirty = true; } );
 
     // pass in the target node, as well as the observer configuration options
     domObserver.observe( pdomRoot, MUTATION_OBSERVER_CONFIG );
@@ -410,8 +420,8 @@
    * @param {Object} mutationConfig
    */
   function addLiveObserver( originalElement, listElement, mutationConfig ) {
-    const liveObserver = new MutationObserver( function( mutations ) {
-      mutations.forEach( function( mutation ) {
+    const liveObserver = new MutationObserver( mutations => {
+      mutations.forEach( mutation => {
 
         // Only display added DOM nodes. ariaHerald will remove the content from aria-live elements so that it
         // can't be read by the virtual cursor. This registers as a "mutation", but we don't want to display
@@ -471,7 +481,7 @@
   };
 
   // handling messages from sims
-  window.addEventListener( 'message', function( evt ) {
+  window.addEventListener( 'message', evt => {
     if ( !evt.data ) {
       return;
     }
@@ -514,8 +524,9 @@
       document.getElementById( 'iframe' ).focus();
 
       // Provide fake focus highlighting to the PDOM copy based on what is actually highlighted in the sim.
+      // TODO: is polling the best way to do this? If so why 500? https://github.com/phetsims/chipper/issues/916
       let previousElement = null;
-      setInterval( function() {
+      setInterval( () => {
 
         if ( previousElement ) {
           previousElement.classList.remove( 'highlight' );
