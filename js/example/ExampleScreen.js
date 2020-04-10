@@ -19,6 +19,7 @@ class ExampleScreen extends Screen {
       () => new ExampleModel(),
       model => new ExampleScreenView( model ), {
         backgroundColorProperty: new Property( 'rgb( 50, 50, 50 )' )
+        //TODO if you include homeScreenIcon or navigationBarIcon, use JOIST/ScreenIcon
       } );
   }
 }
