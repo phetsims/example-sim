@@ -9,10 +9,8 @@
 
 import Sim from '../../joist/js/Sim.js';
 import SimLauncher from '../../joist/js/SimLauncher.js';
-import exampleSimStrings from './exampleSimStrings.js';
 import ExampleScreen from './example/ExampleScreen.js';
-
-const exampleSimTitleString = exampleSimStrings[ 'example-sim' ].title;
+import exampleSimStrings from './exampleSimStrings.js';
 
 const simOptions = {
   credits: {
@@ -27,6 +25,6 @@ const simOptions = {
 };
 
 SimLauncher.launch( () => {
-  const sim = new Sim( exampleSimTitleString, [ new ExampleScreen() ], simOptions );
+  const sim = new Sim( exampleSimStrings[ 'example-sim' ].title, [ new ExampleScreen() ], simOptions );
   sim.start();
 } );
