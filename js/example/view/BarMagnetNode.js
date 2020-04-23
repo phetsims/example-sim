@@ -8,11 +8,13 @@
  * @author Steele Dalton (PhET Interactive Simulations)
  */
 
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import barMagnetImage from '../../../images/barMagnet_png.js';
 import exampleSim from '../../exampleSim.js';
+import BarMagnet from '../model/BarMagnet.js';
 
 class BarMagnetNode extends Node {
 
@@ -21,6 +23,11 @@ class BarMagnetNode extends Node {
    * @param {ModelViewTransform2} modelViewTransform - the coordinate transform between model coordinates and view coordinates
    */
   constructor( barMagnet, modelViewTransform ) {
+
+    // This is an example of using assertions to check for potential programming errors. In this case, we are verifying
+    // that the arguments have the expected type.  Run the simulation with query parameter ?ea to enable assertions.
+    assert && assert( barMagnet instanceof BarMagnet, 'invalid barMagnet' );
+    assert && assert( modelViewTransform instanceof ModelViewTransform2, 'invalid modelViewTransform' );
 
     super( {
 
