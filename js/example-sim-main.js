@@ -8,7 +8,7 @@
  */
 
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import ExampleScreen from './example/ExampleScreen.js';
 import exampleSimStrings from './exampleSimStrings.js';
 
@@ -24,7 +24,7 @@ const simOptions = {
   }
 };
 
-SimLauncher.launch( () => {
+simLauncher.launch( () => {
   const sim = new Sim( exampleSimStrings[ 'example-sim' ].title, [ new ExampleScreen() ], simOptions );
   sim.start();
 } );
