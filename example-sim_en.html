@@ -22,7 +22,7 @@
   window.phet.chipper.packageObject =
     {
       "name": "example-sim",
-      "version": "1.0.0-dev.16",
+      "version": "1.0.0-dev.17",
       "license": "GPL-3.0",
       "repository": {
         "type": "git",
@@ -100,9 +100,7 @@
   if ( brand === 'phet-io' ) {
     preloads = preloads.concat( [
       '../phet-io/js/phet-io-initialize-globals.js',
-      '../example-sim/js/phet-io/example-sim-baseline.js',
-      '../example-sim/js/phet-io/example-sim-overrides.js',
-      '../example-sim/js/phet-io/example-sim-types.js'
+      '../example-sim/js/phet-io/example-sim-overrides.js'
     ] );
   }
 
