@@ -224,10 +224,10 @@
   }
 
   const noPostMessage = simulationQueryString.indexOf( 'postMessageOnLoad&postMessageOnError' ) === -1;
-  const noAccessibility = simulationQueryString.indexOf( 'accessibility' ) === -1;
+  const noAccessibility = simulationQueryString.indexOf( 'supportsDescriptions' ) === -1;
 
   noPostMessage && ( simulationQueryString += 'postMessageOnLoad&postMessageOnError&' );
-  noAccessibility && ( simulationQueryString += 'accessibility' );
+  noAccessibility && ( simulationQueryString += 'supportsDescriptions' );
 
   const repoLocale = 'example-sim_en';
   const filenameEnding = IS_BUILT ? '_phet.html' : '.html';
