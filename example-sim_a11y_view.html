@@ -502,7 +502,7 @@
 
       const simFrame = document.getElementById( 'iframe' );
       const innerWindow = simFrame.contentWindow;
-      const PDOMRoot = innerWindow.phet.joist.display.accessibleDOMElement; // copy of the parallel DOM
+      const PDOMRoot = innerWindow.phet.joist.display.pdomRootElement; // copy of the parallel DOM
 
       // get the alert dom elements from the iframe's inner document
       const ariaLiveElementsContainer = innerWindow.phet.joist.sim.utteranceQueue.getAriaLiveContainer();
