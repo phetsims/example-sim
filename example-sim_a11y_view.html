@@ -136,6 +136,11 @@
       font-weight: bold;
     }
 
+    .assertive {
+      background-color: pink; /* do not change color without changing the doc in "About Interactive Alerts" */
+      border-radius: .2em;
+    }
+
     /* ************SAFARI ONLY *********************** */
     .left-safari {
       display: inline-block;
@@ -179,8 +184,9 @@
         <h3>Activity log of Interactive Alerts</h3>
         <details>
           <summary>About Interactive Alerts</summary>
-          Interactive alerts are read out as the user interacts providing a description of what is happening in
-          real-time. Alerts appear in reverse chronological order with the latest on top.
+          Interactive alerts (powered by aria-live) are read out as the user interacts providing a description of what
+          is happening in real-time. Alerts appear in reverse chronological order with the latest on top. In general
+          all aria-live alerts are polite, but assertive alerts are highlighted with pink.
         </details>
         <div id='alert-copy-container' class='alert_copy_container' role='presentation'>
           <div id='polite-element-container'>
@@ -435,6 +441,10 @@
             const listItem = document.createElement( 'li' );
             listItem.style.opacity = 1.0;
             listItem.textContent = alertText;
+            if ( mutation.target.id.includes( 'assertive' ) ) {
+              listItem.classList.add( 'assertive' );
+            }
+
             listElement.insertBefore( listItem, listElement.children[ 0 ] );
 
             // items fade out as they get older
