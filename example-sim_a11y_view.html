@@ -217,7 +217,7 @@
 
 <script type="application/javascript">
   const IS_BUILT_STRING = '{{IS_BUILT}}';
-  const IS_BUILT = IS_BUILT_STRING.indexOf( '{{' ) !== 0;
+  const IS_BUILT = IS_BUILT_STRING.indexOf( '\{\{' ) !== 0; // escape for better syntax highlighting support
 
 
   // Grab all query parameters to pass to the simulation, and a couple of params that are required for this test
@@ -491,11 +491,18 @@
   };
 
   // handling messages from sims
-  window.addEventListener( 'message', evt => {
-    if ( !evt.data ) {
+  window.addEventListener( 'message', event => {
+    if ( !event.data ) {
       return;
     }
-    const data = JSON.parse( evt.data );
+
+    let data;
+    try {
+      data = JSON.parse( event.data );
+    }
+    catch( e ) {
+      return;
+    }
 
     // if load is successful, create a visualization of the parallel DOM
     if ( data.type === 'load' ) {
