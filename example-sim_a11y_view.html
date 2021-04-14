@@ -325,44 +325,48 @@
     for ( let i = 0; i < allElements.length; i++ ) {
       const element = allElements[ i ];
 
-      if ( element.hasAttribute( 'aria-label' ) && element.innerHTML === '' ) {
-        const ariaLabel = element.getAttribute( 'aria-label' );
+      // this check works because PDOMInstance sets hidden on the entire subtree of PDOMInstances when not visible on
+      // an accessible display rather than just the hidden ancestor
+      if ( !element.hidden ) {
+        if ( element.hasAttribute( 'aria-label' ) && element.innerHTML === '' ) {
+          const ariaLabel = element.getAttribute( 'aria-label' );
 
-        // remove the style
-        element.removeAttribute( 'style' );
+          // remove the style
+          element.removeAttribute( 'style' );
 
-        if ( element.tagName.toLowerCase() === 'input' ) {
-          if ( element.type === 'button' ) {
+          if ( element.tagName.toLowerCase() === 'input' ) {
+            if ( element.type === 'button' ) {
 
-            // set the value of the input to be the same as the aria-label appears inside the button
-            element.setAttribute( 'value', ariaLabel );
+              // set the value of the input to be the same as the aria-label appears inside the button
+              element.setAttribute( 'value', ariaLabel );
+            }
+            else {
+
+              // add a special label element to appear before the input element
+              const labelElement = document.createElement( 'label' );
+              labelElement.textContent = ariaLabel;
+              const parentElement = element.parentNode;
+              parentElement.insertBefore( labelElement, parentElement.firstChild );
+            }
           }
           else {
 
-            // add a special label element to appear before the input element
-            const labelElement = document.createElement( 'label' );
-            labelElement.textContent = ariaLabel;
-            const parentElement = element.parentNode;
-            parentElement.insertBefore( labelElement, parentElement.firstChild );
+            // if not an input, then add it to the innerHTML of an element, without overriding what is already there.
+            element.innerHTML = ariaLabel + element.innerHTML;
           }
         }
-        else {
+        if ( element.hasAttribute( 'aria-valuetext' ) ) {
 
-          // if not an input, then add it to the innerHTML of an element, without overriding what is already there.
-          element.innerHTML = ariaLabel + element.innerHTML;
+          // if the element has aria-valuetext, render this text in a new element so we can see the content of this
+          // inline attribute
+          const valueTextElement = document.createElement( 'p' );
+          valueTextElement.className = 'pdom-style';
+          valueTextElement.style.opacity = 0.55;
+          valueTextElement.textContent = element.getAttribute( 'aria-valuetext' );
+
+          // insert directly after the element that has the valuetext. This handles the case if element is last, see https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
+          element.parentNode.insertBefore( valueTextElement, element.nextSibling );
         }
-      }
-      if ( element.hasAttribute( 'aria-valuetext' ) ) {
-
-        // if the element has aria-valuetext, render this text in a new element so we can see the content of this
-        // inline attribute
-        const valueTextElement = document.createElement( 'p' );
-        valueTextElement.className = 'pdom-style';
-        valueTextElement.style.opacity = 0.55;
-        valueTextElement.textContent = element.getAttribute( 'aria-valuetext' );
-
-        // insert directly after the element that has the valuetext. This handles the case if element is last, see https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
-        element.parentNode.insertBefore( valueTextElement, element.nextSibling );
       }
     }
   }
