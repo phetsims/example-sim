@@ -7,6 +7,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
@@ -20,6 +22,12 @@ class ParticlesScreenView extends ScreenView {
   constructor( model ) {
 
     super();
+
+    //TODO Delete this when this screen is fleshed out.
+    this.addChild( new Text( 'Under Construction', {
+      font: new PhetFont( 40 ),
+      center: this.layoutBounds.center
+    } ) );
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
     // button is positioned at the lower-right of the screen.
