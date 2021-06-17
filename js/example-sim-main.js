@@ -9,7 +9,7 @@
 
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
-import MagnetsScreen from './example/MagnetsScreen.js';
+import MagnetsScreen from './magnets/MagnetsScreen.js';
 import exampleSimStrings from './exampleSimStrings.js';
 
 const simOptions = {
