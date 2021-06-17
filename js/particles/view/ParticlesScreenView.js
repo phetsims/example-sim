@@ -23,7 +23,7 @@ class ParticlesScreenView extends ScreenView {
 
     super();
 
-    //TODO Delete this when this screen is fleshed out.
+    //TODO https://github.com/phetsims/example-sim/issues/13 Delete this when this screen is fleshed out.
     this.addChild( new Text( 'Under Construction', {
       font: new PhetFont( 40 ),
       center: this.layoutBounds.center
