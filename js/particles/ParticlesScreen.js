@@ -8,6 +8,9 @@
 
 import Property from '../../../axon/js/Property.js';
 import Screen from '../../../joist/js/Screen.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
+import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
+import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import exampleSimStrings from '../exampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
@@ -22,8 +25,8 @@ class ParticlesScreen extends Screen {
     
     const options = {
       name: exampleSimStrings.screen.particles,
-      backgroundColorProperty: BACKGROUND_COLOR_PROPERTY
-      //TODO if you include homeScreenIcon or navigationBarIcon, use JOIST/ScreenIcon
+      backgroundColorProperty: BACKGROUND_COLOR_PROPERTY,
+      homeScreenIcon: createScreenIcon()
     };
 
     super(
@@ -32,6 +35,20 @@ class ParticlesScreen extends Screen {
       options
     );
   }
+}
+
+/**
+ * Creates the icon for this screen. This will be used for the home screen and navigation bar.
+ * Always use ScreenIcon for screen icons.
+ * @returns {ScreenIcon}
+ */
+function createScreenIcon() {
+  const iconNode = new ShadedSphereNode( 100, {
+    mainColor: ExampleSimConstants.PARTICLE_COLOR
+  } );
+  return new ScreenIcon( iconNode, {
+    fill: BACKGROUND_COLOR_PROPERTY
+  } );
 }
 
 exampleSim.register( 'ParticlesScreen', ParticlesScreen );

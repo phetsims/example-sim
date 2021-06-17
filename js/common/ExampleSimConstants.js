@@ -14,7 +14,10 @@ const ExampleSimConstants = {
 
   // Margins around the edge of the view
   SCREEN_VIEW_X_MARGIN: 20,
-  SCREEN_VIEW_Y_MARGIN: 20
+  SCREEN_VIEW_Y_MARGIN: 20,
+
+  // Color used for particles
+  PARTICLE_COLOR: 'rgb( 100, 100, 100 )'
 };
 
 exampleSim.register( 'ExampleSimConstants', ExampleSimConstants );
