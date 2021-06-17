@@ -31,7 +31,7 @@ class BarMagnet {
   }
 
   /**
-   * Restores the initial state of the BarMagnet. This method is called when the simulation "Reset All" button is
+   * Restores the initial state of the BarMagnet. This method is called when the simulation's "Reset All" button is
    * pressed. Note that BarMagnet.size is constant and does not need to be reset.
    * @public
    */

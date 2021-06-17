@@ -2,6 +2,12 @@
   "example-sim.title": {
     "value": "Example Simulation"
   },
+  "screen.magnets": {
+    "value": "Example Simulation"
+  },
+  "magnetControls": {
+    "value": "Magnet Controls"
+  },
   "flipPolarity": {
     "value": "Flip Polarity"
   }
