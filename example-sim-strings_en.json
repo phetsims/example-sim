@@ -3,7 +3,10 @@
     "value": "Example Simulation"
   },
   "screen.magnets": {
-    "value": "Example Simulation"
+    "value": "Magnets"
+  },
+  "screen.particles": {
+    "value": "Particles"
   },
   "magnetControls": {
     "value": "Magnet Controls"

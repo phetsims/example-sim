@@ -9,8 +9,9 @@
 
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
-import MagnetsScreen from './magnets/MagnetsScreen.js';
 import exampleSimStrings from './exampleSimStrings.js';
+import MagnetsScreen from './magnets/MagnetsScreen.js';
+import ParticlesScreen from './particles/ParticlesScreen.js';
 
 const simOptions = {
 
@@ -28,7 +29,7 @@ const simOptions = {
 
 simLauncher.launch( () => {
   const title = exampleSimStrings[ 'example-sim' ].title;
-  const screens = [ new MagnetsScreen() ];
+  const screens = [ new MagnetsScreen(), new ParticlesScreen() ];
   const sim = new Sim( title, screens, simOptions );
   sim.start();
 } );
