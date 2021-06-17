@@ -1,7 +1,7 @@
 // Copyright 2013-2020, University of Colorado Boulder
 
 /**
- * The 'Bar Magnet' screen. Conforms to the contract specified in joist/Screen.
+ * ExampleScreen is the top-level component for the 'Example' screen.  It creates the model and view.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

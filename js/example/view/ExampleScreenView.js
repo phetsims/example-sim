@@ -1,7 +1,8 @@
 // Copyright 2013-2020, University of Colorado Boulder
 
 /**
- * View for the 'Example' screen.
+ * ExampleScreenView is the top-level view component for the 'Example' screen. All of the components that make up
+ * the screen's view are added here.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -19,7 +20,7 @@ import ControlPanel from './ControlPanel.js';
 class ExampleScreenView extends ScreenView {
 
   /**
-   * @param {ExampleModel} model - the model for the entire screen
+   * @param {ExampleModel} model - the top-level model for this screen
    */
   constructor( model ) {
 

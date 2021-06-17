@@ -1,7 +1,8 @@
 // Copyright 2013-2020, University of Colorado Boulder
 
 /**
- * Model for the 'Example' screen.
+ * ExampleModel is the top-level model for the 'Example' screen. You can think of the top-level model as a container
+ * for all of the pieces that make up the model for a screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -22,8 +23,8 @@ class ExampleModel {
   }
 
   /**
-   * Restores the initial state of all model elements. This method is called when the simulation "Reset All" button is
-   * pressed.
+   * Restores the initial state of all model elements.
+   * This method is called when the simulation "Reset All" button is pressed.
    * @public
    */
   reset() {

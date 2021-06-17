@@ -1,7 +1,8 @@
 // Copyright 2013-2020, University of Colorado Boulder
 
 /**
- * Panel of controls at the top left of the sim. It contains controls for flipping the magnet and the reset all button.
+ * ControlPanel is the control panel for this screen.
+ * It contains controls for flipping the magnet and the reset all button.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -21,7 +22,7 @@ class ControlPanel extends Panel {
 
   /**
    * @param {ExampleModel} model - the model for the entire screen
-   * @param {Object} [options] - scenery options for rendering the control panel, see the constructor for options
+   * @param {Object} [options] - options for the control panel, see Panel.js for options
    */
   constructor( model, options ) {
 

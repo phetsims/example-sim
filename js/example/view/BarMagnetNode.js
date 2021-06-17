@@ -1,7 +1,7 @@
 // Copyright 2013-2020, University of Colorado Boulder
 
 /**
- * View for the bar magnet object, which can be dragged to translate.
+ * BarMagnetNode is the view for the bar magnet, and stays synchronized with a BarMagnet instance.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  * @author Sam Reid (PhET Interactive Simulations)
@@ -20,7 +20,7 @@ class BarMagnetNode extends Node {
 
   /**
    * @param {BarMagnet} barMagnet - the model of the bar magnet
-   * @param {ModelViewTransform2} modelViewTransform - the coordinate transform between model coordinates and view coordinates
+   * @param {ModelViewTransform2} modelViewTransform - the transform between model coordinates and view coordinates
    */
   constructor( barMagnet, modelViewTransform ) {
 
