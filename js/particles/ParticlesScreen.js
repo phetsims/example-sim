@@ -1,4 +1,4 @@
-// Copyright 2013-2020, University of Colorado Boulder
+// Copyright 2021, University of Colorado Boulder
 
 /**
  * ParticlesScreen is the top-level component for the 'Particles' screen.  It creates the model and view.

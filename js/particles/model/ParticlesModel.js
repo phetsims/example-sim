@@ -1,4 +1,4 @@
-// Copyright 2013-2020, University of Colorado Boulder
+// Copyright 2021, University of Colorado Boulder
 
 /**
  * ParticlesModel is the top-level model for the 'Particles' screen. You can think of the top-level model as a container
