@@ -1,4 +1,4 @@
-// Copyright 2013-2020, University of Colorado Boulder
+// Copyright 2021, University of Colorado Boulder
 
 /**
  * MagnetsScreenView is the top-level view component for the 'Magnets' screen. All of the components that make up
