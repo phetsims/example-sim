@@ -43,7 +43,15 @@ class MagnetsScreenView extends ScreenView {
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
     // button is positioned at the lower-right of the screen.
     this.addChild( new ResetAllButton( {
-      listener: () => model.reset(),
+      listener: () => {
+
+        // Interrupt any other user interactions that may be in progress, needed for multi-touch.
+        // To demonstrate, press the Reset All button while dragging the magent.
+        this.interruptSubtreeInput();
+
+        // Reset the model
+        model.reset();
+      },
       right: this.layoutBounds.right - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
       bottom: this.layoutBounds.bottom - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
     } ) );

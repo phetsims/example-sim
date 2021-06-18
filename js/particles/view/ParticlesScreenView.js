@@ -35,6 +35,11 @@ class ParticlesScreenView extends ScreenView {
     // button is positioned at the lower-right of the screen.
     const resetAllButton = new ResetAllButton( {
       listener: () => {
+
+        // Interrupt any other user interactions that may be in progress, needed for multi-touch.
+        this.interruptSubtreeInput();
+
+        // Reset the model
         model.reset();
         this.logArrayLengths();
       },
