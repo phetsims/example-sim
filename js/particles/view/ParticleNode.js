@@ -11,7 +11,6 @@ import merge from '../../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
-import Particle from '../model/Particle.js';
 
 // constants
 const PARTICLE_DIAMETER = 20;
@@ -43,8 +42,8 @@ class ParticleNode extends ShadedSphereNode {
     } );
 
     // As a particle ages, reduce its opacity so that it fades out.
-    particle.ageProperty.link( age => {
-      this.opacity = Math.max( 0, ( Particle.MAX_AGE - age ) / Particle.MAX_AGE );
+    particle.opacityProperty.link( opacity => {
+      this.opacity = opacity;
     } );
   }
 }

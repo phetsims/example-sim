@@ -8,12 +8,10 @@
 
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import dotRandom from '../../../../dot/js/dotRandom.js';
+import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import exampleSim from '../../exampleSim.js';
-
-// constants
-const DELTA_AGE = 5;
 
 class Particle {
 
@@ -30,7 +28,9 @@ class Particle {
     this.positionProperty = new Vector2Property( new Vector2( x, y ) );
 
     // @public
-    this.ageProperty = new NumberProperty( 0 );
+    this.opacityProperty = new NumberProperty( 1, {
+      range: new Range( 0, 1 )
+    } );
 
     // @public (read-only) whether this particle has been disposed, and should therefore no longer be used
     this.isDisposed = false;
@@ -42,7 +42,7 @@ class Particle {
    */
   dispose() {
     this.positionProperty.dispose();
-    this.ageProperty.dispose();
+    this.opacityProperty.dispose();
     this.isDisposed = true;
   }
 
@@ -55,21 +55,8 @@ class Particle {
     assert && assert( !this.isDisposed, 'attempt to use disposed particle' );
     this.velocity.add( force );
     this.positionProperty.value = this.positionProperty.value.plus( this.velocity );
-    this.ageProperty.value += DELTA_AGE;
-  }
-
-  /**
-   * Determines whether the particle has exceeded its lifespan.
-   * @returns {boolean}
-   * @public
-   */
-  hasExceededLifespan() {
-    return ( this.ageProperty.value >= Particle.MAX_AGE );
   }
 }
-
-// @public
-Particle.MAX_AGE = 255;
 
 exampleSim.register( 'Particle', Particle );
 export default Particle;

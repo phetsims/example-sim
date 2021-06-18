@@ -17,6 +17,7 @@ import Particle from './Particle.js';
 const GRAVITY = new Vector2( 0, 0.2 );
 const INITIAL_X = 500;
 const INITIAL_Y = 20;
+const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each animation step
 
 class ParticlesModel {
 
@@ -44,6 +45,8 @@ class ParticlesModel {
    * @public
    */
   reset() {
+
+    // Remove all particles.
     while ( this.particles.length > 0 ) {
       this.removeParticle( this.particles[ this.particles.length - 1 ] );
     }
@@ -73,14 +76,17 @@ class ParticlesModel {
       this.particleAddedEmitter.emit( particle );
     }
 
-    // Apply a force to all particles, resulting in motion.
+    // For each Particle...
     this.particles.forEach( particle => {
-      particle.applyForce( GRAVITY );
-    } );
 
-    // Remove particles that have exceeded their lifespan.
-    this.particles.forEach( particle => {
-      if ( particle.hasExceededLifespan() ) {
+      // Apply a force, resulting in motion.
+      particle.applyForce( GRAVITY );
+
+      // Reduce opacity.
+      particle.opacityProperty.value = Math.max( 0, particle.opacityProperty.value - OPACITY_DELTA );
+
+      // Remove particles that have become invisible.
+      if ( particle.opacityProperty.value === 0 ) {
         this.removeParticle( particle );
       }
     } );
