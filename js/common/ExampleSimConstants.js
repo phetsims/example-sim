@@ -8,6 +8,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Property from '../../../axon/js/Property.js';
 import exampleSim from '../exampleSim.js';
 
 const ExampleSimConstants = {
@@ -16,8 +17,19 @@ const ExampleSimConstants = {
   SCREEN_VIEW_X_MARGIN: 20,
   SCREEN_VIEW_Y_MARGIN: 20,
 
+  // Options common to all Screens
+  SCREEN_OPTIONS: {
+    backgroundColorProperty: new Property( 'black' ),
+
+    // put a gray border around unselected icons on the home screen
+    showUnselectedHomeScreenIconFrame: true,
+
+    // put a gray border around screen icons when the navigation bar is black
+    showScreenIconFrameForNavigationBarFill: 'black'
+  },
+
   // Color used for particles
-  PARTICLE_COLOR: 'rgb( 100, 100, 100 )'
+  PARTICLE_COLOR: 'rgb( 160, 160, 160 )'
 };
 
 exampleSim.register( 'ExampleSimConstants', ExampleSimConstants );

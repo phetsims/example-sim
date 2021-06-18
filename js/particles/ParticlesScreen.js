@@ -9,6 +9,7 @@
 import Property from '../../../axon/js/Property.js';
 import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
+import merge from '../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
@@ -17,17 +18,16 @@ import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
 
 // constants
-const BACKGROUND_COLOR_PROPERTY = new Property( 'white' );
+const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
 class ParticlesScreen extends Screen {
 
   constructor() {
-    
-    const options = {
+
+    const options = merge( {
       name: exampleSimStrings.screen.particles,
-      backgroundColorProperty: BACKGROUND_COLOR_PROPERTY,
       homeScreenIcon: createScreenIcon()
-    };
+    }, ExampleSimConstants.SCREEN_OPTIONS );
 
     super(
       () => new ParticlesModel(),

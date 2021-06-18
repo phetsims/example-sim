@@ -9,25 +9,26 @@
 import Property from '../../../axon/js/Property.js';
 import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
+import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
+import barMagnetImage from '../../images/barMagnet_png.js';
+import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import exampleSimStrings from '../exampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
-import barMagnetImage from '../../images/barMagnet_png.js';
 
 // constants
-const BACKGROUND_COLOR_PROPERTY = new Property( 'rgb( 50, 50, 50 )' );
+const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
 class MagnetsScreen extends Screen {
 
   constructor() {
 
-    const options = {
+    const options = merge( {
       name: exampleSimStrings.screen.magnets,
-      backgroundColorProperty: BACKGROUND_COLOR_PROPERTY,
       homeScreenIcon: createScreenIcon()
-    };
+    }, ExampleSimConstants.SCREEN_OPTIONS );
 
     super(
       () => new MagnetsModel(),
