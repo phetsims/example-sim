@@ -26,7 +26,9 @@ class ParticlesScreenView extends ScreenView {
     super();
 
     // Transform from model coordinates to view coordinates. We're using an identity transform here to demonstrate,
-    // but it's almost always a good idea to have such a transform.
+    // but it's almost always a good idea to have such a transform. To see how a different transform can result in
+    // a different result in the view, try using this transform, which will cause the particles to flow upward:
+    // const modelViewTransform = ModelViewTransform2.createOffsetXYScaleMapping( new Vector2( 0, 500 ), 1, -1 );
     const modelViewTransform = ModelViewTransform2.createIdentity();
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
