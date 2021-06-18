@@ -55,7 +55,7 @@ class ParticlesScreenView extends ScreenView {
     } );
     this.addChild( timeControlNode );
 
-    // The parent for all ParticleNode instances. Grouping them under here ensures that we're only looking at
+    // The parent for all ParticleNode instances. Grouping them here ensures that we're only looking at
     // ParticleNode instances when trying to identify which ParticleNode corresponds to a specific Particle.
     const particlesNode = new Node();
     this.addChild( particlesNode );
