@@ -10,6 +10,7 @@
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
+import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
@@ -30,11 +31,27 @@ class ParticlesScreenView extends ScreenView {
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
     // button is positioned at the lower-right of the screen.
-    this.addChild( new ResetAllButton( {
-      listener: () => model.reset(),
+    const resetAllButton = new ResetAllButton( {
+      listener: () => {
+        model.reset();
+        this.logArrayLengths();
+      },
       right: this.layoutBounds.right - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
       bottom: this.layoutBounds.bottom - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
-    } ) );
+    } );
+    this.addChild( resetAllButton );
+
+    // Time controls, used to play/pause the animation
+    const timeControlNode = new TimeControlNode( model.isPlayingProperty, {
+      playPauseStepButtonOptions: {
+        stepForwardButtonOptions: {
+          listener: () => model.stepOnce()
+        }
+      },
+      right: resetAllButton.left - 40,
+      bottom: this.layoutBounds.bottom - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
+    } );
+    this.addChild( timeControlNode );
 
     // The parent for all ParticleNode instances. Grouping them under here ensures that we're only looking at
     // ParticleNode instances when trying to identify which ParticleNode corresponds to a specific Particle.
@@ -61,13 +78,21 @@ class ParticlesScreenView extends ScreenView {
   }
 
   /**
-    * Steps the view each time the clock ticks.
-    * @param {number} dt - time step, in seconds
-    * @public
-    */
+   * Steps the view each time the clock ticks.
+   * @param {number} dt - time step, in seconds
+   * @public
+   */
   step( dt ) {
+    if ( this.model.isPlayingProperty.value ) {
+      this.logArrayLengths();
+    }
+  }
 
-    // Run with ?log to verify that model and view array sizes stabilize, and we're not leaking memory.
+  /**
+   * Run with ?log to verify that model and view array sizes stabilize, and we're not leaking memory.
+   * @private
+   */
+  logArrayLengths() {
     phet.log && phet.log( `model.particles.length=${this.model.particles.length}` );
     phet.log && phet.log( `particlesNode.children.length=${this.particlesNode.children.length}` );
   }

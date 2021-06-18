@@ -7,6 +7,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Emitter from '../../../../axon/js/Emitter.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import exampleSim from '../../exampleSim.js';
@@ -33,6 +34,9 @@ class ParticlesModel {
     this.particleRemovedEmitter = new Emitter( {
       parameters: [ { valueType: Particle } ]
     } );
+
+    // @public Whether the model is advanced on each call to step.
+    this.isPlayingProperty = new BooleanProperty( true );
   }
 
   /**
@@ -40,7 +44,9 @@ class ParticlesModel {
    * @public
    */
   reset() {
-    this.particles.forEach( particle => this.removeParticle( particle ) );
+    while ( this.particles.length > 0 ) {
+      this.removeParticle( this.particles[ this.particles.length - 1 ] );
+    }
   }
 
   /**
@@ -49,6 +55,16 @@ class ParticlesModel {
    * @public
    */
   step( dt ) {
+    if ( this.isPlayingProperty.value ) {
+      this.stepOnce();
+    }
+  }
+
+  /**
+   * Steps the model one step. Called directly when using the step button of the time control.
+   * @public
+   */
+  stepOnce() {
 
     // Create some new particles
     for ( let i = 0; i < 3; i++ ) {
@@ -62,7 +78,7 @@ class ParticlesModel {
       particle.applyForce( GRAVITY );
     } );
 
-    // Remove particles that have finished.
+    // Remove particles that have exceeded their lifespan.
     this.particles.forEach( particle => {
       if ( particle.hasExceededLifespan() ) {
         this.removeParticle( particle );

@@ -31,6 +31,9 @@ class Particle {
 
     // @public
     this.ageProperty = new NumberProperty( 0 );
+
+    // @public (read-only) whether this particle has been disposed, and should therefore no longer be used
+    this.isDisposed = false;
   }
 
   /**
@@ -40,6 +43,7 @@ class Particle {
   dispose() {
     this.positionProperty.dispose();
     this.ageProperty.dispose();
+    this.isDisposed = true;
   }
 
   /**
@@ -48,6 +52,7 @@ class Particle {
    * @public
    */
   applyForce( force ) {
+    assert && assert( !this.isDisposed, 'attempt to use disposed particle' );
     this.velocity.add( force );
     this.positionProperty.value = this.positionProperty.value.plus( this.velocity );
     this.ageProperty.value += DELTA_AGE;
