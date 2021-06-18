@@ -39,9 +39,19 @@ class ParticlesScreenView extends ScreenView {
         // Interrupt any other user interactions that may be in progress, needed for multi-touch.
         this.interruptSubtreeInput();
 
+        // This is an example of using phet.log. Adding the 'log' query parameter to your URL will enabled phet.log
+        // output to the console. In this example, we will print the size of the model and view arrays before and
+        // after resetting, to confirm that we're not leaking memory.
+        phet.log && phet.log( 'Before reset:' );
+        phet.log && phet.log( `# Particles=${this.model.particles.length}` );
+        phet.log && phet.log( `# ParticlesNodes=${this.particlesNode.children.length}` );
+
         // Reset the model
         model.reset();
-        this.logArrayLengths();
+
+        phet.log && phet.log( 'After reset:' );
+        phet.log && phet.log( `# Particles=${this.model.particles.length}` );
+        phet.log && phet.log( `# ParticlesNodes=${this.particlesNode.children.length}` );
       },
       right: this.layoutBounds.right - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
       bottom: this.layoutBounds.bottom - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
@@ -84,26 +94,6 @@ class ParticlesScreenView extends ScreenView {
     // @private
     this.model = model;
     this.particlesNode = particlesNode;
-  }
-
-  /**
-   * Steps the view each time the clock ticks.
-   * @param {number} dt - time step, in seconds
-   * @public
-   */
-  step( dt ) {
-    if ( this.model.isPlayingProperty.value ) {
-      this.logArrayLengths();
-    }
-  }
-
-  /**
-   * Run with ?log to verify that model and view array sizes stabilize, and we're not leaking memory.
-   * @private
-   */
-  logArrayLengths() {
-    phet.log && phet.log( `model.particles.length=${this.model.particles.length}` );
-    phet.log && phet.log( `particlesNode.children.length=${this.particlesNode.children.length}` );
   }
 }
 
