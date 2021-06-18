@@ -15,8 +15,8 @@ import Particle from './Particle.js';
 
 // constants
 const GRAVITY = new Vector2( 0, 0.2 );
-const INITIAL_X = 500;
-const INITIAL_Y = 20;
+const INITIAL_X = 500; // x coordinate of initial position for all particles, in model coordinates
+const INITIAL_Y = 20; // y coordinate of initial position for all particles, in model coordinates
 const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each animation step
 
 class ParticlesModel {

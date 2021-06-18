@@ -13,7 +13,7 @@ import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 
 // constants
-const PARTICLE_DIAMETER = 20;
+const PARTICLE_DIAMETER = 20; // in view coordinates
 
 class ParticleNode extends ShadedSphereNode {
 
