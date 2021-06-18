@@ -60,7 +60,7 @@ class ParticlesScreenView extends ScreenView {
     const particlesNode = new Node();
     this.addChild( particlesNode );
 
-    // When a particle is added to the model, add its corresponding view.
+    // When a Particle is added to the model, add a corresponding ParticleNode to the view.
     // removeListener is not needed, because model exists for the lifetime of the sim.
     model.particleAddedEmitter.addListener( particle => {
       particlesNode.addChild( new ParticleNode( particle, modelViewTransform ) );
