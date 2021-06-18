@@ -3,6 +3,10 @@
 /**
  * ParticlesScreen is the top-level component for the 'Particles' screen.  It creates the model and view.
  *
+ * This screen was inspired by Alberto, a member of the PhET Google Group. He had written a particle simulation
+ * in p5.js, and was interested in how it could be ported to PhET libraries.
+ * See https://groups.google.com/g/developing-interactive-simulations-in-html5/c/nrBahpJjAf0
+ *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
