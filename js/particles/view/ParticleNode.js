@@ -37,7 +37,7 @@ class ParticleNode extends ShadedSphereNode {
       this.translation = modelViewTransform.modelToViewPosition( position );
     } );
 
-    // As a particle ages, reduce its opacity so that it fades out.
+    // Update opacity to match the model.
     particle.opacityProperty.link( opacity => {
       this.opacity = opacity;
     } );
