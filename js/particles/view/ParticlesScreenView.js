@@ -17,6 +17,9 @@ import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 import ParticleNode from './ParticleNode.js';
 
+// The model is in nanometers, and this is the number of nanometers per 1 unit in the view.
+const NANOMETERS_PER_PIXEL = 100;
+
 class ParticlesScreenView extends ScreenView {
 
   /**
@@ -31,7 +34,7 @@ class ParticlesScreenView extends ScreenView {
     // scale up from model to view. And since +y is up in the model, the y scale is negative because +y is
     // down in the view (scenery).
     const viewOffset = new Vector2( this.layoutBounds.centerX, 20 );
-    const modelViewTransform = ModelViewTransform2.createOffsetXYScaleMapping( viewOffset, 1, -1 );
+    const modelViewTransform = ModelViewTransform2.createOffsetXYScaleMapping( viewOffset, 1 / NANOMETERS_PER_PIXEL, -1 / NANOMETERS_PER_PIXEL );
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
     // button is positioned at the lower-right of the screen.
