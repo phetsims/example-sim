@@ -11,21 +11,32 @@ import dotRandom from '../../../../dot/js/dotRandom.js';
 import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
+import merge from '../../../../phet-core/js/merge.js';
 import exampleSim from '../../exampleSim.js';
+
+// constants
+const DEFAULT_POSITION = new Vector2( 0, 0 ); // in nm
 
 class Particle {
 
   /**
-   * @param {number} x - x coordinate of initial position, in nm
-   * @param {number} y - y coordinate of initial position, in nm
+   * @param {Object} [options]
    */
-  constructor( x, y ) {
+  constructor( options ) {
+
+    options = merge( {
+      diameter: 2000, // {number} nm
+      position: DEFAULT_POSITION // {Vector2} nm
+    }, options );
+
+    // @public the particle's diameter, in nm
+    this.diameter = options.diameter;
+
+    // @public the particle's position, in nm
+    this.positionProperty = new Vector2Property( options.position );
 
     // @private the particle's velocity, in nm/sec
     this.velocity = new Vector2( dotRandom.nextIntBetween( -500, 500 ), dotRandom.nextIntBetween( -100, -1000 ) );
-
-    // @public the particle's position, in nm
-    this.positionProperty = new Vector2Property( new Vector2( x, y ) );
 
     // @public
     this.opacityProperty = new NumberProperty( 1, {
