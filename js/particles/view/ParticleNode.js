@@ -12,9 +12,6 @@ import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 
-// constants
-const PARTICLE_DIAMETER = 20; // in view coordinates
-
 class ParticleNode extends ShadedSphereNode {
 
   /**
@@ -30,7 +27,7 @@ class ParticleNode extends ShadedSphereNode {
       mainColor: ExampleSimConstants.PARTICLE_COLOR
     }, options );
 
-    super( PARTICLE_DIAMETER, options );
+    super( modelViewTransform.modelToViewDeltaX( particle.diameter ), options );
 
     // @public (read-only)
     this.particle = particle;
