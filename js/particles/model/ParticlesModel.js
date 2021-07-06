@@ -4,6 +4,10 @@
  * ParticlesModel is the top-level model for the 'Particles' screen. You can think of the top-level model as a container
  * for all of the pieces that make up the model for a screen.
  *
+ * Model units are nm (nanometers) and seconds. +x is to the right, +y is up.
+ *
+ * The origin (0,0) of the model is the position where the particles originate.
+ *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
@@ -14,9 +18,9 @@ import exampleSim from '../../exampleSim.js';
 import Particle from './Particle.js';
 
 // constants
-const GRAVITY = new Vector2( 0, 0.2 );
-const INITIAL_X = 500; // x coordinate of initial position for all particles, in model coordinates
-const INITIAL_Y = 20; // y coordinate of initial position for all particles, in model coordinates
+const INITIAL_X = 0; // x coordinate of initial position for all particles, in nm
+const INITIAL_Y = 0; // y coordinate of initial position for all particles, in nm
+const GRAVITY = new Vector2( 0, -0.2 ); // in nm/sec
 const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each animation step
 
 class ParticlesModel {

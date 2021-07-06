@@ -16,15 +16,15 @@ import exampleSim from '../../exampleSim.js';
 class Particle {
 
   /**
-   * @param {number} x - x coordinate of initial position
-   * @param {number} y - y coordinate of initial position
+   * @param {number} x - x coordinate of initial position, in nm
+   * @param {number} y - y coordinate of initial position, in nm
    */
   constructor( x, y ) {
 
-    // @private
-    this.velocity = new Vector2( dotRandom.nextIntBetween( -5, 5 ), dotRandom.nextIntBetween( 1, 10 ) );
+    // @private the particle's velocity, in nm/sec
+    this.velocity = new Vector2( dotRandom.nextIntBetween( -5, 5 ), dotRandom.nextIntBetween( -1, -10 ) );
 
-    // @public
+    // @public the particle's position, in nm
     this.positionProperty = new Vector2Property( new Vector2( x, y ) );
 
     // @public

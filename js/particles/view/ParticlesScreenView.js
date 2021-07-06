@@ -7,6 +7,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
@@ -25,11 +26,12 @@ class ParticlesScreenView extends ScreenView {
 
     super();
 
-    // Transform from model coordinates to view coordinates. We're using an identity transform here to demonstrate,
-    // but it's almost always a good idea to have such a transform. To see how a different transform can result in
-    // a different result in the view, try using this transform, which will cause the particles to flow upward:
-    // const modelViewTransform = ModelViewTransform2.createOffsetXYScaleMapping( new Vector2( 0, 500 ), 1, -1 );
-    const modelViewTransform = ModelViewTransform2.createIdentity();
+    // Transform from model coordinates to view coordinates. The model's origin is at the position where the
+    // particles originate. Move that position to the top center of the screen.  Since the model is in nm,
+    // scale up from model to view. And since +y is up in the model, the y scale is negative because +y is
+    // down in the view (scenery).
+    const viewOffset = new Vector2( this.layoutBounds.centerX, 20 );
+    const modelViewTransform = ModelViewTransform2.createOffsetXYScaleMapping( viewOffset, 1, -1 );
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
     // button is positioned at the lower-right of the screen.
