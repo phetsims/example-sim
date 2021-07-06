@@ -22,7 +22,7 @@ class Particle {
   constructor( x, y ) {
 
     // @private the particle's velocity, in nm/sec
-    this.velocity = new Vector2( dotRandom.nextIntBetween( -5, 5 ), dotRandom.nextIntBetween( -1, -10 ) );
+    this.velocity = new Vector2( dotRandom.nextIntBetween( -500, 500 ), dotRandom.nextIntBetween( -100, -1000 ) );
 
     // @public the particle's position, in nm
     this.positionProperty = new Vector2Property( new Vector2( x, y ) );
