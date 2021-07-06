@@ -9,7 +9,6 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
-import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 
 class ParticleNode extends ShadedSphereNode {
@@ -24,7 +23,7 @@ class ParticleNode extends ShadedSphereNode {
     options = merge( {
 
       // ShadedSphereNode options
-      mainColor: ExampleSimConstants.PARTICLE_COLOR
+      mainColor: particle.color
     }, options );
 
     super( modelViewTransform.modelToViewDeltaX( particle.diameter ), options );
