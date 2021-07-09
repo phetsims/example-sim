@@ -1,5 +1,5 @@
 {
-  "comment": "# example-sim 1.1.1-rc.1 Fri Jul 09 2021 11:48:30 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# example-sim 1.1.1 Fri Jul 09 2021 11:52:49 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "f360fa1bd09a47b3c9e49cd90c8dddd136a13e0c",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "example-sim": {
-    "sha": "31b09356115432b116c1536c0834f7357f3be5a7",
+    "sha": "013b146ee470c69623bc82bfa3dca6adb21434f5",
     "branch": "1.1"
   },
   "joist": {
