@@ -22,7 +22,7 @@ const simOptions = {
     softwareDevelopment: 'Natasha',
     team: 'Chico, Groucho, Gummo, Harpo, Zeppo',
     qualityAssurance: 'Curly, Larry, Moe',
-    graphicArts: 'Rembrandt Harmenszoon van Rijn',
+    graphicArts: 'Dali, Picasso, Warhol',
     thanks: 'Thanks to the ACME Dynamite Company for funding this sim!'
   }
 };
