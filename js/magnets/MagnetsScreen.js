@@ -11,7 +11,7 @@ import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
-import barMagnetImage from '../../images/barMagnet_png.js';
+import barMagnet_png from '../../images/barMagnet_png.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import exampleSimStrings from '../exampleSimStrings.js';
@@ -44,7 +44,7 @@ class MagnetsScreen extends Screen {
  * @returns {ScreenIcon}
  */
 function createScreenIcon() {
-  const iconNode = new Image( barMagnetImage );
+  const iconNode = new Image( barMagnet_png );
   return new ScreenIcon( iconNode, {
     fill: BACKGROUND_COLOR_PROPERTY
   } );

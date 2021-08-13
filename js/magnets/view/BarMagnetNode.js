@@ -13,7 +13,7 @@ import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransfo
 import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
-import barMagnetImage from '../../../images/barMagnet_png.js';
+import barMagnet_png from '../../../images/barMagnet_png.js';
 import exampleSim from '../../exampleSim.js';
 import BarMagnet from '../model/BarMagnet.js';
 
@@ -38,7 +38,7 @@ class BarMagnetNode extends Node {
 
     // The bar magnet is rendered using an image file. This creates the scenery Node that will render that image
     // file, and moves the origin (0,0) to the center of the Node.
-    this.addChild( new Image( barMagnetImage, {
+    this.addChild( new Image( barMagnet_png, {
       centerX: 0,
       centerY: 0
     } ) );
