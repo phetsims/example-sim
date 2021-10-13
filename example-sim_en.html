@@ -114,6 +114,7 @@
     script.type = type;
     script.src = preloadURL;
     script.async = false;
+    script.setAttribute( 'crossorigin', 'use-credentials' );
     document.head.appendChild( script );
   };
 
