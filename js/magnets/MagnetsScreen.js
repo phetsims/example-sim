@@ -10,7 +10,7 @@ import Property from '../../../axon/js/Property.js';
 import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
-import Image from '../../../scenery/js/nodes/Image.js';
+import { Image } from '../../../scenery/js/imports.js';
 import barMagnet_png from '../../images/barMagnet_png.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
