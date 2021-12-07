@@ -30,6 +30,8 @@ git clone https://github.com/phetsims/dot.git
 git clone https://github.com/phetsims/example-sim.git
 git clone https://github.com/phetsims/joist.git
 git clone https://github.com/phetsims/kite.git
+git clone https://github.com/phetsims/perennial.git
+git clone https://github.com/phetsims/perennial.git perennial-alias
 git clone https://github.com/phetsims/phet-core.git
 git clone https://github.com/phetsims/phetcommon.git
 git clone https://github.com/phetsims/phetmarks.git
@@ -43,9 +45,32 @@ git clone https://github.com/phetsims/tandem.git
 git clone https://github.com/phetsims/twixt.git
 git clone https://github.com/phetsims/utterance-queue.git
 ```
-(2) Start an http-server
 
-(3) Open `http://localhost/example-sim/example-sim_en.html` (You will probably need to modify this URL based on your HTTP port and relative path.)
+(2) Install dev dependencies:
+```
+cd chipper
+npm install
+cd ../perennial
+npm install
+cd ../perennial-alias
+npm install
+cd ../example-sim
+npm install
+```
+
+(3) Change directory to chipper `cd ../chipper/`, then transpile the code to JavaScript by running `node js/scripts/transpile.js --watch`
+
+(4) Start an http-server
+
+(5) Open in the browser: `http://localhost/example-sim/example-sim_en.html` (You will probably need to modify this URL based on your HTTP port and relative path.)
+
+#### Optional: Build the simulation into a single file
+
+(1) Change directory to the simulation directory: `cd ../example-sim`
+
+(2) Build the sim: `grunt --brands=adapted-from-phet`
+
+(3) Open in the browser: `http://localhost/example-sim/build/adapted-from-phet/example-sim_en_adapted-from-phet.html` (You will probably need to modify this URL based on your HTTP port and relative path.)
 
 ### Get Involved
 
