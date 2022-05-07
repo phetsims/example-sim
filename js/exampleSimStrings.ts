@@ -9,14 +9,14 @@ import exampleSim from './exampleSim.js';
 
 type StringsType = {
   'example-sim': {
-    'title': string
-  },
+    'title': string;
+  };
   'screen': {
-    'magnets': string,
-    'particles': string
-  },
-  'magnetControls': string,
-  'flipPolarity': string
+    'magnets': string;
+    'particles': string;
+  };
+  'magnetControls': string;
+  'flipPolarity': string;
 };
 
 const exampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
