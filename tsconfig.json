@@ -1,14 +1,9 @@
 {
   "extends": "../chipper/tsconfig-core.json",
-  "references": [
-    {
-      "path": "../joist/tsconfig-module.json"
-    }
-  ],
   "include": [
     "js/**/*",
-    "sounds/**/*",
+    "images/**/*",
     "mipmaps/**/*",
-    "images/**/*"
+    "sounds/**/*"
   ]
 }
