@@ -10,9 +10,7 @@
  */
 
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
-import { DragListener } from '../../../../scenery/js/imports.js';
-import { Image } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
+import { DragListener, Image, Node } from '../../../../scenery/js/imports.js';
 import barMagnet_png from '../../../images/barMagnet_png.js';
 import exampleSim from '../../exampleSim.js';
 import BarMagnet from '../model/BarMagnet.js';
