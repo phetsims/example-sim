@@ -11,18 +11,18 @@ import exampleSim from './exampleSim.js';
 type StringsType = {
   'example-sim': {
     'title': string;
-    'titleProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': TReadOnlyProperty<string>;
   };
   'screen': {
     'magnets': string;
-    'magnetsProperty': TReadOnlyProperty<string>;
+    'magnetsStringProperty': TReadOnlyProperty<string>;
     'particles': string;
-    'particlesProperty': TReadOnlyProperty<string>;
+    'particlesStringProperty': TReadOnlyProperty<string>;
   };
   'magnetControls': string;
-  'magnetControlsProperty': TReadOnlyProperty<string>;
+  'magnetControlsStringProperty': TReadOnlyProperty<string>;
   'flipPolarity': string;
-  'flipPolarityProperty': TReadOnlyProperty<string>;
+  'flipPolarityStringProperty': TReadOnlyProperty<string>;
 };
 
 const exampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
