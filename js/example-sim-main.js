@@ -28,8 +28,8 @@ const simOptions = {
 };
 
 simLauncher.launch( () => {
-  const title = exampleSimStrings[ 'example-sim' ].title;
+  const titleStringProperty = exampleSimStrings[ 'example-sim' ].titleStringProperty;
   const screens = [ new MagnetsScreen(), new ParticlesScreen() ];
-  const sim = new Sim( title, screens, simOptions );
+  const sim = new Sim( titleStringProperty, screens, simOptions );
   sim.start();
 } );
