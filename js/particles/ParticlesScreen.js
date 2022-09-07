@@ -17,7 +17,7 @@ import merge from '../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
-import exampleSimStrings from '../exampleSimStrings.js';
+import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
 
@@ -29,7 +29,7 @@ class ParticlesScreen extends Screen {
   constructor() {
 
     const options = merge( {
-      name: exampleSimStrings.screen.particles,
+      name: ExampleSimStrings.screen.particles,
       homeScreenIcon: createScreenIcon()
     }, ExampleSimConstants.SCREEN_OPTIONS );
 

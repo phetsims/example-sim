@@ -14,7 +14,7 @@ import { Text, VBox } from '../../../../scenery/js/imports.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import Panel from '../../../../sun/js/Panel.js';
 import exampleSim from '../../exampleSim.js';
-import exampleSimStrings from '../../exampleSimStrings.js';
+import ExampleSimStrings from '../../ExampleSimStrings.js';
 
 class MagnetsControlPanel extends Panel {
 
@@ -35,7 +35,7 @@ class MagnetsControlPanel extends Panel {
     }, options );
 
     // 'Magnet Controls' title
-    const magnetControlsTitleNode = new Text( exampleSimStrings.magnetControls, {
+    const magnetControlsTitleNode = new Text( ExampleSimStrings.magnetControls, {
       font: new PhetFont( {
         size: 18,
         weight: 'bold'
@@ -44,7 +44,7 @@ class MagnetsControlPanel extends Panel {
 
     // 'Flip Polarity' button
     const flipPolarityButton = new RectangularPushButton( {
-      content: new Text( exampleSimStrings.flipPolarity, {
+      content: new Text( ExampleSimStrings.flipPolarity, {
         font: new PhetFont( 16 )
       } ),
       baseColor: 'yellow',

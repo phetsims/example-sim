@@ -25,8 +25,8 @@ type StringsType = {
   'flipPolarityStringProperty': TReadOnlyProperty<string>;
 };
 
-const exampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
+const ExampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
 
-exampleSim.register( 'exampleSimStrings', exampleSimStrings );
+exampleSim.register( 'ExampleSimStrings', ExampleSimStrings );
 
-export default exampleSimStrings;
+export default ExampleSimStrings;

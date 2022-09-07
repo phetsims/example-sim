@@ -14,7 +14,7 @@ import { Image } from '../../../scenery/js/imports.js';
 import barMagnet_png from '../../images/barMagnet_png.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
-import exampleSimStrings from '../exampleSimStrings.js';
+import ExampleSimStrings from '../ExampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
 
@@ -26,7 +26,7 @@ class MagnetsScreen extends Screen {
   constructor() {
 
     const options = merge( {
-      name: exampleSimStrings.screen.magnets,
+      name: ExampleSimStrings.screen.magnets,
       homeScreenIcon: createScreenIcon()
     }, ExampleSimConstants.SCREEN_OPTIONS );
 

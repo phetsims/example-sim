@@ -9,7 +9,7 @@
 
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
-import exampleSimStrings from './exampleSimStrings.js';
+import ExampleSimStrings from './ExampleSimStrings.js';
 import MagnetsScreen from './magnets/MagnetsScreen.js';
 import ParticlesScreen from './particles/ParticlesScreen.js';
 
@@ -28,7 +28,7 @@ const simOptions = {
 };
 
 simLauncher.launch( () => {
-  const titleStringProperty = exampleSimStrings[ 'example-sim' ].titleStringProperty;
+  const titleStringProperty = ExampleSimStrings[ 'example-sim' ].titleStringProperty;
   const screens = [ new MagnetsScreen(), new ParticlesScreen() ];
   const sim = new Sim( titleStringProperty, screens, simOptions );
   sim.start();
