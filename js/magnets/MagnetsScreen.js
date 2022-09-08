@@ -1,4 +1,4 @@
-// Copyright 2013-2021, University of Colorado Boulder
+// Copyright 2013-2022, University of Colorado Boulder
 
 /**
  * MagnetsScreen is the top-level component for the 'Magnets' screen.  It creates the model and view.
