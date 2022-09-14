@@ -26,7 +26,7 @@ class MagnetsScreen extends Screen {
   constructor() {
 
     const options = merge( {
-      name: ExampleSimStrings.screen.magnets,
+      name: ExampleSimStrings.screen.magnetsStringProperty,
       homeScreenIcon: createScreenIcon()
     }, ExampleSimConstants.SCREEN_OPTIONS );
 

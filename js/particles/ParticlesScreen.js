@@ -29,7 +29,7 @@ class ParticlesScreen extends Screen {
   constructor() {
 
     const options = merge( {
-      name: ExampleSimStrings.screen.particles,
+      name: ExampleSimStrings.screen.particlesStringProperty,
       homeScreenIcon: createScreenIcon()
     }, ExampleSimConstants.SCREEN_OPTIONS );
 
