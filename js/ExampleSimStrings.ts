@@ -5,24 +5,24 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
-import TReadOnlyProperty from '../../axon/js/TReadOnlyProperty.js';
+import LinkableProperty from '../../axon/js/LinkableProperty.js';
 import exampleSim from './exampleSim.js';
 
 type StringsType = {
   'example-sim': {
     'title': string;
-    'titleStringProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': LinkableProperty<string>;
   };
   'screen': {
     'magnets': string;
-    'magnetsStringProperty': TReadOnlyProperty<string>;
+    'magnetsStringProperty': LinkableProperty<string>;
     'particles': string;
-    'particlesStringProperty': TReadOnlyProperty<string>;
+    'particlesStringProperty': LinkableProperty<string>;
   };
   'magnetControls': string;
-  'magnetControlsStringProperty': TReadOnlyProperty<string>;
+  'magnetControlsStringProperty': LinkableProperty<string>;
   'flipPolarity': string;
-  'flipPolarityStringProperty': TReadOnlyProperty<string>;
+  'flipPolarityStringProperty': LinkableProperty<string>;
 };
 
 const ExampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
