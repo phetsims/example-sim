@@ -10,18 +10,13 @@ import exampleSim from './exampleSim.js';
 
 type StringsType = {
   'example-sim': {
-    'title': string;
     'titleStringProperty': LinkableProperty<string>;
   };
   'screen': {
-    'magnets': string;
     'magnetsStringProperty': LinkableProperty<string>;
-    'particles': string;
     'particlesStringProperty': LinkableProperty<string>;
   };
-  'magnetControls': string;
   'magnetControlsStringProperty': LinkableProperty<string>;
-  'flipPolarity': string;
   'flipPolarityStringProperty': LinkableProperty<string>;
 };
 

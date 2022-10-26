@@ -35,7 +35,7 @@ class MagnetsControlPanel extends Panel {
     }, options );
 
     // 'Magnet Controls' title
-    const magnetControlsTitleNode = new Text( ExampleSimStrings.magnetControls, {
+    const magnetControlsTitleNode = new Text( ExampleSimStrings.magnetControlsStringProperty, {
       font: new PhetFont( {
         size: 18,
         weight: 'bold'
@@ -44,7 +44,7 @@ class MagnetsControlPanel extends Panel {
 
     // 'Flip Polarity' button
     const flipPolarityButton = new RectangularPushButton( {
-      content: new Text( ExampleSimStrings.flipPolarity, {
+      content: new Text( ExampleSimStrings.flipPolarityStringProperty, {
         font: new PhetFont( 16 )
       } ),
       baseColor: 'yellow',
