@@ -22,7 +22,11 @@
     "supportsOutputJS": true,
     "simFeatures": {
       "supportsDynamicLocale": true
-    }
+    },
+    "screenNameKeys": [
+      "EXAMPLE_SIM/screen.magnets",
+      "EXAMPLE_SIM/screen.particles"
+    ]
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js",
