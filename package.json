@@ -13,8 +13,7 @@
     "requirejsNamespace": "EXAMPLE_SIM",
     "runnable": true,
     "supportedBrands": [
-      "phet",
-      "adapted-from-phet"
+      "phet"
     ],
     "simulation": true,
     "ignoreForAutomatedMaintenanceReleases": true,
