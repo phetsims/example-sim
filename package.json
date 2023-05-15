@@ -26,7 +26,8 @@
     "screenNameKeys": [
       "EXAMPLE_SIM/screen.magnets",
       "EXAMPLE_SIM/screen.particles"
-    ]
+    ],
+    "published": true
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js",
