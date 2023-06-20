@@ -5,19 +5,19 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
-import LinkableProperty from '../../axon/js/LinkableProperty.js';
+import type LocalizedStringProperty from '../../chipper/js/LocalizedStringProperty.js';
 import exampleSim from './exampleSim.js';
 
 type StringsType = {
   'example-sim': {
-    'titleStringProperty': LinkableProperty<string>;
+    'titleStringProperty': LocalizedStringProperty;
   };
   'screen': {
-    'magnetsStringProperty': LinkableProperty<string>;
-    'particlesStringProperty': LinkableProperty<string>;
+    'magnetsStringProperty': LocalizedStringProperty;
+    'particlesStringProperty': LocalizedStringProperty;
   };
-  'magnetControlsStringProperty': LinkableProperty<string>;
-  'flipPolarityStringProperty': LinkableProperty<string>;
+  'magnetControlsStringProperty': LocalizedStringProperty;
+  'flipPolarityStringProperty': LocalizedStringProperty;
 };
 
 const ExampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
