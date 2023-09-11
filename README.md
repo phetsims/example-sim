@@ -2,8 +2,8 @@ Example Simulation
 =============
 "Example Simulation" is an educational simulation in HTML5, by <a href="https://phet.colorado.edu/" target="_blank">PhET
 Interactive Simulations</a>
-at the University of Colorado Boulder.
-For a description of this simulation, associated resources, and a link to the published version,
+at the University of Colorado Boulder. For a description of this simulation, associated resources, and a link to the
+published version,
 <a href="https://phet.colorado.edu/en/simulation/example-sim" target="_blank">visit the simulation's web page</a>.
 
 ### Try it!
@@ -18,10 +18,9 @@ Example Simulation".</a>
 ### Documentation
 
 The <a href="https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md" target="_blank">PhET
-Development Overview</a> is the most complete guide to PhET Simulation
-Development. This guide includes how to obtain simulation code and its dependencies, notes about architecture & design,
-how to test and build
-the sims, as well as other important information.
+Development Overview</a> is the most complete guide to PhET Simulation Development. This guide includes how to obtain
+simulation code and its dependencies, notes about architecture & design, how to test and build the sims, as well as
+other important information.
 
 ### Quick Start
 
@@ -64,8 +63,8 @@ npm install
 ```
 
 (3) Change directory to chipper `cd ../chipper/`, then transpile the code to JavaScript by
-running `node js/scripts/transpile.js --watch`. This starts a file-watching process
-that will automatically transpile new or changed files.
+running `node js/scripts/transpile.js --watch`. This starts a file-watching process that will automatically transpile
+new or changed files.
 
 (4) In a new terminal/command prompt, start an http-server
 
@@ -77,8 +76,8 @@ based on your HTTP port and relative path.)
 (1) Change directory to the simulation directory: `cd ../example-sim`
 
 (2) Build the sim: `grunt --brands=adapted-from-phet`. It is safe to ignore warnings
-like `>> WARNING404: Skipping potentially non-public dependency`,
-which indicate that non-public PhET-iO code is not being included in the build.
+like `>> WARNING404: Skipping potentially non-public dependency`, which indicate that non-public PhET-iO code is not
+being included in the build.
 
 (3) Open in the browser: `http://localhost/example-sim/build/adapted-from-phet/example-sim_en_adapted-from-phet.html` (
 You will probably need to modify this URL based on your HTTP port and relative path.)
