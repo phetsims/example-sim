@@ -19,8 +19,7 @@
     }
 
     body {
-      margin: 1em 1em 2em;
-      width: 100%;
+      margin: 1em;
       background: #ccc;
     }
 
@@ -28,10 +27,6 @@
       margin-top: .55em;
       margin-bottom: 0;
       padding: 0;
-    }
-
-    #content {
-      margin: 1em;
     }
 
     .alert_copy_container ul {
@@ -88,7 +83,7 @@
       background: #e5c45b;
       border-radius: 1em;
       padding: .25em .75em 1em;
-      min-height: 10em;
+      min-height: 18em;
     }
 
     p.alert_copy {
@@ -107,8 +102,7 @@
 
     div.wrapper {
       height: auto;
-      width: 95%;
-      margin-bottom: 2em;
+      width: 97%;
     }
 
     .dynamic {
@@ -141,6 +135,19 @@
       border-radius: .2em;
     }
 
+    .activity-log-heading-container {
+      display: flex;
+      align-content: space-between;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-top: 0.5em;
+    }
+
+    .activity-log-heading-item {
+      align-self: center;
+      font-size: 1.17em;
+    }
+
     /* ************SAFARI ONLY *********************** */
     .left-safari {
       display: inline-block;
@@ -157,20 +164,18 @@
     <div id="intro">
       <h1>A11y View: Example Simulation</h1>
       <details>
-        <summary>About the A11y View</summary>
+        <summary>About the A11y View Tool</summary>
         <p>
-          The A11y View is a design and presentation tool that allows us to visually demonstrate the accessibility layer
-          of the simulation. We refer to this layer as the Parallel DOM, or PDOM. The PDOM (copied into the blue box)
-          exposes the simulation’s full document structure and all the dynamic descriptive content that lives within
-          that structure to a student accessing the simulation using assistive technology, such as screen reader
-          software. The activity log (copied into the orange box), exposes the interactive alerts that a student would
-          hear in real-time as they interact with the simulation. Interact with the accessible version of
-          Example Simulation in the iframe, with either a keyboard or a mouse, and notice how the activity log (orange
-          box) and the content of the PDOM (blue box) update as you interact.
+          The A11y View is a design and presentation tool that visually displays a copy of the descriptions we design
+          for the Interactive Description feature. The State Descriptions (blue box) track the current state of the
+          simulation. The Responsive Descriptions (orange box) deliver relevant changes in real time as they happen.
+          Using this tool, designers can test and assess the descriptions during the design process without using a
+          screen reader. Educators can also use this tool to see if the content of the descritpions meets their teaching
+          and learning needs.
         </p>
         <p>
-          <b>Please note</b> that students do not use the A11y View, they use the accessible simulation, alone, which is
-          rendered here inside the iframe.
+          <b>Please note:</b> The A11y View is not for learners. In learning contexts, screen reader users access the
+          Interactive Desctiption feature using the same simulation as everyone else.
         </p>
       </details>
     </div>
@@ -181,12 +186,17 @@
         <iframe id="iframe" allowfullscreen scrolling="no" title="Interact with Example Simulation"></iframe>
       </div>
       <div id="alerts">
-        <h3>Activity log of Interactive Alerts</h3>
+        <div class="activity-log-heading-container">
+          <h3 class="activity-log-heading-item">Activity log of Responsive Descriptions</h3>
+          <button class="activity-log-heading-item" id="clear-activity-log-button">Clear Log</button>
+        </div>
         <details>
-          <summary>About Interactive Alerts</summary>
-          Interactive alerts (powered by aria-live) are read out as the user interacts providing a description of what
-          is happening in real-time. Alerts appear in reverse chronological order with the latest on top. In general
-          all aria-live alerts are polite, but assertive alerts are highlighted with pink.
+          <summary>About Responsive Descriptions</summary>
+          Responsive Descriptions are a combination of object responses, descriptions of changes made directly to
+          interactive objects, and context responses, descriptions of changes to the surrounding context. Together, they
+          are designed to deliver relevant changes in real time as they happen. The object and context responses powered
+          by ARIA Live appear in the activity log below. The object responses for slider interactions are powered by the
+          aria-valuetext attribute, and are found in grey text under slider interactions in the blue box.
         </details>
         <div id='alert-copy-container' class='alert_copy_container' role='presentation'>
           <div id='polite-element-container'>
@@ -199,11 +209,14 @@
     <!--The PDOM copy will be placed in this container -->
     <div class="right" id="right">
       <div id="pdom">
-        <h3>PDOM & Descriptions for Example Simulation</h3>
+        <h3>State Descriptions for Example Simulation</h3>
         <details>
-          <summary>About the PDOM & Descriptions</summary>
-          Content in the blue box updates in real-time to provide an always-available description of the current
-          state of the sim.
+          <summary>About State Descriptions</summary>
+          State Descriptions are a combination of static state descriptions (descriptions that never change) and dynamic
+          state descriptions (descriptions that update silently as the simulation changes). Together, they form a
+          complete description of the current state at any given moment. These are the descriptions that a screen reader
+          users can read through or review as they feel the need when they accessing a simulation (i.e., not the A11y
+          View tool).
         </details>
         <div id="dom-copy-container" class="dom_copy_container" role="presentation"></div>
       </div>
@@ -217,8 +230,7 @@
 
 <script type="application/javascript">
   const IS_BUILT_STRING = '{{IS_BUILT}}';
-  const IS_BUILT = IS_BUILT_STRING.indexOf( '\{\{' ) !== 0; // escape for better syntax highlighting support
-
+  const IS_BUILT = IS_BUILT_STRING.indexOf( '{{' ) !== 0; // escape for better syntax highlighting support
 
   // Grab all query parameters to pass to the simulation, and a couple of params that are required for this test
   let simulationQueryString = window.location.search;
@@ -235,8 +247,10 @@
   noPostMessage && ( simulationQueryString += 'postMessageOnLoad&postMessageOnError&' );
   noAccessibility && ( simulationQueryString += 'supportsInteractiveDescription=true' );
 
+
+  // in unbuilt mode and on phet-server, the brand suffix is removed
+  const filenameEnding = ( window.location.hostname === 'phet.colorado.edu' || !IS_BUILT ) ? '.html' : '_phet.html';
   const repoLocale = 'example-sim_en';
-  const filenameEnding = IS_BUILT ? '_phet.html' : '.html';
   const simURL = repoLocale + filenameEnding + simulationQueryString;
 
   // set the source of the sim iframe
@@ -245,9 +259,9 @@
   // apply sticky styling for all browsers except chrome.
   const left = document.getElementById( 'left' );
   const ua = navigator.userAgent.toLowerCase();
-  if ( ua.indexOf( 'safari' ) != -1 ) {
+  if ( ua.indexOf( 'safari' ) !== -1 ) {
     if ( ua.indexOf( 'chrome' ) > -1 ) {
-      left.classList.add( 'left' )
+      left.classList.add( 'left' );
     }
     else {
       left.classList.add( 'left-safari' );
@@ -257,6 +271,8 @@
 </script>
 
 <script>
+  // Number of alerts that remain in the Activity log before fading out.
+  const ACTIVITY_LOG_LENGTH = 10;
 
   /*******************************************************************************
    * Helper Functions
@@ -298,13 +314,11 @@
     for ( let i = 0; i < allElements.length; i++ ) {
       const element = allElements[ i ];
 
-      // TODO: see https://github.com/phetsims/chipper/issues/740, for some reason this makes Chrome very slow
       // make sure nothing in copy is focusable
       element.tabIndex = '-1';
 
       // make sure that styling is removed, unless some styling was added just for the copy
-      // TODO: pdom-style is not used anywhere. Should we keep it? https://github.com/phetsims/chipper/issues/916
-      if ( element.className !== "pdom-style" ) {
+      if ( element.className !== 'pdom-style' ) {
         element.removeAttribute( 'style' );
       }
     }
@@ -320,7 +334,7 @@
   function addInlineAttributesTHTML( rootNode ) {
 
     // all elements in the PDOM - a defensive copy since we may be adding new elements to the DOM
-    const allElements = Array.prototype.slice.call( rootNode.getElementsByTagName( "*" ) );
+    const allElements = Array.prototype.slice.call( rootNode.getElementsByTagName( '*' ) );
 
     for ( let i = 0; i < allElements.length; i++ ) {
       const element = allElements[ i ];
@@ -380,7 +394,6 @@
 
     // This is extremely inefficient every time the document changes, make a new copy, remove
     // the visual DOM, and add a new one
-    // TODO: Work on refining this, and only modifying the elements that change in the PDOM https://github.com/phetsims/chipper/issues/916
     copyContainer.innerHTML = '';
     const pdomCopy = pdomRoot.cloneNode( true );
     pdomCopy.removeAttribute( 'style' );
@@ -409,7 +422,7 @@
 
         // update the PDOM copy after a delay to fix a FF/Safari bug where cloneNode prevents hidden DOM elements
         // in the iframe from staying hidden - see https://github.com/phetsims/chipper/issues/648
-        setTimeout( function() {
+        setTimeout( () => {
           setPDOMCopyContent( pdomRoot, copyContainer );
           dirty = false;
         }, 10 );
@@ -453,12 +466,12 @@
 
             // items fade out as they get older
             for ( let j = 0; j < listElement.children.length; j++ ) {
-              listElement.children[ j ].style.opacity = 1.0 / ( j + 1 ) + 0.25;
+              listElement.children[ j ].style.opacity = 1.0 / ( j + 1 ) + 0.50;
             }
 
             // if the list is too large, remove the last items from the list
             const childrenArray = Array.prototype.slice.call( listElement.children );
-            const fadeArray = childrenArray.slice( 5, childrenArray.length );
+            const fadeArray = childrenArray.slice( ACTIVITY_LOG_LENGTH, childrenArray.length );
 
             for ( let i = 0; i < fadeArray.length; i++ ) {
               const fadeChild = fadeArray[ i ];
@@ -478,12 +491,18 @@
       } );
     } );
 
-    liveObserver.observe( originalElement, mutationConfig )
+    liveObserver.observe( originalElement, mutationConfig );
   }
 
-</script>
-
-<script type="application/javascript">
+  /**
+   * Remove all alerts from the activity log by removing all children of the parent containing them. Solution to clear
+   * children from https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+   */
+  function clearActivityLog( listElement ) {
+    while ( listElement.firstChild ) {
+      listElement.removeChild( listElement.lastChild );
+    }
+  }
 
   // constants
   // see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit for details
@@ -513,24 +532,24 @@
 
       const simFrame = document.getElementById( 'iframe' );
       const innerWindow = simFrame.contentWindow;
-      const PDOMRoot = innerWindow.phet.joist.display.pdomRootElement; // copy of the parallel DOM
+      // eslint-disable-next-line dot-notation
+      const PDOMRoot = innerWindow[ 'phet' ].joist.display.pdomRootElement; // copy of the parallel DOM
 
       // get the alert dom elements from the iframe's inner document
-      const ariaLiveElementsContainer = innerWindow.phet.joist.sim.display.descriptionUtteranceQueue.announcer.ariaLiveContainer;
+      // eslint-disable-next-line dot-notation
+      const ariaLiveElementsContainer = innerWindow[ 'phet' ].joist.sim.display.descriptionUtteranceQueue.announcer.ariaLiveContainer;
 
       // get the alert dom elements from the PDOM copy
       const alertList = document.getElementById( 'alert-list' );
 
       // strip the styling from the copied DOM elements
 
-      // TODO: why do we do this? Isn't this an element purely in the a11y view? https://github.com/phetsims/chipper/issues/916
       alertList.removeAttribute( 'style' );
 
       // get the parent container for the parallel DOM copy and the alert content
       const copyContainer = document.getElementById( 'dom-copy-container' );
 
       // once for initial setup
-      // TODO: do we have to do this? https://github.com/phetsims/chipper/issues/916
       setPDOMCopyContent( PDOMRoot, copyContainer );
 
       // update the PDOM copy whenever the sim's PDOM changes
@@ -541,11 +560,14 @@
         addLiveObserver( ariaLiveElementsContainer.children[ i ], alertList, MUTATION_OBSERVER_CONFIG );
       }
 
+      // clear all alerts when the "Clear Log" button is pressed
+      const clearButton = document.getElementById( 'clear-activity-log-button' );
+      clearButton.addEventListener( 'click', () => clearActivityLog( alertList ) );
+
       // set focus to the loaded iframe
       document.getElementById( 'iframe' ).focus();
 
       // Provide fake focus highlighting to the PDOM copy based on what is actually highlighted in the sim.
-      // TODO: is polling the best way to do this? If so why 500? https://github.com/phetsims/chipper/issues/916
       let previousElement = null;
       setInterval( () => {
 
