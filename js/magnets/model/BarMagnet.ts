@@ -11,14 +11,14 @@
 import Property from '../../../../axon/js/Property.js';
 import exampleSim from '../../exampleSim.js';
 
-class BarMagnet {
+export default class BarMagnet {
 
   /**
    * @param {Dimension2} size - the size of the bar magnet in model coordinates
    * @param {Vector2} position - the position of the bar magnet in model coordinates
    * @param {number} orientation - in radians
    */
-  constructor( size, position, orientation ) {
+  public constructor( size, position, orientation ) {
 
     // @public (read-only) {Dimension2} the size of the bar magnet in model coordinates
     this.size = size;
@@ -35,11 +35,10 @@ class BarMagnet {
    * pressed. Note that BarMagnet.size is constant and does not need to be reset.
    * @public
    */
-  reset() {
+  public reset(): void {
     this.positionProperty.reset();
     this.orientationProperty.reset();
   }
 }
 
 exampleSim.register( 'BarMagnet', BarMagnet );
-export default BarMagnet;
