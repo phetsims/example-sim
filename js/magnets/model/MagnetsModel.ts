@@ -17,10 +17,7 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import TModel from '../../../../joist/js/TModel.js';
 import BarMagnet from './BarMagnet.js';
 
-type SelfOptions = {
-  //TODO add options that are specific to MagnetsModel here
-};
-
+type SelfOptions = EmptySelfOptions;
 type MagnetsModelOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 export default class MagnetsModel implements TModel {
