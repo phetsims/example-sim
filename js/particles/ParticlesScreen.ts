@@ -1,4 +1,4 @@
-// Copyright 2021-2022, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticlesScreen is the top-level component for the 'Particles' screen.  It creates the model and view.
@@ -24,9 +24,9 @@ import ParticlesScreenView from './view/ParticlesScreenView.js';
 // constants
 const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
-class ParticlesScreen extends Screen {
+export default class ParticlesScreen extends Screen {
 
-  constructor() {
+  public constructor() {
 
     const options = merge( {
       name: ExampleSimStrings.screen.particlesStringProperty,
@@ -46,7 +46,7 @@ class ParticlesScreen extends Screen {
  * Always use ScreenIcon for screen icons.
  * @returns {ScreenIcon}
  */
-function createScreenIcon() {
+function createScreenIcon(): ScreenIcon {
   const iconNode = new ShadedSphereNode( 100, {
     mainColor: ExampleSimConstants.PARTICLE_COLOR
   } );
@@ -56,4 +56,3 @@ function createScreenIcon() {
 }
 
 exampleSim.register( 'ParticlesScreen', ParticlesScreen );
-export default ParticlesScreen;
