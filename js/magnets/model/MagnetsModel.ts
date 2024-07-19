@@ -25,9 +25,10 @@ type MagnetsModelOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tand
 
 export default class MagnetsModel implements TModel {
 
-  public constructor( providedOptions: MagnetsModelOptions ) {
+  // initial bar magnet model element
+  barMagnet: BarMagnet;
 
-    // @public {BarMagnet} initial bar magnet model element
+  public constructor( providedOptions: MagnetsModelOptions ) {
     this.barMagnet = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 0, 0 ), 0 );
   }
 
@@ -38,14 +39,6 @@ export default class MagnetsModel implements TModel {
    */
   public reset(): void {
     this.barMagnet.reset();
-  }
-
-  /**
-   * Steps the model.
-   * @param dt - time step, in seconds
-   */
-  public step( dt: number ): void {
-    //TODO
   }
 }
 
