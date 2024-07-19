@@ -1,4 +1,4 @@
-// Copyright 2013-2022, University of Colorado Boulder
+// Copyright 2013-2024, University of Colorado Boulder
 
 /**
  * MagnetsControlPanel is a panel that contains controls for magnets.
@@ -12,27 +12,36 @@ import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Text, VBox } from '../../../../scenery/js/imports.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
-import Panel from '../../../../sun/js/Panel.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import exampleSim from '../../exampleSim.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
-class MagnetsControlPanel extends Panel {
+type SelfOptions = {
+ //TODO add options that are specific to MagnetsControlPanel here
+};
+
+type MagnetsControlPanelOptions = SelfOptions & PanelOptions;
+
+export default class MagnetsControlPanel extends Panel {
 
   /**
    * @param {MagnetsModel} model - the model for the entire screen
    * @param {Object} [options] - options for the control panel, see Panel.js for options
    */
-  constructor( model, options ) {
+  public constructor( model: MagnetsModel, providedOptions: MagnetsControlPanelOptions ) {
 
     // Demonstrate a common pattern for specifying options and providing default values
-    options = merge( {
+    const options = optionize<MagnetsControlPanelOptions, SelfOptions, PanelOptions>()( {
 
-      // Panel options
+      //TODO add default values for optional SelfOptions here
+
+      // Default values for optional PanelOptions here
       xMargin: 10,
       yMargin: 10,
       stroke: 'orange',
       lineWidth: 3
-    }, options );
+    }, providedOptions );
 
     // 'Magnet Controls' title
     const magnetControlsTitleNode = new Text( ExampleSimStrings.magnetControlsStringProperty, {
@@ -70,4 +79,3 @@ class MagnetsControlPanel extends Panel {
 }
 
 exampleSim.register( 'MagnetsControlPanel', MagnetsControlPanel );
-export default MagnetsControlPanel;
