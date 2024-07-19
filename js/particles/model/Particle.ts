@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * Particle is the model of a simple particle.
@@ -14,22 +14,31 @@ import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 // constants
 const DEFAULT_POSITION = new Vector2( 0, 0 ); // in nm
 
-class Particle {
+type SelfOptions = {
+  diameter: number, // in nm
+  position: Vector2, // in nm
+  color: Color | string
+};
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
+type ParticleOptions = SelfOptions;
 
-    options = merge( {
+export default class Particle implements TModel {
+
+  public constructor( providedOptions: ParticleOptions ) {
+
+    // Demonstrate a common pattern for specifying options and providing default values
+    const options = optionize<ParticleOptions, SelfOptions>()( {
+
+      // Default values for optional SelfOptions
       diameter: 2000, // {number} nm
       position: DEFAULT_POSITION, // {Vector2} nm
       color: ExampleSimConstants.PARTICLE_COLOR // {Color|string}
-    }, options );
+    }, providedOptions );
 
     // @public (read-only) the particle's diameter, in nm
     this.diameter = options.diameter;
@@ -56,7 +65,7 @@ class Particle {
    * Call this method when an instance is ready to be freed, so that it becomes eligible for garbage collection.
    * @public
    */
-  dispose() {
+  public dispose(): void {
     this.positionProperty.dispose();
     this.opacityProperty.dispose();
     this.isDisposed = true;
@@ -67,7 +76,7 @@ class Particle {
    * @param {Vector2} force
    * @public
    */
-  applyForce( force ) {
+  public applyForce( force: Vector2 ): void {
     assert && assert( !this.isDisposed, 'attempt to use disposed particle' );
     this.velocity.add( force );
     this.positionProperty.value = this.positionProperty.value.plus( this.velocity );
@@ -75,4 +84,3 @@ class Particle {
 }
 
 exampleSim.register( 'Particle', Particle );
-export default Particle;
