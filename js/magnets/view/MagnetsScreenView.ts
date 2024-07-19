@@ -20,7 +20,7 @@ import MagnetsControlPanel from './MagnetsControlPanel.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = {
- //TODO add options that are specific to MagnetsScreenView here
+  //TODO add options that are specific to MagnetsScreenView here
 };
 
 type MagnetsScreenViewOptions = SelfOptions & ScreenViewOptions;

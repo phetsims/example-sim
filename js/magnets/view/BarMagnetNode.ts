@@ -21,7 +21,7 @@ export default class BarMagnetNode extends Node {
    * @param {BarMagnet} barMagnet - the model of the bar magnet
    * @param {ModelViewTransform2} modelViewTransform - the transform between model coordinates and view coordinates
    */
-  public constructor( barMagnet, modelViewTransform ) {
+  public constructor( barMagnet: BarMagnet, modelViewTransform: ModelViewTransform2 ) {
 
     // This is an example of using assertions to check for potential programming errors. In this case, we are verifying
     // that the arguments have the expected type.  Run the simulation with query parameter ?ea to enable assertions.

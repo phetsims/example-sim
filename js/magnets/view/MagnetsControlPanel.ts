@@ -8,7 +8,6 @@
  * @author Steele Dalton (PhET Interactive Simulations)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Text, VBox } from '../../../../scenery/js/imports.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
@@ -18,7 +17,7 @@ import ExampleSimStrings from '../../ExampleSimStrings.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = {
- //TODO add options that are specific to MagnetsControlPanel here
+  //TODO add options that are specific to MagnetsControlPanel here
 };
 
 type MagnetsControlPanelOptions = SelfOptions & PanelOptions;
@@ -36,7 +35,7 @@ export default class MagnetsControlPanel extends Panel {
 
       //TODO add default values for optional SelfOptions here
 
-      // Default values for optional PanelOptions here
+      // Default values for optional PanelOptions
       xMargin: 10,
       yMargin: 10,
       stroke: 'orange',

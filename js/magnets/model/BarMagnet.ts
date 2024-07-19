@@ -18,7 +18,7 @@ export default class BarMagnet {
    * @param {Vector2} position - the position of the bar magnet in model coordinates
    * @param {number} orientation - in radians
    */
-  public constructor( size, position, orientation ) {
+  public constructor( size: Dimension2, position:Vector2, orientation: number ) {
 
     // @public (read-only) {Dimension2} the size of the bar magnet in model coordinates
     this.size = size;
