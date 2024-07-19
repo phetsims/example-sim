@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticlesModel is the top-level model for the 'Particles' screen. You can think of the top-level model as a container
@@ -21,9 +21,9 @@ import Particle from './Particle.js';
 const GRAVITY = new Vector2( 0, -20 ); // in nm/sec
 const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each animation step
 
-class ParticlesModel {
+export default class ParticlesModel {
 
-  constructor() {
+  public constructor() {
 
     // @public {Particle[]} the complete set of particles
     this.particles = [];
@@ -46,7 +46,7 @@ class ParticlesModel {
    * Resets the model to its initial state. This method is called when the simulation's "Reset All" button is pressed.
    * @public
    */
-  reset() {
+  public reset(): void {
 
     // Remove all particles.
     while ( this.particles.length > 0 ) {
@@ -59,7 +59,7 @@ class ParticlesModel {
    * @param {number} dt - time step, in seconds
    * @public
    */
-  step( dt ) {
+  public step( dt: number ): void {
     if ( this.isPlayingProperty.value ) {
       this.stepOnce();
     }
@@ -69,7 +69,7 @@ class ParticlesModel {
    * Steps the model one step. Called directly when using the step button of the time control.
    * @public
    */
-  stepOnce() {
+  public stepOnce(): void {
 
     // Create some new particles
     for ( let i = 0; i < 3; i++ ) {
@@ -99,7 +99,7 @@ class ParticlesModel {
    * @param {Particle} particle
    * @private
    */
-  removeParticle( particle ) {
+  private removeParticle( particle: Particle ): void {
     this.particles.splice( this.particles.indexOf( particle ), 1 );
     this.particleRemovedEmitter.emit( particle );
     particle.dispose();
@@ -107,4 +107,3 @@ class ParticlesModel {
 }
 
 exampleSim.register( 'ParticlesModel', ParticlesModel );
-export default ParticlesModel;
