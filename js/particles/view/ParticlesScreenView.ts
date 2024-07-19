@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticlesScreenView is the top-level view component for the 'Magnets' screen. All of the components that make up
@@ -20,12 +20,12 @@ import ParticleNode from './ParticleNode.js';
 // The model is in nanometers, and this is the number of nanometers per 1 unit in the view.
 const NANOMETERS_PER_PIXEL = 100;
 
-class ParticlesScreenView extends ScreenView {
+export default class ParticlesScreenView extends ScreenView {
 
   /**
    * @param {ParticlesModel} model - the top-level model for this screen
    */
-  constructor( model ) {
+  public constructor( model: ParticlesModel ) {
 
     super();
 
@@ -104,4 +104,3 @@ class ParticlesScreenView extends ScreenView {
 }
 
 exampleSim.register( 'ParticlesScreenView', ParticlesScreenView );
-export default ParticlesScreenView;
