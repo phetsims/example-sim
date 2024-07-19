@@ -7,24 +7,33 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
+import ShadedSphereNode, { ShadedSphereNodeOptions } from '../../../../scenery-phet/js/ShadedSphereNode.js';
 import exampleSim from '../../exampleSim.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
-class ParticleNode extends ShadedSphereNode {
+type SelfOptions = {
+  //TODO add options that are specific to ParticleNode here
+};
+
+type ParticleNodeOptions = SelfOptions & ShadedSphereNodeOptions;
+
+export default class ParticleNode extends ShadedSphereNode {
 
   /**
    * @param {Particle} particle - the model of a particle
    * @param {ModelViewTransform2} modelViewTransform - transform between model and view coordinates
    * @param {Options} [options]
    */
-  constructor( particle, modelViewTransform, options ) {
+  public constructor( particle: Particle, modelViewTransform: ModelViewTransform2, providedOptions: ParticleNodeOptions ) {
 
-    options = merge( {
+    // Demonstrate a common pattern for specifying options and providing default values
+    const options = optionize<MagnetsControlPanelOptions, SelfOptions, PanelOptions>()( {
 
-      // ShadedSphereNode options
+      //TODO add default values for optional SelfOptions here
+
+      // Default values for optional ShadedSphereNodeOptions
       mainColor: particle.color
-    }, options );
+    }, providedOptions );
 
     super( modelViewTransform.modelToViewDeltaX( particle.diameter ), options );
 
@@ -45,4 +54,3 @@ class ParticleNode extends ShadedSphereNode {
 }
 
 exampleSim.register( 'ParticleNode', ParticleNode );
-export default ParticleNode;
