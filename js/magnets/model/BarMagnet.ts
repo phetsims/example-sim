@@ -9,9 +9,19 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
+import TModel from '../../../../joist/js/TModel.js';
 import exampleSim from '../../exampleSim.js';
 
-export default class BarMagnet {
+export default class BarMagnet implements TModel {
+
+  // the size of the bar magnet in model coordinates
+  readonly size: Dimension2;
+
+  // the position of the bar magnet in model coordinates
+  positionProperty: Property<Vector2>;
+
+  // orientation in radians
+  orientationProperty: Property<number>;
 
   /**
    * @param {Dimension2} size - the size of the bar magnet in model coordinates
@@ -19,14 +29,8 @@ export default class BarMagnet {
    * @param {number} orientation - in radians
    */
   public constructor( size: Dimension2, position: Vector2, orientation: number ) {
-
-    // @public (read-only) {Dimension2} the size of the bar magnet in model coordinates
     this.size = size;
-
-    // @public {Vector2} the position of the bar magnet in model coordinates
     this.positionProperty = new Property( position );
-
-    // @public {number} in radians
     this.orientationProperty = new Property( orientation );
   }
 
