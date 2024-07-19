@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * MagnetsScreenView is the top-level view component for the 'Magnets' screen. All of the components that make up
@@ -10,22 +10,36 @@
  */
 
 import Vector2 from '../../../../dot/js/Vector2.js';
-import ScreenView from '../../../../joist/js/ScreenView.js';
+import ScreenView, { ScreenViewOptions } from '../../../../joist/js/ScreenView.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 import BarMagnetNode from './BarMagnetNode.js';
 import MagnetsControlPanel from './MagnetsControlPanel.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
-class MagnetsScreenView extends ScreenView {
+type SelfOptions = {
+ //TODO add options that are specific to MagnetsScreenView here
+};
+
+type MagnetsScreenViewOptions = SelfOptions & ScreenViewOptions;
+
+export default class MagnetsScreenView extends ScreenView {
 
   /**
    * @param {MagnetsModel} model - the top-level model for this screen
    */
-  constructor( model ) {
+  public constructor( model: MagnetsModel, providedOptions: MagnetsScreenViewOptions ) {
 
-    super();
+    const options = optionize<MagnetsScreenViewOptions, SelfOptions, ScreenViewOptions>()( {
+
+      //TODO add default values for optional SelfOptions here
+
+      //TODO add default values for optional ScreenViewOptions here
+    }, providedOptions );
+
+    super( options );
 
     // transform between model coordinates and view coordinates
     const center = new Vector2( this.layoutBounds.width / 2, this.layoutBounds.height / 2 );
@@ -42,21 +56,33 @@ class MagnetsScreenView extends ScreenView {
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this
     // button is positioned at the lower-right of the screen.
-    this.addChild( new ResetAllButton( {
+    const resetAllButton = new ResetAllButton( {
       listener: () => {
-
-        // Interrupt any other user interactions that may be in progress, needed for multi-touch.
-        // To demonstrate, press the Reset All button while dragging the magent.
-        this.interruptSubtreeInput();
-
-        // Reset the model
+        this.interruptSubtreeInput(); // cancel interactions that may be in progress
         model.reset();
+        this.reset();
       },
-      right: this.layoutBounds.right - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
-      bottom: this.layoutBounds.bottom - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
-    } ) );
+      right: this.layoutBounds.maxX - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
+      bottom: this.layoutBounds.maxY - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
+      // tandem: options.tandem.createTandem( 'resetAllButton' )
+    } );
+    this.addChild( resetAllButton );
+  }
+
+  /**
+   * Resets the view.
+   */
+  public reset(): void {
+    //TODO
+  }
+
+  /**
+   * Steps the view.
+   * @param dt - time step, in seconds
+   */
+  public override step( dt: number ): void {
+    //TODO
   }
 }
 
 exampleSim.register( 'MagnetsScreenView', MagnetsScreenView );
-export default MagnetsScreenView;
