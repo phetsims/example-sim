@@ -11,27 +11,34 @@
  */
 
 import Property from '../../../axon/js/Property.js';
-import Screen from '../../../joist/js/Screen.js';
+import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
-import ExampleSimConstants from '../common/ExampleSimConstants.js';
+import ExampleSimConstants, { ExampleSimScreenOptions } from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
+import optionize from '../../../phet-core/js/optionize.js';
 
 // constants
 const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
-export default class ParticlesScreen extends Screen {
+type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
+type ParticlesScreenOptions = SelfOptions & ScreenOptions;
 
-  public constructor() {
+export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScreenView> {
 
-    const options = merge( {
-      name: ExampleSimStrings.screen.particlesStringProperty,
-      homeScreenIcon: createScreenIcon()
-    }, ExampleSimConstants.SCREEN_OPTIONS );
+  public constructor( providedOptions?: ParticlesScreenOptions ) {
+
+    const options = optionize<ParticlesScreenOptions, SelfOptions, ScreenOptions>()(
+      ExampleSimConstants.SCREEN_OPTIONS,
+      {
+        name: ExampleSimStrings.screen.particlesStringProperty,
+        homeScreenIcon: createScreenIcon()
+      },
+      providedOptions );
 
     super(
       () => new ParticlesModel(),
