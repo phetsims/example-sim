@@ -11,6 +11,14 @@
 import Property from '../../../axon/js/Property.js';
 import exampleSim from '../exampleSim.js';
 
+export type ExampleSimScreenOptions = {
+    backgroundColorProperty: Property<String>,
+
+    showUnselectedHomeScreenIconFrame: boolean,
+
+    showScreenIconFrameForNavigationBarFill: String
+};
+
 const ExampleSimConstants = {
 
   // Margins around the edge of the view
@@ -18,6 +26,7 @@ const ExampleSimConstants = {
   SCREEN_VIEW_Y_MARGIN: 20,
 
   // Options common to all Screens
+  //SCREEN_OPTIONS: ExampleSimScreenOptions = {
   SCREEN_OPTIONS: {
     backgroundColorProperty: new Property( 'black' ),
 

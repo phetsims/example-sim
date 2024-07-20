@@ -7,28 +7,35 @@
  */
 
 import Property from '../../../axon/js/Property.js';
-import Screen from '../../../joist/js/Screen.js';
+import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import barMagnet_png from '../../images/barMagnet_png.js';
-import ExampleSimConstants from '../common/ExampleSimConstants.js';
+import ExampleSimConstants, { ExampleSimScreenOptions } from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
+import optionize from '../../../phet-core/js/optionize.js';
 
 // constants
 const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
-class MagnetsScreen extends Screen {
+type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
+type MagnetsScreenOptions = SelfOptions & ScreenOptions;
 
-  constructor() {
+export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenView> {
 
-    const options = merge( {
-      name: ExampleSimStrings.screen.magnetsStringProperty,
-      homeScreenIcon: createScreenIcon()
-    }, ExampleSimConstants.SCREEN_OPTIONS );
+  public constructor( providedOptions?: MagnetsScreenOptions ) {
+
+    const options = optionize<MagnetsScreenOptions, SelfOptions, ScreenOptions>()(
+      ExampleSimConstants.SCREEN_OPTIONS,
+      {
+        name: ExampleSimStrings.screen.magnetsStringProperty,
+        homeScreenIcon: createScreenIcon()
+      },
+      providedOptions );
 
     super(
       () => new MagnetsModel(),
@@ -43,7 +50,7 @@ class MagnetsScreen extends Screen {
  * Always use ScreenIcon for screen icons.
  * @returns {ScreenIcon}
  */
-function createScreenIcon() {
+function createScreenIcon(): ScreenIcon {
   const iconNode = new Image( barMagnet_png );
   return new ScreenIcon( iconNode, {
     fill: BACKGROUND_COLOR_PROPERTY
@@ -51,4 +58,3 @@ function createScreenIcon() {
 }
 
 exampleSim.register( 'MagnetsScreen', MagnetsScreen );
-export default MagnetsScreen;
