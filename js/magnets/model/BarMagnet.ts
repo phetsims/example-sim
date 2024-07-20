@@ -1,4 +1,4 @@
-// Copyright 2013-2021, University of Colorado Boulder
+// Copyright 2013-2024, University of Colorado Boulder
 
 /**
  * BarMagnet is the model of a simple bar magnet. The magnet has fixed size, and mutable position and orientation.

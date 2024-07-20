@@ -19,10 +19,7 @@ import BarMagnetNode from './BarMagnetNode.js';
 import MagnetsControlPanel from './MagnetsControlPanel.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
-type SelfOptions = {
-  //TODO add options that are specific to MagnetsScreenView here
-};
-
+type SelfOptions = EmptySelfOptions;
 type MagnetsScreenViewOptions = SelfOptions & ScreenViewOptions;
 
 export default class MagnetsScreenView extends ScreenView {

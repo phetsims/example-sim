@@ -1,4 +1,4 @@
-// Copyright 2013-2022, University of Colorado Boulder
+// Copyright 2013-2024, University of Colorado Boulder
 
 /**
  * BarMagnetNode is the view for the bar magnet. It is responsible for the visual representation of a bar magnet,

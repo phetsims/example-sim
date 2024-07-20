@@ -16,10 +16,7 @@ import exampleSim from '../../exampleSim.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
-type SelfOptions = {
-  //TODO add options that are specific to MagnetsControlPanel here
-};
-
+type SelfOptions = EmptySelfOptions;
 type MagnetsControlPanelOptions = SelfOptions & PanelOptions;
 
 export default class MagnetsControlPanel extends Panel {
@@ -32,8 +29,6 @@ export default class MagnetsControlPanel extends Panel {
 
     // Demonstrate a common pattern for specifying options and providing default values
     const options = optionize<MagnetsControlPanelOptions, SelfOptions, PanelOptions>()( {
-
-      //TODO add default values for optional SelfOptions here
 
       // Default values for optional PanelOptions
       xMargin: 10,
