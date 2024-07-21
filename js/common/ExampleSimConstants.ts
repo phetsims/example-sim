@@ -13,11 +13,11 @@ import ExampleSimColors from './ExampleSimColors.js';
 import exampleSim from '../exampleSim.js';
 
 export type ExampleSimScreenOptions = {
-    backgroundColorProperty: Property<String>,
+    backgroundColorProperty: Property<string>;
 
-    showUnselectedHomeScreenIconFrame: boolean,
+    showUnselectedHomeScreenIconFrame: boolean;
 
-    showScreenIconFrameForNavigationBarFill: String
+    showScreenIconFrameForNavigationBarFill: string;
 };
 
 const ExampleSimConstants = {
@@ -27,7 +27,7 @@ const ExampleSimConstants = {
   SCREEN_VIEW_Y_MARGIN: 20,
 
   // Options common to all Screens
-  // SCREEN_OPTIONS: ExampleSimScreenOptions = { // TODO should be this, but weirdly says ExampleSimScreenOptions doesn't exist
+  // SCREEN_OPTIONS: ExampleSimScreenOptions = { // should be this, but weirdly says ExampleSimScreenOptions doesn't exist
   SCREEN_OPTIONS: {
     backgroundColorProperty: ExampleSimColors.screenBackgroundColorProperty,
 
@@ -36,7 +36,7 @@ const ExampleSimConstants = {
 
     // put a gray border around screen icons when the navigation bar is black
     showScreenIconFrameForNavigationBarFill: 'black'
-  },
+  }
 };
 
 exampleSim.register( 'ExampleSimConstants', ExampleSimConstants );

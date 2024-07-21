@@ -6,14 +6,14 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import { Color } from '../../../../scenery/js/imports.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import dotRandom from '../../../../dot/js/dotRandom.js';
 import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
-import merge from '../../../../phet-core/js/merge.js';
+import TModel from '../../../../joist/js/TModel.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
-import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
@@ -22,9 +22,9 @@ const DEFAULT_DIAMETER = 2000; // in nm
 const DEFAULT_POSITION = new Vector2( 0, 0 ); // in nm
 
 type SelfOptions = {
-  diameter: number, // in nm
-  position: Vector2, // in nm
-  color: Color | string
+  diameter: number; // in nm
+  position: Vector2; // in nm
+  color: Color | string;
 };
 
 type ParticleOptions = SelfOptions;
@@ -32,20 +32,20 @@ type ParticleOptions = SelfOptions;
 export default class Particle implements TModel {
 
   // the particle's diameter, in nm
-  readonly diameter: number;
+  public readonly diameter: number;
 
   // the particle's position, in nm
-  positionProperty: Vector2Property;
+  public positionProperty: Vector2Property;
 
-  readonly color: Color | string;
+  public readonly color: Color | string;
 
   // the particle's velocity, in nm/sec
   private velocity: Vector2;
 
-  opacityProperty: NumberProperty;
+  public opacityProperty: NumberProperty;
 
   // whether this particle has been disposed, and should therefore no longer be used
-  readonly isDisposed: boolean;
+  public readonly isDisposed: boolean;
 
   public constructor( providedOptions: ParticleOptions ) {
 
@@ -70,7 +70,6 @@ export default class Particle implements TModel {
 
   /**
    * Call this method when an instance is ready to be freed, so that it becomes eligible for garbage collection.
-   * @public
    */
   public dispose(): void {
     this.positionProperty.dispose();
@@ -80,8 +79,6 @@ export default class Particle implements TModel {
 
   /**
    * Applies a force to the particle, which will result in a change of position.
-   * @param {Vector2} force
-   * @public
    */
   public applyForce( force: Vector2 ): void {
     assert && assert( !this.isDisposed, 'attempt to use disposed particle' );

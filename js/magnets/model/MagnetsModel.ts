@@ -11,13 +11,14 @@
 
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
+import TModel from '../../../../joist/js/TModel.js';
 import exampleSim from '../../exampleSim.js';
 import BarMagnet from './BarMagnet.js';
 
 export default class MagnetsModel implements TModel {
 
   // initial bar magnet model element
-  barMagnet: BarMagnet;
+  public barMagnet: BarMagnet;
 
   public constructor() {
     this.barMagnet = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 0, 0 ), 0 );

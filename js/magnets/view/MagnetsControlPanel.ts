@@ -15,7 +15,8 @@ import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import exampleSim from '../../exampleSim.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import MagnetsModel from '../model/MagnetsModel.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
 type MagnetsControlPanelOptions = SelfOptions & PanelOptions;
@@ -23,8 +24,8 @@ type MagnetsControlPanelOptions = SelfOptions & PanelOptions;
 export default class MagnetsControlPanel extends Panel {
 
   /**
-   * @param {MagnetsModel} model - the model for the entire screen
-   * @param {Object} [options] - options for the control panel, see Panel.js for options
+   * model - the model for the entire screen
+   * providedOptions - options for the control panel, see Panel.js for options
    */
   public constructor( model: MagnetsModel, providedOptions: MagnetsControlPanelOptions ) {
 

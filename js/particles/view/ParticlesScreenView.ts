@@ -15,6 +15,7 @@ import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import { Node } from '../../../../scenery/js/imports.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
+import ParticlesModel from '../model/ParticlesModel.js';
 import ParticleNode from './ParticleNode.js';
 
 // The model is in nanometers, and this is the number of nanometers per 1 unit in the view.
@@ -28,7 +29,7 @@ export default class ParticlesScreenView extends ScreenView {
   private particlesNode: Node;
 
   /**
-   * @param {ParticlesModel} model - the top-level model for this screen
+   * model - the top-level model for this screen
    */
   public constructor( model: ParticlesModel ) {
 

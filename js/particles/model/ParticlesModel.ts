@@ -24,16 +24,16 @@ const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each anima
 export default class ParticlesModel {
 
   // the complete set of particles
-  particles: Particle[];
+  public particles: Particle[];
 
   // Notifies listeners when a Particle is added.
-  particleAddedEmitter: Emitter;
+  public particleAddedEmitter: Emitter;
 
   // Notifies listeners when a Particle is removed.
-  particleRemovedEmitter: Emitter;
+  public particleRemovedEmitter: Emitter;
 
   // Whether the model is advanced on each call to step.
-  isPlayingProperty: BooleanProperty;
+  public isPlayingProperty: BooleanProperty;
 
   public constructor() {
 
@@ -49,7 +49,6 @@ export default class ParticlesModel {
 
   /**
    * Resets the model to its initial state. This method is called when the simulation's "Reset All" button is pressed.
-   * @public
    */
   public reset(): void {
 
@@ -61,8 +60,7 @@ export default class ParticlesModel {
 
   /**
    * Steps the model each time the clock ticks.
-   * @param {number} dt - time step, in seconds
-   * @public
+   * dt - time step, in seconds
    */
   public step( dt: number ): void {
     if ( this.isPlayingProperty.value ) {
@@ -72,7 +70,6 @@ export default class ParticlesModel {
 
   /**
    * Steps the model one step. Called directly when using the step button of the time control.
-   * @public
    */
   public stepOnce(): void {
 
@@ -101,8 +98,6 @@ export default class ParticlesModel {
 
   /**
    * Removes a particle.
-   * @param {Particle} particle
-   * @private
    */
   private removeParticle( particle: Particle ): void {
     this.particles.splice( this.particles.indexOf( particle ), 1 );

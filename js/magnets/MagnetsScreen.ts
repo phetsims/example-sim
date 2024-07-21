@@ -16,7 +16,7 @@ import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
-import optionize from '../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
 type MagnetsScreenOptions = SelfOptions & ScreenOptions;
@@ -34,8 +34,8 @@ export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenVie
       providedOptions );
 
     super(
-      () => new MagnetsModel(),
-      model => new MagnetsScreenView( model ),
+      () => new MagnetsModel( { tandem: options.tandem.createTandem( 'model' ) } ),
+      model => new MagnetsScreenView( model, { tandem: options.tandem.createTandem( 'model' ) } ),
       options
     );
   }
@@ -44,7 +44,6 @@ export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenVie
 /**
  * Creates the icon for this screen. This will be used for the home screen and navigation bar.
  * Always use ScreenIcon for screen icons.
- * @returns {ScreenIcon}
  */
 function createScreenIcon(): ScreenIcon {
   const iconNode = new Image( barMagnet_png );

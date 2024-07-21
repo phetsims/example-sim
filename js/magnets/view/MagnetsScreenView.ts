@@ -13,11 +13,12 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView, { ScreenViewOptions } from '../../../../joist/js/ScreenView.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
-import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
+import ExampleSimConstants from '../../common/ExampleSimConstants.js';
+import MagnetsModel from '../model/MagnetsModel.js';
 import BarMagnetNode from './BarMagnetNode.js';
 import MagnetsControlPanel from './MagnetsControlPanel.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
 type MagnetsScreenViewOptions = SelfOptions & ScreenViewOptions;
@@ -25,7 +26,7 @@ type MagnetsScreenViewOptions = SelfOptions & ScreenViewOptions;
 export default class MagnetsScreenView extends ScreenView {
 
   /**
-   * @param {MagnetsModel} model - the top-level model for this screen
+   * model - the top-level model for this screen
    */
   public constructor( model: MagnetsModel, providedOptions: MagnetsScreenViewOptions ) {
 
@@ -57,8 +58,8 @@ export default class MagnetsScreenView extends ScreenView {
         this.reset();
       },
       right: this.layoutBounds.maxX - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
-      bottom: this.layoutBounds.maxY - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
-      // tandem: options.tandem.createTandem( 'resetAllButton' ) // TODO added by create-sim, but doesn't work here
+      bottom: this.layoutBounds.maxY - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN,
+      tandem: options.tandem.createTandem( 'resetAllButton' )
     } );
     this.addChild( resetAllButton );
   }

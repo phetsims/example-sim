@@ -8,6 +8,8 @@
  * @author Steele Dalton (PhET Interactive Simulations)
  */
 
+import Dimension2 from '../../../../dot/js/Dimension2.js';
+import Vector2 from '../../../../dot/js/Vector2.js';
 import Property from '../../../../axon/js/Property.js';
 import TModel from '../../../../joist/js/TModel.js';
 import exampleSim from '../../exampleSim.js';
@@ -15,18 +17,18 @@ import exampleSim from '../../exampleSim.js';
 export default class BarMagnet implements TModel {
 
   // the size of the bar magnet in model coordinates
-  readonly size: Dimension2;
+  public readonly size: Dimension2;
 
   // the position of the bar magnet in model coordinates
-  positionProperty: Property<Vector2>;
+  public positionProperty: Property<Vector2>;
 
   // orientation in radians
-  orientationProperty: Property<number>;
+  public orientationProperty: Property<number>;
 
   /**
-   * @param {Dimension2} size - the size of the bar magnet in model coordinates
-   * @param {Vector2} position - the position of the bar magnet in model coordinates
-   * @param {number} orientation - in radians
+   * size - the size of the bar magnet in model coordinates
+   * position - the position of the bar magnet in model coordinates
+   * orientation - in radians
    */
   public constructor( size: Dimension2, position: Vector2, orientation: number ) {
     this.size = size;
@@ -37,7 +39,6 @@ export default class BarMagnet implements TModel {
   /**
    * Restores the initial state of the BarMagnet. This method is called when the simulation's "Reset All" button is
    * pressed. Note that BarMagnet.size is constant and does not need to be reset.
-   * @public
    */
   public reset(): void {
     this.positionProperty.reset();

@@ -10,10 +10,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
 import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
-import merge from '../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
 import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants, { ExampleSimScreenOptions } from '../common/ExampleSimConstants.js';
@@ -21,7 +19,7 @@ import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
-import optionize from '../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
 type ParticlesScreenOptions = SelfOptions & ScreenOptions;
@@ -39,8 +37,8 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
       providedOptions );
 
     super(
-      () => new ParticlesModel(),
-      model => new ParticlesScreenView( model ),
+      () => new ParticlesModel( { tandem: options.tandem.createTandem( 'model' ) } ),
+      model => new ParticlesScreenView( model, { tandem: options.tandem.createTandem( 'model' ) } ),
       options
     );
   }
@@ -49,7 +47,6 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
 /**
  * Creates the icon for this screen. This will be used for the home screen and navigation bar.
  * Always use ScreenIcon for screen icons.
- * @returns {ScreenIcon}
  */
 function createScreenIcon(): ScreenIcon {
   const iconNode = new ShadedSphereNode( 100, {

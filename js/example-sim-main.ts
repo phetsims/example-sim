@@ -21,7 +21,10 @@ simLauncher.launch( () => {
 
   const titleStringProperty = ExampleSimStrings[ 'example-sim' ].titleStringProperty;
 
-  const screens = [ new MagnetsScreen(), new ParticlesScreen() ];
+  const screens = [
+    new MagnetsScreen( { tandem: Tandem.ROOT.createTandem( 'magnetsScreen' ) } ),
+    new ParticlesScreen( { tandem: Tandem.ROOT.createTandem( 'particlesScreen' ) } )
+  ];
 
   const options: SimOptions = {
 

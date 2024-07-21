@@ -7,26 +7,28 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ShadedSphereNode, { ShadedSphereNodeOptions } from '../../../../scenery-phet/js/ShadedSphereNode.js';
 import exampleSim from '../../exampleSim.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import Particle from '../model/Particle.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
 type ParticleNodeOptions = SelfOptions & ShadedSphereNodeOptions;
 
 export default class ParticleNode extends ShadedSphereNode {
 
-  readonly particle: Particle;
+  public readonly particle: Particle;
 
   /**
-   * @param {Particle} particle - the model of a particle
-   * @param {ModelViewTransform2} modelViewTransform - transform between model and view coordinates
-   * @param {Options} [options]
+   * particle - the model of a particle
+   * modelViewTransform - transform between model and view coordinates
+   * providedOptions
    */
   public constructor( particle: Particle, modelViewTransform: ModelViewTransform2, providedOptions: ParticleNodeOptions ) {
 
     // Demonstrate a common pattern for specifying options and providing default values
-    const options = optionize<MagnetsControlPanelOptions, SelfOptions, PanelOptions>()( {
+    const options = optionize<ParticleNodeOptions, SelfOptions, ShadedSphereNodeOptions>()( {
 
       // Default values for optional ShadedSphereNodeOptions
       mainColor: particle.color
