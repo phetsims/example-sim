@@ -35,7 +35,7 @@ export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenVie
 
     super(
       () => new MagnetsModel( { tandem: options.tandem.createTandem( 'model' ) } ),
-      model => new MagnetsScreenView( model, { tandem: options.tandem.createTandem( 'model' ) } ),
+      model => new MagnetsScreenView( model, { tandem: options.tandem.createTandem( 'view' ) } ),
       options
     );
   }

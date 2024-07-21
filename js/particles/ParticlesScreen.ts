@@ -38,7 +38,7 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
 
     super(
       () => new ParticlesModel( { tandem: options.tandem.createTandem( 'model' ) } ),
-      model => new ParticlesScreenView( model, { tandem: options.tandem.createTandem( 'model' ) } ),
+      model => new ParticlesScreenView( model, { tandem: options.tandem.createTandem( 'view' ) } ),
       options
     );
   }
