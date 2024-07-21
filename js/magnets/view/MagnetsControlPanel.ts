@@ -13,6 +13,7 @@ import { Text, VBox } from '../../../../scenery/js/imports.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import exampleSim from '../../exampleSim.js';
+import ExampleSimColors from '../../common/ExampleSimColors.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
@@ -33,7 +34,7 @@ export default class MagnetsControlPanel extends Panel {
       // Default values for optional PanelOptions
       xMargin: 10,
       yMargin: 10,
-      stroke: 'orange',
+      stroke: ExampleSimColors.controlPanelBorderColorProperty,
       lineWidth: 3
     }, providedOptions );
 
@@ -50,7 +51,7 @@ export default class MagnetsControlPanel extends Panel {
       content: new Text( ExampleSimStrings.flipPolarityStringProperty, {
         font: new PhetFont( 16 )
       } ),
-      baseColor: 'yellow',
+      baseColor: ExampleSimColors.controlPanelButtonColorProperty,
       xMargin: 10,
       listener: () => {
         const orientation = model.barMagnet.orientationProperty.get() + Math.PI;

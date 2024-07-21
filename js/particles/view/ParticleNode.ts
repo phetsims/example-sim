@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticleNode is the view for a particle. It is responsible for the visual representation of a particle,
@@ -34,7 +34,6 @@ export default class ParticleNode extends ShadedSphereNode {
 
     super( modelViewTransform.modelToViewDeltaX( particle.diameter ), options );
 
-    // @public (read-only)
     this.particle = particle;
 
     // Update the view position to match the model position.

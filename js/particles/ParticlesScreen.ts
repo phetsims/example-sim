@@ -53,7 +53,7 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
  */
 function createScreenIcon(): ScreenIcon {
   const iconNode = new ShadedSphereNode( 100, {
-    mainColor: ExampleSimConstants.PARTICLE_COLOR
+    mainColor: ExampleSimColors.particleColorProperty
   } );
   return new ScreenIcon( iconNode, {
     fill: ExampleSimColors.screenBackgroundColorProperty

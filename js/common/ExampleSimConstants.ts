@@ -27,7 +27,7 @@ const ExampleSimConstants = {
   SCREEN_VIEW_Y_MARGIN: 20,
 
   // Options common to all Screens
-  //SCREEN_OPTIONS: ExampleSimScreenOptions = {
+  // SCREEN_OPTIONS: ExampleSimScreenOptions = { // TODO should be this, but weirdly says ExampleSimScreenOptions doesn't exist
   SCREEN_OPTIONS: {
     backgroundColorProperty: ExampleSimColors.screenBackgroundColorProperty,
 
@@ -37,9 +37,6 @@ const ExampleSimConstants = {
     // put a gray border around screen icons when the navigation bar is black
     showScreenIconFrameForNavigationBarFill: 'black'
   },
-
-  // Color used for particles
-  PARTICLE_COLOR: 'rgb( 160, 160, 160 )'
 };
 
 exampleSim.register( 'ExampleSimConstants', ExampleSimConstants );

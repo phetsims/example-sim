@@ -30,10 +30,7 @@ export default class MagnetsScreenView extends ScreenView {
   public constructor( model: MagnetsModel, providedOptions: MagnetsScreenViewOptions ) {
 
     const options = optionize<MagnetsScreenViewOptions, SelfOptions, ScreenViewOptions>()( {
-
-      //TODO add default values for optional SelfOptions here
-
-      //TODO add default values for optional ScreenViewOptions here
+      // Nothing needed for example-sim.
     }, providedOptions );
 
     super( options );
@@ -61,7 +58,7 @@ export default class MagnetsScreenView extends ScreenView {
       },
       right: this.layoutBounds.maxX - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
       bottom: this.layoutBounds.maxY - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
-      // tandem: options.tandem.createTandem( 'resetAllButton' )
+      // tandem: options.tandem.createTandem( 'resetAllButton' ) // TODO added by create-sim, but doesn't work here
     } );
     this.addChild( resetAllButton );
   }
@@ -70,15 +67,7 @@ export default class MagnetsScreenView extends ScreenView {
    * Resets the view.
    */
   public reset(): void {
-    //TODO
-  }
-
-  /**
-   * Steps the view.
-   * @param dt - time step, in seconds
-   */
-  public override step( dt: number ): void {
-    //TODO
+    // Nothing needed for example-sim.
   }
 }
 

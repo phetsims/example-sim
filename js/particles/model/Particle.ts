@@ -12,11 +12,13 @@ import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import merge from '../../../../phet-core/js/merge.js';
+import ExampleSimColors from '../../common/ExampleSimColors.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
 // constants
+const DEFAULT_DIAMETER = 2000; // in nm
 const DEFAULT_POSITION = new Vector2( 0, 0 ); // in nm
 
 type SelfOptions = {
@@ -51,29 +53,18 @@ export default class Particle implements TModel {
     const options = optionize<ParticleOptions, SelfOptions>()( {
 
       // Default values for optional SelfOptions
-      diameter: 2000, // {number} nm
-      position: DEFAULT_POSITION, // {Vector2} nm
-      color: ExampleSimConstants.PARTICLE_COLOR // {Color|string}
+      diameter: DEFAULT_DIAMETER,
+      position: DEFAULT_POSITION,
+      color: ExampleSimColors.particleColorProperty
     }, providedOptions );
 
-    // @public (read-only) the particle's diameter, in nm
     this.diameter = options.diameter;
-
-    // @public the particle's position, in nm
     this.positionProperty = new Vector2Property( options.position );
-
-    // @public (read-only)
     this.color = options.color;
-
-    // @private the particle's velocity, in nm/sec
     this.velocity = new Vector2( dotRandom.nextIntBetween( -500, 500 ), dotRandom.nextIntBetween( -100, -1000 ) );
-
-    // @public
     this.opacityProperty = new NumberProperty( 1, {
       range: new Range( 0, 1 )
     } );
-
-    // @public (read-only) whether this particle has been disposed, and should therefore no longer be used
     this.isDisposed = false;
   }
 

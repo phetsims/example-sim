@@ -11,7 +11,7 @@ import logGlobal from '../../../phet-core/js/logGlobal.js';
 import exampleSim from '../exampleSim.js';
 
 const SCHEMA_MAP = {
-  //TODO add schemas for query parameters
+  // None needed for example-sim?
 };
 
 const ExampleSimQueryParameters = QueryStringMachine.getAll( SCHEMA_MAP );

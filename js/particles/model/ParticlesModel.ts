@@ -37,20 +37,13 @@ export default class ParticlesModel {
 
   public constructor() {
 
-    // @public {Particle[]} the complete set of particles
     this.particles = [];
-
-    // @public Notifies listeners when a Particle is added.
     this.particleAddedEmitter = new Emitter( {
       parameters: [ { valueType: Particle } ]
     } );
-
-    // @public Notifies listeners when a Particle is removed.
     this.particleRemovedEmitter = new Emitter( {
       parameters: [ { valueType: Particle } ]
     } );
-
-    // @public Whether the model is advanced on each call to step.
     this.isPlayingProperty = new BooleanProperty( true );
   }
 

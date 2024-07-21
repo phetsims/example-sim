@@ -22,6 +22,11 @@ const NANOMETERS_PER_PIXEL = 100;
 
 export default class ParticlesScreenView extends ScreenView {
 
+  private model: ParticlesModel;
+
+  // the parent for all ParticleNode instances
+  private particlesNode: Node;
+
   /**
    * @param {ParticlesModel} model - the top-level model for this screen
    */
@@ -97,7 +102,6 @@ export default class ParticlesScreenView extends ScreenView {
       } );
     } );
 
-    // @private
     this.model = model;
     this.particlesNode = particlesNode;
   }

@@ -19,6 +19,18 @@ import exampleSim from '../exampleSim.js';
 
 const ExampleSimColors = {
 
+  controlPanelBorderColorProperty: new ProfileColorProperty( exampleSim, 'controlPanelBorder', {
+    default: 'orange'
+  } ),
+
+  controlPanelButtonColorProperty: new ProfileColorProperty( exampleSim, 'controlPanelButton', {
+    default: 'yellow'
+  } ),
+
+  particleColorProperty: new ProfileColorProperty( exampleSim, 'particle', {
+    default: 'rgb( 160, 160, 160 )'
+  } ),
+
   // Background color for screens in this sim
   screenBackgroundColorProperty: new ProfileColorProperty( exampleSim, 'background', {
     default: 'black'
