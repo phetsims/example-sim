@@ -29,6 +29,22 @@ type ParticleOptions = SelfOptions;
 
 export default class Particle implements TModel {
 
+  // the particle's diameter, in nm
+  readonly diameter: number;
+
+  // the particle's position, in nm
+  positionProperty: Vector2Property;
+
+  readonly color: Color | string;
+
+  // the particle's velocity, in nm/sec
+  private velocity: Vector2;
+
+  opacityProperty: NumberProperty;
+
+  // whether this particle has been disposed, and should therefore no longer be used
+  readonly isDisposed: boolean;
+
   public constructor( providedOptions: ParticleOptions ) {
 
     // Demonstrate a common pattern for specifying options and providing default values
