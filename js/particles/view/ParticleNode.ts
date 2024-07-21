@@ -11,13 +11,12 @@ import ShadedSphereNode, { ShadedSphereNodeOptions } from '../../../../scenery-p
 import exampleSim from '../../exampleSim.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
-type SelfOptions = {
-  //TODO add options that are specific to ParticleNode here
-};
-
+type SelfOptions = EmptySelfOptions;
 type ParticleNodeOptions = SelfOptions & ShadedSphereNodeOptions;
 
 export default class ParticleNode extends ShadedSphereNode {
+
+  readonly particle: Particle;
 
   /**
    * @param {Particle} particle - the model of a particle
@@ -28,8 +27,6 @@ export default class ParticleNode extends ShadedSphereNode {
 
     // Demonstrate a common pattern for specifying options and providing default values
     const options = optionize<MagnetsControlPanelOptions, SelfOptions, PanelOptions>()( {
-
-      //TODO add default values for optional SelfOptions here
 
       // Default values for optional ShadedSphereNodeOptions
       mainColor: particle.color
