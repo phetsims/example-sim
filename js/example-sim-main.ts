@@ -31,7 +31,7 @@ simLauncher.launch( () => {
       leadDesign: 'Boris',
       softwareDevelopment: 'Natasha',
       team: 'Chico, Groucho, Gummo, Harpo, Zeppo',
-      contributors: '',
+      contributors: 'Archie, Jughead',
       qualityAssurance: 'Curly, Larry, Moe',
       graphicArts: 'Dali, Picasso, Warhol',
       soundDesign: 'Bach, Mozart',

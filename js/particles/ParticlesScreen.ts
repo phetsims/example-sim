@@ -15,15 +15,13 @@ import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
+import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants, { ExampleSimScreenOptions } from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
 import optionize from '../../../phet-core/js/optionize.js';
-
-// constants
-const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
 type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
 type ParticlesScreenOptions = SelfOptions & ScreenOptions;
@@ -58,7 +56,7 @@ function createScreenIcon(): ScreenIcon {
     mainColor: ExampleSimConstants.PARTICLE_COLOR
   } );
   return new ScreenIcon( iconNode, {
-    fill: BACKGROUND_COLOR_PROPERTY
+    fill: ExampleSimColors.screenBackgroundColorProperty
   } );
 }
 

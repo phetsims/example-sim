@@ -21,7 +21,7 @@ const ExampleSimColors = {
 
   // Background color for screens in this sim
   screenBackgroundColorProperty: new ProfileColorProperty( exampleSim, 'background', {
-    default: 'white'
+    default: 'black'
   } )
 };
 

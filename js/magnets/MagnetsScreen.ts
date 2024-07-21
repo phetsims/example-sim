@@ -12,15 +12,13 @@ import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import barMagnet_png from '../../images/barMagnet_png.js';
+import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants, { ExampleSimScreenOptions } from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
 import optionize from '../../../phet-core/js/optionize.js';
-
-// constants
-const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
 
 type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
 type MagnetsScreenOptions = SelfOptions & ScreenOptions;
@@ -53,7 +51,7 @@ export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenVie
 function createScreenIcon(): ScreenIcon {
   const iconNode = new Image( barMagnet_png );
   return new ScreenIcon( iconNode, {
-    fill: BACKGROUND_COLOR_PROPERTY
+    fill: ExampleSimColors.screenBackgroundColorProperty
   } );
 }
 

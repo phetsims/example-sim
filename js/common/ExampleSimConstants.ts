@@ -9,6 +9,7 @@
  */
 
 import Property from '../../../axon/js/Property.js';
+import ExampleSimColors from './ExampleSimColors.js';
 import exampleSim from '../exampleSim.js';
 
 export type ExampleSimScreenOptions = {
@@ -28,7 +29,7 @@ const ExampleSimConstants = {
   // Options common to all Screens
   //SCREEN_OPTIONS: ExampleSimScreenOptions = {
   SCREEN_OPTIONS: {
-    backgroundColorProperty: new Property( 'black' ),
+    backgroundColorProperty: ExampleSimColors.screenBackgroundColorProperty,
 
     // put a gray border around unselected icons on the home screen
     showUnselectedHomeScreenIconFrame: true,
