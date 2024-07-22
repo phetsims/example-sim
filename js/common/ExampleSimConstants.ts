@@ -27,7 +27,7 @@ const ExampleSimConstants = {
   SCREEN_VIEW_Y_MARGIN: 20,
 
   // Options common to all Screens
-  // SCREEN_OPTIONS: ExampleSimScreenOptions = { // should be this, but weirdly says ExampleSimScreenOptions doesn't exist
+  // SCREEN_OPTIONS: ExampleSimScreenOptions = { // "ReferenceError: ExampleSimScreenOptions is not defined" Huh?
   SCREEN_OPTIONS: {
     backgroundColorProperty: ExampleSimColors.screenBackgroundColorProperty,
 
