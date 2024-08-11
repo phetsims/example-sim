@@ -30,7 +30,7 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
   public constructor( providedOptions?: ParticlesScreenOptions ) {
 
     const options = optionize4<ParticlesScreenOptions, SelfOptions, ScreenOptions>()(
-      ExampleSimConstants.SCREEN_OPTIONS,
+      {}, ExampleSimConstants.SCREEN_OPTIONS,
       {
         name: ExampleSimStrings.screen.particlesStringProperty,
         homeScreenIcon: createScreenIcon()

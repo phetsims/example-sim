@@ -27,7 +27,7 @@ export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenVie
   public constructor( providedOptions?: MagnetsScreenOptions ) {
 
     const options = optionize4<MagnetsScreenOptions, SelfOptions, ScreenOptions>()(
-      ExampleSimConstants.SCREEN_OPTIONS,
+      {}, ExampleSimConstants.SCREEN_OPTIONS,
       {
         name: ExampleSimStrings.screen.magnetsStringProperty,
         homeScreenIcon: createScreenIcon()
