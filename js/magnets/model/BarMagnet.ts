@@ -20,10 +20,10 @@ export default class BarMagnet implements TModel {
   public readonly size: Dimension2;
 
   // the position of the bar magnet in model coordinates
-  public positionProperty: Property<Vector2>;
+  public readonly positionProperty: Property<Vector2>;
 
   // orientation in radians
-  public orientationProperty: Property<number>;
+  public readonly orientationProperty: Property<number>;
 
   /**
    * size - the size of the bar magnet in model coordinates

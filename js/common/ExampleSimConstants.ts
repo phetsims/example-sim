@@ -8,17 +8,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
 import ExampleSimColors from './ExampleSimColors.js';
 import exampleSim from '../exampleSim.js';
-
-export type ExampleSimScreenOptions = {
-    backgroundColorProperty: Property<string>;
-
-    showUnselectedHomeScreenIconFrame: boolean;
-
-    showScreenIconFrameForNavigationBarFill: string;
-};
 
 const ExampleSimConstants = {
 
@@ -27,7 +18,6 @@ const ExampleSimConstants = {
   SCREEN_VIEW_Y_MARGIN: 20,
 
   // Options common to all Screens
-  // SCREEN_OPTIONS: ExampleSimScreenOptions = { // "ReferenceError: ExampleSimScreenOptions is not defined" Huh?
   SCREEN_OPTIONS: {
     backgroundColorProperty: ExampleSimColors.screenBackgroundColorProperty,
 

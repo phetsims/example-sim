@@ -23,10 +23,10 @@ const NANOMETERS_PER_PIXEL = 100;
 
 export default class ParticlesScreenView extends ScreenView {
 
-  private model: ParticlesModel;
+  private readonly model: ParticlesModel;
 
   // the parent for all ParticleNode instances
-  private particlesNode: Node;
+  private readonly particlesNode: Node;
 
   /**
    * model - the top-level model for this screen
@@ -97,7 +97,7 @@ export default class ParticlesScreenView extends ScreenView {
     // removeListener is not needed, because model exists for the lifetime of the sim.
     model.particleRemovedEmitter.addListener( particle => {
       particlesNode.children.forEach( particleNode => {
-        if ( particleNode.particle === particle ) {
+        if ( ( particleNode as ParticleNode ).particle === particle ) {
           particleNode.dispose(); // this also removes particleNode from particlesNode
         }
       } );

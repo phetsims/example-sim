@@ -18,9 +18,10 @@ import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import MagnetsModel from '../model/MagnetsModel.js';
 import BarMagnetNode from './BarMagnetNode.js';
 import MagnetsControlPanel from './MagnetsControlPanel.js';
-import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
+
 type MagnetsScreenViewOptions = SelfOptions & ScreenViewOptions;
 
 export default class MagnetsScreenView extends ScreenView {
@@ -28,13 +29,9 @@ export default class MagnetsScreenView extends ScreenView {
   /**
    * model - the top-level model for this screen
    */
-  public constructor( model: MagnetsModel, providedOptions: MagnetsScreenViewOptions ) {
+  public constructor( model: MagnetsModel, providedOptions?: MagnetsScreenViewOptions ) {
 
-    const options = optionize<MagnetsScreenViewOptions, SelfOptions, ScreenViewOptions>()( {
-      // Nothing needed for example-sim.
-    }, providedOptions );
-
-    super( options );
+    super( providedOptions );
 
     // transform between model coordinates and view coordinates
     const center = new Vector2( this.layoutBounds.width / 2, this.layoutBounds.height / 2 );
@@ -53,13 +50,14 @@ export default class MagnetsScreenView extends ScreenView {
     // button is positioned at the lower-right of the screen.
     const resetAllButton = new ResetAllButton( {
       listener: () => {
-        this.interruptSubtreeInput(); // cancel interactions that may be in progress
+
+        // Interrupt any other user interactions that may be in progress, needed for multi-touch.
+        this.interruptSubtreeInput();
         model.reset();
         this.reset();
       },
       right: this.layoutBounds.maxX - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
-      bottom: this.layoutBounds.maxY - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN,
-      tandem: options.tandem.createTandem( 'resetAllButton' )
+      bottom: this.layoutBounds.maxY - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
     } );
     this.addChild( resetAllButton );
   }

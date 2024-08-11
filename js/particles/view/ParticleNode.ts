@@ -25,7 +25,7 @@ export default class ParticleNode extends ShadedSphereNode {
    * modelViewTransform - transform between model and view coordinates
    * providedOptions
    */
-  public constructor( particle: Particle, modelViewTransform: ModelViewTransform2, providedOptions: ParticleNodeOptions ) {
+  public constructor( particle: Particle, modelViewTransform: ModelViewTransform2, providedOptions?: ParticleNodeOptions ) {
 
     // Demonstrate a common pattern for specifying options and providing default values
     const options = optionize<ParticleNodeOptions, SelfOptions, ShadedSphereNodeOptions>()( {

@@ -18,7 +18,7 @@ import BarMagnet from './BarMagnet.js';
 export default class MagnetsModel implements TModel {
 
   // initial bar magnet model element
-  public barMagnet: BarMagnet;
+  public readonly barMagnet: BarMagnet;
 
   public constructor() {
     this.barMagnet = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 0, 0 ), 0 );

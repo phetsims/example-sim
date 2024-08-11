@@ -14,21 +14,22 @@ import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
 import ExampleSimColors from '../common/ExampleSimColors.js';
-import ExampleSimConstants, { ExampleSimScreenOptions } from '../common/ExampleSimConstants.js';
+import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
-import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
+import { optionize4, EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
-type SelfOptions = ExampleSimScreenOptions & EmptySelfOptions;
+type SelfOptions = EmptySelfOptions;
+
 type ParticlesScreenOptions = SelfOptions & ScreenOptions;
 
 export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScreenView> {
 
   public constructor( providedOptions?: ParticlesScreenOptions ) {
 
-    const options = optionize<ParticlesScreenOptions, SelfOptions, ScreenOptions>()(
+    const options = optionize4<ParticlesScreenOptions, SelfOptions, ScreenOptions>()(
       ExampleSimConstants.SCREEN_OPTIONS,
       {
         name: ExampleSimStrings.screen.particlesStringProperty,
@@ -37,8 +38,8 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
       providedOptions );
 
     super(
-      () => new ParticlesModel( { tandem: options.tandem.createTandem( 'model' ) } ),
-      model => new ParticlesScreenView( model, { tandem: options.tandem.createTandem( 'view' ) } ),
+      () => new ParticlesModel(),
+      model => new ParticlesScreenView( model ),
       options
     );
   }

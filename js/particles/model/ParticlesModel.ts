@@ -24,20 +24,19 @@ const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each anima
 export default class ParticlesModel {
 
   // the complete set of particles
-  public particles: Particle[];
+  public particles: Particle[] = [];
 
   // Notifies listeners when a Particle is added.
-  public particleAddedEmitter: Emitter;
+  public particleAddedEmitter: Emitter<[ Particle ]>;
 
   // Notifies listeners when a Particle is removed.
-  public particleRemovedEmitter: Emitter;
+  public particleRemovedEmitter: Emitter<[ Particle ]>;
 
   // Whether the model is advanced on each call to step.
   public isPlayingProperty: BooleanProperty;
 
   public constructor() {
 
-    this.particles = [];
     this.particleAddedEmitter = new Emitter( {
       parameters: [ { valueType: Particle } ]
     } );

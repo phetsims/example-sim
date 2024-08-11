@@ -9,7 +9,6 @@
 
 import Sim, { SimOptions } from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
-import Tandem from '../../tandem/js/Tandem.js';
 import ExampleSimStrings from './ExampleSimStrings.js';
 import './common/ExampleSimQueryParameters.js';
 import MagnetsScreen from './magnets/MagnetsScreen.js';
@@ -22,8 +21,8 @@ simLauncher.launch( () => {
   const titleStringProperty = ExampleSimStrings[ 'example-sim' ].titleStringProperty;
 
   const screens = [
-    new MagnetsScreen( { tandem: Tandem.ROOT.createTandem( 'magnetsScreen' ) } ),
-    new ParticlesScreen( { tandem: Tandem.ROOT.createTandem( 'particlesScreen' ) } )
+    new MagnetsScreen(),
+    new ParticlesScreen()
   ];
 
   const options: SimOptions = {

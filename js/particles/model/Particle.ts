@@ -12,55 +12,54 @@ import dotRandom from '../../../../dot/js/dotRandom.js';
 import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
-import TModel from '../../../../joist/js/TModel.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
 import exampleSim from '../../exampleSim.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 // constants
 const DEFAULT_DIAMETER = 2000; // in nm
 const DEFAULT_POSITION = new Vector2( 0, 0 ); // in nm
 
 type SelfOptions = {
-  diameter: number; // in nm
-  position: Vector2; // in nm
-  color: Color | string;
+  diameter?: number; // in nm
+  position?: Vector2; // in nm
+  color?: Color | string;
 };
 
-type ParticleOptions = SelfOptions;
+export type ParticleOptions = SelfOptions;
 
-export default class Particle implements TModel {
+export default class Particle {
 
   // the particle's diameter, in nm
   public readonly diameter: number;
 
   // the particle's position, in nm
-  public positionProperty: Vector2Property;
+  public readonly positionProperty: Vector2Property;
 
   public readonly color: Color | string;
 
   // the particle's velocity, in nm/sec
   private velocity: Vector2;
 
-  public opacityProperty: NumberProperty;
+  public readonly opacityProperty: NumberProperty;
 
   // whether this particle has been disposed, and should therefore no longer be used
-  public readonly isDisposed: boolean;
+  public isDisposed: boolean;
 
-  public constructor( providedOptions: ParticleOptions ) {
+  public constructor( providedOptions?: ParticleOptions ) {
 
     // Demonstrate a common pattern for specifying options and providing default values
-    const options = optionize<ParticleOptions, SelfOptions>()( {
+    const options = combineOptions<ParticleOptions>( {
 
       // Default values for optional SelfOptions
       diameter: DEFAULT_DIAMETER,
       position: DEFAULT_POSITION,
-      color: ExampleSimColors.particleColorProperty
+      color: ExampleSimColors.particleColorProperty.value
     }, providedOptions );
 
-    this.diameter = options.diameter;
-    this.positionProperty = new Vector2Property( options.position );
-    this.color = options.color;
+    this.diameter = options.diameter!;
+    this.positionProperty = new Vector2Property( options.position! );
+    this.color = options.color!;
     this.velocity = new Vector2( dotRandom.nextIntBetween( -500, 500 ), dotRandom.nextIntBetween( -100, -1000 ) );
     this.opacityProperty = new NumberProperty( 1, {
       range: new Range( 0, 1 )
