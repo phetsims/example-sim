@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ExampleSimConstants is a collection of constants that are used throughout this simulation.
