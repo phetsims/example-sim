@@ -20,6 +20,7 @@ import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
 import { optionize4, EmptySelfOptions } from '../../../phet-core/js/optionize.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -33,7 +34,8 @@ export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScr
       {}, ExampleSimConstants.SCREEN_OPTIONS,
       {
         name: ExampleSimStrings.screen.particlesStringProperty,
-        homeScreenIcon: createScreenIcon()
+        homeScreenIcon: createScreenIcon(),
+        tandem: Tandem.OPT_OUT
       },
       providedOptions );
 

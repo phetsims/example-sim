@@ -17,6 +17,7 @@ import ExampleSimStrings from '../ExampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
 import { optionize4, EmptySelfOptions } from '../../../phet-core/js/optionize.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -30,7 +31,8 @@ export default class MagnetsScreen extends Screen<MagnetsModel, MagnetsScreenVie
       {}, ExampleSimConstants.SCREEN_OPTIONS,
       {
         name: ExampleSimStrings.screen.magnetsStringProperty,
-        homeScreenIcon: createScreenIcon()
+        homeScreenIcon: createScreenIcon(),
+        tandem: Tandem.OPT_OUT
       },
       providedOptions );
 
