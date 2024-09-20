@@ -49,7 +49,7 @@
         },
         "parserOptions": {
           "project": [
-            "../example-sim/tsconfig.json"
+            "../chipper/tsconfig/eslint-all/tsconfig.json"
           ]
         }
       }
