@@ -46,6 +46,11 @@
               "ts-nocheck": true
             }
           ]
+        },
+        "parserOptions": {
+          "project": [
+            "../example-sim/tsconfig.json"
+          ]
         }
       }
     ]
