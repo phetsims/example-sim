@@ -4,6 +4,7 @@
  * Auto-generated from modulify, DO NOT manually modify.
  */
 /* eslint-disable */
+/* @formatter:off */
 import getStringModule from '../../chipper/js/getStringModule.js';
 import type LocalizedStringProperty from '../../chipper/js/LocalizedStringProperty.js';
 import exampleSim from './exampleSim.js';
