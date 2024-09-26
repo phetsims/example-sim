@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ExampleSimConstants is a collection of constants that are used throughout this simulation.
@@ -8,7 +8,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
+import ExampleSimColors from './ExampleSimColors.js';
 import exampleSim from '../exampleSim.js';
 
 const ExampleSimConstants = {
@@ -19,17 +19,14 @@ const ExampleSimConstants = {
 
   // Options common to all Screens
   SCREEN_OPTIONS: {
-    backgroundColorProperty: new Property( 'black' ),
+    backgroundColorProperty: ExampleSimColors.screenBackgroundColorProperty,
 
     // put a gray border around unselected icons on the home screen
     showUnselectedHomeScreenIconFrame: true,
 
     // put a gray border around screen icons when the navigation bar is black
     showScreenIconFrameForNavigationBarFill: 'black'
-  },
-
-  // Color used for particles
-  PARTICLE_COLOR: 'rgb( 160, 160, 160 )'
+  }
 };
 
 exampleSim.register( 'ExampleSimConstants', ExampleSimConstants );

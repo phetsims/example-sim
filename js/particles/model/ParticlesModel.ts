@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticlesModel is the top-level model for the 'Particles' screen. You can think of the top-level model as a container
@@ -21,32 +21,35 @@ import Particle from './Particle.js';
 const GRAVITY = new Vector2( 0, -20 ); // in nm/sec
 const OPACITY_DELTA = 0.02; // opacity is decreased by this amount on each animation step
 
-class ParticlesModel {
+export default class ParticlesModel {
 
-  constructor() {
+  // the complete set of particles
+  public particles: Particle[] = [];
 
-    // @public {Particle[]} the complete set of particles
-    this.particles = [];
+  // Notifies listeners when a Particle is added.
+  public particleAddedEmitter: Emitter<[ Particle ]>;
 
-    // @public Notifies listeners when a Particle is added.
+  // Notifies listeners when a Particle is removed.
+  public particleRemovedEmitter: Emitter<[ Particle ]>;
+
+  // Whether the model is advanced on each call to step.
+  public isPlayingProperty: BooleanProperty;
+
+  public constructor() {
+
     this.particleAddedEmitter = new Emitter( {
       parameters: [ { valueType: Particle } ]
     } );
-
-    // @public Notifies listeners when a Particle is removed.
     this.particleRemovedEmitter = new Emitter( {
       parameters: [ { valueType: Particle } ]
     } );
-
-    // @public Whether the model is advanced on each call to step.
     this.isPlayingProperty = new BooleanProperty( true );
   }
 
   /**
    * Resets the model to its initial state. This method is called when the simulation's "Reset All" button is pressed.
-   * @public
    */
-  reset() {
+  public reset(): void {
 
     // Remove all particles.
     while ( this.particles.length > 0 ) {
@@ -56,10 +59,9 @@ class ParticlesModel {
 
   /**
    * Steps the model each time the clock ticks.
-   * @param {number} dt - time step, in seconds
-   * @public
+   * dt - time step, in seconds
    */
-  step( dt ) {
+  public step( dt: number ): void {
     if ( this.isPlayingProperty.value ) {
       this.stepOnce();
     }
@@ -67,9 +69,8 @@ class ParticlesModel {
 
   /**
    * Steps the model one step. Called directly when using the step button of the time control.
-   * @public
    */
-  stepOnce() {
+  public stepOnce(): void {
 
     // Create some new particles
     for ( let i = 0; i < 3; i++ ) {
@@ -96,10 +97,8 @@ class ParticlesModel {
 
   /**
    * Removes a particle.
-   * @param {Particle} particle
-   * @private
    */
-  removeParticle( particle ) {
+  private removeParticle( particle: Particle ): void {
     this.particles.splice( this.particles.indexOf( particle ), 1 );
     this.particleRemovedEmitter.emit( particle );
     particle.dispose();
@@ -107,4 +106,3 @@ class ParticlesModel {
 }
 
 exampleSim.register( 'ParticlesModel', ParticlesModel );
-export default ParticlesModel;

@@ -1,4 +1,4 @@
-// Copyright 2013-2022, University of Colorado Boulder
+// Copyright 2013-2024, University of Colorado Boulder
 
 /**
  * BarMagnetNode is the view for the bar magnet. It is responsible for the visual representation of a bar magnet,
@@ -15,18 +15,13 @@ import barMagnet_png from '../../../images/barMagnet_png.js';
 import exampleSim from '../../exampleSim.js';
 import BarMagnet from '../model/BarMagnet.js';
 
-class BarMagnetNode extends Node {
+export default class BarMagnetNode extends Node {
 
   /**
-   * @param {BarMagnet} barMagnet - the model of the bar magnet
-   * @param {ModelViewTransform2} modelViewTransform - the transform between model coordinates and view coordinates
+   * barMagnet - the model of the bar magnet
+   * modelViewTransform - the transform between model coordinates and view coordinates
    */
-  constructor( barMagnet, modelViewTransform ) {
-
-    // This is an example of using assertions to check for potential programming errors. In this case, we are verifying
-    // that the arguments have the expected type.  Run the simulation with query parameter ?ea to enable assertions.
-    assert && assert( barMagnet instanceof BarMagnet, 'invalid barMagnet' );
-    assert && assert( modelViewTransform instanceof ModelViewTransform2, 'invalid modelViewTransform' );
+  public constructor( barMagnet: BarMagnet, modelViewTransform: ModelViewTransform2 ) {
 
     super( {
 
@@ -68,4 +63,3 @@ class BarMagnetNode extends Node {
 }
 
 exampleSim.register( 'BarMagnetNode', BarMagnetNode );
-export default BarMagnetNode;

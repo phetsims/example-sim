@@ -1,4 +1,4 @@
-// Copyright 2021, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticlesScreenView is the top-level view component for the 'Magnets' screen. All of the components that make up
@@ -15,17 +15,21 @@ import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import { Node } from '../../../../scenery/js/imports.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
 import exampleSim from '../../exampleSim.js';
+import ParticlesModel from '../model/ParticlesModel.js';
 import ParticleNode from './ParticleNode.js';
 
 // The model is in nanometers, and this is the number of nanometers per 1 unit in the view.
 const NANOMETERS_PER_PIXEL = 100;
 
-class ParticlesScreenView extends ScreenView {
+export default class ParticlesScreenView extends ScreenView {
+
+  // the parent for all ParticleNode instances
+  private readonly particlesNode: Node;
 
   /**
-   * @param {ParticlesModel} model - the top-level model for this screen
+   * model - the top-level model for this screen
    */
-  constructor( model ) {
+  public constructor( private readonly model: ParticlesModel ) {
 
     super();
 
@@ -91,17 +95,14 @@ class ParticlesScreenView extends ScreenView {
     // removeListener is not needed, because model exists for the lifetime of the sim.
     model.particleRemovedEmitter.addListener( particle => {
       particlesNode.children.forEach( particleNode => {
-        if ( particleNode.particle === particle ) {
+        if ( ( particleNode as ParticleNode ).particle === particle ) {
           particleNode.dispose(); // this also removes particleNode from particlesNode
         }
       } );
     } );
 
-    // @private
-    this.model = model;
     this.particlesNode = particlesNode;
   }
 }
 
 exampleSim.register( 'ParticlesScreenView', ParticlesScreenView );
-export default ParticlesScreenView;

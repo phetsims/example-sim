@@ -1,4 +1,4 @@
-// Copyright 2021-2022, University of Colorado Boulder
+// Copyright 2021-2024, University of Colorado Boulder
 
 /**
  * ParticlesScreen is the top-level component for the 'Particles' screen.  It creates the model and view.
@@ -10,28 +10,34 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
-import Screen from '../../../joist/js/Screen.js';
+import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
-import merge from '../../../phet-core/js/merge.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
+import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
+import { optionize4, EmptySelfOptions } from '../../../phet-core/js/optionize.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
-// constants
-const BACKGROUND_COLOR_PROPERTY = new Property( 'black' );
+type SelfOptions = EmptySelfOptions;
 
-class ParticlesScreen extends Screen {
+type ParticlesScreenOptions = SelfOptions & ScreenOptions;
 
-  constructor() {
+export default class ParticlesScreen extends Screen<ParticlesModel, ParticlesScreenView> {
 
-    const options = merge( {
-      name: ExampleSimStrings.screen.particlesStringProperty,
-      homeScreenIcon: createScreenIcon()
-    }, ExampleSimConstants.SCREEN_OPTIONS );
+  public constructor( providedOptions?: ParticlesScreenOptions ) {
+
+    const options = optionize4<ParticlesScreenOptions, SelfOptions, ScreenOptions>()(
+      {}, ExampleSimConstants.SCREEN_OPTIONS,
+      {
+        name: ExampleSimStrings.screen.particlesStringProperty,
+        homeScreenIcon: createScreenIcon(),
+        tandem: Tandem.OPT_OUT
+      },
+      providedOptions );
 
     super(
       () => new ParticlesModel(),
@@ -44,16 +50,14 @@ class ParticlesScreen extends Screen {
 /**
  * Creates the icon for this screen. This will be used for the home screen and navigation bar.
  * Always use ScreenIcon for screen icons.
- * @returns {ScreenIcon}
  */
-function createScreenIcon() {
+function createScreenIcon(): ScreenIcon {
   const iconNode = new ShadedSphereNode( 100, {
-    mainColor: ExampleSimConstants.PARTICLE_COLOR
+    mainColor: ExampleSimColors.particleColorProperty
   } );
   return new ScreenIcon( iconNode, {
-    fill: BACKGROUND_COLOR_PROPERTY
+    fill: ExampleSimColors.screenBackgroundColorProperty
   } );
 }
 
 exampleSim.register( 'ParticlesScreen', ParticlesScreen );
-export default ParticlesScreen;

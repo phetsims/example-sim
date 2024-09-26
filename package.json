@@ -11,12 +11,12 @@
   },
   "phet": {
     "requirejsNamespace": "EXAMPLE_SIM",
+    "simulation": true,
     "runnable": true,
     "supportedBrands": [
       "phet",
       "adapted-from-phet"
     ],
-    "simulation": true,
     "ignoreForAutomatedMaintenanceReleases": true,
     "readmeCreatedManually": true,
     "supportsOutputJS": true,
