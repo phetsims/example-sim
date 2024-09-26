@@ -7,10 +7,10 @@
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
-import parent from '../chipper/eslint/sim.eslint.config.mjs';
+import simEslintConfig from '../chipper/eslint/sim.eslint.config.mjs';
 
 export default [
-  ...parent,
+  ...simEslintConfig,
   {
     files: [
       '**/*.ts'
