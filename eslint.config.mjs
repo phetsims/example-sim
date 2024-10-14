@@ -12,9 +12,7 @@ import simEslintConfig from '../chipper/eslint/sim.eslint.config.mjs';
 export default [
   ...simEslintConfig,
   {
-    files: [
-      '**/*.ts'
-    ],
+    files: [ '**/*.ts' ],
     rules: {
       '@typescript-eslint/ban-ts-comment': [
         'error',
