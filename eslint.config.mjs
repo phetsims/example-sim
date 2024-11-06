@@ -8,7 +8,7 @@
  */
 
 import banTSCommentConfig from '../perennial-alias/js/eslint/config/util/banTSCommentConfig.mjs';
-import simEslintConfig from '../perennial-alias/js/eslint/sim.eslint.config.mjs';
+import simEslintConfig from '../perennial-alias/js/eslint/config/sim.eslint.config.mjs';
 
 export default [
   ...simEslintConfig,
