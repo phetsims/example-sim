@@ -7,7 +7,7 @@
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
-import banTSCommentConfig from '../perennial-alias/js/eslint/banTSCommentConfig.mjs';
+import banTSCommentConfig from '../perennial-alias/js/eslint/config/util/banTSCommentConfig.mjs';
 import simEslintConfig from '../perennial-alias/js/eslint/sim.eslint.config.mjs';
 
 export default [
