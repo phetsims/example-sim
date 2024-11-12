@@ -83,11 +83,12 @@ You will probably need to modify this URL based on your HTTP port and relative p
 
 ### Get Involved
 
-Contact us at our Google
-Group: <a href="http://groups.google.com/forum/#!forum/developing-interactive-simulations-in-html5" target="_blank">
-Developing Interactive Simulations in HTML5</a>
+This example simulation was made using <a href="http://scenerystack.org/" target="_blank">SceneryStack</a>. Join the community to learn more about the practices and patterns for developing multimodal, and inclusive interactives in HTML5.
 
-Help us improve, create a <a href="http://github.com/phetsims/example-sim/issues/new" target="_blank">New Issue</a>
+Reach out on the <a href="https://github.com/orgs/scenerystack/discussions" target="_blank">
+SceneryStack Discussions forum</a>.
+
+Help improve this tutorial sim, create a <a href="http://github.com/phetsims/example-sim/issues/new" target="_blank">New Issue</a>
 
 ### License
 
