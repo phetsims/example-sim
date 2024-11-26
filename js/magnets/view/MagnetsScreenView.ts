@@ -51,8 +51,6 @@ export default class MagnetsScreenView extends ScreenView {
     const resetAllButton = new ResetAllButton( {
       listener: () => {
 
-        // Interrupt any other user interactions that may be in progress, needed for multi-touch.
-        this.interruptSubtreeInput();
         model.reset();
         this.reset();
       },

@@ -46,9 +46,6 @@ export default class ParticlesScreenView extends ScreenView {
     const resetAllButton = new ResetAllButton( {
       listener: () => {
 
-        // Interrupt any other user interactions that may be in progress, needed for multi-touch.
-        this.interruptSubtreeInput();
-
         // This is an example of using phet.log. Adding the 'log' query parameter to your URL will enabled phet.log
         // output to the console. In this example, we will print the size of the model and view arrays before and
         // after resetting, to confirm that we're not leaking memory.
