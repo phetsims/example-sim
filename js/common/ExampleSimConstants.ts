@@ -8,8 +8,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import ExampleSimColors from './ExampleSimColors.js';
 import exampleSim from '../exampleSim.js';
+import ExampleSimColors from './ExampleSimColors.js';
 
 const ExampleSimConstants = {
 

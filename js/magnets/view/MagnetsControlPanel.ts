@@ -8,15 +8,15 @@
  * @author Steele Dalton (PhET Interactive Simulations)
  */
 
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Text, VBox } from '../../../../scenery/js/imports.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
-import exampleSim from '../../exampleSim.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
+import exampleSim from '../../exampleSim.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
 import MagnetsModel from '../model/MagnetsModel.js';
-import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
 type MagnetsControlPanelOptions = SelfOptions & PanelOptions;

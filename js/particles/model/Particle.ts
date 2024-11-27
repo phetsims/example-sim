@@ -6,15 +6,15 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import { Color } from '../../../../scenery/js/imports.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import dotRandom from '../../../../dot/js/dotRandom.js';
 import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import { Color } from '../../../../scenery/js/imports.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
 import exampleSim from '../../exampleSim.js';
-import { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 // constants
 const DEFAULT_DIAMETER = 2000; // in nm

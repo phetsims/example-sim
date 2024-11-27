@@ -12,15 +12,15 @@
 
 import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
+import { EmptySelfOptions, optionize4 } from '../../../phet-core/js/optionize.js';
 import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
 import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
-import { optionize4, EmptySelfOptions } from '../../../phet-core/js/optionize.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 
 type SelfOptions = EmptySelfOptions;
 
