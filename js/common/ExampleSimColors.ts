@@ -14,7 +14,7 @@
  * @author Franz Amador
  */
 
-import { ProfileColorProperty } from '../../../scenery/js/imports.js';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
 import exampleSim from '../exampleSim.js';
 
 const ExampleSimColors = {

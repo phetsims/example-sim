@@ -12,7 +12,7 @@ import Range from '../../../../dot/js/Range.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
-import { Color } from '../../../../scenery/js/imports.js';
+import Color from '../../../../scenery/js/util/Color.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
 import exampleSim from '../../exampleSim.js';
 

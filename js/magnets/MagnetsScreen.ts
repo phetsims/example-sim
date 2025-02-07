@@ -9,7 +9,7 @@
 import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import { EmptySelfOptions, optionize4 } from '../../../phet-core/js/optionize.js';
-import { Image } from '../../../scenery/js/imports.js';
+import Image from '../../../scenery/js/nodes/Image.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import barMagnet_png from '../../images/barMagnet_png.js';
 import ExampleSimColors from '../common/ExampleSimColors.js';
