@@ -1,4 +1,4 @@
-// Copyright 2021-2024, University of Colorado Boulder
+// Copyright 2021-2025, University of Colorado Boulder
 
 /**
  * ParticlesScreenView is the top-level view component for the 'Magnets' screen. All of the components that make up
