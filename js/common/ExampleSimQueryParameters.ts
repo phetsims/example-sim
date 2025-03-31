@@ -11,14 +11,9 @@ import logGlobal from '../../../phet-core/js/logGlobal.js';
 import { QueryStringMachine } from '../../../query-string-machine/js/QueryStringMachineModule.js';
 import exampleSim from '../exampleSim.js';
 
-const SCHEMA_MAP = {
+const ExampleSimQueryParameters = QueryStringMachine.getAll( {
   // None needed for example-sim?
-};
-
-const ExampleSimQueryParameters = QueryStringMachine.getAll( SCHEMA_MAP );
-
-// The schema map is a read-only part of the public API, in case schema details (e.g. validValues) are needed elsewhere.
-ExampleSimQueryParameters.SCHEMA_MAP = SCHEMA_MAP;
+} );
 
 exampleSim.register( 'ExampleSimQueryParameters', ExampleSimQueryParameters );
 
