@@ -14,7 +14,6 @@ import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
-import exampleSim from '../../exampleSim.js';
 
 // constants
 const DEFAULT_DIAMETER = 2000; // in nm
@@ -85,5 +84,3 @@ export default class Particle {
     this.positionProperty.value = this.positionProperty.value.plus( this.velocity );
   }
 }
-
-exampleSim.register( 'Particle', Particle );

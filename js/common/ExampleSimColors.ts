@@ -37,5 +37,4 @@ const ExampleSimColors = {
   } )
 };
 
-exampleSim.register( 'ExampleSimColors', ExampleSimColors );
 export default ExampleSimColors;

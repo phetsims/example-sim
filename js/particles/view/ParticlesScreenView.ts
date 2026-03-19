@@ -14,7 +14,6 @@ import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.j
 import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
-import exampleSim from '../../exampleSim.js';
 import ParticlesModel from '../model/ParticlesModel.js';
 import ParticleNode from './ParticleNode.js';
 
@@ -101,5 +100,3 @@ export default class ParticlesScreenView extends ScreenView {
     this.particlesNode = particlesNode;
   }
 }
-
-exampleSim.register( 'ParticlesScreenView', ParticlesScreenView );

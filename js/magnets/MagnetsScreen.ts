@@ -14,7 +14,6 @@ import Tandem from '../../../tandem/js/Tandem.js';
 import barMagnet_png from '../../images/barMagnet_png.js';
 import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
-import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import MagnetsModel from './model/MagnetsModel.js';
 import MagnetsScreenView from './view/MagnetsScreenView.js';
@@ -54,5 +53,3 @@ function createScreenIcon(): ScreenIcon {
     fill: ExampleSimColors.screenBackgroundColorProperty
   } );
 }
-
-exampleSim.register( 'MagnetsScreen', MagnetsScreen );

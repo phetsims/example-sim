@@ -14,7 +14,6 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Emitter from '../../../../axon/js/Emitter.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import exampleSim from '../../exampleSim.js';
 import Particle from './Particle.js';
 
 // constants
@@ -104,5 +103,3 @@ export default class ParticlesModel {
     particle.dispose();
   }
 }
-
-exampleSim.register( 'ParticlesModel', ParticlesModel );

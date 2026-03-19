@@ -12,7 +12,6 @@
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import TModel from '../../../../joist/js/TModel.js';
-import exampleSim from '../../exampleSim.js';
 import BarMagnet from './BarMagnet.js';
 
 export default class MagnetsModel implements TModel {
@@ -32,5 +31,3 @@ export default class MagnetsModel implements TModel {
     this.barMagnet.reset();
   }
 }
-
-exampleSim.register( 'MagnetsModel', MagnetsModel );

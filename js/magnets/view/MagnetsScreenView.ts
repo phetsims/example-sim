@@ -15,7 +15,6 @@ import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import ExampleSimConstants from '../../common/ExampleSimConstants.js';
-import exampleSim from '../../exampleSim.js';
 import MagnetsModel from '../model/MagnetsModel.js';
 import BarMagnetNode from './BarMagnetNode.js';
 import MagnetsControlPanel from './MagnetsControlPanel.js';
@@ -67,5 +66,3 @@ export default class MagnetsScreenView extends ScreenView {
     // Nothing needed for example-sim.
   }
 }
-
-exampleSim.register( 'MagnetsScreenView', MagnetsScreenView );

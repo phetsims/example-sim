@@ -10,7 +10,6 @@
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ShadedSphereNode, { ShadedSphereNodeOptions } from '../../../../scenery-phet/js/ShadedSphereNode.js';
-import exampleSim from '../../exampleSim.js';
 import Particle from '../model/Particle.js';
 
 type SelfOptions = EmptySelfOptions;
@@ -50,5 +49,3 @@ export default class ParticleNode extends ShadedSphereNode {
     } );
   }
 }
-
-exampleSim.register( 'ParticleNode', ParticleNode );

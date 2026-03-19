@@ -8,7 +8,6 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import exampleSim from '../exampleSim.js';
 import ExampleSimColors from './ExampleSimColors.js';
 
 const ExampleSimConstants = {
@@ -29,5 +28,4 @@ const ExampleSimConstants = {
   }
 };
 
-exampleSim.register( 'ExampleSimConstants', ExampleSimConstants );
 export default ExampleSimConstants;

@@ -15,7 +15,6 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import ExampleSimColors from '../../common/ExampleSimColors.js';
-import exampleSim from '../../exampleSim.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
 import MagnetsModel from '../model/MagnetsModel.js';
 
@@ -74,5 +73,3 @@ export default class MagnetsControlPanel extends Panel {
     super( content, options );
   }
 }
-
-exampleSim.register( 'MagnetsControlPanel', MagnetsControlPanel );

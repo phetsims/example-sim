@@ -17,7 +17,6 @@ import ShadedSphereNode from '../../../scenery-phet/js/ShadedSphereNode.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import ExampleSimColors from '../common/ExampleSimColors.js';
 import ExampleSimConstants from '../common/ExampleSimConstants.js';
-import exampleSim from '../exampleSim.js';
 import ExampleSimStrings from '../ExampleSimStrings.js';
 import ParticlesModel from './model/ParticlesModel.js';
 import ParticlesScreenView from './view/ParticlesScreenView.js';
@@ -59,5 +58,3 @@ function createScreenIcon(): ScreenIcon {
     fill: ExampleSimColors.screenBackgroundColorProperty
   } );
 }
-
-exampleSim.register( 'ParticlesScreen', ParticlesScreen );
