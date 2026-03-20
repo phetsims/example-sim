@@ -25,4 +25,6 @@ type StringsType = {
 
 const ExampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;
 
+exampleSim.register( 'ExampleSimStrings', ExampleSimStrings );
+
 export default ExampleSimStrings;
