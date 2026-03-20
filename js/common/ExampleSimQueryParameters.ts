@@ -17,6 +17,6 @@ const ExampleSimQueryParameters = QueryStringMachine.getAll( {
 // Log query parameters
 logGlobal( 'phet.chipper.queryParameters' );
 logGlobal( 'phet.preloads.phetio.queryParameters' );
-logGlobal( 'phet.exampleSim.ExampleSimQueryParameters' );
+phet.log && phet.log( `ExampleSimQueryParameters: ${JSON.stringify( ExampleSimQueryParameters, null, 2 )}` );
 
 export default ExampleSimQueryParameters;
