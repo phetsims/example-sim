@@ -1,4 +1,4 @@
-// Copyright 2013-2024, University of Colorado Boulder
+// Copyright 2013-2026, University of Colorado Boulder
 
 /**
  * MagnetsModel is the top-level model for the 'Magnets' screen. You can think of the top-level model as a container

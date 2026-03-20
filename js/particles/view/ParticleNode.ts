@@ -1,4 +1,4 @@
-// Copyright 2021-2024, University of Colorado Boulder
+// Copyright 2021-2026, University of Colorado Boulder
 
 /**
  * ParticleNode is the view for a particle. It is responsible for the visual representation of a particle,
