@@ -8,8 +8,8 @@ published version,
 
 ### Try it!
 
-<a href="https://phet.colorado.edu/sims/html/example-sim/latest/example-sim_en.html" target="_blank">Click here to run "
-Example Simulation".</a>
+<a href="https://phet.colorado.edu/sims/html/example-sim/latest/example-sim_en.html" target="_blank">Click here to
+run "Example Simulation".</a>
 
 <a href="https://phet.colorado.edu/sims/html/example-sim/latest/example-sim_en.html" target="_blank">
 <img src="https://raw.githubusercontent.com/phetsims/example-sim/main/assets/example-sim-screenshot.png" alt="Screenshot" style="width: 400px;"/>
@@ -62,13 +62,9 @@ cd ../example-sim
 npm install
 ```
 
-(3) Transpile the TypeScript code to JavaScript by running `grunt output-js-project --live`. This starts a file-watching process that will automatically transpile
-new or changed files.
+(3) Run `grunt dev-server` to start a local development server that will serve the simulation.
 
-(4) In a new terminal/command prompt, start an http-server
-
-(5) Open in the browser: `http://localhost/example-sim/example-sim_en.html` (You will probably need to modify this URL
-based on your HTTP port and relative path.)
+(4) Open in the browser: `http://localhost/example-sim/example-sim_en.html`
 
 #### Optional: Build the simulation into a single file
 
@@ -78,17 +74,14 @@ based on your HTTP port and relative path.)
 like `>> WARNING404: Skipping potentially non-public dependency`, which indicate that non-public PhET-iO code is not
 being included in the build.
 
-(3) Open in the browser: `http://localhost/example-sim/build/adapted-from-phet/example-sim_en_adapted-from-phet.html` (
-You will probably need to modify this URL based on your HTTP port and relative path.)
+(3) Open in the
+browser: `http://localhost/example-sim/build/adapted-from-phet/example-sim_en_adapted-from-phet.html`
 
 ### Get Involved
 
-This example simulation was made using <a href="http://scenerystack.org/" target="_blank">SceneryStack</a>. Join the community to learn more about the practices and patterns for developing multimodal, and inclusive interactives in HTML5.
+Join us at the <a href="https://scenerystack.org/community/join/" target="_blank">SceneryStack Community</a>
 
-Reach out on the <a href="https://github.com/orgs/scenerystack/discussions" target="_blank">
-SceneryStack Discussions forum</a>.
-
-Help improve this tutorial sim, create a <a href="http://github.com/phetsims/example-sim/issues/new" target="_blank">New Issue</a>
+Help us improve, create a <a href="http://github.com/phetsims/example-sim/issues/new" target="_blank">New Issue</a>
 
 ### License
 
